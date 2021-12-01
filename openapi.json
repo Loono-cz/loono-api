@@ -99,7 +99,7 @@
         },
         "/leaderboard": {
             "get": {
-                "summary": "[Draft] Get Leaderboard",
+                "summary": "Draft Get Leaderboard",
                 "tags": [
                     "Leaderboard"
                 ],
@@ -449,21 +449,10 @@
                     "200": {
                         "description": "OK",
                         "content": {
-                            "application/json": {
+                            "application/zip": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/HealthcareProviderList"
-                                }
-                            },
-                            "application/octet-stream": {
-                                "schema": {
-                                    "type": "object",
-                                    "properties": {}
-                                }
-                            },
-                            "application/xml": {
-                                "schema": {
-                                    "type": "object",
-                                    "properties": {}
+                                    "type": "string",
+                                    "format": "binary"
                                 }
                             }
                         }
@@ -894,12 +883,23 @@
                         "type": "string"
                     },
                     "lat": {
-                        "type": "string"
+                        "type": "number",
+                        "format": "double"
                     },
                     "lng": {
-                        "type": "string"
+                        "type": "number",
+                        "format": "double"
                     }
-                }
+                },
+                "required": [
+                    "locationId",
+                    "institutionId",
+                    "title",
+                    "city",
+                    "postalCode",
+                    "houseNumber",
+                    "category"
+                ]
             },
             "Settings": {
                 "title": "Settings",
@@ -932,12 +932,15 @@
             "UpdateStatusMessage": {
                 "title": "UpdateStatusMessage",
                 "type": "object",
+                "description": "Update status of the update of healthcare providers",
                 "properties": {
                     "message": {
                         "type": "string"
                     }
                 },
-                "description": "Update status of the update of healthcare providers"
+                "required": [
+                    "message"
+                ]
             },
             "HealthcareProviderId": {
                 "title": "HealthcareProviderId",
@@ -952,7 +955,11 @@
                         "type": "integer",
                         "format": "int64"
                     }
-                }
+                },
+                "required": [
+                    "locationId",
+                    "institutionId"
+                ]
             },
             "HealthcareProviderDetail": {
                 "title": "HealthcareProviderDetail",
@@ -1019,12 +1026,25 @@
                         "type": "string"
                     },
                     "lat": {
-                        "type": "string"
+                        "type": "number",
+                        "format": "double"
                     },
                     "lng": {
-                        "type": "string"
+                        "type": "number",
+                        "format": "double"
                     }
-                }
+                },
+                "required": [
+                    "locationId",
+                    "institutionId",
+                    "title",
+                    "institutionType",
+                    "houseNumber",
+                    "city",
+                    "postalCode",
+                    "ico",
+                    "category"
+                ]
             },
             "HealthcareProviderList": {
                 "title": "HealthcareProviderList",
@@ -1037,17 +1057,23 @@
                             "$ref": "#/components/schemas/SimpleHealthcareProvider"
                         }
                     }
-                }
+                },
+                "required": [
+                    "healthcareProviders"
+                ]
             },
             "HealthcareProviderLastUpdate": {
                 "title": "HealthcareProviderLastUpdate",
                 "type": "object",
+                "description": "Provides a date of the last healthcare providers update",
                 "properties": {
                     "lastUpdate": {
                         "type": "string"
                     }
                 },
-                "description": "Provides a date of the last healthcare providers update"
+                "required": [
+                    "lastUpdate"
+                ]
             },
             "HealthcareProviderDetailList": {
                 "title": "HealthcareProviderDetailList",
@@ -1059,7 +1085,10 @@
                             "$ref": "#/components/schemas/HealthcareProviderDetail"
                         }
                     }
-                }
+                },
+                "required": [
+                    "healthcareProvidersDetails"
+                ]
             },
             "HealthcareProviderIdList": {
                 "title": "HealthcareProviderIdList",
@@ -1072,7 +1101,10 @@
                             "$ref": "#/components/schemas/HealthcareProviderId"
                         }
                     }
-                }
+                },
+                "required": [
+                    "providersIds"
+                ]
             }
         },
         "securitySchemes": {
