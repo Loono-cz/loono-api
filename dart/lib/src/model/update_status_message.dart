@@ -13,7 +13,7 @@ part 'update_status_message.g.dart';
 /// * [message] 
 abstract class UpdateStatusMessage implements Built<UpdateStatusMessage, UpdateStatusMessageBuilder> {
     @BuiltValueField(wireName: r'message')
-    String? get message;
+    String get message;
 
     UpdateStatusMessage._();
 
@@ -37,12 +37,10 @@ class _$UpdateStatusMessageSerializer implements StructuredSerializer<UpdateStat
     Iterable<Object?> serialize(Serializers serializers, UpdateStatusMessage object,
         {FullType specifiedType = FullType.unspecified}) {
         final result = <Object?>[];
-        if (object.message != null) {
-            result
-                ..add(r'message')
-                ..add(serializers.serialize(object.message,
-                    specifiedType: const FullType(String)));
-        }
+        result
+            ..add(r'message')
+            ..add(serializers.serialize(object.message,
+                specifiedType: const FullType(String)));
         return result;
     }
 

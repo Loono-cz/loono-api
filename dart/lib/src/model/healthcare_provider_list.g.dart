@@ -8,13 +8,16 @@ part of 'healthcare_provider_list.dart';
 
 class _$HealthcareProviderList extends HealthcareProviderList {
   @override
-  final BuiltList<SimpleHealthcareProvider>? healthcareProviders;
+  final BuiltList<SimpleHealthcareProvider> healthcareProviders;
 
   factory _$HealthcareProviderList(
           [void Function(HealthcareProviderListBuilder)? updates]) =>
       (new HealthcareProviderListBuilder()..update(updates)).build();
 
-  _$HealthcareProviderList._({this.healthcareProviders}) : super._();
+  _$HealthcareProviderList._({required this.healthcareProviders}) : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        healthcareProviders, 'HealthcareProviderList', 'healthcareProviders');
+  }
 
   @override
   HealthcareProviderList rebuild(
@@ -64,7 +67,7 @@ class HealthcareProviderListBuilder
   HealthcareProviderListBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _healthcareProviders = $v.healthcareProviders?.toBuilder();
+      _healthcareProviders = $v.healthcareProviders.toBuilder();
       _$v = null;
     }
     return this;
@@ -87,12 +90,12 @@ class HealthcareProviderListBuilder
     try {
       _$result = _$v ??
           new _$HealthcareProviderList._(
-              healthcareProviders: _healthcareProviders?.build());
+              healthcareProviders: healthcareProviders.build());
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'healthcareProviders';
-        _healthcareProviders?.build();
+        healthcareProviders.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             'HealthcareProviderList', _$failedField, e.toString());

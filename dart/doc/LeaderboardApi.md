@@ -9,13 +9,13 @@ All URIs are relative to *https://loono.ceskodigital.net:443*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getLeaderboard**](LeaderboardApi.md#getleaderboard) | **GET** /leaderboard | [Draft] Get Leaderboard
+[**getLeaderboard**](LeaderboardApi.md#getleaderboard) | **GET** /leaderboard | Draft Get Leaderboard
 
 
 # **getLeaderboard**
 > Leaderboard getLeaderboard()
 
-[Draft] Get Leaderboard
+Draft Get Leaderboard
 
 TODO: This is a mock.  Returns the leaderboard rendering.
 

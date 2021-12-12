@@ -8,21 +8,21 @@ part of 'healthcare_provider_detail.dart';
 
 class _$HealthcareProviderDetail extends HealthcareProviderDetail {
   @override
-  final int? locationId;
+  final int locationId;
   @override
-  final int? institutionId;
+  final int institutionId;
   @override
-  final String? title;
+  final String title;
   @override
-  final String? institutionType;
+  final String institutionType;
   @override
   final String? street;
   @override
-  final String? houseNumber;
+  final String houseNumber;
   @override
-  final String? city;
+  final String city;
   @override
-  final String? postalCode;
+  final String postalCode;
   @override
   final String? phoneNumber;
   @override
@@ -32,9 +32,9 @@ class _$HealthcareProviderDetail extends HealthcareProviderDetail {
   @override
   final String? website;
   @override
-  final String? ico;
+  final String ico;
   @override
-  final BuiltList<String>? category;
+  final BuiltList<String> category;
   @override
   final String? specialization;
   @override
@@ -44,36 +44,59 @@ class _$HealthcareProviderDetail extends HealthcareProviderDetail {
   @override
   final String? substitute;
   @override
-  final String? lat;
+  final double lat;
   @override
-  final String? lng;
+  final double lng;
 
   factory _$HealthcareProviderDetail(
           [void Function(HealthcareProviderDetailBuilder)? updates]) =>
       (new HealthcareProviderDetailBuilder()..update(updates)).build();
 
   _$HealthcareProviderDetail._(
-      {this.locationId,
-      this.institutionId,
-      this.title,
-      this.institutionType,
+      {required this.locationId,
+      required this.institutionId,
+      required this.title,
+      required this.institutionType,
       this.street,
-      this.houseNumber,
-      this.city,
-      this.postalCode,
+      required this.houseNumber,
+      required this.city,
+      required this.postalCode,
       this.phoneNumber,
       this.fax,
       this.email,
       this.website,
-      this.ico,
-      this.category,
+      required this.ico,
+      required this.category,
       this.specialization,
       this.careForm,
       this.careType,
       this.substitute,
-      this.lat,
-      this.lng})
-      : super._();
+      required this.lat,
+      required this.lng})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        locationId, 'HealthcareProviderDetail', 'locationId');
+    BuiltValueNullFieldError.checkNotNull(
+        institutionId, 'HealthcareProviderDetail', 'institutionId');
+    BuiltValueNullFieldError.checkNotNull(
+        title, 'HealthcareProviderDetail', 'title');
+    BuiltValueNullFieldError.checkNotNull(
+        institutionType, 'HealthcareProviderDetail', 'institutionType');
+    BuiltValueNullFieldError.checkNotNull(
+        houseNumber, 'HealthcareProviderDetail', 'houseNumber');
+    BuiltValueNullFieldError.checkNotNull(
+        city, 'HealthcareProviderDetail', 'city');
+    BuiltValueNullFieldError.checkNotNull(
+        postalCode, 'HealthcareProviderDetail', 'postalCode');
+    BuiltValueNullFieldError.checkNotNull(
+        ico, 'HealthcareProviderDetail', 'ico');
+    BuiltValueNullFieldError.checkNotNull(
+        category, 'HealthcareProviderDetail', 'category');
+    BuiltValueNullFieldError.checkNotNull(
+        lat, 'HealthcareProviderDetail', 'lat');
+    BuiltValueNullFieldError.checkNotNull(
+        lng, 'HealthcareProviderDetail', 'lng');
+  }
 
   @override
   HealthcareProviderDetail rebuild(
@@ -260,13 +283,13 @@ class HealthcareProviderDetailBuilder
   String? get substitute => _$this._substitute;
   set substitute(String? substitute) => _$this._substitute = substitute;
 
-  String? _lat;
-  String? get lat => _$this._lat;
-  set lat(String? lat) => _$this._lat = lat;
+  double? _lat;
+  double? get lat => _$this._lat;
+  set lat(double? lat) => _$this._lat = lat;
 
-  String? _lng;
-  String? get lng => _$this._lng;
-  set lng(String? lng) => _$this._lng = lng;
+  double? _lng;
+  double? get lng => _$this._lng;
+  set lng(double? lng) => _$this._lng = lng;
 
   HealthcareProviderDetailBuilder() {
     HealthcareProviderDetail._defaults(this);
@@ -288,7 +311,7 @@ class HealthcareProviderDetailBuilder
       _email = $v.email;
       _website = $v.website;
       _ico = $v.ico;
-      _category = $v.category?.toBuilder();
+      _category = $v.category.toBuilder();
       _specialization = $v.specialization;
       _careForm = $v.careForm;
       _careType = $v.careType;
@@ -317,31 +340,40 @@ class HealthcareProviderDetailBuilder
     try {
       _$result = _$v ??
           new _$HealthcareProviderDetail._(
-              locationId: locationId,
-              institutionId: institutionId,
-              title: title,
-              institutionType: institutionType,
+              locationId: BuiltValueNullFieldError.checkNotNull(
+                  locationId, 'HealthcareProviderDetail', 'locationId'),
+              institutionId: BuiltValueNullFieldError.checkNotNull(
+                  institutionId, 'HealthcareProviderDetail', 'institutionId'),
+              title: BuiltValueNullFieldError.checkNotNull(
+                  title, 'HealthcareProviderDetail', 'title'),
+              institutionType: BuiltValueNullFieldError.checkNotNull(
+                  institutionType,
+                  'HealthcareProviderDetail',
+                  'institutionType'),
               street: street,
-              houseNumber: houseNumber,
-              city: city,
-              postalCode: postalCode,
+              houseNumber: BuiltValueNullFieldError.checkNotNull(
+                  houseNumber, 'HealthcareProviderDetail', 'houseNumber'),
+              city: BuiltValueNullFieldError.checkNotNull(
+                  city, 'HealthcareProviderDetail', 'city'),
+              postalCode: BuiltValueNullFieldError.checkNotNull(
+                  postalCode, 'HealthcareProviderDetail', 'postalCode'),
               phoneNumber: phoneNumber,
               fax: fax,
               email: email,
               website: website,
-              ico: ico,
-              category: _category?.build(),
+              ico: BuiltValueNullFieldError.checkNotNull(ico, 'HealthcareProviderDetail', 'ico'),
+              category: category.build(),
               specialization: specialization,
               careForm: careForm,
               careType: careType,
               substitute: substitute,
-              lat: lat,
-              lng: lng);
+              lat: BuiltValueNullFieldError.checkNotNull(lat, 'HealthcareProviderDetail', 'lat'),
+              lng: BuiltValueNullFieldError.checkNotNull(lng, 'HealthcareProviderDetail', 'lng'));
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'category';
-        _category?.build();
+        category.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             'HealthcareProviderDetail', _$failedField, e.toString());

@@ -33,28 +33,28 @@ part 'healthcare_provider_detail.g.dart';
 /// * [lng] 
 abstract class HealthcareProviderDetail implements Built<HealthcareProviderDetail, HealthcareProviderDetailBuilder> {
     @BuiltValueField(wireName: r'locationId')
-    int? get locationId;
+    int get locationId;
 
     @BuiltValueField(wireName: r'institutionId')
-    int? get institutionId;
+    int get institutionId;
 
     @BuiltValueField(wireName: r'title')
-    String? get title;
+    String get title;
 
     @BuiltValueField(wireName: r'institutionType')
-    String? get institutionType;
+    String get institutionType;
 
     @BuiltValueField(wireName: r'street')
     String? get street;
 
     @BuiltValueField(wireName: r'houseNumber')
-    String? get houseNumber;
+    String get houseNumber;
 
     @BuiltValueField(wireName: r'city')
-    String? get city;
+    String get city;
 
     @BuiltValueField(wireName: r'postalCode')
-    String? get postalCode;
+    String get postalCode;
 
     @BuiltValueField(wireName: r'phoneNumber')
     String? get phoneNumber;
@@ -69,10 +69,10 @@ abstract class HealthcareProviderDetail implements Built<HealthcareProviderDetai
     String? get website;
 
     @BuiltValueField(wireName: r'ico')
-    String? get ico;
+    String get ico;
 
     @BuiltValueField(wireName: r'category')
-    BuiltList<String>? get category;
+    BuiltList<String> get category;
 
     @BuiltValueField(wireName: r'specialization')
     String? get specialization;
@@ -87,10 +87,10 @@ abstract class HealthcareProviderDetail implements Built<HealthcareProviderDetai
     String? get substitute;
 
     @BuiltValueField(wireName: r'lat')
-    String? get lat;
+    double get lat;
 
     @BuiltValueField(wireName: r'lng')
-    String? get lng;
+    double get lng;
 
     HealthcareProviderDetail._();
 
@@ -114,54 +114,40 @@ class _$HealthcareProviderDetailSerializer implements StructuredSerializer<Healt
     Iterable<Object?> serialize(Serializers serializers, HealthcareProviderDetail object,
         {FullType specifiedType = FullType.unspecified}) {
         final result = <Object?>[];
-        if (object.locationId != null) {
-            result
-                ..add(r'locationId')
-                ..add(serializers.serialize(object.locationId,
-                    specifiedType: const FullType(int)));
-        }
-        if (object.institutionId != null) {
-            result
-                ..add(r'institutionId')
-                ..add(serializers.serialize(object.institutionId,
-                    specifiedType: const FullType(int)));
-        }
-        if (object.title != null) {
-            result
-                ..add(r'title')
-                ..add(serializers.serialize(object.title,
-                    specifiedType: const FullType(String)));
-        }
-        if (object.institutionType != null) {
-            result
-                ..add(r'institutionType')
-                ..add(serializers.serialize(object.institutionType,
-                    specifiedType: const FullType(String)));
-        }
+        result
+            ..add(r'locationId')
+            ..add(serializers.serialize(object.locationId,
+                specifiedType: const FullType(int)));
+        result
+            ..add(r'institutionId')
+            ..add(serializers.serialize(object.institutionId,
+                specifiedType: const FullType(int)));
+        result
+            ..add(r'title')
+            ..add(serializers.serialize(object.title,
+                specifiedType: const FullType(String)));
+        result
+            ..add(r'institutionType')
+            ..add(serializers.serialize(object.institutionType,
+                specifiedType: const FullType(String)));
         if (object.street != null) {
             result
                 ..add(r'street')
                 ..add(serializers.serialize(object.street,
                     specifiedType: const FullType(String)));
         }
-        if (object.houseNumber != null) {
-            result
-                ..add(r'houseNumber')
-                ..add(serializers.serialize(object.houseNumber,
-                    specifiedType: const FullType(String)));
-        }
-        if (object.city != null) {
-            result
-                ..add(r'city')
-                ..add(serializers.serialize(object.city,
-                    specifiedType: const FullType(String)));
-        }
-        if (object.postalCode != null) {
-            result
-                ..add(r'postalCode')
-                ..add(serializers.serialize(object.postalCode,
-                    specifiedType: const FullType(String)));
-        }
+        result
+            ..add(r'houseNumber')
+            ..add(serializers.serialize(object.houseNumber,
+                specifiedType: const FullType(String)));
+        result
+            ..add(r'city')
+            ..add(serializers.serialize(object.city,
+                specifiedType: const FullType(String)));
+        result
+            ..add(r'postalCode')
+            ..add(serializers.serialize(object.postalCode,
+                specifiedType: const FullType(String)));
         if (object.phoneNumber != null) {
             result
                 ..add(r'phoneNumber')
@@ -186,18 +172,14 @@ class _$HealthcareProviderDetailSerializer implements StructuredSerializer<Healt
                 ..add(serializers.serialize(object.website,
                     specifiedType: const FullType(String)));
         }
-        if (object.ico != null) {
-            result
-                ..add(r'ico')
-                ..add(serializers.serialize(object.ico,
-                    specifiedType: const FullType(String)));
-        }
-        if (object.category != null) {
-            result
-                ..add(r'category')
-                ..add(serializers.serialize(object.category,
-                    specifiedType: const FullType(BuiltList, [FullType(String)])));
-        }
+        result
+            ..add(r'ico')
+            ..add(serializers.serialize(object.ico,
+                specifiedType: const FullType(String)));
+        result
+            ..add(r'category')
+            ..add(serializers.serialize(object.category,
+                specifiedType: const FullType(BuiltList, [FullType(String)])));
         if (object.specialization != null) {
             result
                 ..add(r'specialization')
@@ -222,18 +204,14 @@ class _$HealthcareProviderDetailSerializer implements StructuredSerializer<Healt
                 ..add(serializers.serialize(object.substitute,
                     specifiedType: const FullType(String)));
         }
-        if (object.lat != null) {
-            result
-                ..add(r'lat')
-                ..add(serializers.serialize(object.lat,
-                    specifiedType: const FullType(String)));
-        }
-        if (object.lng != null) {
-            result
-                ..add(r'lng')
-                ..add(serializers.serialize(object.lng,
-                    specifiedType: const FullType(String)));
-        }
+        result
+            ..add(r'lat')
+            ..add(serializers.serialize(object.lat,
+                specifiedType: const FullType(double)));
+        result
+            ..add(r'lng')
+            ..add(serializers.serialize(object.lng,
+                specifiedType: const FullType(double)));
         return result;
     }
 
@@ -341,12 +319,12 @@ class _$HealthcareProviderDetailSerializer implements StructuredSerializer<Healt
                     break;
                 case r'lat':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
+                        specifiedType: const FullType(double)) as double;
                     result.lat = valueDes;
                     break;
                 case r'lng':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
+                        specifiedType: const FullType(double)) as double;
                     result.lng = valueDes;
                     break;
             }

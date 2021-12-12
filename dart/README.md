@@ -56,11 +56,9 @@ import 'package:loono_api/loono_api.dart';
 
 
 final api = LoonoApi().getAccountApi();
-final dynamic body = Object; // dynamic | Empty object
 
 try {
-    final response = await api.deleteAccount(body);
-    print(response);
+    api.deleteAccount();
 } catch on DioError (e) {
     print("Exception when calling AccountApi->deleteAccount: $e\n");
 }
@@ -73,7 +71,7 @@ All URIs are relative to *https://loono.ceskodigital.net:443*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-[*AccountApi*](doc/AccountApi.md) | [**deleteAccount**](doc/AccountApi.md#deleteaccount) | **POST** /account/delete | [Draft] Delete Account
+[*AccountApi*](doc/AccountApi.md) | [**deleteAccount**](doc/AccountApi.md#deleteaccount) | **DELETE** /account | Delete account
 [*AccountApi*](doc/AccountApi.md) | [**deleteExamination**](doc/AccountApi.md#deleteexamination) | **POST** /examinations/reset | [Draft] Reset Examination Record
 [*AccountApi*](doc/AccountApi.md) | [**getAccount**](doc/AccountApi.md#getaccount) | **GET** /account | GET Account
 [*AccountApi*](doc/AccountApi.md) | [**updateAccountSettings**](doc/AccountApi.md#updateaccountsettings) | **POST** /account/settings/update | Update Account Settings
@@ -81,7 +79,7 @@ Class | Method | HTTP request | Description
 [*ExaminationsApi*](doc/ExaminationsApi.md) | [**completeExamination**](doc/ExaminationsApi.md#completeexamination) | **POST** /examinations/{type}/complete | Complete Examination
 [*ExaminationsApi*](doc/ExaminationsApi.md) | [**deleteExamination**](doc/ExaminationsApi.md#deleteexamination) | **POST** /examinations/reset | [Draft] Reset Examination Record
 [*ExaminationsApi*](doc/ExaminationsApi.md) | [**getExaminations**](doc/ExaminationsApi.md#getexaminations) | **GET** /examinations | Get Examination Records
-[*LeaderboardApi*](doc/LeaderboardApi.md) | [**getLeaderboard**](doc/LeaderboardApi.md#getleaderboard) | **GET** /leaderboard | [Draft] Get Leaderboard
+[*LeaderboardApi*](doc/LeaderboardApi.md) | [**getLeaderboard**](doc/LeaderboardApi.md#getleaderboard) | **GET** /leaderboard | Draft Get Leaderboard
 [*ProvidersApi*](doc/ProvidersApi.md) | [**getProvidersAll**](doc/ProvidersApi.md#getprovidersall) | **GET** /providers/all | Gets all healthcare providers data
 [*ProvidersApi*](doc/ProvidersApi.md) | [**getProvidersLastupdate**](doc/ProvidersApi.md#getproviderslastupdate) | **GET** /providers/lastupdate | Gets last date of healthcare provider update
 [*ProvidersApi*](doc/ProvidersApi.md) | [**getProvidersUpdate**](doc/ProvidersApi.md#getprovidersupdate) | **GET** /providers/update | Trigger healthcare provider update
@@ -115,6 +113,10 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Authorization
 
+
+## Basic_Auth
+
+- **Type**: HTTP basic authentication
 
 ## Bearer_Auth
 

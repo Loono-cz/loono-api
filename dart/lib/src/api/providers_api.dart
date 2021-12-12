@@ -7,10 +7,10 @@ import 'dart:async';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
+import 'dart:typed_data';
 import 'package:loono_api/src/model/healthcare_provider_detail.dart';
 import 'package:loono_api/src/model/healthcare_provider_id_list.dart';
 import 'package:loono_api/src/model/healthcare_provider_last_update.dart';
-import 'package:loono_api/src/model/healthcare_provider_list.dart';
 import 'package:loono_api/src/model/update_status_message.dart';
 
 class ProvidersApi {
@@ -32,9 +32,9 @@ class ProvidersApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [HealthcareProviderList] as data
+  /// Returns a [Future] containing a [Response] with a [Uint8List] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<HealthcareProviderList>> getProvidersAll({ 
+  Future<Response<Uint8List>> getProvidersAll({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -45,6 +45,7 @@ class ProvidersApi {
     final _path = r'/providers/all';
     final _options = Options(
       method: r'GET',
+      responseType: ResponseType.bytes,
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -69,14 +70,10 @@ class ProvidersApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    HealthcareProviderList _responseData;
+    Uint8List _responseData;
 
     try {
-      const _responseType = FullType(HealthcareProviderList);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as HealthcareProviderList;
+      _responseData = _response.data as Uint8List;
 
     } catch (error, stackTrace) {
       throw DioError(
@@ -87,7 +84,7 @@ class ProvidersApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<HealthcareProviderList>(
+    return Response<Uint8List>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -199,7 +196,13 @@ class ProvidersApi {
         ...?headers,
       },
       extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
+        'secure': <Map<String, String>>[
+          {
+            'type': 'http',
+            'scheme': 'basic',
+            'name': 'Basic_Auth',
+          },
+        ],
         ...?extra,
       },
       validateStatus: validateStatus,

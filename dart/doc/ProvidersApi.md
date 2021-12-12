@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 # **getProvidersAll**
-> HealthcareProviderList getProvidersAll()
+> Uint8List getProvidersAll()
 
 Gets all healthcare providers data
 
@@ -44,7 +44,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**HealthcareProviderList**](HealthcareProviderList.md)
+[**Uint8List**](Uint8List.md)
 
 ### Authorization
 
@@ -53,7 +53,7 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/octet-stream, application/xml
+ - **Accept**: application/zip
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -104,6 +104,9 @@ Trigger healthcare provider update
 ### Example
 ```dart
 import 'package:loono_api/api.dart';
+// TODO Configure HTTP basic authorization: Basic_Auth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('Basic_Auth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('Basic_Auth').password = 'YOUR_PASSWORD';
 
 final api = LoonoApi().getProvidersApi();
 
@@ -124,7 +127,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[Basic_Auth](../README.md#Basic_Auth)
 
 ### HTTP request headers
 

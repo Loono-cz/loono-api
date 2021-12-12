@@ -8,13 +8,16 @@ part of 'healthcare_provider_last_update.dart';
 
 class _$HealthcareProviderLastUpdate extends HealthcareProviderLastUpdate {
   @override
-  final String? lastUpdate;
+  final Date lastUpdate;
 
   factory _$HealthcareProviderLastUpdate(
           [void Function(HealthcareProviderLastUpdateBuilder)? updates]) =>
       (new HealthcareProviderLastUpdateBuilder()..update(updates)).build();
 
-  _$HealthcareProviderLastUpdate._({this.lastUpdate}) : super._();
+  _$HealthcareProviderLastUpdate._({required this.lastUpdate}) : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        lastUpdate, 'HealthcareProviderLastUpdate', 'lastUpdate');
+  }
 
   @override
   HealthcareProviderLastUpdate rebuild(
@@ -51,9 +54,9 @@ class HealthcareProviderLastUpdateBuilder
             HealthcareProviderLastUpdateBuilder> {
   _$HealthcareProviderLastUpdate? _$v;
 
-  String? _lastUpdate;
-  String? get lastUpdate => _$this._lastUpdate;
-  set lastUpdate(String? lastUpdate) => _$this._lastUpdate = lastUpdate;
+  Date? _lastUpdate;
+  Date? get lastUpdate => _$this._lastUpdate;
+  set lastUpdate(Date? lastUpdate) => _$this._lastUpdate = lastUpdate;
 
   HealthcareProviderLastUpdateBuilder() {
     HealthcareProviderLastUpdate._defaults(this);
@@ -81,8 +84,10 @@ class HealthcareProviderLastUpdateBuilder
 
   @override
   _$HealthcareProviderLastUpdate build() {
-    final _$result =
-        _$v ?? new _$HealthcareProviderLastUpdate._(lastUpdate: lastUpdate);
+    final _$result = _$v ??
+        new _$HealthcareProviderLastUpdate._(
+            lastUpdate: BuiltValueNullFieldError.checkNotNull(
+                lastUpdate, 'HealthcareProviderLastUpdate', 'lastUpdate'));
     replace(_$result);
     return _$result;
   }

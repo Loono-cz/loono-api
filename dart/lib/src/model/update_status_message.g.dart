@@ -8,13 +8,16 @@ part of 'update_status_message.dart';
 
 class _$UpdateStatusMessage extends UpdateStatusMessage {
   @override
-  final String? message;
+  final String message;
 
   factory _$UpdateStatusMessage(
           [void Function(UpdateStatusMessageBuilder)? updates]) =>
       (new UpdateStatusMessageBuilder()..update(updates)).build();
 
-  _$UpdateStatusMessage._({this.message}) : super._();
+  _$UpdateStatusMessage._({required this.message}) : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        message, 'UpdateStatusMessage', 'message');
+  }
 
   @override
   UpdateStatusMessage rebuild(
@@ -78,7 +81,10 @@ class UpdateStatusMessageBuilder
 
   @override
   _$UpdateStatusMessage build() {
-    final _$result = _$v ?? new _$UpdateStatusMessage._(message: message);
+    final _$result = _$v ??
+        new _$UpdateStatusMessage._(
+            message: BuiltValueNullFieldError.checkNotNull(
+                message, 'UpdateStatusMessage', 'message'));
     replace(_$result);
     return _$result;
   }

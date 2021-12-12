@@ -15,7 +15,7 @@ part 'healthcare_provider_detail_list.g.dart';
 /// * [healthcareProvidersDetails] 
 abstract class HealthcareProviderDetailList implements Built<HealthcareProviderDetailList, HealthcareProviderDetailListBuilder> {
     @BuiltValueField(wireName: r'healthcareProvidersDetails')
-    BuiltList<HealthcareProviderDetail>? get healthcareProvidersDetails;
+    BuiltList<HealthcareProviderDetail> get healthcareProvidersDetails;
 
     HealthcareProviderDetailList._();
 
@@ -39,12 +39,10 @@ class _$HealthcareProviderDetailListSerializer implements StructuredSerializer<H
     Iterable<Object?> serialize(Serializers serializers, HealthcareProviderDetailList object,
         {FullType specifiedType = FullType.unspecified}) {
         final result = <Object?>[];
-        if (object.healthcareProvidersDetails != null) {
-            result
-                ..add(r'healthcareProvidersDetails')
-                ..add(serializers.serialize(object.healthcareProvidersDetails,
-                    specifiedType: const FullType(BuiltList, [FullType(HealthcareProviderDetail)])));
-        }
+        result
+            ..add(r'healthcareProvidersDetails')
+            ..add(serializers.serialize(object.healthcareProvidersDetails,
+                specifiedType: const FullType(BuiltList, [FullType(HealthcareProviderDetail)])));
         return result;
     }
 

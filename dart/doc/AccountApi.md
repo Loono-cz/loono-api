@@ -9,7 +9,7 @@ All URIs are relative to *https://loono.ceskodigital.net:443*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteAccount**](AccountApi.md#deleteaccount) | **POST** /account/delete | [Draft] Delete Account
+[**deleteAccount**](AccountApi.md#deleteaccount) | **DELETE** /account | Delete account
 [**deleteExamination**](AccountApi.md#deleteexamination) | **POST** /examinations/reset | [Draft] Reset Examination Record
 [**getAccount**](AccountApi.md#getaccount) | **GET** /account | GET Account
 [**updateAccountSettings**](AccountApi.md#updateaccountsettings) | **POST** /account/settings/update | Update Account Settings
@@ -17,9 +17,9 @@ Method | HTTP request | Description
 
 
 # **deleteAccount**
-> dynamic deleteAccount(body)
+> deleteAccount()
 
-[Draft] Delete Account
+Delete account
 
 Deletes the user account and all associated data. This action is irreversible.   If it is necessary to keep certain pieces of information, for instance to comply with legal requirements, that data is anonymized to the maximum possible extent.  Specific error codes:  |HTTP Status| code |description| |--- |--- | --- | |403|RECENT_LOGIN_REQUIRED| User must reauthenticate. Equivalent to the [FirebaseAuthRecentLoginRequiredException](https://firebase.google.com/docs/reference/android/com/google/firebase/auth/FirebaseAuthRecentLoginRequiredException)(Android) |
 
@@ -31,25 +31,20 @@ import 'package:loono_api/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('Bearer_Auth').password = 'YOUR_PASSWORD';
 
 final api = LoonoApi().getAccountApi();
-final dynamic body = Object; // dynamic | Empty object
 
 try {
-    final response = api.deleteAccount(body);
-    print(response);
+    api.deleteAccount();
 } catch on DioError (e) {
     print('Exception when calling AccountApi->deleteAccount: $e\n');
 }
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | **dynamic**| Empty object | [optional] 
+This endpoint does not need any parameter.
 
 ### Return type
 
-[**dynamic**](JsonObject.md)
+void (empty response body)
 
 ### Authorization
 
@@ -57,8 +52,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

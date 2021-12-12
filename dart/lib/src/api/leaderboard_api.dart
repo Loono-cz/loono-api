@@ -18,7 +18,7 @@ class LeaderboardApi {
 
   const LeaderboardApi(this._dio, this._serializers);
 
-  /// [Draft] Get Leaderboard
+  /// Draft Get Leaderboard
   /// TODO: This is a mock.  Returns the leaderboard rendering.
   ///
   /// Parameters:

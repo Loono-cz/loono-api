@@ -14,10 +14,10 @@ part 'healthcare_provider_id.g.dart';
 /// * [institutionId] 
 abstract class HealthcareProviderId implements Built<HealthcareProviderId, HealthcareProviderIdBuilder> {
     @BuiltValueField(wireName: r'locationId')
-    int? get locationId;
+    int get locationId;
 
     @BuiltValueField(wireName: r'institutionId')
-    int? get institutionId;
+    int get institutionId;
 
     HealthcareProviderId._();
 
@@ -41,18 +41,14 @@ class _$HealthcareProviderIdSerializer implements StructuredSerializer<Healthcar
     Iterable<Object?> serialize(Serializers serializers, HealthcareProviderId object,
         {FullType specifiedType = FullType.unspecified}) {
         final result = <Object?>[];
-        if (object.locationId != null) {
-            result
-                ..add(r'locationId')
-                ..add(serializers.serialize(object.locationId,
-                    specifiedType: const FullType(int)));
-        }
-        if (object.institutionId != null) {
-            result
-                ..add(r'institutionId')
-                ..add(serializers.serialize(object.institutionId,
-                    specifiedType: const FullType(int)));
-        }
+        result
+            ..add(r'locationId')
+            ..add(serializers.serialize(object.locationId,
+                specifiedType: const FullType(int)));
+        result
+            ..add(r'institutionId')
+            ..add(serializers.serialize(object.institutionId,
+                specifiedType: const FullType(int)));
         return result;
     }
 

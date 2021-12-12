@@ -8,15 +8,22 @@ part of 'healthcare_provider_id.dart';
 
 class _$HealthcareProviderId extends HealthcareProviderId {
   @override
-  final int? locationId;
+  final int locationId;
   @override
-  final int? institutionId;
+  final int institutionId;
 
   factory _$HealthcareProviderId(
           [void Function(HealthcareProviderIdBuilder)? updates]) =>
       (new HealthcareProviderIdBuilder()..update(updates)).build();
 
-  _$HealthcareProviderId._({this.locationId, this.institutionId}) : super._();
+  _$HealthcareProviderId._(
+      {required this.locationId, required this.institutionId})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        locationId, 'HealthcareProviderId', 'locationId');
+    BuiltValueNullFieldError.checkNotNull(
+        institutionId, 'HealthcareProviderId', 'institutionId');
+  }
 
   @override
   HealthcareProviderId rebuild(
@@ -91,7 +98,10 @@ class HealthcareProviderIdBuilder
   _$HealthcareProviderId build() {
     final _$result = _$v ??
         new _$HealthcareProviderId._(
-            locationId: locationId, institutionId: institutionId);
+            locationId: BuiltValueNullFieldError.checkNotNull(
+                locationId, 'HealthcareProviderId', 'locationId'),
+            institutionId: BuiltValueNullFieldError.checkNotNull(
+                institutionId, 'HealthcareProviderId', 'institutionId'));
     replace(_$result);
     return _$result;
   }

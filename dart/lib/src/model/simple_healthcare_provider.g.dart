@@ -8,45 +8,64 @@ part of 'simple_healthcare_provider.dart';
 
 class _$SimpleHealthcareProvider extends SimpleHealthcareProvider {
   @override
-  final int? locationId;
+  final int locationId;
   @override
-  final int? institutionId;
+  final int institutionId;
   @override
-  final String? title;
+  final String title;
   @override
-  final String? city;
+  final String city;
   @override
-  final String? postalCode;
+  final String postalCode;
   @override
   final String? street;
   @override
-  final String? houseNumber;
+  final String houseNumber;
   @override
-  final BuiltList<String>? category;
+  final BuiltList<String> category;
   @override
   final String? specialization;
   @override
-  final String? lat;
+  final double lat;
   @override
-  final String? lng;
+  final double lng;
 
   factory _$SimpleHealthcareProvider(
           [void Function(SimpleHealthcareProviderBuilder)? updates]) =>
       (new SimpleHealthcareProviderBuilder()..update(updates)).build();
 
   _$SimpleHealthcareProvider._(
-      {this.locationId,
-      this.institutionId,
-      this.title,
-      this.city,
-      this.postalCode,
+      {required this.locationId,
+      required this.institutionId,
+      required this.title,
+      required this.city,
+      required this.postalCode,
       this.street,
-      this.houseNumber,
-      this.category,
+      required this.houseNumber,
+      required this.category,
       this.specialization,
-      this.lat,
-      this.lng})
-      : super._();
+      required this.lat,
+      required this.lng})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        locationId, 'SimpleHealthcareProvider', 'locationId');
+    BuiltValueNullFieldError.checkNotNull(
+        institutionId, 'SimpleHealthcareProvider', 'institutionId');
+    BuiltValueNullFieldError.checkNotNull(
+        title, 'SimpleHealthcareProvider', 'title');
+    BuiltValueNullFieldError.checkNotNull(
+        city, 'SimpleHealthcareProvider', 'city');
+    BuiltValueNullFieldError.checkNotNull(
+        postalCode, 'SimpleHealthcareProvider', 'postalCode');
+    BuiltValueNullFieldError.checkNotNull(
+        houseNumber, 'SimpleHealthcareProvider', 'houseNumber');
+    BuiltValueNullFieldError.checkNotNull(
+        category, 'SimpleHealthcareProvider', 'category');
+    BuiltValueNullFieldError.checkNotNull(
+        lat, 'SimpleHealthcareProvider', 'lat');
+    BuiltValueNullFieldError.checkNotNull(
+        lng, 'SimpleHealthcareProvider', 'lng');
+  }
 
   @override
   SimpleHealthcareProvider rebuild(
@@ -160,13 +179,13 @@ class SimpleHealthcareProviderBuilder
   set specialization(String? specialization) =>
       _$this._specialization = specialization;
 
-  String? _lat;
-  String? get lat => _$this._lat;
-  set lat(String? lat) => _$this._lat = lat;
+  double? _lat;
+  double? get lat => _$this._lat;
+  set lat(double? lat) => _$this._lat = lat;
 
-  String? _lng;
-  String? get lng => _$this._lng;
-  set lng(String? lng) => _$this._lng = lng;
+  double? _lng;
+  double? get lng => _$this._lng;
+  set lng(double? lng) => _$this._lng = lng;
 
   SimpleHealthcareProviderBuilder() {
     SimpleHealthcareProvider._defaults(this);
@@ -182,7 +201,7 @@ class SimpleHealthcareProviderBuilder
       _postalCode = $v.postalCode;
       _street = $v.street;
       _houseNumber = $v.houseNumber;
-      _category = $v.category?.toBuilder();
+      _category = $v.category.toBuilder();
       _specialization = $v.specialization;
       _lat = $v.lat;
       _lng = $v.lng;
@@ -208,22 +227,30 @@ class SimpleHealthcareProviderBuilder
     try {
       _$result = _$v ??
           new _$SimpleHealthcareProvider._(
-              locationId: locationId,
-              institutionId: institutionId,
-              title: title,
-              city: city,
-              postalCode: postalCode,
+              locationId: BuiltValueNullFieldError.checkNotNull(
+                  locationId, 'SimpleHealthcareProvider', 'locationId'),
+              institutionId: BuiltValueNullFieldError.checkNotNull(
+                  institutionId, 'SimpleHealthcareProvider', 'institutionId'),
+              title: BuiltValueNullFieldError.checkNotNull(
+                  title, 'SimpleHealthcareProvider', 'title'),
+              city: BuiltValueNullFieldError.checkNotNull(
+                  city, 'SimpleHealthcareProvider', 'city'),
+              postalCode: BuiltValueNullFieldError.checkNotNull(
+                  postalCode, 'SimpleHealthcareProvider', 'postalCode'),
               street: street,
-              houseNumber: houseNumber,
-              category: _category?.build(),
+              houseNumber: BuiltValueNullFieldError.checkNotNull(
+                  houseNumber, 'SimpleHealthcareProvider', 'houseNumber'),
+              category: category.build(),
               specialization: specialization,
-              lat: lat,
-              lng: lng);
+              lat: BuiltValueNullFieldError.checkNotNull(
+                  lat, 'SimpleHealthcareProvider', 'lat'),
+              lng: BuiltValueNullFieldError.checkNotNull(
+                  lng, 'SimpleHealthcareProvider', 'lng'));
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'category';
-        _category?.build();
+        category.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             'SimpleHealthcareProvider', _$failedField, e.toString());
