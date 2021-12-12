@@ -1,0 +1,5 @@
+additionalProperties:
+  pubName: loono_api
+typeMappings:
+  object: dynamic
+  JsonObject: dynamic
