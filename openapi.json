@@ -1148,6 +1148,10 @@
                     },
                     "count": {
                         "type": "integer"
+                    },
+                    "lastConfirmedDate": {
+                        "type": "string",
+                        "format": "date-time"
                     }
                 },
                 "required": [
