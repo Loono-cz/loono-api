@@ -34,6 +34,9 @@
         },
         {
             "name": "Examinations"
+        },
+        {
+            "name": "Checkups"
         }
     ],
     "paths": {
@@ -257,7 +260,7 @@
         },
         "/examinations": {
             "get": {
-                "summary": "Get Examinations Status",
+                "summary": "Get Examination Records",
                 "tags": [
                     "Examinations"
                 ],
@@ -269,7 +272,7 @@
                                 "schema": {
                                     "type": "array",
                                     "items": {
-                                        "$ref": "#/components/schemas/PreventionStatus"
+                                        "$ref": "#/components/schemas/ExaminationRecord"
                                     }
                                 }
                             }
@@ -293,61 +296,22 @@
                         "Bearer_Auth": []
                     }
                 ]
-            },
-            "post": {
-                "summary": "Create or update examination record",
-                "operationId": "post-examinations",
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ExaminationRecord"
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "Unauthorized"
-                    },
-                    "403": {
-                        "description": "Forbidden"
-                    },
-                    "404": {
-                        "description": "Not Found"
-                    }
-                },
-                "security": [
-                    {
-                        "Bearer_Auth": []
-                    }
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/ExaminationRecord"
-                            }
-                        }
-                    }
-                },
-                "tags": [
-                    "Examinations"
-                ]
             }
         },
-        "/examinations/{type}/confirm": {
+        "/examinations/{type}/complete": {
             "post": {
-                "summary": "Confirm Examination",
+                "summary": "Complete Examination",
                 "operationId": "completeExamination",
                 "responses": {
                     "200": {
-                        "description": "",
+                        "description": "Returns the updated list of examination records.\n\nTODO: Co vracet?  Account? All the records? Just the one record?",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ExaminationRecord"
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/ExaminationRecord"
+                                    }
                                 }
                             }
                         }
@@ -376,7 +340,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/ExaminationId"
+                                "$ref": "#/components/schemas/ExaminationCompletion"
                             }
                         }
                     },
@@ -395,36 +359,30 @@
                 }
             ]
         },
-        "/examinations/{type}/cancel": {
+        "/examinations/reset": {
             "post": {
-                "summary": "Cancel Examination",
-                "operationId": "cancelExamination",
+                "summary": "[Draft] Reset Examination Record",
+                "operationId": "deleteExamination",
                 "responses": {
-                    "200": {
-                        "description": "",
+                    "201": {
+                        "description": "Returns the updated list of examination records.\n\nTODO: Co vracet?  Account? All the records? Just the one record?",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ExaminationRecord"
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "Unauthorized",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/ExaminationRecord"
+                                    }
                                 }
                             }
                         }
                     }
                 },
                 "tags": [
-                    "Examinations"
+                    "Examinations",
+                    "Account"
                 ],
-                "description": "Notify the API that an examination has been performed.\n\nThe date of the completion must not be in the future.",
+                "description": "Delete the aggregate examination record for this examination type.\n\nSpecial consideration: How to prevent abuse and point cheating? SOME information about the history of point entitlement will have to be retained so that people don't spam create/delete to farm points.",
                 "security": [
                     {
                         "Bearer_Auth": []
@@ -434,24 +392,14 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/ExaminationId"
+                                "type": "object"
                             }
                         }
                     },
-                    "description": ""
+                    "description": "Empty object"
                 }
             },
-            "parameters": [
-                {
-                    "schema": {
-                        "type": "string"
-                    },
-                    "name": "type",
-                    "in": "path",
-                    "required": true,
-                    "description": "One of the `ExaminationTypeEnum` values"
-                }
-            ]
+            "parameters": []
         },
         "/providers/all": {
             "get": {
@@ -602,6 +550,182 @@
                     "Providers"
                 ]
             }
+        },
+        "/checkups": {
+            "summary": "Represents checkups of the current user",
+            "description": "Represents checkups that need to be created and checkups that are already created by the user",
+            "post": {
+                "summary": "Add checkup",
+                "operationId": "createCheckup",
+                "description": "Creates a checkup",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/Checkup"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "OK"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer_Auth": []
+                    }
+                ],
+                "tags": [
+                    "Checkups"
+                ]
+            },
+            "get": {
+                "summary": "Get all checkups of the current user",
+                "operationId": "getCheckups",
+                "description": "Get checkups with both statuses: TO_CREATE and TO_REMIND",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Checkup"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [],
+                "security": [
+                    {
+                        "Bearer_Auth": []
+                    }
+                ],
+                "tags": [
+                    "Checkups"
+                ]
+            },
+            "put": {
+                "summary": "Update the checkup",
+                "operationId": "updateCheckup",
+                "description": "Updates the specified checkup",
+                "responses": {
+                    "200": {
+                        "description": "Checkup has been successfully updated",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Checkup"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "name": "checkupId",
+                        "in": "path",
+                        "required": true,
+                        "description": "Checkup's id"
+                    }
+                ],
+                "security": [
+                    {
+                        "Bearer_Auth": []
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/Checkup"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Checkups"
+                ]
+            }
+        },
+        "/checkups/{id}": {
+            "delete": {
+                "summary": "Delete the checkup",
+                "operationId": "deleteCheckup",
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "description": "Checkup's id"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Checkup was sucessfully deleted"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "description": "Removes the checkup",
+                "security": [
+                    {
+                        "Bearer_Auth": []
+                    }
+                ],
+                "tags": [
+                    "Checkups"
+                ]
+            }
         }
     },
     "components": {
@@ -648,21 +772,26 @@
                     }
                 }
             },
-            "ExaminationId": {
-                "title": "ExaminationId",
+            "ExaminationCompletion": {
+                "title": "ExaminationCompletion",
                 "type": "object",
-                "description": "A examination identification.\n\n`month` and `year` are optional and nullable. If any of them is missing or `null`, API defaults to `LocalDate.now()` - the current year and month.",
+                "description": "A completed medical examination.\n\n`month` and `year` are optional and nullable. If any of them is missing or `null`, API defaults to `LocalDate.now()` - the current year and month.",
                 "properties": {
-                    "id": {
+                    "month": {
+                        "type": "integer",
+                        "description": "",
+                        "format": "int32",
+                        "default": null,
+                        "nullable": true
+                    },
+                    "year": {
                         "type": "integer",
                         "description": "Must not be in the future",
-                        "format": "int64",
-                        "default": null
+                        "format": "int32",
+                        "default": null,
+                        "nullable": true
                     }
-                },
-                "required": [
-                    "id"
-                ]
+                }
             },
             "User": {
                 "title": "User",
@@ -825,6 +954,58 @@
                 "description": "Users can choose to have their communication email address be different from their main Firebase account email.\n\noptional and nullable\n",
                 "format": "email",
                 "nullable": true
+            },
+            "ExaminationRecord": {
+                "type": "object",
+                "title": "ExaminationRecord",
+                "description": "An aggregate record of a single examination type.",
+                "properties": {
+                    "type": {
+                        "$ref": "#/components/schemas/ExaminationTypeEnum"
+                    },
+                    "worth": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "description": "How many points will be awarded upon completing this examination if the user is eligible."
+                    },
+                    "streak": {
+                        "$ref": "#/components/schemas/Streak"
+                    },
+                    "lastVisitYear": {
+                        "type": "integer",
+                        "format": "date"
+                    },
+                    "lastVisitMonth": {
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "type",
+                    "worth"
+                ],
+                "readOnly": true
+            },
+            "Streak": {
+                "title": "Streak",
+                "type": "object",
+                "description": "Examination completion streak.",
+                "properties": {
+                    "currentStreak": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "format": "int32"
+                    },
+                    "downtimeRemainingDays": {
+                        "type": "integer",
+                        "format": "int32",
+                        "minimum": 0
+                    },
+                    "gracePeriodRemainingDays": {
+                        "type": "integer",
+                        "format": "int32",
+                        "minimum": 0
+                    }
+                }
             },
             "Appointment": {
                 "title": "Appointment",
@@ -1106,86 +1287,38 @@
                     }
                 }
             },
-            "ExaminationStatus": {
-                "type": "string",
-                "title": "ExaminationStatus",
-                "description": "Status enum of the examination",
-                "enum": [
-                    "NEW",
-                    "TO_BE_CONFIRMED",
-                    "CONFIRMED",
-                    "CANCELED",
-                    "UNKNOWN"
-                ]
-            },
-            "PreventionStatus": {
+            "Checkup": {
+                "title": "Checkup",
                 "type": "object",
-                "title": "PreventionStatus",
-                "description": "Overview status of examinations",
+                "description": "",
                 "properties": {
                     "id": {
-                        "type": "integer",
-                        "format": "int64"
+                        "type": "string"
                     },
-                    "examinationType": {
-                        "$ref": "#/components/schemas/ExaminationTypeEnum"
-                    },
-                    "intervalYears": {
-                        "type": "integer"
-                    },
-                    "date": {
+                    "specialist": {
                         "type": "string",
-                        "format": "date-time"
-                    },
-                    "firstExam": {
-                        "type": "boolean"
-                    },
-                    "priority": {
-                        "type": "integer"
+                        "description": "the specialist the user will visit"
                     },
                     "state": {
-                        "$ref": "#/components/schemas/ExaminationStatus"
-                    },
-                    "count": {
-                        "type": "integer"
-                    }
-                },
-                "required": [
-                    "examinationType",
-                    "intervalYears",
-                    "firstExam",
-                    "priority",
-                    "state",
-                    "count"
-                ]
-            },
-            "ExaminationRecord": {
-                "title": "ExaminationRecord",
-                "type": "object",
-                "description": "Examination object to update or create an object",
-                "properties": {
-                    "id": {
-                        "type": "integer",
-                        "format": "int64"
-                    },
-                    "type": {
-                        "$ref": "#/components/schemas/ExaminationTypeEnum"
-                    },
-                    "date": {
                         "type": "string",
-                        "format": "date-time",
-                        "nullable": true
+                        "description": "Checkup's state. Can be TO_CREATE or TO_REMIND"
                     },
-                    "status": {
-                        "$ref": "#/components/schemas/ExaminationStatus"
+                    "visitInterval": {
+                        "type": "string",
+                        "description": "The recommended interval for the visiting the specialist"
                     },
-                    "firstExam": {
-                        "type": "boolean"
+                    "lastVisitDate": {
+                        "type": "string",
+                        "description": "The date of the last visit."
+                    },
+                    "plannedVisitDate": {
+                        "type": "string",
+                        "description": "The date of the planned visit. Is set when the check up has the state TO_REMIND"
+                    },
+                    "healthCareProvider": {
+                        "$ref": "#/components/schemas/SimpleHealthcareProvider"
                     }
-                },
-                "required": [
-                    "type"
-                ]
+                }
             }
         },
         "securitySchemes": {
