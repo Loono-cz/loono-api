@@ -1133,7 +1133,7 @@
                     "intervalYears": {
                         "type": "integer"
                     },
-                    "date": {
+                    "plannedDate": {
                         "type": "string",
                         "format": "date-time"
                     },
