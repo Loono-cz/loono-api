@@ -1133,7 +1133,7 @@
                     "intervalYears": {
                         "type": "integer"
                     },
-                    "date": {
+                    "plannedDate": {
                         "type": "string",
                         "format": "date-time"
                     },
@@ -1148,6 +1148,10 @@
                     },
                     "count": {
                         "type": "integer"
+                    },
+                    "lastConfirmedDate": {
+                        "type": "string",
+                        "format": "date-time"
                     }
                 },
                 "required": [
