@@ -8,7 +8,7 @@ jobs:
       - uses: dart-lang/setup-dart@v1
 
       - name: Upgrade dependencies
-        run: dart pub upgrade
+        run: dart pub upgrade analyzer
 
       - name: Install Open Api Generator
         run: npm install @openapitools/openapi-generator-cli -g
