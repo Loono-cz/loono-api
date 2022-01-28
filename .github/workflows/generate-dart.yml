@@ -17,3 +17,9 @@ jobs:
 
       - name: Generate Dart Files
         run: npm run generate-dart
+
+      - name: Upload  Generated Files
+        uses: actions/upload-artifact@v2
+        with:
+          name: dart
+          path: dart/
