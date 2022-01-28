@@ -9,9 +9,6 @@ jobs:
         with:
           sdk: '2.14.0'
 
-      - name: Upgrade dependencies
-        run: dart pub upgrade
-
       - name: Install Open Api Generator
         run: npm install @openapitools/openapi-generator-cli -g
 
