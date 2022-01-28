@@ -12,5 +12,8 @@ jobs:
       - name: Install Open Api Generator
         run: npm install @openapitools/openapi-generator-cli -g
 
+      - name: Remove old files
+        run: rm -rf dart/
+
       - name: Generate Dart Files
         run: npm run generate-dart
