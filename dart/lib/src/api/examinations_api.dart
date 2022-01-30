@@ -9,8 +9,9 @@ import 'package:dio/dio.dart';
 
 import 'package:built_collection/built_collection.dart';
 import 'package:loono_api/src/model/error.dart';
-import 'package:loono_api/src/model/examination_completion.dart';
+import 'package:loono_api/src/model/examination_id.dart';
 import 'package:loono_api/src/model/examination_record.dart';
+import 'package:loono_api/src/model/prevention_status.dart';
 
 class ExaminationsApi {
 
@@ -20,12 +21,12 @@ class ExaminationsApi {
 
   const ExaminationsApi(this._dio, this._serializers);
 
-  /// Complete Examination
+  /// Cancel Examination
   /// Notify the API that an examination has been performed.  The date of the completion must not be in the future.
   ///
   /// Parameters:
   /// * [type] - One of the `ExaminationTypeEnum` values
-  /// * [examinationCompletion] 
+  /// * [examinationId] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -33,11 +34,11 @@ class ExaminationsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<ExaminationRecord>] as data
+  /// Returns a [Future] containing a [Response] with a [ExaminationRecord] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<BuiltList<ExaminationRecord>>> completeExamination({ 
+  Future<Response<ExaminationRecord>> cancelExamination({ 
     required String type,
-    ExaminationCompletion? examinationCompletion,
+    ExaminationId? examinationId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -45,7 +46,7 @@ class ExaminationsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/examinations/{type}/complete'.replaceAll('{' r'type' '}', type.toString());
+    final _path = r'/examinations/{type}/cancel'.replaceAll('{' r'type' '}', type.toString());
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -68,8 +69,8 @@ class ExaminationsApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(ExaminationCompletion);
-      _bodyData = examinationCompletion == null ? null : _serializers.serialize(examinationCompletion, specifiedType: _type);
+      const _type = FullType(ExaminationId);
+      _bodyData = examinationId == null ? null : _serializers.serialize(examinationId, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioError(
@@ -91,14 +92,14 @@ class ExaminationsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<ExaminationRecord> _responseData;
+    ExaminationRecord _responseData;
 
     try {
-      const _responseType = FullType(BuiltList, [FullType(ExaminationRecord)]);
+      const _responseType = FullType(ExaminationRecord);
       _responseData = _serializers.deserialize(
         _response.data!,
         specifiedType: _responseType,
-      ) as BuiltList<ExaminationRecord>;
+      ) as ExaminationRecord;
 
     } catch (error, stackTrace) {
       throw DioError(
@@ -109,7 +110,7 @@ class ExaminationsApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<BuiltList<ExaminationRecord>>(
+    return Response<ExaminationRecord>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -121,11 +122,12 @@ class ExaminationsApi {
     );
   }
 
-  /// [Draft] Reset Examination Record
-  /// Delete the aggregate examination record for this examination type.  Special consideration: How to prevent abuse and point cheating? SOME information about the history of point entitlement will have to be retained so that people don&#39;t spam create/delete to farm points.
+  /// Confirm Examination
+  /// Notify the API that an examination has been performed.  The date of the completion must not be in the future.
   ///
   /// Parameters:
-  /// * [body] - Empty object
+  /// * [type] - One of the `ExaminationTypeEnum` values
+  /// * [examinationId] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -133,10 +135,11 @@ class ExaminationsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<ExaminationRecord>] as data
+  /// Returns a [Future] containing a [Response] with a [ExaminationRecord] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<BuiltList<ExaminationRecord>>> deleteExamination({ 
-    dynamic? body,
+  Future<Response<ExaminationRecord>> completeExamination({ 
+    required String type,
+    ExaminationId? examinationId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -144,7 +147,7 @@ class ExaminationsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/examinations/reset';
+    final _path = r'/examinations/{type}/confirm'.replaceAll('{' r'type' '}', type.toString());
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -167,7 +170,8 @@ class ExaminationsApi {
     dynamic _bodyData;
 
     try {
-      _bodyData = body;
+      const _type = FullType(ExaminationId);
+      _bodyData = examinationId == null ? null : _serializers.serialize(examinationId, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioError(
@@ -189,14 +193,14 @@ class ExaminationsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<ExaminationRecord> _responseData;
+    ExaminationRecord _responseData;
 
     try {
-      const _responseType = FullType(BuiltList, [FullType(ExaminationRecord)]);
+      const _responseType = FullType(ExaminationRecord);
       _responseData = _serializers.deserialize(
         _response.data!,
         specifiedType: _responseType,
-      ) as BuiltList<ExaminationRecord>;
+      ) as ExaminationRecord;
 
     } catch (error, stackTrace) {
       throw DioError(
@@ -207,7 +211,7 @@ class ExaminationsApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<BuiltList<ExaminationRecord>>(
+    return Response<ExaminationRecord>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -219,7 +223,7 @@ class ExaminationsApi {
     );
   }
 
-  /// Get Examination Records
+  /// Get Examinations Status
   /// Returns the examination records of the current user.
   ///
   /// Parameters:
@@ -230,9 +234,9 @@ class ExaminationsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<ExaminationRecord>] as data
+  /// Returns a [Future] containing a [Response] with a [BuiltList<PreventionStatus>] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<BuiltList<ExaminationRecord>>> getExaminations({ 
+  Future<Response<BuiltList<PreventionStatus>>> getExaminations({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -267,14 +271,14 @@ class ExaminationsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<ExaminationRecord> _responseData;
+    BuiltList<PreventionStatus> _responseData;
 
     try {
-      const _responseType = FullType(BuiltList, [FullType(ExaminationRecord)]);
+      const _responseType = FullType(BuiltList, [FullType(PreventionStatus)]);
       _responseData = _serializers.deserialize(
         _response.data!,
         specifiedType: _responseType,
-      ) as BuiltList<ExaminationRecord>;
+      ) as BuiltList<PreventionStatus>;
 
     } catch (error, stackTrace) {
       throw DioError(
@@ -285,7 +289,106 @@ class ExaminationsApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<BuiltList<ExaminationRecord>>(
+    return Response<BuiltList<PreventionStatus>>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// Create or update examination record
+  /// 
+  ///
+  /// Parameters:
+  /// * [examinationRecord] 
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [ExaminationRecord] as data
+  /// Throws [DioError] if API call or serialization fails
+  Future<Response<ExaminationRecord>> postExaminations({ 
+    ExaminationRecord? examinationRecord,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/examinations';
+    final _options = Options(
+      method: r'POST',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'http',
+            'scheme': 'bearer',
+            'name': 'Bearer_Auth',
+          },
+        ],
+        ...?extra,
+      },
+      contentType: 'application/json',
+      validateStatus: validateStatus,
+    );
+
+    dynamic _bodyData;
+
+    try {
+      const _type = FullType(ExaminationRecord);
+      _bodyData = examinationRecord == null ? null : _serializers.serialize(examinationRecord, specifiedType: _type);
+
+    } catch(error, stackTrace) {
+      throw DioError(
+         requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
+        type: DioErrorType.other,
+        error: error,
+      )..stackTrace = stackTrace;
+    }
+
+    final _response = await _dio.request<Object>(
+      _path,
+      data: _bodyData,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    ExaminationRecord _responseData;
+
+    try {
+      const _responseType = FullType(ExaminationRecord);
+      _responseData = _serializers.deserialize(
+        _response.data!,
+        specifiedType: _responseType,
+      ) as ExaminationRecord;
+
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioErrorType.other,
+        error: error,
+      )..stackTrace = stackTrace;
+    }
+
+    return Response<ExaminationRecord>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

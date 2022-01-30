@@ -2,43 +2,44 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
-import 'package:loono_api/src/model/streak.dart';
 import 'package:loono_api/src/model/examination_type_enum.dart';
+import 'package:loono_api/src/model/examination_status.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 part 'examination_record.g.dart';
 
-/// An aggregate record of a single examination type.
+/// Examination object to update or create an object
 ///
 /// Properties:
+/// * [uuid] 
 /// * [type] 
-/// * [worth] - How many points will be awarded upon completing this examination if the user is eligible.
-/// * [streak] 
-/// * [lastVisitYear] 
-/// * [lastVisitMonth] 
+/// * [date] 
+/// * [status] 
+/// * [firstExam] 
 abstract class ExaminationRecord implements Built<ExaminationRecord, ExaminationRecordBuilder> {
+    @BuiltValueField(wireName: r'uuid')
+    String? get uuid;
+
     @BuiltValueField(wireName: r'type')
     ExaminationTypeEnum get type;
     // enum typeEnum {  BREAST_SELF,  COLONOSCOPY,  DENTIST,  DERMATOLOGIST,  GENERAL_PRACTITIONER,  GYNECOLOGIST,  MAMMOGRAM,  OPHTHALMOLOGIST,  TESTICULAR_SELF,  TOKS,  ULTRASOUND_BREAST,  UROLOGIST,  VENEREAL_DISEASES,  };
 
-    /// How many points will be awarded upon completing this examination if the user is eligible.
-    @BuiltValueField(wireName: r'worth')
-    int get worth;
+    @BuiltValueField(wireName: r'date')
+    DateTime? get date;
 
-    @BuiltValueField(wireName: r'streak')
-    Streak? get streak;
+    @BuiltValueField(wireName: r'status')
+    ExaminationStatus? get status;
+    // enum statusEnum {  NEW,  TO_BE_CONFIRMED,  CONFIRMED,  CANCELED,  UNKNOWN,  };
 
-    @BuiltValueField(wireName: r'lastVisitYear')
-    int? get lastVisitYear;
-
-    @BuiltValueField(wireName: r'lastVisitMonth')
-    int? get lastVisitMonth;
+    @BuiltValueField(wireName: r'firstExam')
+    bool? get firstExam;
 
     ExaminationRecord._();
 
     @BuiltValueHook(initializeBuilder: true)
-    static void _defaults(ExaminationRecordBuilder b) => b;
+    static void _defaults(ExaminationRecordBuilder b) => b
+        ..firstExam = true;
 
     factory ExaminationRecord([void updates(ExaminationRecordBuilder b)]) = _$ExaminationRecord;
 
@@ -57,31 +58,33 @@ class _$ExaminationRecordSerializer implements StructuredSerializer<ExaminationR
     Iterable<Object?> serialize(Serializers serializers, ExaminationRecord object,
         {FullType specifiedType = FullType.unspecified}) {
         final result = <Object?>[];
+        if (object.uuid != null) {
+            result
+                ..add(r'uuid')
+                ..add(serializers.serialize(object.uuid,
+                    specifiedType: const FullType.nullable(String)));
+        }
         result
             ..add(r'type')
             ..add(serializers.serialize(object.type,
                 specifiedType: const FullType(ExaminationTypeEnum)));
-        result
-            ..add(r'worth')
-            ..add(serializers.serialize(object.worth,
-                specifiedType: const FullType(int)));
-        if (object.streak != null) {
+        if (object.date != null) {
             result
-                ..add(r'streak')
-                ..add(serializers.serialize(object.streak,
-                    specifiedType: const FullType(Streak)));
+                ..add(r'date')
+                ..add(serializers.serialize(object.date,
+                    specifiedType: const FullType.nullable(DateTime)));
         }
-        if (object.lastVisitYear != null) {
+        if (object.status != null) {
             result
-                ..add(r'lastVisitYear')
-                ..add(serializers.serialize(object.lastVisitYear,
-                    specifiedType: const FullType(int)));
+                ..add(r'status')
+                ..add(serializers.serialize(object.status,
+                    specifiedType: const FullType(ExaminationStatus)));
         }
-        if (object.lastVisitMonth != null) {
+        if (object.firstExam != null) {
             result
-                ..add(r'lastVisitMonth')
-                ..add(serializers.serialize(object.lastVisitMonth,
-                    specifiedType: const FullType(int)));
+                ..add(r'firstExam')
+                ..add(serializers.serialize(object.firstExam,
+                    specifiedType: const FullType(bool)));
         }
         return result;
     }
@@ -98,30 +101,32 @@ class _$ExaminationRecordSerializer implements StructuredSerializer<ExaminationR
             final Object? value = iterator.current;
             
             switch (key) {
+                case r'uuid':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType.nullable(String)) as String?;
+                    if (valueDes == null) continue;
+                    result.uuid = valueDes;
+                    break;
                 case r'type':
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(ExaminationTypeEnum)) as ExaminationTypeEnum;
                     result.type = valueDes;
                     break;
-                case r'worth':
+                case r'date':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(int)) as int;
-                    result.worth = valueDes;
+                        specifiedType: const FullType.nullable(DateTime)) as DateTime?;
+                    if (valueDes == null) continue;
+                    result.date = valueDes;
                     break;
-                case r'streak':
+                case r'status':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(Streak)) as Streak;
-                    result.streak.replace(valueDes);
+                        specifiedType: const FullType(ExaminationStatus)) as ExaminationStatus;
+                    result.status = valueDes;
                     break;
-                case r'lastVisitYear':
+                case r'firstExam':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(int)) as int;
-                    result.lastVisitYear = valueDes;
-                    break;
-                case r'lastVisitMonth':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(int)) as int;
-                    result.lastVisitMonth = valueDes;
+                        specifiedType: const FullType(bool)) as bool;
+                    result.firstExam = valueDes;
                     break;
             }
         }
