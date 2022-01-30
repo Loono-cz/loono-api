@@ -1,17 +1,17 @@
 import 'package:test/test.dart';
-import 'package:openapi/openapi.dart';
+import 'package:loono_api/loono_api.dart';
 
 
 /// tests for ProvidersApi
 void main() {
-  final instance = Openapi().getProvidersApi();
+  final instance = LoonoApi().getProvidersApi();
 
   group(ProvidersApi, () {
     // Gets all healthcare providers data
     //
     // Getting all healthcare providers.  List of all healthcare providers in the simple form. The file format is JSON and it is zipped.
     //
-    //Future<HealthcareProviderList> getProvidersAll() async
+    //Future<Uint8List> getProvidersAll() async
     test('test getProvidersAll', () async {
       // TODO
     });
