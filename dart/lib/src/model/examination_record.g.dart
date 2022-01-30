@@ -8,29 +8,24 @@ part of 'examination_record.dart';
 
 class _$ExaminationRecord extends ExaminationRecord {
   @override
+  final String? uuid;
+  @override
   final ExaminationTypeEnum type;
   @override
-  final int worth;
+  final DateTime? date;
   @override
-  final Streak? streak;
+  final ExaminationStatus? status;
   @override
-  final int? lastVisitYear;
-  @override
-  final int? lastVisitMonth;
+  final bool? firstExam;
 
   factory _$ExaminationRecord(
           [void Function(ExaminationRecordBuilder)? updates]) =>
       (new ExaminationRecordBuilder()..update(updates)).build();
 
   _$ExaminationRecord._(
-      {required this.type,
-      required this.worth,
-      this.streak,
-      this.lastVisitYear,
-      this.lastVisitMonth})
+      {this.uuid, required this.type, this.date, this.status, this.firstExam})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(type, 'ExaminationRecord', 'type');
-    BuiltValueNullFieldError.checkNotNull(worth, 'ExaminationRecord', 'worth');
   }
 
   @override
@@ -45,29 +40,29 @@ class _$ExaminationRecord extends ExaminationRecord {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is ExaminationRecord &&
+        uuid == other.uuid &&
         type == other.type &&
-        worth == other.worth &&
-        streak == other.streak &&
-        lastVisitYear == other.lastVisitYear &&
-        lastVisitMonth == other.lastVisitMonth;
+        date == other.date &&
+        status == other.status &&
+        firstExam == other.firstExam;
   }
 
   @override
   int get hashCode {
     return $jf($jc(
-        $jc($jc($jc($jc(0, type.hashCode), worth.hashCode), streak.hashCode),
-            lastVisitYear.hashCode),
-        lastVisitMonth.hashCode));
+        $jc($jc($jc($jc(0, uuid.hashCode), type.hashCode), date.hashCode),
+            status.hashCode),
+        firstExam.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('ExaminationRecord')
+          ..add('uuid', uuid)
           ..add('type', type)
-          ..add('worth', worth)
-          ..add('streak', streak)
-          ..add('lastVisitYear', lastVisitYear)
-          ..add('lastVisitMonth', lastVisitMonth))
+          ..add('date', date)
+          ..add('status', status)
+          ..add('firstExam', firstExam))
         .toString();
   }
 }
@@ -76,27 +71,25 @@ class ExaminationRecordBuilder
     implements Builder<ExaminationRecord, ExaminationRecordBuilder> {
   _$ExaminationRecord? _$v;
 
+  String? _uuid;
+  String? get uuid => _$this._uuid;
+  set uuid(String? uuid) => _$this._uuid = uuid;
+
   ExaminationTypeEnum? _type;
   ExaminationTypeEnum? get type => _$this._type;
   set type(ExaminationTypeEnum? type) => _$this._type = type;
 
-  int? _worth;
-  int? get worth => _$this._worth;
-  set worth(int? worth) => _$this._worth = worth;
+  DateTime? _date;
+  DateTime? get date => _$this._date;
+  set date(DateTime? date) => _$this._date = date;
 
-  StreakBuilder? _streak;
-  StreakBuilder get streak => _$this._streak ??= new StreakBuilder();
-  set streak(StreakBuilder? streak) => _$this._streak = streak;
+  ExaminationStatus? _status;
+  ExaminationStatus? get status => _$this._status;
+  set status(ExaminationStatus? status) => _$this._status = status;
 
-  int? _lastVisitYear;
-  int? get lastVisitYear => _$this._lastVisitYear;
-  set lastVisitYear(int? lastVisitYear) =>
-      _$this._lastVisitYear = lastVisitYear;
-
-  int? _lastVisitMonth;
-  int? get lastVisitMonth => _$this._lastVisitMonth;
-  set lastVisitMonth(int? lastVisitMonth) =>
-      _$this._lastVisitMonth = lastVisitMonth;
+  bool? _firstExam;
+  bool? get firstExam => _$this._firstExam;
+  set firstExam(bool? firstExam) => _$this._firstExam = firstExam;
 
   ExaminationRecordBuilder() {
     ExaminationRecord._defaults(this);
@@ -105,11 +98,11 @@ class ExaminationRecordBuilder
   ExaminationRecordBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _uuid = $v.uuid;
       _type = $v.type;
-      _worth = $v.worth;
-      _streak = $v.streak?.toBuilder();
-      _lastVisitYear = $v.lastVisitYear;
-      _lastVisitMonth = $v.lastVisitMonth;
+      _date = $v.date;
+      _status = $v.status;
+      _firstExam = $v.firstExam;
       _$v = null;
     }
     return this;
@@ -128,28 +121,14 @@ class ExaminationRecordBuilder
 
   @override
   _$ExaminationRecord build() {
-    _$ExaminationRecord _$result;
-    try {
-      _$result = _$v ??
-          new _$ExaminationRecord._(
-              type: BuiltValueNullFieldError.checkNotNull(
-                  type, 'ExaminationRecord', 'type'),
-              worth: BuiltValueNullFieldError.checkNotNull(
-                  worth, 'ExaminationRecord', 'worth'),
-              streak: _streak?.build(),
-              lastVisitYear: lastVisitYear,
-              lastVisitMonth: lastVisitMonth);
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'streak';
-        _streak?.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            'ExaminationRecord', _$failedField, e.toString());
-      }
-      rethrow;
-    }
+    final _$result = _$v ??
+        new _$ExaminationRecord._(
+            uuid: uuid,
+            type: BuiltValueNullFieldError.checkNotNull(
+                type, 'ExaminationRecord', 'type'),
+            date: date,
+            status: status,
+            firstExam: firstExam);
     replace(_$result);
     return _$result;
   }

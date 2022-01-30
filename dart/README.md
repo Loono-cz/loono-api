@@ -72,13 +72,13 @@ All URIs are relative to *https://loono.ceskodigital.net:443*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 [*AccountApi*](doc/AccountApi.md) | [**deleteAccount**](doc/AccountApi.md#deleteaccount) | **DELETE** /account | Delete account
-[*AccountApi*](doc/AccountApi.md) | [**deleteExamination**](doc/AccountApi.md#deleteexamination) | **POST** /examinations/reset | [Draft] Reset Examination Record
 [*AccountApi*](doc/AccountApi.md) | [**getAccount**](doc/AccountApi.md#getaccount) | **GET** /account | GET Account
 [*AccountApi*](doc/AccountApi.md) | [**updateAccountSettings**](doc/AccountApi.md#updateaccountsettings) | **POST** /account/settings/update | Update Account Settings
 [*AccountApi*](doc/AccountApi.md) | [**updateAccountUser**](doc/AccountApi.md#updateaccountuser) | **POST** /account/user/update | Update Account User
-[*ExaminationsApi*](doc/ExaminationsApi.md) | [**completeExamination**](doc/ExaminationsApi.md#completeexamination) | **POST** /examinations/{type}/complete | Complete Examination
-[*ExaminationsApi*](doc/ExaminationsApi.md) | [**deleteExamination**](doc/ExaminationsApi.md#deleteexamination) | **POST** /examinations/reset | [Draft] Reset Examination Record
-[*ExaminationsApi*](doc/ExaminationsApi.md) | [**getExaminations**](doc/ExaminationsApi.md#getexaminations) | **GET** /examinations | Get Examination Records
+[*ExaminationsApi*](doc/ExaminationsApi.md) | [**cancelExamination**](doc/ExaminationsApi.md#cancelexamination) | **POST** /examinations/{type}/cancel | Cancel Examination
+[*ExaminationsApi*](doc/ExaminationsApi.md) | [**completeExamination**](doc/ExaminationsApi.md#completeexamination) | **POST** /examinations/{type}/confirm | Confirm Examination
+[*ExaminationsApi*](doc/ExaminationsApi.md) | [**getExaminations**](doc/ExaminationsApi.md#getexaminations) | **GET** /examinations | Get Examinations Status
+[*ExaminationsApi*](doc/ExaminationsApi.md) | [**postExaminations**](doc/ExaminationsApi.md#postexaminations) | **POST** /examinations | Create or update examination record
 [*LeaderboardApi*](doc/LeaderboardApi.md) | [**getLeaderboard**](doc/LeaderboardApi.md#getleaderboard) | **GET** /leaderboard | Draft Get Leaderboard
 [*ProvidersApi*](doc/ProvidersApi.md) | [**getProvidersAll**](doc/ProvidersApi.md#getprovidersall) | **GET** /providers/all | Gets all healthcare providers data
 [*ProvidersApi*](doc/ProvidersApi.md) | [**getProvidersLastupdate**](doc/ProvidersApi.md#getproviderslastupdate) | **GET** /providers/lastupdate | Gets last date of healthcare provider update
@@ -91,8 +91,9 @@ Class | Method | HTTP request | Description
  - [Account](doc/Account.md)
  - [Appointment](doc/Appointment.md)
  - [Error](doc/Error.md)
- - [ExaminationCompletion](doc/ExaminationCompletion.md)
+ - [ExaminationId](doc/ExaminationId.md)
  - [ExaminationRecord](doc/ExaminationRecord.md)
+ - [ExaminationStatus](doc/ExaminationStatus.md)
  - [ExaminationTypeEnum](doc/ExaminationTypeEnum.md)
  - [HealthcareProviderDetail](doc/HealthcareProviderDetail.md)
  - [HealthcareProviderDetailList](doc/HealthcareProviderDetailList.md)
@@ -102,10 +103,10 @@ Class | Method | HTTP request | Description
  - [HealthcareProviderList](doc/HealthcareProviderList.md)
  - [Leaderboard](doc/Leaderboard.md)
  - [LeaderboardUser](doc/LeaderboardUser.md)
+ - [PreventionStatus](doc/PreventionStatus.md)
  - [Settings](doc/Settings.md)
  - [Sex](doc/Sex.md)
  - [SimpleHealthcareProvider](doc/SimpleHealthcareProvider.md)
- - [Streak](doc/Streak.md)
  - [UpdateStatusMessage](doc/UpdateStatusMessage.md)
  - [User](doc/User.md)
  - [UserPatch](doc/UserPatch.md)

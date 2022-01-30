@@ -9,15 +9,16 @@ All URIs are relative to *https://loono.ceskodigital.net:443*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**completeExamination**](ExaminationsApi.md#completeexamination) | **POST** /examinations/{type}/complete | Complete Examination
-[**deleteExamination**](ExaminationsApi.md#deleteexamination) | **POST** /examinations/reset | [Draft] Reset Examination Record
-[**getExaminations**](ExaminationsApi.md#getexaminations) | **GET** /examinations | Get Examination Records
+[**cancelExamination**](ExaminationsApi.md#cancelexamination) | **POST** /examinations/{type}/cancel | Cancel Examination
+[**completeExamination**](ExaminationsApi.md#completeexamination) | **POST** /examinations/{type}/confirm | Confirm Examination
+[**getExaminations**](ExaminationsApi.md#getexaminations) | **GET** /examinations | Get Examinations Status
+[**postExaminations**](ExaminationsApi.md#postexaminations) | **POST** /examinations | Create or update examination record
 
 
-# **completeExamination**
-> BuiltList<ExaminationRecord> completeExamination(type, examinationCompletion)
+# **cancelExamination**
+> ExaminationRecord cancelExamination(type, examinationId)
 
-Complete Examination
+Cancel Examination
 
 Notify the API that an examination has been performed.  The date of the completion must not be in the future.
 
@@ -30,13 +31,13 @@ import 'package:loono_api/api.dart';
 
 final api = LoonoApi().getExaminationsApi();
 final String type = type_example; // String | One of the `ExaminationTypeEnum` values
-final ExaminationCompletion examinationCompletion = ; // ExaminationCompletion | 
+final ExaminationId examinationId = ; // ExaminationId | 
 
 try {
-    final response = api.completeExamination(type, examinationCompletion);
+    final response = api.cancelExamination(type, examinationId);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling ExaminationsApi->completeExamination: $e\n');
+    print('Exception when calling ExaminationsApi->cancelExamination: $e\n');
 }
 ```
 
@@ -45,11 +46,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **type** | **String**| One of the `ExaminationTypeEnum` values | 
- **examinationCompletion** | [**ExaminationCompletion**](ExaminationCompletion.md)|  | [optional] 
+ **examinationId** | [**ExaminationId**](ExaminationId.md)|  | [optional] 
 
 ### Return type
 
-[**BuiltList&lt;ExaminationRecord&gt;**](ExaminationRecord.md)
+[**ExaminationRecord**](ExaminationRecord.md)
 
 ### Authorization
 
@@ -62,12 +63,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **deleteExamination**
-> BuiltList<ExaminationRecord> deleteExamination(body)
+# **completeExamination**
+> ExaminationRecord completeExamination(type, examinationId)
 
-[Draft] Reset Examination Record
+Confirm Examination
 
-Delete the aggregate examination record for this examination type.  Special consideration: How to prevent abuse and point cheating? SOME information about the history of point entitlement will have to be retained so that people don't spam create/delete to farm points.
+Notify the API that an examination has been performed.  The date of the completion must not be in the future.
 
 ### Example
 ```dart
@@ -77,13 +78,14 @@ import 'package:loono_api/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('Bearer_Auth').password = 'YOUR_PASSWORD';
 
 final api = LoonoApi().getExaminationsApi();
-final dynamic body = Object; // dynamic | Empty object
+final String type = type_example; // String | One of the `ExaminationTypeEnum` values
+final ExaminationId examinationId = ; // ExaminationId | 
 
 try {
-    final response = api.deleteExamination(body);
+    final response = api.completeExamination(type, examinationId);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling ExaminationsApi->deleteExamination: $e\n');
+    print('Exception when calling ExaminationsApi->completeExamination: $e\n');
 }
 ```
 
@@ -91,11 +93,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **dynamic**| Empty object | [optional] 
+ **type** | **String**| One of the `ExaminationTypeEnum` values | 
+ **examinationId** | [**ExaminationId**](ExaminationId.md)|  | [optional] 
 
 ### Return type
 
-[**BuiltList&lt;ExaminationRecord&gt;**](ExaminationRecord.md)
+[**ExaminationRecord**](ExaminationRecord.md)
 
 ### Authorization
 
@@ -109,9 +112,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getExaminations**
-> BuiltList<ExaminationRecord> getExaminations()
+> BuiltList<PreventionStatus> getExaminations()
 
-Get Examination Records
+Get Examinations Status
 
 Returns the examination records of the current user.
 
@@ -137,7 +140,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**BuiltList&lt;ExaminationRecord&gt;**](ExaminationRecord.md)
+[**BuiltList&lt;PreventionStatus&gt;**](PreventionStatus.md)
 
 ### Authorization
 
@@ -146,6 +149,50 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **postExaminations**
+> ExaminationRecord postExaminations(examinationRecord)
+
+Create or update examination record
+
+### Example
+```dart
+import 'package:loono_api/api.dart';
+// TODO Configure HTTP basic authorization: Bearer_Auth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('Bearer_Auth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('Bearer_Auth').password = 'YOUR_PASSWORD';
+
+final api = LoonoApi().getExaminationsApi();
+final ExaminationRecord examinationRecord = ; // ExaminationRecord | 
+
+try {
+    final response = api.postExaminations(examinationRecord);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling ExaminationsApi->postExaminations: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **examinationRecord** | [**ExaminationRecord**](ExaminationRecord.md)|  | [optional] 
+
+### Return type
+
+[**ExaminationRecord**](ExaminationRecord.md)
+
+### Authorization
+
+[Bearer_Auth](../README.md#Bearer_Auth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

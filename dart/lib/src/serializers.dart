@@ -15,8 +15,9 @@ import 'package:loono_api/src/model/date.dart';
 import 'package:loono_api/src/model/account.dart';
 import 'package:loono_api/src/model/appointment.dart';
 import 'package:loono_api/src/model/error.dart';
-import 'package:loono_api/src/model/examination_completion.dart';
+import 'package:loono_api/src/model/examination_id.dart';
 import 'package:loono_api/src/model/examination_record.dart';
+import 'package:loono_api/src/model/examination_status.dart';
 import 'package:loono_api/src/model/examination_type_enum.dart';
 import 'package:loono_api/src/model/healthcare_provider_detail.dart';
 import 'package:loono_api/src/model/healthcare_provider_detail_list.dart';
@@ -26,10 +27,10 @@ import 'package:loono_api/src/model/healthcare_provider_last_update.dart';
 import 'package:loono_api/src/model/healthcare_provider_list.dart';
 import 'package:loono_api/src/model/leaderboard.dart';
 import 'package:loono_api/src/model/leaderboard_user.dart';
+import 'package:loono_api/src/model/prevention_status.dart';
 import 'package:loono_api/src/model/settings.dart';
 import 'package:loono_api/src/model/sex.dart';
 import 'package:loono_api/src/model/simple_healthcare_provider.dart';
-import 'package:loono_api/src/model/streak.dart';
 import 'package:loono_api/src/model/update_status_message.dart';
 import 'package:loono_api/src/model/user.dart';
 import 'package:loono_api/src/model/user_patch.dart';
@@ -40,8 +41,9 @@ part 'serializers.g.dart';
   Account,
   Appointment,
   Error,
-  ExaminationCompletion,
+  ExaminationId,
   ExaminationRecord,
+  ExaminationStatus,
   ExaminationTypeEnum,
   HealthcareProviderDetail,
   HealthcareProviderDetailList,
@@ -51,22 +53,18 @@ part 'serializers.g.dart';
   HealthcareProviderList,
   Leaderboard,
   LeaderboardUser,
+  PreventionStatus,
   Settings,
   Sex,
   SimpleHealthcareProvider,
-  Streak,
   UpdateStatusMessage,
   User,
   UserPatch,
 ])
 Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ExaminationRecord)]),
-        () => ListBuilder<ExaminationRecord>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ExaminationRecord)]),
-        () => ListBuilder<ExaminationRecord>(),
+        const FullType(BuiltList, [FullType(PreventionStatus)]),
+        () => ListBuilder<PreventionStatus>(),
       )
       ..add(const DateSerializer())
       ..add(Iso8601DateTimeSerializer()))
