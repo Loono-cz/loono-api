@@ -18,14 +18,9 @@ jobs:
       - name: Generate Dart Files
         run: npm run generate-dart
 
-      - name: Upload  Generated Files
-        uses: actions/upload-artifact@v2
-        with:
-          name: dart
-          path: dart/
-
       - name: Commit generated files
         run: |
+          git branch -a
           git config --global user.name 'Workflow Action Bot'
           git config --global user.email 'workflowActionBot@users.noreply.github.com'
           git commit -am "Automated dart files generated for new API"
