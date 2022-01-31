@@ -2,8 +2,10 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
+import 'package:built_collection/built_collection.dart';
 import 'package:loono_api/src/model/settings.dart';
 import 'package:loono_api/src/model/user.dart';
+import 'package:loono_api/src/model/badge.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -15,6 +17,7 @@ part 'account.g.dart';
 /// * [user] 
 /// * [settings] 
 /// * [points] - The total amount of points earned by the user from gamification features.
+/// * [badges] 
 abstract class Account implements Built<Account, AccountBuilder> {
     @BuiltValueField(wireName: r'user')
     User get user;
@@ -25,6 +28,9 @@ abstract class Account implements Built<Account, AccountBuilder> {
     /// The total amount of points earned by the user from gamification features.
     @BuiltValueField(wireName: r'points')
     int get points;
+
+    @BuiltValueField(wireName: r'badges')
+    BuiltList<Badge>? get badges;
 
     Account._();
 
@@ -60,6 +66,12 @@ class _$AccountSerializer implements StructuredSerializer<Account> {
             ..add(r'points')
             ..add(serializers.serialize(object.points,
                 specifiedType: const FullType(int)));
+        if (object.badges != null) {
+            result
+                ..add(r'badges')
+                ..add(serializers.serialize(object.badges,
+                    specifiedType: const FullType(BuiltList, [FullType(Badge)])));
+        }
         return result;
     }
 
@@ -89,6 +101,11 @@ class _$AccountSerializer implements StructuredSerializer<Account> {
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(int)) as int;
                     result.points = valueDes;
+                    break;
+                case r'badges':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(BuiltList, [FullType(Badge)])) as BuiltList<Badge>;
+                    result.badges.replace(valueDes);
                     break;
             }
         }

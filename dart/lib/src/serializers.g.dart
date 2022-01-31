@@ -9,6 +9,8 @@ part of 'serializers.dart';
 Serializers _$serializers = (new Serializers().toBuilder()
       ..add(Account.serializer)
       ..add(Appointment.serializer)
+      ..add(Badge.serializer)
+      ..add(BadgeType.serializer)
       ..add(Error.serializer)
       ..add(ExaminationId.serializer)
       ..add(ExaminationRecord.serializer)
@@ -29,6 +31,9 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(UpdateStatusMessage.serializer)
       ..add(User.serializer)
       ..add(UserPatch.serializer)
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(Badge)]),
+          () => new ListBuilder<Badge>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(HealthcareProviderDetail)]),

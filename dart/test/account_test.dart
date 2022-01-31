@@ -23,5 +23,10 @@ void main() {
       // TODO
     });
 
+    // BuiltList<Badge> badges
+    test('to test the property `badges`', () async {
+      // TODO
+    });
+
   });
 }

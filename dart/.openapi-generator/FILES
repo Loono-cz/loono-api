@@ -5,6 +5,8 @@ analysis_options.yaml
 doc/Account.md
 doc/AccountApi.md
 doc/Appointment.md
+doc/Badge.md
+doc/BadgeType.md
 doc/Error.md
 doc/ExaminationId.md
 doc/ExaminationRecord.md
@@ -43,6 +45,8 @@ lib/src/auth/oauth.dart
 lib/src/date_serializer.dart
 lib/src/model/account.dart
 lib/src/model/appointment.dart
+lib/src/model/badge.dart
+lib/src/model/badge_type.dart
 lib/src/model/date.dart
 lib/src/model/error.dart
 lib/src/model/examination_id.dart
@@ -69,6 +73,8 @@ pubspec.yaml
 test/account_api_test.dart
 test/account_test.dart
 test/appointment_test.dart
+test/badge_test.dart
+test/badge_type_test.dart
 test/error_test.dart
 test/examination_id_test.dart
 test/examination_record_test.dart

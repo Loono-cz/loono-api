@@ -90,6 +90,8 @@ Class | Method | HTTP request | Description
 
  - [Account](doc/Account.md)
  - [Appointment](doc/Appointment.md)
+ - [Badge](doc/Badge.md)
+ - [BadgeType](doc/BadgeType.md)
  - [Error](doc/Error.md)
  - [ExaminationId](doc/ExaminationId.md)
  - [ExaminationRecord](doc/ExaminationRecord.md)

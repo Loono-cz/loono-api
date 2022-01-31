@@ -16,6 +16,8 @@ export 'package:loono_api/src/api/providers_api.dart';
 
 export 'package:loono_api/src/model/account.dart';
 export 'package:loono_api/src/model/appointment.dart';
+export 'package:loono_api/src/model/badge.dart';
+export 'package:loono_api/src/model/badge_type.dart';
 export 'package:loono_api/src/model/error.dart';
 export 'package:loono_api/src/model/examination_id.dart';
 export 'package:loono_api/src/model/examination_record.dart';
