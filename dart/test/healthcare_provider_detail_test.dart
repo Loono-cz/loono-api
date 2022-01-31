@@ -1,5 +1,5 @@
 import 'package:test/test.dart';
-import 'package:openapi/openapi.dart';
+import 'package:loono_api/loono_api.dart';
 
 // tests for HealthcareProviderDetail
 void main() {
@@ -97,12 +97,12 @@ void main() {
       // TODO
     });
 
-    // String lat
+    // double lat
     test('to test the property `lat`', () async {
       // TODO
     });
 
-    // String lng
+    // double lng
     test('to test the property `lng`', () async {
       // TODO
     });

@@ -1,5 +1,5 @@
 import 'package:test/test.dart';
-import 'package:openapi/openapi.dart';
+import 'package:loono_api/loono_api.dart';
 
 // tests for UserPatch
 void main() {

@@ -1,0 +1,34 @@
+name: Generate Dart
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  generate-dart:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: dart-lang/setup-dart@v1
+        with:
+          sdk: '2.14.0'
+
+      - name: Install Open Api Generator
+        run: npm install @openapitools/openapi-generator-cli -g
+
+      - name: Remove old files
+        run: rm -rf dart/
+
+      - name: Generate Dart Files
+        run: npm run generate-dart
+
+#      if anything has changed, commit and push
+#      diff-index has to be used, otherwise git commit fails at empty commit
+      - name: Commit generated files
+        run: |
+          git branch -a
+          git config --global user.name 'Workflow Action Bot'
+          git config --global user.email 'workflowActionBot@users.noreply.github.com'
+          git add -A
+          git diff-index --quiet HEAD || git commit -m "Automated dart files generated for new API"
+          git push
