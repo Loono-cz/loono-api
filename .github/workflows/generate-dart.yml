@@ -17,12 +17,13 @@ jobs:
 
       - name: Generate Dart Files
         run: npm run generate-dart
+
       - name: Commit generated files
         run: |
           git branch -a
           git config --global user.name 'Workflow Action Bot'
           git config --global user.email 'workflowActionBot@users.noreply.github.com'
-          git add -A
+#          git add -A
 #          if anything has changed, commit and push
 #          diff-index has to be used, otherwise git commit fails at empty commit
 #          git diff-index --quiet HEAD || git commit -m "Automated dart files generated for new API"
