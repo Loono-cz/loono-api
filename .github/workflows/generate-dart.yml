@@ -28,4 +28,4 @@ jobs:
 #          diff-index has to be used, otherwise git commit fails at empty commit
 #          git diff-index --quiet HEAD || git commit -m "Automated dart files generated for new API"
 #          git push
-          echo "Ahoj"
+#          echo "Ahoj"
