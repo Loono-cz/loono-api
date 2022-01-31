@@ -18,6 +18,8 @@ jobs:
       - name: Generate Dart Files
         run: npm run generate-dart
 
+#      if anything has changed, commit and push
+#      diff-index has to be used, otherwise git commit fails at empty commit
       - name: Commit generated files
         run: |
           git branch -a
