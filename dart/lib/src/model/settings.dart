@@ -13,7 +13,6 @@ part 'settings.g.dart';
 /// * [leaderboardAnonymizationOptIn] 
 /// * [appointmentReminderEmailsOptIn] 
 /// * [newsletterOptIn] 
-/// * [profileImageUrl] 
 abstract class Settings implements Built<Settings, SettingsBuilder> {
     @BuiltValueField(wireName: r'leaderboardAnonymizationOptIn')
     bool get leaderboardAnonymizationOptIn;
@@ -23,9 +22,6 @@ abstract class Settings implements Built<Settings, SettingsBuilder> {
 
     @BuiltValueField(wireName: r'newsletterOptIn')
     bool get newsletterOptIn;
-
-    @BuiltValueField(wireName: r'profileImageUrl')
-    String? get profileImageUrl;
 
     Settings._();
 
@@ -64,12 +60,6 @@ class _$SettingsSerializer implements StructuredSerializer<Settings> {
             ..add(r'newsletterOptIn')
             ..add(serializers.serialize(object.newsletterOptIn,
                 specifiedType: const FullType(bool)));
-        if (object.profileImageUrl != null) {
-            result
-                ..add(r'profileImageUrl')
-                ..add(serializers.serialize(object.profileImageUrl,
-                    specifiedType: const FullType(String)));
-        }
         return result;
     }
 
@@ -99,11 +89,6 @@ class _$SettingsSerializer implements StructuredSerializer<Settings> {
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(bool)) as bool;
                     result.newsletterOptIn = valueDes;
-                    break;
-                case r'profileImageUrl':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
-                    result.profileImageUrl = valueDes;
                     break;
             }
         }

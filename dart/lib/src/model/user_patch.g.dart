@@ -8,6 +8,8 @@ part of 'user_patch.dart';
 
 class _$UserPatch extends UserPatch {
   @override
+  final String? nickname;
+  @override
   final Sex? sex;
   @override
   final int? birthdateMonth;
@@ -15,12 +17,19 @@ class _$UserPatch extends UserPatch {
   final int? birthdateYear;
   @override
   final String? preferredEmail;
+  @override
+  final String? profileImageUrl;
 
   factory _$UserPatch([void Function(UserPatchBuilder)? updates]) =>
       (new UserPatchBuilder()..update(updates)).build();
 
   _$UserPatch._(
-      {this.sex, this.birthdateMonth, this.birthdateYear, this.preferredEmail})
+      {this.nickname,
+      this.sex,
+      this.birthdateMonth,
+      this.birthdateYear,
+      this.preferredEmail,
+      this.profileImageUrl})
       : super._();
 
   @override
@@ -34,33 +43,45 @@ class _$UserPatch extends UserPatch {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is UserPatch &&
+        nickname == other.nickname &&
         sex == other.sex &&
         birthdateMonth == other.birthdateMonth &&
         birthdateYear == other.birthdateYear &&
-        preferredEmail == other.preferredEmail;
+        preferredEmail == other.preferredEmail &&
+        profileImageUrl == other.profileImageUrl;
   }
 
   @override
   int get hashCode {
     return $jf($jc(
-        $jc($jc($jc(0, sex.hashCode), birthdateMonth.hashCode),
-            birthdateYear.hashCode),
-        preferredEmail.hashCode));
+        $jc(
+            $jc(
+                $jc($jc($jc(0, nickname.hashCode), sex.hashCode),
+                    birthdateMonth.hashCode),
+                birthdateYear.hashCode),
+            preferredEmail.hashCode),
+        profileImageUrl.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('UserPatch')
+          ..add('nickname', nickname)
           ..add('sex', sex)
           ..add('birthdateMonth', birthdateMonth)
           ..add('birthdateYear', birthdateYear)
-          ..add('preferredEmail', preferredEmail))
+          ..add('preferredEmail', preferredEmail)
+          ..add('profileImageUrl', profileImageUrl))
         .toString();
   }
 }
 
 class UserPatchBuilder implements Builder<UserPatch, UserPatchBuilder> {
   _$UserPatch? _$v;
+
+  String? _nickname;
+  String? get nickname => _$this._nickname;
+  set nickname(String? nickname) => _$this._nickname = nickname;
 
   Sex? _sex;
   Sex? get sex => _$this._sex;
@@ -81,6 +102,11 @@ class UserPatchBuilder implements Builder<UserPatch, UserPatchBuilder> {
   set preferredEmail(String? preferredEmail) =>
       _$this._preferredEmail = preferredEmail;
 
+  String? _profileImageUrl;
+  String? get profileImageUrl => _$this._profileImageUrl;
+  set profileImageUrl(String? profileImageUrl) =>
+      _$this._profileImageUrl = profileImageUrl;
+
   UserPatchBuilder() {
     UserPatch._defaults(this);
   }
@@ -88,10 +114,12 @@ class UserPatchBuilder implements Builder<UserPatch, UserPatchBuilder> {
   UserPatchBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _nickname = $v.nickname;
       _sex = $v.sex;
       _birthdateMonth = $v.birthdateMonth;
       _birthdateYear = $v.birthdateYear;
       _preferredEmail = $v.preferredEmail;
+      _profileImageUrl = $v.profileImageUrl;
       _$v = null;
     }
     return this;
@@ -112,10 +140,12 @@ class UserPatchBuilder implements Builder<UserPatch, UserPatchBuilder> {
   _$UserPatch build() {
     final _$result = _$v ??
         new _$UserPatch._(
+            nickname: nickname,
             sex: sex,
             birthdateMonth: birthdateMonth,
             birthdateYear: birthdateYear,
-            preferredEmail: preferredEmail);
+            preferredEmail: preferredEmail,
+            profileImageUrl: profileImageUrl);
     replace(_$result);
     return _$result;
   }

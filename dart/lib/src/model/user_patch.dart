@@ -11,11 +11,16 @@ part 'user_patch.g.dart';
 /// All fields are always updated, so beware of defaults.
 ///
 /// Properties:
+/// * [nickname] 
 /// * [sex] 
 /// * [birthdateMonth] - birthdate month of user
 /// * [birthdateYear] - birthdate year of user
 /// * [preferredEmail] 
+/// * [profileImageUrl] 
 abstract class UserPatch implements Built<UserPatch, UserPatchBuilder> {
+    @BuiltValueField(wireName: r'nickname')
+    String? get nickname;
+
     @BuiltValueField(wireName: r'sex')
     Sex? get sex;
     // enum sexEnum {  MALE,  FEMALE,  };
@@ -30,6 +35,9 @@ abstract class UserPatch implements Built<UserPatch, UserPatchBuilder> {
 
     @BuiltValueField(wireName: r'preferredEmail')
     String? get preferredEmail;
+
+    @BuiltValueField(wireName: r'profileImageUrl')
+    String? get profileImageUrl;
 
     UserPatch._();
 
@@ -53,6 +61,12 @@ class _$UserPatchSerializer implements StructuredSerializer<UserPatch> {
     Iterable<Object?> serialize(Serializers serializers, UserPatch object,
         {FullType specifiedType = FullType.unspecified}) {
         final result = <Object?>[];
+        if (object.nickname != null) {
+            result
+                ..add(r'nickname')
+                ..add(serializers.serialize(object.nickname,
+                    specifiedType: const FullType(String)));
+        }
         if (object.sex != null) {
             result
                 ..add(r'sex')
@@ -77,6 +91,12 @@ class _$UserPatchSerializer implements StructuredSerializer<UserPatch> {
                 ..add(serializers.serialize(object.preferredEmail,
                     specifiedType: const FullType.nullable(String)));
         }
+        if (object.profileImageUrl != null) {
+            result
+                ..add(r'profileImageUrl')
+                ..add(serializers.serialize(object.profileImageUrl,
+                    specifiedType: const FullType(String)));
+        }
         return result;
     }
 
@@ -92,6 +112,11 @@ class _$UserPatchSerializer implements StructuredSerializer<UserPatch> {
             final Object? value = iterator.current;
             
             switch (key) {
+                case r'nickname':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    result.nickname = valueDes;
+                    break;
                 case r'sex':
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(Sex)) as Sex;
@@ -114,6 +139,11 @@ class _$UserPatchSerializer implements StructuredSerializer<UserPatch> {
                         specifiedType: const FullType.nullable(String)) as String?;
                     if (valueDes == null) continue;
                     result.preferredEmail = valueDes;
+                    break;
+                case r'profileImageUrl':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    result.profileImageUrl = valueDes;
                     break;
             }
         }

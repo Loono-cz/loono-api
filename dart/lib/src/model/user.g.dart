@@ -21,6 +21,8 @@ class _$User extends User {
   final int? birthdateYear;
   @override
   final String? preferredEmail;
+  @override
+  final String? profileImageUrl;
 
   factory _$User([void Function(UserBuilder)? updates]) =>
       (new UserBuilder()..update(updates)).build();
@@ -32,7 +34,8 @@ class _$User extends User {
       this.sex,
       this.birthdateMonth,
       this.birthdateYear,
-      this.preferredEmail})
+      this.preferredEmail,
+      this.profileImageUrl})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(uid, 'User', 'uid');
     BuiltValueNullFieldError.checkNotNull(email, 'User', 'email');
@@ -56,7 +59,8 @@ class _$User extends User {
         sex == other.sex &&
         birthdateMonth == other.birthdateMonth &&
         birthdateYear == other.birthdateYear &&
-        preferredEmail == other.preferredEmail;
+        preferredEmail == other.preferredEmail &&
+        profileImageUrl == other.profileImageUrl;
   }
 
   @override
@@ -65,12 +69,14 @@ class _$User extends User {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, uid.hashCode), email.hashCode),
-                        nickname.hashCode),
-                    sex.hashCode),
-                birthdateMonth.hashCode),
-            birthdateYear.hashCode),
-        preferredEmail.hashCode));
+                    $jc(
+                        $jc($jc($jc(0, uid.hashCode), email.hashCode),
+                            nickname.hashCode),
+                        sex.hashCode),
+                    birthdateMonth.hashCode),
+                birthdateYear.hashCode),
+            preferredEmail.hashCode),
+        profileImageUrl.hashCode));
   }
 
   @override
@@ -82,7 +88,8 @@ class _$User extends User {
           ..add('sex', sex)
           ..add('birthdateMonth', birthdateMonth)
           ..add('birthdateYear', birthdateYear)
-          ..add('preferredEmail', preferredEmail))
+          ..add('preferredEmail', preferredEmail)
+          ..add('profileImageUrl', profileImageUrl))
         .toString();
   }
 }
@@ -121,6 +128,11 @@ class UserBuilder implements Builder<User, UserBuilder> {
   set preferredEmail(String? preferredEmail) =>
       _$this._preferredEmail = preferredEmail;
 
+  String? _profileImageUrl;
+  String? get profileImageUrl => _$this._profileImageUrl;
+  set profileImageUrl(String? profileImageUrl) =>
+      _$this._profileImageUrl = profileImageUrl;
+
   UserBuilder() {
     User._defaults(this);
   }
@@ -135,6 +147,7 @@ class UserBuilder implements Builder<User, UserBuilder> {
       _birthdateMonth = $v.birthdateMonth;
       _birthdateYear = $v.birthdateYear;
       _preferredEmail = $v.preferredEmail;
+      _profileImageUrl = $v.profileImageUrl;
       _$v = null;
     }
     return this;
@@ -163,7 +176,8 @@ class UserBuilder implements Builder<User, UserBuilder> {
             sex: sex,
             birthdateMonth: birthdateMonth,
             birthdateYear: birthdateYear,
-            preferredEmail: preferredEmail);
+            preferredEmail: preferredEmail,
+            profileImageUrl: profileImageUrl);
     replace(_$result);
     return _$result;
   }

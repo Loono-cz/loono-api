@@ -46,5 +46,10 @@ void main() {
       // TODO
     });
 
+    // String profileImageUrl
+    test('to test the property `profileImageUrl`', () async {
+      // TODO
+    });
+
   });
 }

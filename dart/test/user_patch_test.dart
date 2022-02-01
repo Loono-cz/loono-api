@@ -7,6 +7,11 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(UserPatch, () {
+    // String nickname
+    test('to test the property `nickname`', () async {
+      // TODO
+    });
+
     // Sex sex
     test('to test the property `sex`', () async {
       // TODO
@@ -26,6 +31,11 @@ void main() {
 
     // String preferredEmail
     test('to test the property `preferredEmail`', () async {
+      // TODO
+    });
+
+    // String profileImageUrl
+    test('to test the property `profileImageUrl`', () async {
       // TODO
     });
 
