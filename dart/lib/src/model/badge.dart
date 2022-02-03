@@ -13,7 +13,6 @@ part 'badge.g.dart';
 /// Properties:
 /// * [type] 
 /// * [level] 
-/// * [updatedOnDate] 
 abstract class Badge implements Built<Badge, BadgeBuilder> {
     @BuiltValueField(wireName: r'type')
     BadgeType get type;
@@ -21,9 +20,6 @@ abstract class Badge implements Built<Badge, BadgeBuilder> {
 
     @BuiltValueField(wireName: r'level')
     int get level;
-
-    @BuiltValueField(wireName: r'updatedOnDate')
-    DateTime get updatedOnDate;
 
     Badge._();
 
@@ -55,10 +51,6 @@ class _$BadgeSerializer implements StructuredSerializer<Badge> {
             ..add(r'level')
             ..add(serializers.serialize(object.level,
                 specifiedType: const FullType(int)));
-        result
-            ..add(r'updatedOnDate')
-            ..add(serializers.serialize(object.updatedOnDate,
-                specifiedType: const FullType(DateTime)));
         return result;
     }
 
@@ -83,11 +75,6 @@ class _$BadgeSerializer implements StructuredSerializer<Badge> {
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(int)) as int;
                     result.level = valueDes;
-                    break;
-                case r'updatedOnDate':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(DateTime)) as DateTime;
-                    result.updatedOnDate = valueDes;
                     break;
             }
         }
