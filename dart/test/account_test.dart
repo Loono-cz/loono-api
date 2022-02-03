@@ -1,5 +1,5 @@
 import 'package:test/test.dart';
-import 'package:openapi/openapi.dart';
+import 'package:loono_api/loono_api.dart';
 
 // tests for Account
 void main() {
@@ -20,6 +20,11 @@ void main() {
     // The total amount of points earned by the user from gamification features.
     // int points
     test('to test the property `points`', () async {
+      // TODO
+    });
+
+    // BuiltList<Badge> badges
+    test('to test the property `badges`', () async {
       // TODO
     });
 

@@ -13,12 +13,17 @@ class _$Account extends Account {
   final Settings settings;
   @override
   final int points;
+  @override
+  final BuiltList<Badge>? badges;
 
   factory _$Account([void Function(AccountBuilder)? updates]) =>
       (new AccountBuilder()..update(updates)).build();
 
   _$Account._(
-      {required this.user, required this.settings, required this.points})
+      {required this.user,
+      required this.settings,
+      required this.points,
+      this.badges})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(user, 'Account', 'user');
     BuiltValueNullFieldError.checkNotNull(settings, 'Account', 'settings');
@@ -38,13 +43,15 @@ class _$Account extends Account {
     return other is Account &&
         user == other.user &&
         settings == other.settings &&
-        points == other.points;
+        points == other.points &&
+        badges == other.badges;
   }
 
   @override
   int get hashCode {
-    return $jf(
-        $jc($jc($jc(0, user.hashCode), settings.hashCode), points.hashCode));
+    return $jf($jc(
+        $jc($jc($jc(0, user.hashCode), settings.hashCode), points.hashCode),
+        badges.hashCode));
   }
 
   @override
@@ -52,7 +59,8 @@ class _$Account extends Account {
     return (newBuiltValueToStringHelper('Account')
           ..add('user', user)
           ..add('settings', settings)
-          ..add('points', points))
+          ..add('points', points)
+          ..add('badges', badges))
         .toString();
   }
 }
@@ -72,6 +80,10 @@ class AccountBuilder implements Builder<Account, AccountBuilder> {
   int? get points => _$this._points;
   set points(int? points) => _$this._points = points;
 
+  ListBuilder<Badge>? _badges;
+  ListBuilder<Badge> get badges => _$this._badges ??= new ListBuilder<Badge>();
+  set badges(ListBuilder<Badge>? badges) => _$this._badges = badges;
+
   AccountBuilder() {
     Account._defaults(this);
   }
@@ -82,6 +94,7 @@ class AccountBuilder implements Builder<Account, AccountBuilder> {
       _user = $v.user.toBuilder();
       _settings = $v.settings.toBuilder();
       _points = $v.points;
+      _badges = $v.badges?.toBuilder();
       _$v = null;
     }
     return this;
@@ -107,7 +120,8 @@ class AccountBuilder implements Builder<Account, AccountBuilder> {
               user: user.build(),
               settings: settings.build(),
               points: BuiltValueNullFieldError.checkNotNull(
-                  points, 'Account', 'points'));
+                  points, 'Account', 'points'),
+              badges: _badges?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -115,6 +129,9 @@ class AccountBuilder implements Builder<Account, AccountBuilder> {
         user.build();
         _$failedField = 'settings';
         settings.build();
+
+        _$failedField = 'badges';
+        _badges?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             'Account', _$failedField, e.toString());

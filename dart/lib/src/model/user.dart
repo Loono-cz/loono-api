@@ -18,6 +18,7 @@ part 'user.g.dart';
 /// * [birthdateMonth] - birthdate month of user
 /// * [birthdateYear] - birthdate year of user
 /// * [preferredEmail] 
+/// * [profileImageUrl] 
 abstract class User implements Built<User, UserBuilder> {
     /// unique user identifier
     @BuiltValueField(wireName: r'uid')
@@ -44,6 +45,9 @@ abstract class User implements Built<User, UserBuilder> {
 
     @BuiltValueField(wireName: r'preferredEmail')
     String? get preferredEmail;
+
+    @BuiltValueField(wireName: r'profileImageUrl')
+    String? get profileImageUrl;
 
     User._();
 
@@ -103,6 +107,12 @@ class _$UserSerializer implements StructuredSerializer<User> {
                 ..add(serializers.serialize(object.preferredEmail,
                     specifiedType: const FullType(String)));
         }
+        if (object.profileImageUrl != null) {
+            result
+                ..add(r'profileImageUrl')
+                ..add(serializers.serialize(object.profileImageUrl,
+                    specifiedType: const FullType(String)));
+        }
         return result;
     }
 
@@ -152,6 +162,11 @@ class _$UserSerializer implements StructuredSerializer<User> {
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(String)) as String;
                     result.preferredEmail = valueDes;
+                    break;
+                case r'profileImageUrl':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    result.profileImageUrl = valueDes;
                     break;
             }
         }

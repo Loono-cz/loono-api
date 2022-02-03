@@ -1,36 +1,43 @@
 import 'package:test/test.dart';
-import 'package:openapi/openapi.dart';
+import 'package:loono_api/loono_api.dart';
 
 
 /// tests for ExaminationsApi
 void main() {
-  final instance = Openapi().getExaminationsApi();
+  final instance = LoonoApi().getExaminationsApi();
 
   group(ExaminationsApi, () {
-    // Complete Examination
+    // Cancel Examination
     //
     // Notify the API that an examination has been performed.  The date of the completion must not be in the future.
     //
-    //Future<BuiltList<ExaminationRecord>> completeExamination(String type, { ExaminationCompletion examinationCompletion }) async
+    //Future<ExaminationRecord> cancelExamination(String type, { ExaminationId examinationId }) async
+    test('test cancelExamination', () async {
+      // TODO
+    });
+
+    // Confirm Examination
+    //
+    // Notify the API that an examination has been performed.  The date of the completion must not be in the future.
+    //
+    //Future<ExaminationRecord> completeExamination(String type, { ExaminationId examinationId }) async
     test('test completeExamination', () async {
       // TODO
     });
 
-    // [Draft] Reset Examination Record
-    //
-    // Delete the aggregate examination record for this examination type.  Special consideration: How to prevent abuse and point cheating? SOME information about the history of point entitlement will have to be retained so that people don't spam create/delete to farm points.
-    //
-    //Future<BuiltList<ExaminationRecord>> deleteExamination({ JsonObject body }) async
-    test('test deleteExamination', () async {
-      // TODO
-    });
-
-    // Get Examination Records
+    // Get Examinations Status
     //
     // Returns the examination records of the current user.
     //
-    //Future<BuiltList<ExaminationRecord>> getExaminations() async
+    //Future<BuiltList<PreventionStatus>> getExaminations() async
     test('test getExaminations', () async {
+      // TODO
+    });
+
+    // Create or update examination record
+    //
+    //Future<ExaminationRecord> postExaminations({ ExaminationRecord examinationRecord }) async
+    test('test postExaminations', () async {
       // TODO
     });
 

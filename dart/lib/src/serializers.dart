@@ -14,6 +14,8 @@ import 'package:loono_api/src/model/date.dart';
 
 import 'package:loono_api/src/model/account.dart';
 import 'package:loono_api/src/model/appointment.dart';
+import 'package:loono_api/src/model/badge.dart';
+import 'package:loono_api/src/model/badge_type.dart';
 import 'package:loono_api/src/model/error.dart';
 import 'package:loono_api/src/model/examination_id.dart';
 import 'package:loono_api/src/model/examination_record.dart';
@@ -40,6 +42,8 @@ part 'serializers.g.dart';
 @SerializersFor([
   Account,
   Appointment,
+  Badge,
+  BadgeType,
   Error,
   ExaminationId,
   ExaminationRecord,

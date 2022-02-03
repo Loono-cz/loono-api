@@ -13,8 +13,6 @@ class _$Settings extends Settings {
   final bool appointmentReminderEmailsOptIn;
   @override
   final bool newsletterOptIn;
-  @override
-  final String? profileImageUrl;
 
   factory _$Settings([void Function(SettingsBuilder)? updates]) =>
       (new SettingsBuilder()..update(updates)).build();
@@ -22,8 +20,7 @@ class _$Settings extends Settings {
   _$Settings._(
       {required this.leaderboardAnonymizationOptIn,
       required this.appointmentReminderEmailsOptIn,
-      required this.newsletterOptIn,
-      this.profileImageUrl})
+      required this.newsletterOptIn})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(leaderboardAnonymizationOptIn,
         'Settings', 'leaderboardAnonymizationOptIn');
@@ -47,18 +44,15 @@ class _$Settings extends Settings {
         leaderboardAnonymizationOptIn == other.leaderboardAnonymizationOptIn &&
         appointmentReminderEmailsOptIn ==
             other.appointmentReminderEmailsOptIn &&
-        newsletterOptIn == other.newsletterOptIn &&
-        profileImageUrl == other.profileImageUrl;
+        newsletterOptIn == other.newsletterOptIn;
   }
 
   @override
   int get hashCode {
     return $jf($jc(
-        $jc(
-            $jc($jc(0, leaderboardAnonymizationOptIn.hashCode),
-                appointmentReminderEmailsOptIn.hashCode),
-            newsletterOptIn.hashCode),
-        profileImageUrl.hashCode));
+        $jc($jc(0, leaderboardAnonymizationOptIn.hashCode),
+            appointmentReminderEmailsOptIn.hashCode),
+        newsletterOptIn.hashCode));
   }
 
   @override
@@ -67,8 +61,7 @@ class _$Settings extends Settings {
           ..add('leaderboardAnonymizationOptIn', leaderboardAnonymizationOptIn)
           ..add(
               'appointmentReminderEmailsOptIn', appointmentReminderEmailsOptIn)
-          ..add('newsletterOptIn', newsletterOptIn)
-          ..add('profileImageUrl', profileImageUrl))
+          ..add('newsletterOptIn', newsletterOptIn))
         .toString();
   }
 }
@@ -93,11 +86,6 @@ class SettingsBuilder implements Builder<Settings, SettingsBuilder> {
   set newsletterOptIn(bool? newsletterOptIn) =>
       _$this._newsletterOptIn = newsletterOptIn;
 
-  String? _profileImageUrl;
-  String? get profileImageUrl => _$this._profileImageUrl;
-  set profileImageUrl(String? profileImageUrl) =>
-      _$this._profileImageUrl = profileImageUrl;
-
   SettingsBuilder() {
     Settings._defaults(this);
   }
@@ -108,7 +96,6 @@ class SettingsBuilder implements Builder<Settings, SettingsBuilder> {
       _leaderboardAnonymizationOptIn = $v.leaderboardAnonymizationOptIn;
       _appointmentReminderEmailsOptIn = $v.appointmentReminderEmailsOptIn;
       _newsletterOptIn = $v.newsletterOptIn;
-      _profileImageUrl = $v.profileImageUrl;
       _$v = null;
     }
     return this;
@@ -140,8 +127,7 @@ class SettingsBuilder implements Builder<Settings, SettingsBuilder> {
                     'Settings',
                     'appointmentReminderEmailsOptIn'),
             newsletterOptIn: BuiltValueNullFieldError.checkNotNull(
-                newsletterOptIn, 'Settings', 'newsletterOptIn'),
-            profileImageUrl: profileImageUrl);
+                newsletterOptIn, 'Settings', 'newsletterOptIn'));
     replace(_$result);
     return _$result;
   }
