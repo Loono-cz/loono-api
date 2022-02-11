@@ -13,11 +13,11 @@ Method | HTTP request | Description
 
 
 # **getLeaderboard**
-> Leaderboard getLeaderboard()
+> Leaderboard getLeaderboard(leaderboardSize)
 
 Draft Get Leaderboard
 
-TODO: This is a mock.  Returns the leaderboard rendering.
+Returns the top leading accounts.
 
 ### Example
 ```dart
@@ -27,9 +27,10 @@ import 'package:loono_api/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('Bearer_Auth').password = 'YOUR_PASSWORD';
 
 final api = LoonoApi().getLeaderboardApi();
+final int leaderboardSize = 56; // int | Count of leading accounts
 
 try {
-    final response = api.getLeaderboard();
+    final response = api.getLeaderboard(leaderboardSize);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling LeaderboardApi->getLeaderboard: $e\n');
@@ -37,7 +38,10 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **leaderboardSize** | **int**| Count of leading accounts | [optional] 
 
 ### Return type
 

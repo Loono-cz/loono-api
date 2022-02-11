@@ -9,18 +9,13 @@ import 'package:built_value/serializer.dart';
 
 part 'leaderboard.g.dart';
 
-/// Rendered leaderboard from the POV of the authenticated user. Contains the top profiles and peers.
+/// Rendered leaderboard from the POV of the authenticated user. Contains the top profiles.
 ///
 /// Properties:
-/// * [top] 
-/// * [peers] - The users immediately adjacent to the authenticated user. One of the items is the current user.
+/// * [leaderboard] 
 abstract class Leaderboard implements Built<Leaderboard, LeaderboardBuilder> {
-    @BuiltValueField(wireName: r'top')
-    BuiltList<LeaderboardUser>? get top;
-
-    /// The users immediately adjacent to the authenticated user. One of the items is the current user.
-    @BuiltValueField(wireName: r'peers')
-    BuiltList<LeaderboardUser>? get peers;
+    @BuiltValueField(wireName: r'leaderboard')
+    BuiltList<LeaderboardUser>? get leaderboard;
 
     Leaderboard._();
 
@@ -44,16 +39,10 @@ class _$LeaderboardSerializer implements StructuredSerializer<Leaderboard> {
     Iterable<Object?> serialize(Serializers serializers, Leaderboard object,
         {FullType specifiedType = FullType.unspecified}) {
         final result = <Object?>[];
-        if (object.top != null) {
+        if (object.leaderboard != null) {
             result
-                ..add(r'top')
-                ..add(serializers.serialize(object.top,
-                    specifiedType: const FullType(BuiltList, [FullType(LeaderboardUser)])));
-        }
-        if (object.peers != null) {
-            result
-                ..add(r'peers')
-                ..add(serializers.serialize(object.peers,
+                ..add(r'leaderboard')
+                ..add(serializers.serialize(object.leaderboard,
                     specifiedType: const FullType(BuiltList, [FullType(LeaderboardUser)])));
         }
         return result;
@@ -71,15 +60,10 @@ class _$LeaderboardSerializer implements StructuredSerializer<Leaderboard> {
             final Object? value = iterator.current;
             
             switch (key) {
-                case r'top':
+                case r'leaderboard':
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(BuiltList, [FullType(LeaderboardUser)])) as BuiltList<LeaderboardUser>;
-                    result.top.replace(valueDes);
-                    break;
-                case r'peers':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(BuiltList, [FullType(LeaderboardUser)])) as BuiltList<LeaderboardUser>;
-                    result.peers.replace(valueDes);
+                    result.leaderboard.replace(valueDes);
                     break;
             }
         }

@@ -7,14 +7,8 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(Leaderboard, () {
-    // BuiltList<LeaderboardUser> top
-    test('to test the property `top`', () async {
-      // TODO
-    });
-
-    // The users immediately adjacent to the authenticated user. One of the items is the current user.
-    // BuiltList<LeaderboardUser> peers
-    test('to test the property `peers`', () async {
+    // BuiltList<LeaderboardUser> leaderboard
+    test('to test the property `leaderboard`', () async {
       // TODO
     });
 

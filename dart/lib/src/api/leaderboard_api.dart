@@ -7,6 +7,7 @@ import 'dart:async';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
+import 'package:loono_api/src/api_util.dart';
 import 'package:loono_api/src/model/error.dart';
 import 'package:loono_api/src/model/leaderboard.dart';
 
@@ -19,9 +20,10 @@ class LeaderboardApi {
   const LeaderboardApi(this._dio, this._serializers);
 
   /// Draft Get Leaderboard
-  /// TODO: This is a mock.  Returns the leaderboard rendering.
+  /// Returns the top leading accounts.
   ///
   /// Parameters:
+  /// * [leaderboardSize] - Count of leading accounts
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -32,6 +34,7 @@ class LeaderboardApi {
   /// Returns a [Future] containing a [Response] with a [Leaderboard] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<Leaderboard>> getLeaderboard({ 
+    int? leaderboardSize,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -58,9 +61,14 @@ class LeaderboardApi {
       validateStatus: validateStatus,
     );
 
+    final _queryParameters = <String, dynamic>{
+      if (leaderboardSize != null) r'leaderboard_size': encodeQueryParameter(_serializers, leaderboardSize, const FullType(int)),
+    };
+
     final _response = await _dio.request<Object>(
       _path,
       options: _options,
+      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,

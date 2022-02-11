@@ -9,9 +9,9 @@ void main() {
   group(LeaderboardApi, () {
     // Draft Get Leaderboard
     //
-    // TODO: This is a mock.  Returns the leaderboard rendering.
+    // Returns the top leading accounts.
     //
-    //Future<Leaderboard> getLeaderboard() async
+    //Future<Leaderboard> getLeaderboard({ int leaderboardSize }) async
     test('test getLeaderboard', () async {
       // TODO
     });

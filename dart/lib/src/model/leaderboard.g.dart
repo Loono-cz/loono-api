@@ -8,14 +8,12 @@ part of 'leaderboard.dart';
 
 class _$Leaderboard extends Leaderboard {
   @override
-  final BuiltList<LeaderboardUser>? top;
-  @override
-  final BuiltList<LeaderboardUser>? peers;
+  final BuiltList<LeaderboardUser>? leaderboard;
 
   factory _$Leaderboard([void Function(LeaderboardBuilder)? updates]) =>
       (new LeaderboardBuilder()..update(updates)).build();
 
-  _$Leaderboard._({this.top, this.peers}) : super._();
+  _$Leaderboard._({this.leaderboard}) : super._();
 
   @override
   Leaderboard rebuild(void Function(LeaderboardBuilder) updates) =>
@@ -27,19 +25,18 @@ class _$Leaderboard extends Leaderboard {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is Leaderboard && top == other.top && peers == other.peers;
+    return other is Leaderboard && leaderboard == other.leaderboard;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc(0, top.hashCode), peers.hashCode));
+    return $jf($jc(0, leaderboard.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Leaderboard')
-          ..add('top', top)
-          ..add('peers', peers))
+          ..add('leaderboard', leaderboard))
         .toString();
   }
 }
@@ -47,15 +44,11 @@ class _$Leaderboard extends Leaderboard {
 class LeaderboardBuilder implements Builder<Leaderboard, LeaderboardBuilder> {
   _$Leaderboard? _$v;
 
-  ListBuilder<LeaderboardUser>? _top;
-  ListBuilder<LeaderboardUser> get top =>
-      _$this._top ??= new ListBuilder<LeaderboardUser>();
-  set top(ListBuilder<LeaderboardUser>? top) => _$this._top = top;
-
-  ListBuilder<LeaderboardUser>? _peers;
-  ListBuilder<LeaderboardUser> get peers =>
-      _$this._peers ??= new ListBuilder<LeaderboardUser>();
-  set peers(ListBuilder<LeaderboardUser>? peers) => _$this._peers = peers;
+  ListBuilder<LeaderboardUser>? _leaderboard;
+  ListBuilder<LeaderboardUser> get leaderboard =>
+      _$this._leaderboard ??= new ListBuilder<LeaderboardUser>();
+  set leaderboard(ListBuilder<LeaderboardUser>? leaderboard) =>
+      _$this._leaderboard = leaderboard;
 
   LeaderboardBuilder() {
     Leaderboard._defaults(this);
@@ -64,8 +57,7 @@ class LeaderboardBuilder implements Builder<Leaderboard, LeaderboardBuilder> {
   LeaderboardBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _top = $v.top?.toBuilder();
-      _peers = $v.peers?.toBuilder();
+      _leaderboard = $v.leaderboard?.toBuilder();
       _$v = null;
     }
     return this;
@@ -86,15 +78,12 @@ class LeaderboardBuilder implements Builder<Leaderboard, LeaderboardBuilder> {
   _$Leaderboard build() {
     _$Leaderboard _$result;
     try {
-      _$result = _$v ??
-          new _$Leaderboard._(top: _top?.build(), peers: _peers?.build());
+      _$result = _$v ?? new _$Leaderboard._(leaderboard: _leaderboard?.build());
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'top';
-        _top?.build();
-        _$failedField = 'peers';
-        _peers?.build();
+        _$failedField = 'leaderboard';
+        _leaderboard?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             'Leaderboard', _$failedField, e.toString());
