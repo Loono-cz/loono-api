@@ -26,10 +26,10 @@ abstract class User implements Built<User, UserBuilder> {
 
     /// The primary registration email.
     @BuiltValueField(wireName: r'email')
-    String get email;
+    String? get email;
 
     @BuiltValueField(wireName: r'nickname')
-    String get nickname;
+    String? get nickname;
 
     @BuiltValueField(wireName: r'sex')
     Sex? get sex;
@@ -75,14 +75,18 @@ class _$UserSerializer implements StructuredSerializer<User> {
             ..add(r'uid')
             ..add(serializers.serialize(object.uid,
                 specifiedType: const FullType(String)));
-        result
-            ..add(r'email')
-            ..add(serializers.serialize(object.email,
-                specifiedType: const FullType(String)));
-        result
-            ..add(r'nickname')
-            ..add(serializers.serialize(object.nickname,
-                specifiedType: const FullType(String)));
+        if (object.email != null) {
+            result
+                ..add(r'email')
+                ..add(serializers.serialize(object.email,
+                    specifiedType: const FullType(String)));
+        }
+        if (object.nickname != null) {
+            result
+                ..add(r'nickname')
+                ..add(serializers.serialize(object.nickname,
+                    specifiedType: const FullType(String)));
+        }
         if (object.sex != null) {
             result
                 ..add(r'sex')

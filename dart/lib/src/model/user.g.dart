@@ -10,9 +10,9 @@ class _$User extends User {
   @override
   final String uid;
   @override
-  final String email;
+  final String? email;
   @override
-  final String nickname;
+  final String? nickname;
   @override
   final Sex? sex;
   @override
@@ -29,8 +29,8 @@ class _$User extends User {
 
   _$User._(
       {required this.uid,
-      required this.email,
-      required this.nickname,
+      this.email,
+      this.nickname,
       this.sex,
       this.birthdateMonth,
       this.birthdateYear,
@@ -38,8 +38,6 @@ class _$User extends User {
       this.profileImageUrl})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(uid, 'User', 'uid');
-    BuiltValueNullFieldError.checkNotNull(email, 'User', 'email');
-    BuiltValueNullFieldError.checkNotNull(nickname, 'User', 'nickname');
   }
 
   @override
@@ -169,10 +167,8 @@ class UserBuilder implements Builder<User, UserBuilder> {
     final _$result = _$v ??
         new _$User._(
             uid: BuiltValueNullFieldError.checkNotNull(uid, 'User', 'uid'),
-            email:
-                BuiltValueNullFieldError.checkNotNull(email, 'User', 'email'),
-            nickname: BuiltValueNullFieldError.checkNotNull(
-                nickname, 'User', 'nickname'),
+            email: email,
+            nickname: nickname,
             sex: sex,
             birthdateMonth: birthdateMonth,
             birthdateYear: birthdateYear,

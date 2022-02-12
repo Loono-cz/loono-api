@@ -7,8 +7,18 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(Leaderboard, () {
-    // BuiltList<LeaderboardUser> leaderboard
-    test('to test the property `leaderboard`', () async {
+    // BuiltList<LeaderboardUser> top
+    test('to test the property `top`', () async {
+      // TODO
+    });
+
+    // BuiltList<LeaderboardUser> peers
+    test('to test the property `peers`', () async {
+      // TODO
+    });
+
+    // int myOrder
+    test('to test the property `myOrder`', () async {
       // TODO
     });
 

@@ -46,6 +46,9 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltList, const [const FullType(LeaderboardUser)]),
           () => new ListBuilder<LeaderboardUser>())
       ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(LeaderboardUser)]),
+          () => new ListBuilder<LeaderboardUser>())
+      ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(SimpleHealthcareProvider)]),
           () => new ListBuilder<SimpleHealthcareProvider>())
