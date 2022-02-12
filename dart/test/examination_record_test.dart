@@ -27,7 +27,7 @@ void main() {
       // TODO
     });
 
-    // bool firstExam (default value: true)
+    // bool firstExam (default value: false)
     test('to test the property `firstExam`', () async {
       // TODO
     });

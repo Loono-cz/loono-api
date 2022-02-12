@@ -9,13 +9,13 @@ All URIs are relative to *https://loono.ceskodigital.net:443*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getLeaderboard**](LeaderboardApi.md#getleaderboard) | **GET** /leaderboard | Draft Get Leaderboard
+[**getLeaderboard**](LeaderboardApi.md#getleaderboard) | **GET** /leaderboard | Get Leaderboard
 
 
 # **getLeaderboard**
 > Leaderboard getLeaderboard(leaderboardSize)
 
-Draft Get Leaderboard
+Get Leaderboard
 
 Returns the top leading accounts.
 

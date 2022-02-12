@@ -39,7 +39,7 @@ abstract class ExaminationRecord implements Built<ExaminationRecord, Examination
 
     @BuiltValueHook(initializeBuilder: true)
     static void _defaults(ExaminationRecordBuilder b) => b
-        ..firstExam = true;
+        ..firstExam = false;
 
     factory ExaminationRecord([void updates(ExaminationRecordBuilder b)]) = _$ExaminationRecord;
 

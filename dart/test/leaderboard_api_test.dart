@@ -7,7 +7,7 @@ void main() {
   final instance = LoonoApi().getLeaderboardApi();
 
   group(LeaderboardApi, () {
-    // Draft Get Leaderboard
+    // Get Leaderboard
     //
     // Returns the top leading accounts.
     //

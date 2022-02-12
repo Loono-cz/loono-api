@@ -79,7 +79,7 @@ Class | Method | HTTP request | Description
 [*ExaminationsApi*](doc/ExaminationsApi.md) | [**completeExamination**](doc/ExaminationsApi.md#completeexamination) | **POST** /examinations/{type}/confirm | Confirm Examination
 [*ExaminationsApi*](doc/ExaminationsApi.md) | [**getExaminations**](doc/ExaminationsApi.md#getexaminations) | **GET** /examinations | Get Examinations Status
 [*ExaminationsApi*](doc/ExaminationsApi.md) | [**postExaminations**](doc/ExaminationsApi.md#postexaminations) | **POST** /examinations | Create or update examination record
-[*LeaderboardApi*](doc/LeaderboardApi.md) | [**getLeaderboard**](doc/LeaderboardApi.md#getleaderboard) | **GET** /leaderboard | Draft Get Leaderboard
+[*LeaderboardApi*](doc/LeaderboardApi.md) | [**getLeaderboard**](doc/LeaderboardApi.md#getleaderboard) | **GET** /leaderboard | Get Leaderboard
 [*ProvidersApi*](doc/ProvidersApi.md) | [**getProvidersAll**](doc/ProvidersApi.md#getprovidersall) | **GET** /providers/all | Gets all healthcare providers data
 [*ProvidersApi*](doc/ProvidersApi.md) | [**getProvidersLastupdate**](doc/ProvidersApi.md#getproviderslastupdate) | **GET** /providers/lastupdate | Gets last date of healthcare provider update
 [*ProvidersApi*](doc/ProvidersApi.md) | [**getProvidersUpdate**](doc/ProvidersApi.md#getprovidersupdate) | **GET** /providers/update | Trigger healthcare provider update

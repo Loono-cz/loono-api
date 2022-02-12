@@ -19,7 +19,7 @@ class LeaderboardApi {
 
   const LeaderboardApi(this._dio, this._serializers);
 
-  /// Draft Get Leaderboard
+  /// Get Leaderboard
   /// Returns the top leading accounts.
   ///
   /// Parameters:
