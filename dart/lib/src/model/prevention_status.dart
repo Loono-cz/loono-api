@@ -12,7 +12,7 @@ part 'prevention_status.g.dart';
 /// Overview status of examinations
 ///
 /// Properties:
-/// * [id] 
+/// * [uuid] 
 /// * [examinationType] 
 /// * [intervalYears] 
 /// * [plannedDate] 
@@ -22,8 +22,8 @@ part 'prevention_status.g.dart';
 /// * [count] 
 /// * [lastConfirmedDate] 
 abstract class PreventionStatus implements Built<PreventionStatus, PreventionStatusBuilder> {
-    @BuiltValueField(wireName: r'id')
-    int? get id;
+    @BuiltValueField(wireName: r'uuid')
+    String? get uuid;
 
     @BuiltValueField(wireName: r'examinationType')
     ExaminationTypeEnum get examinationType;
@@ -73,11 +73,11 @@ class _$PreventionStatusSerializer implements StructuredSerializer<PreventionSta
     Iterable<Object?> serialize(Serializers serializers, PreventionStatus object,
         {FullType specifiedType = FullType.unspecified}) {
         final result = <Object?>[];
-        if (object.id != null) {
+        if (object.uuid != null) {
             result
-                ..add(r'id')
-                ..add(serializers.serialize(object.id,
-                    specifiedType: const FullType(int)));
+                ..add(r'uuid')
+                ..add(serializers.serialize(object.uuid,
+                    specifiedType: const FullType(String)));
         }
         result
             ..add(r'examinationType')
@@ -130,10 +130,10 @@ class _$PreventionStatusSerializer implements StructuredSerializer<PreventionSta
             final Object? value = iterator.current;
             
             switch (key) {
-                case r'id':
+                case r'uuid':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(int)) as int;
-                    result.id = valueDes;
+                        specifiedType: const FullType(String)) as String;
+                    result.uuid = valueDes;
                     break;
                 case r'examinationType':
                     final valueDes = serializers.deserialize(value,

@@ -8,7 +8,7 @@ part of 'prevention_status.dart';
 
 class _$PreventionStatus extends PreventionStatus {
   @override
-  final int? id;
+  final String? uuid;
   @override
   final ExaminationTypeEnum examinationType;
   @override
@@ -31,7 +31,7 @@ class _$PreventionStatus extends PreventionStatus {
       (new PreventionStatusBuilder()..update(updates)).build();
 
   _$PreventionStatus._(
-      {this.id,
+      {this.uuid,
       required this.examinationType,
       required this.intervalYears,
       this.plannedDate,
@@ -65,7 +65,7 @@ class _$PreventionStatus extends PreventionStatus {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is PreventionStatus &&
-        id == other.id &&
+        uuid == other.uuid &&
         examinationType == other.examinationType &&
         intervalYears == other.intervalYears &&
         plannedDate == other.plannedDate &&
@@ -85,7 +85,7 @@ class _$PreventionStatus extends PreventionStatus {
                     $jc(
                         $jc(
                             $jc(
-                                $jc($jc(0, id.hashCode),
+                                $jc($jc(0, uuid.hashCode),
                                     examinationType.hashCode),
                                 intervalYears.hashCode),
                             plannedDate.hashCode),
@@ -99,7 +99,7 @@ class _$PreventionStatus extends PreventionStatus {
   @override
   String toString() {
     return (newBuiltValueToStringHelper('PreventionStatus')
-          ..add('id', id)
+          ..add('uuid', uuid)
           ..add('examinationType', examinationType)
           ..add('intervalYears', intervalYears)
           ..add('plannedDate', plannedDate)
@@ -116,9 +116,9 @@ class PreventionStatusBuilder
     implements Builder<PreventionStatus, PreventionStatusBuilder> {
   _$PreventionStatus? _$v;
 
-  int? _id;
-  int? get id => _$this._id;
-  set id(int? id) => _$this._id = id;
+  String? _uuid;
+  String? get uuid => _$this._uuid;
+  set uuid(String? uuid) => _$this._uuid = uuid;
 
   ExaminationTypeEnum? _examinationType;
   ExaminationTypeEnum? get examinationType => _$this._examinationType;
@@ -162,7 +162,7 @@ class PreventionStatusBuilder
   PreventionStatusBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _id = $v.id;
+      _uuid = $v.uuid;
       _examinationType = $v.examinationType;
       _intervalYears = $v.intervalYears;
       _plannedDate = $v.plannedDate;
@@ -191,7 +191,7 @@ class PreventionStatusBuilder
   _$PreventionStatus build() {
     final _$result = _$v ??
         new _$PreventionStatus._(
-            id: id,
+            uuid: uuid,
             examinationType: BuiltValueNullFieldError.checkNotNull(
                 examinationType, 'PreventionStatus', 'examinationType'),
             intervalYears: BuiltValueNullFieldError.checkNotNull(

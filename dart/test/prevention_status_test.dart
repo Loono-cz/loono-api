@@ -7,8 +7,8 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(PreventionStatus, () {
-    // int id
-    test('to test the property `id`', () async {
+    // String uuid
+    test('to test the property `uuid`', () async {
       // TODO
     });
 
