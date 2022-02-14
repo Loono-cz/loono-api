@@ -14,9 +14,6 @@ class ExaminationStatus extends EnumClass {
   @BuiltValueEnumConst(wireName: r'NEW')
   static const ExaminationStatus NEW = _$NEW;
   /// Status enum of the examination
-  @BuiltValueEnumConst(wireName: r'TO_BE_CONFIRMED')
-  static const ExaminationStatus TO_BE_CONFIRMED = _$TO_BE_CONFIRMED;
-  /// Status enum of the examination
   @BuiltValueEnumConst(wireName: r'CONFIRMED')
   static const ExaminationStatus CONFIRMED = _$CONFIRMED;
   /// Status enum of the examination

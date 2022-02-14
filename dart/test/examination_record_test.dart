@@ -12,7 +12,7 @@ void main() {
       // TODO
     });
 
-    // ExaminationTypeEnum type
+    // ExaminationType type
     test('to test the property `type`', () async {
       // TODO
     });

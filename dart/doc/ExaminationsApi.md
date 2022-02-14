@@ -112,7 +112,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getExaminations**
-> BuiltList<PreventionStatus> getExaminations()
+> PreventionStatus getExaminations()
 
 Get Examinations Status
 
@@ -140,7 +140,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**BuiltList&lt;PreventionStatus&gt;**](PreventionStatus.md)
+[**PreventionStatus**](PreventionStatus.md)
 
 ### Authorization
 

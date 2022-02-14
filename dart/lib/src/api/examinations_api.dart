@@ -7,7 +7,6 @@ import 'dart:async';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
-import 'package:built_collection/built_collection.dart';
 import 'package:loono_api/src/model/error.dart';
 import 'package:loono_api/src/model/examination_id.dart';
 import 'package:loono_api/src/model/examination_record.dart';
@@ -234,9 +233,9 @@ class ExaminationsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<PreventionStatus>] as data
+  /// Returns a [Future] containing a [Response] with a [PreventionStatus] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<BuiltList<PreventionStatus>>> getExaminations({ 
+  Future<Response<PreventionStatus>> getExaminations({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -271,14 +270,14 @@ class ExaminationsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<PreventionStatus> _responseData;
+    PreventionStatus _responseData;
 
     try {
-      const _responseType = FullType(BuiltList, [FullType(PreventionStatus)]);
+      const _responseType = FullType(PreventionStatus);
       _responseData = _serializers.deserialize(
         _response.data!,
         specifiedType: _responseType,
-      ) as BuiltList<PreventionStatus>;
+      ) as PreventionStatus;
 
     } catch (error, stackTrace) {
       throw DioError(
@@ -289,7 +288,7 @@ class ExaminationsApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<BuiltList<PreventionStatus>>(
+    return Response<PreventionStatus>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

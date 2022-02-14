@@ -7,8 +7,6 @@ part of 'examination_status.dart';
 // **************************************************************************
 
 const ExaminationStatus _$NEW = const ExaminationStatus._('NEW');
-const ExaminationStatus _$TO_BE_CONFIRMED =
-    const ExaminationStatus._('TO_BE_CONFIRMED');
 const ExaminationStatus _$CONFIRMED = const ExaminationStatus._('CONFIRMED');
 const ExaminationStatus _$CANCELED = const ExaminationStatus._('CANCELED');
 const ExaminationStatus _$UNKNOWN = const ExaminationStatus._('UNKNOWN');
@@ -17,8 +15,6 @@ ExaminationStatus _$valueOf(String name) {
   switch (name) {
     case 'NEW':
       return _$NEW;
-    case 'TO_BE_CONFIRMED':
-      return _$TO_BE_CONFIRMED;
     case 'CONFIRMED':
       return _$CONFIRMED;
     case 'CANCELED':
@@ -33,7 +29,6 @@ ExaminationStatus _$valueOf(String name) {
 final BuiltSet<ExaminationStatus> _$values =
     new BuiltSet<ExaminationStatus>(const <ExaminationStatus>[
   _$NEW,
-  _$TO_BE_CONFIRMED,
   _$CONFIRMED,
   _$CANCELED,
   _$UNKNOWN,
@@ -42,7 +37,6 @@ final BuiltSet<ExaminationStatus> _$values =
 class _$ExaminationStatusMeta {
   const _$ExaminationStatusMeta();
   ExaminationStatus get NEW => _$NEW;
-  ExaminationStatus get TO_BE_CONFIRMED => _$TO_BE_CONFIRMED;
   ExaminationStatus get CONFIRMED => _$CONFIRMED;
   ExaminationStatus get CANCELED => _$CANCELED;
   ExaminationStatus get UNKNOWN => _$UNKNOWN;
@@ -63,14 +57,12 @@ class _$ExaminationStatusSerializer
     implements PrimitiveSerializer<ExaminationStatus> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'NEW': 'NEW',
-    'TO_BE_CONFIRMED': 'TO_BE_CONFIRMED',
     'CONFIRMED': 'CONFIRMED',
     'CANCELED': 'CANCELED',
     'UNKNOWN': 'UNKNOWN',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'NEW': 'NEW',
-    'TO_BE_CONFIRMED': 'TO_BE_CONFIRMED',
     'CONFIRMED': 'CONFIRMED',
     'CANCELED': 'CANCELED',
     'UNKNOWN': 'UNKNOWN',

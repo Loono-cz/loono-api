@@ -7,48 +7,13 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(PreventionStatus, () {
-    // String uuid
-    test('to test the property `uuid`', () async {
+    // BuiltList<ExaminationPreventionStatus> examinations
+    test('to test the property `examinations`', () async {
       // TODO
     });
 
-    // ExaminationTypeEnum examinationType
-    test('to test the property `examinationType`', () async {
-      // TODO
-    });
-
-    // int intervalYears
-    test('to test the property `intervalYears`', () async {
-      // TODO
-    });
-
-    // DateTime plannedDate
-    test('to test the property `plannedDate`', () async {
-      // TODO
-    });
-
-    // bool firstExam
-    test('to test the property `firstExam`', () async {
-      // TODO
-    });
-
-    // int priority
-    test('to test the property `priority`', () async {
-      // TODO
-    });
-
-    // ExaminationStatus state
-    test('to test the property `state`', () async {
-      // TODO
-    });
-
-    // int count
-    test('to test the property `count`', () async {
-      // TODO
-    });
-
-    // DateTime lastConfirmedDate
-    test('to test the property `lastConfirmedDate`', () async {
+    // BuiltList<SelfExaminationPreventionStatus> selfexaminations
+    test('to test the property `selfexaminations`', () async {
       // TODO
     });
 

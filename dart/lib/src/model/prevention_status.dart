@@ -2,54 +2,25 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
-import 'package:loono_api/src/model/examination_type_enum.dart';
-import 'package:loono_api/src/model/examination_status.dart';
+import 'package:loono_api/src/model/examination_prevention_status.dart';
+import 'package:built_collection/built_collection.dart';
+import 'package:loono_api/src/model/self_examination_prevention_status.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 part 'prevention_status.g.dart';
 
-/// Overview status of examinations
+/// Overview prevention statuses of all examinations
 ///
 /// Properties:
-/// * [uuid] 
-/// * [examinationType] 
-/// * [intervalYears] 
-/// * [plannedDate] 
-/// * [firstExam] 
-/// * [priority] 
-/// * [state] 
-/// * [count] 
-/// * [lastConfirmedDate] 
+/// * [examinations] 
+/// * [selfexaminations] 
 abstract class PreventionStatus implements Built<PreventionStatus, PreventionStatusBuilder> {
-    @BuiltValueField(wireName: r'uuid')
-    String? get uuid;
+    @BuiltValueField(wireName: r'examinations')
+    BuiltList<ExaminationPreventionStatus> get examinations;
 
-    @BuiltValueField(wireName: r'examinationType')
-    ExaminationTypeEnum get examinationType;
-    // enum examinationTypeEnum {  BREAST_SELF,  COLONOSCOPY,  DENTIST,  DERMATOLOGIST,  GENERAL_PRACTITIONER,  GYNECOLOGIST,  MAMMOGRAM,  OPHTHALMOLOGIST,  TESTICULAR_SELF,  TOKS,  ULTRASOUND_BREAST,  UROLOGIST,  VENEREAL_DISEASES,  };
-
-    @BuiltValueField(wireName: r'intervalYears')
-    int get intervalYears;
-
-    @BuiltValueField(wireName: r'plannedDate')
-    DateTime? get plannedDate;
-
-    @BuiltValueField(wireName: r'firstExam')
-    bool get firstExam;
-
-    @BuiltValueField(wireName: r'priority')
-    int get priority;
-
-    @BuiltValueField(wireName: r'state')
-    ExaminationStatus get state;
-    // enum stateEnum {  NEW,  TO_BE_CONFIRMED,  CONFIRMED,  CANCELED,  UNKNOWN,  };
-
-    @BuiltValueField(wireName: r'count')
-    int get count;
-
-    @BuiltValueField(wireName: r'lastConfirmedDate')
-    DateTime? get lastConfirmedDate;
+    @BuiltValueField(wireName: r'selfexaminations')
+    BuiltList<SelfExaminationPreventionStatus> get selfexaminations;
 
     PreventionStatus._();
 
@@ -73,48 +44,14 @@ class _$PreventionStatusSerializer implements StructuredSerializer<PreventionSta
     Iterable<Object?> serialize(Serializers serializers, PreventionStatus object,
         {FullType specifiedType = FullType.unspecified}) {
         final result = <Object?>[];
-        if (object.uuid != null) {
-            result
-                ..add(r'uuid')
-                ..add(serializers.serialize(object.uuid,
-                    specifiedType: const FullType(String)));
-        }
         result
-            ..add(r'examinationType')
-            ..add(serializers.serialize(object.examinationType,
-                specifiedType: const FullType(ExaminationTypeEnum)));
+            ..add(r'examinations')
+            ..add(serializers.serialize(object.examinations,
+                specifiedType: const FullType(BuiltList, [FullType(ExaminationPreventionStatus)])));
         result
-            ..add(r'intervalYears')
-            ..add(serializers.serialize(object.intervalYears,
-                specifiedType: const FullType(int)));
-        if (object.plannedDate != null) {
-            result
-                ..add(r'plannedDate')
-                ..add(serializers.serialize(object.plannedDate,
-                    specifiedType: const FullType(DateTime)));
-        }
-        result
-            ..add(r'firstExam')
-            ..add(serializers.serialize(object.firstExam,
-                specifiedType: const FullType(bool)));
-        result
-            ..add(r'priority')
-            ..add(serializers.serialize(object.priority,
-                specifiedType: const FullType(int)));
-        result
-            ..add(r'state')
-            ..add(serializers.serialize(object.state,
-                specifiedType: const FullType(ExaminationStatus)));
-        result
-            ..add(r'count')
-            ..add(serializers.serialize(object.count,
-                specifiedType: const FullType(int)));
-        if (object.lastConfirmedDate != null) {
-            result
-                ..add(r'lastConfirmedDate')
-                ..add(serializers.serialize(object.lastConfirmedDate,
-                    specifiedType: const FullType(DateTime)));
-        }
+            ..add(r'selfexaminations')
+            ..add(serializers.serialize(object.selfexaminations,
+                specifiedType: const FullType(BuiltList, [FullType(SelfExaminationPreventionStatus)])));
         return result;
     }
 
@@ -130,50 +67,15 @@ class _$PreventionStatusSerializer implements StructuredSerializer<PreventionSta
             final Object? value = iterator.current;
             
             switch (key) {
-                case r'uuid':
+                case r'examinations':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
-                    result.uuid = valueDes;
+                        specifiedType: const FullType(BuiltList, [FullType(ExaminationPreventionStatus)])) as BuiltList<ExaminationPreventionStatus>;
+                    result.examinations.replace(valueDes);
                     break;
-                case r'examinationType':
+                case r'selfexaminations':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(ExaminationTypeEnum)) as ExaminationTypeEnum;
-                    result.examinationType = valueDes;
-                    break;
-                case r'intervalYears':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(int)) as int;
-                    result.intervalYears = valueDes;
-                    break;
-                case r'plannedDate':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(DateTime)) as DateTime;
-                    result.plannedDate = valueDes;
-                    break;
-                case r'firstExam':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(bool)) as bool;
-                    result.firstExam = valueDes;
-                    break;
-                case r'priority':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(int)) as int;
-                    result.priority = valueDes;
-                    break;
-                case r'state':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(ExaminationStatus)) as ExaminationStatus;
-                    result.state = valueDes;
-                    break;
-                case r'count':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(int)) as int;
-                    result.count = valueDes;
-                    break;
-                case r'lastConfirmedDate':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(DateTime)) as DateTime;
-                    result.lastConfirmedDate = valueDes;
+                        specifiedType: const FullType(BuiltList, [FullType(SelfExaminationPreventionStatus)])) as BuiltList<SelfExaminationPreventionStatus>;
+                    result.selfexaminations.replace(valueDes);
                     break;
             }
         }

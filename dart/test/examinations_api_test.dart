@@ -29,7 +29,7 @@ void main() {
     //
     // Returns the examination records of the current user.
     //
-    //Future<BuiltList<PreventionStatus>> getExaminations() async
+    //Future<PreventionStatus> getExaminations() async
     test('test getExaminations', () async {
       // TODO
     });

@@ -1,9 +1,9 @@
 import 'package:test/test.dart';
 import 'package:loono_api/loono_api.dart';
 
-// tests for ExaminationTypeEnum
+// tests for SelfExaminationResult
 void main() {
 
-  group(ExaminationTypeEnum, () {
+  group(SelfExaminationResult, () {
   });
 }

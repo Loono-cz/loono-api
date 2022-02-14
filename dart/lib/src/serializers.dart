@@ -18,9 +18,10 @@ import 'package:loono_api/src/model/badge.dart';
 import 'package:loono_api/src/model/badge_type.dart';
 import 'package:loono_api/src/model/error.dart';
 import 'package:loono_api/src/model/examination_id.dart';
+import 'package:loono_api/src/model/examination_prevention_status.dart';
 import 'package:loono_api/src/model/examination_record.dart';
 import 'package:loono_api/src/model/examination_status.dart';
-import 'package:loono_api/src/model/examination_type_enum.dart';
+import 'package:loono_api/src/model/examination_type.dart';
 import 'package:loono_api/src/model/healthcare_provider_detail.dart';
 import 'package:loono_api/src/model/healthcare_provider_detail_list.dart';
 import 'package:loono_api/src/model/healthcare_provider_id.dart';
@@ -30,6 +31,10 @@ import 'package:loono_api/src/model/healthcare_provider_list.dart';
 import 'package:loono_api/src/model/leaderboard.dart';
 import 'package:loono_api/src/model/leaderboard_user.dart';
 import 'package:loono_api/src/model/prevention_status.dart';
+import 'package:loono_api/src/model/self_examination_prevention_status.dart';
+import 'package:loono_api/src/model/self_examination_result.dart';
+import 'package:loono_api/src/model/self_examination_status.dart';
+import 'package:loono_api/src/model/self_examination_type.dart';
 import 'package:loono_api/src/model/settings.dart';
 import 'package:loono_api/src/model/sex.dart';
 import 'package:loono_api/src/model/simple_healthcare_provider.dart';
@@ -46,9 +51,10 @@ part 'serializers.g.dart';
   BadgeType,
   Error,
   ExaminationId,
+  ExaminationPreventionStatus,
   ExaminationRecord,
   ExaminationStatus,
-  ExaminationTypeEnum,
+  ExaminationType,
   HealthcareProviderDetail,
   HealthcareProviderDetailList,
   HealthcareProviderId,
@@ -58,6 +64,10 @@ part 'serializers.g.dart';
   Leaderboard,
   LeaderboardUser,
   PreventionStatus,
+  SelfExaminationPreventionStatus,
+  SelfExaminationResult,
+  SelfExaminationStatus,
+  SelfExaminationType,
   Settings,
   Sex,
   SimpleHealthcareProvider,
@@ -66,10 +76,6 @@ part 'serializers.g.dart';
   UserPatch,
 ])
 Serializers serializers = (_$serializers.toBuilder()
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(PreventionStatus)]),
-        () => ListBuilder<PreventionStatus>(),
-      )
       ..add(const DateSerializer())
       ..add(Iso8601DateTimeSerializer()))
     .build();

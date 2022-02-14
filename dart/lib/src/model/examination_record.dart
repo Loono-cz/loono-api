@@ -2,7 +2,7 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
-import 'package:loono_api/src/model/examination_type_enum.dart';
+import 'package:loono_api/src/model/examination_type.dart';
 import 'package:loono_api/src/model/examination_status.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -22,15 +22,15 @@ abstract class ExaminationRecord implements Built<ExaminationRecord, Examination
     String? get uuid;
 
     @BuiltValueField(wireName: r'type')
-    ExaminationTypeEnum get type;
-    // enum typeEnum {  BREAST_SELF,  COLONOSCOPY,  DENTIST,  DERMATOLOGIST,  GENERAL_PRACTITIONER,  GYNECOLOGIST,  MAMMOGRAM,  OPHTHALMOLOGIST,  TESTICULAR_SELF,  TOKS,  ULTRASOUND_BREAST,  UROLOGIST,  VENEREAL_DISEASES,  };
+    ExaminationType get type;
+    // enum typeEnum {  COLONOSCOPY,  DENTIST,  DERMATOLOGIST,  GENERAL_PRACTITIONER,  GYNECOLOGIST,  MAMMOGRAM,  OPHTHALMOLOGIST,  TOKS,  ULTRASOUND_BREAST,  UROLOGIST,  VENEREAL_DISEASES,  };
 
     @BuiltValueField(wireName: r'date')
     DateTime? get date;
 
     @BuiltValueField(wireName: r'status')
     ExaminationStatus? get status;
-    // enum statusEnum {  NEW,  TO_BE_CONFIRMED,  CONFIRMED,  CANCELED,  UNKNOWN,  };
+    // enum statusEnum {  NEW,  CONFIRMED,  CANCELED,  UNKNOWN,  };
 
     @BuiltValueField(wireName: r'firstExam')
     bool? get firstExam;
@@ -67,7 +67,7 @@ class _$ExaminationRecordSerializer implements StructuredSerializer<ExaminationR
         result
             ..add(r'type')
             ..add(serializers.serialize(object.type,
-                specifiedType: const FullType(ExaminationTypeEnum)));
+                specifiedType: const FullType(ExaminationType)));
         if (object.date != null) {
             result
                 ..add(r'date')
@@ -109,7 +109,7 @@ class _$ExaminationRecordSerializer implements StructuredSerializer<ExaminationR
                     break;
                 case r'type':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(ExaminationTypeEnum)) as ExaminationTypeEnum;
+                        specifiedType: const FullType(ExaminationType)) as ExaminationType;
                     result.type = valueDes;
                     break;
                 case r'date':

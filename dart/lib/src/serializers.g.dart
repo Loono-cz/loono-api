@@ -13,9 +13,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(BadgeType.serializer)
       ..add(Error.serializer)
       ..add(ExaminationId.serializer)
+      ..add(ExaminationPreventionStatus.serializer)
       ..add(ExaminationRecord.serializer)
       ..add(ExaminationStatus.serializer)
-      ..add(ExaminationTypeEnum.serializer)
+      ..add(ExaminationType.serializer)
       ..add(HealthcareProviderDetail.serializer)
       ..add(HealthcareProviderDetailList.serializer)
       ..add(HealthcareProviderId.serializer)
@@ -25,6 +26,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(Leaderboard.serializer)
       ..add(LeaderboardUser.serializer)
       ..add(PreventionStatus.serializer)
+      ..add(SelfExaminationPreventionStatus.serializer)
+      ..add(SelfExaminationResult.serializer)
+      ..add(SelfExaminationStatus.serializer)
+      ..add(SelfExaminationType.serializer)
       ..add(Settings.serializer)
       ..add(Sex.serializer)
       ..add(SimpleHealthcareProvider.serializer)
@@ -34,6 +39,14 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(Badge)]),
           () => new ListBuilder<Badge>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(ExaminationPreventionStatus)]),
+          () => new ListBuilder<ExaminationPreventionStatus>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(SelfExaminationPreventionStatus)]),
+          () => new ListBuilder<SelfExaminationPreventionStatus>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(HealthcareProviderDetail)]),
@@ -48,6 +61,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(LeaderboardUser)]),
           () => new ListBuilder<LeaderboardUser>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(SelfExaminationStatus)]),
+          () => new ListBuilder<SelfExaminationStatus>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(SimpleHealthcareProvider)]),

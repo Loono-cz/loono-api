@@ -10,7 +10,7 @@ class _$ExaminationRecord extends ExaminationRecord {
   @override
   final String? uuid;
   @override
-  final ExaminationTypeEnum type;
+  final ExaminationType type;
   @override
   final DateTime? date;
   @override
@@ -75,9 +75,9 @@ class ExaminationRecordBuilder
   String? get uuid => _$this._uuid;
   set uuid(String? uuid) => _$this._uuid = uuid;
 
-  ExaminationTypeEnum? _type;
-  ExaminationTypeEnum? get type => _$this._type;
-  set type(ExaminationTypeEnum? type) => _$this._type = type;
+  ExaminationType? _type;
+  ExaminationType? get type => _$this._type;
+  set type(ExaminationType? type) => _$this._type = type;
 
   DateTime? _date;
   DateTime? get date => _$this._date;
