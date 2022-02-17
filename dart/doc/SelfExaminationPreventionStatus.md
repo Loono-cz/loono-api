@@ -12,6 +12,8 @@ Name | Type | Description | Notes
 **plannedDate** | [**Date**](Date.md) |  | [optional] 
 **type** | [**SelfExaminationType**](SelfExaminationType.md) |  | 
 **history** | [**BuiltList&lt;SelfExaminationStatus&gt;**](SelfExaminationStatus.md) |  | 
+**points** | **int** |  | 
+**badge** | [**BadgeType**](BadgeType.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

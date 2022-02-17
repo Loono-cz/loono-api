@@ -25,6 +25,10 @@ class _$ExaminationPreventionStatus extends ExaminationPreventionStatus {
   final int count;
   @override
   final DateTime? lastConfirmedDate;
+  @override
+  final int points;
+  @override
+  final BadgeType badge;
 
   factory _$ExaminationPreventionStatus(
           [void Function(ExaminationPreventionStatusBuilder)? updates]) =>
@@ -39,7 +43,9 @@ class _$ExaminationPreventionStatus extends ExaminationPreventionStatus {
       required this.priority,
       required this.state,
       required this.count,
-      this.lastConfirmedDate})
+      this.lastConfirmedDate,
+      required this.points,
+      required this.badge})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         uuid, 'ExaminationPreventionStatus', 'uuid');
@@ -55,6 +61,10 @@ class _$ExaminationPreventionStatus extends ExaminationPreventionStatus {
         state, 'ExaminationPreventionStatus', 'state');
     BuiltValueNullFieldError.checkNotNull(
         count, 'ExaminationPreventionStatus', 'count');
+    BuiltValueNullFieldError.checkNotNull(
+        points, 'ExaminationPreventionStatus', 'points');
+    BuiltValueNullFieldError.checkNotNull(
+        badge, 'ExaminationPreventionStatus', 'badge');
   }
 
   @override
@@ -78,7 +88,9 @@ class _$ExaminationPreventionStatus extends ExaminationPreventionStatus {
         priority == other.priority &&
         state == other.state &&
         count == other.count &&
-        lastConfirmedDate == other.lastConfirmedDate;
+        lastConfirmedDate == other.lastConfirmedDate &&
+        points == other.points &&
+        badge == other.badge;
   }
 
   @override
@@ -90,15 +102,19 @@ class _$ExaminationPreventionStatus extends ExaminationPreventionStatus {
                     $jc(
                         $jc(
                             $jc(
-                                $jc($jc(0, uuid.hashCode),
-                                    examinationType.hashCode),
-                                intervalYears.hashCode),
-                            plannedDate.hashCode),
-                        firstExam.hashCode),
-                    priority.hashCode),
-                state.hashCode),
-            count.hashCode),
-        lastConfirmedDate.hashCode));
+                                $jc(
+                                    $jc(
+                                        $jc($jc(0, uuid.hashCode),
+                                            examinationType.hashCode),
+                                        intervalYears.hashCode),
+                                    plannedDate.hashCode),
+                                firstExam.hashCode),
+                            priority.hashCode),
+                        state.hashCode),
+                    count.hashCode),
+                lastConfirmedDate.hashCode),
+            points.hashCode),
+        badge.hashCode));
   }
 
   @override
@@ -112,7 +128,9 @@ class _$ExaminationPreventionStatus extends ExaminationPreventionStatus {
           ..add('priority', priority)
           ..add('state', state)
           ..add('count', count)
-          ..add('lastConfirmedDate', lastConfirmedDate))
+          ..add('lastConfirmedDate', lastConfirmedDate)
+          ..add('points', points)
+          ..add('badge', badge))
         .toString();
   }
 }
@@ -162,6 +180,14 @@ class ExaminationPreventionStatusBuilder
   set lastConfirmedDate(DateTime? lastConfirmedDate) =>
       _$this._lastConfirmedDate = lastConfirmedDate;
 
+  int? _points;
+  int? get points => _$this._points;
+  set points(int? points) => _$this._points = points;
+
+  BadgeType? _badge;
+  BadgeType? get badge => _$this._badge;
+  set badge(BadgeType? badge) => _$this._badge = badge;
+
   ExaminationPreventionStatusBuilder() {
     ExaminationPreventionStatus._defaults(this);
   }
@@ -178,6 +204,8 @@ class ExaminationPreventionStatusBuilder
       _state = $v.state;
       _count = $v.count;
       _lastConfirmedDate = $v.lastConfirmedDate;
+      _points = $v.points;
+      _badge = $v.badge;
       _$v = null;
     }
     return this;
@@ -201,9 +229,7 @@ class ExaminationPreventionStatusBuilder
             uuid: BuiltValueNullFieldError.checkNotNull(
                 uuid, 'ExaminationPreventionStatus', 'uuid'),
             examinationType: BuiltValueNullFieldError.checkNotNull(
-                examinationType,
-                'ExaminationPreventionStatus',
-                'examinationType'),
+                examinationType, 'ExaminationPreventionStatus', 'examinationType'),
             intervalYears: BuiltValueNullFieldError.checkNotNull(
                 intervalYears, 'ExaminationPreventionStatus', 'intervalYears'),
             plannedDate: plannedDate,
@@ -215,7 +241,10 @@ class ExaminationPreventionStatusBuilder
                 state, 'ExaminationPreventionStatus', 'state'),
             count: BuiltValueNullFieldError.checkNotNull(
                 count, 'ExaminationPreventionStatus', 'count'),
-            lastConfirmedDate: lastConfirmedDate);
+            lastConfirmedDate: lastConfirmedDate,
+            points:
+                BuiltValueNullFieldError.checkNotNull(points, 'ExaminationPreventionStatus', 'points'),
+            badge: BuiltValueNullFieldError.checkNotNull(badge, 'ExaminationPreventionStatus', 'badge'));
     replace(_$result);
     return _$result;
   }

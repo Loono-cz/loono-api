@@ -27,6 +27,8 @@ void main() {
 
     // Trigger healthcare provider update
     //
+    // Trigger to execute the providers update manually.
+    //
     //Future<UpdateStatusMessage> getProvidersUpdate() async
     test('test getProvidersUpdate', () async {
       // TODO
@@ -36,7 +38,7 @@ void main() {
     //
     // Returns complete details of multiple healthcare providers
     //
-    //Future<HealthcareProviderDetail> postProvidersDetail({ HealthcareProviderIdList healthcareProviderIdList }) async
+    //Future<HealthcareProviderDetailList> postProvidersDetail({ HealthcareProviderIdList healthcareProviderIdList }) async
     test('test postProvidersDetail', () async {
       // TODO
     });

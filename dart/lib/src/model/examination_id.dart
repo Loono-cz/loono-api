@@ -19,8 +19,7 @@ abstract class ExaminationId implements Built<ExaminationId, ExaminationIdBuilde
     ExaminationId._();
 
     @BuiltValueHook(initializeBuilder: true)
-    static void _defaults(ExaminationIdBuilder b) => b
-        ..uuid = 'null';
+    static void _defaults(ExaminationIdBuilder b) => b;
 
     factory ExaminationId([void updates(ExaminationIdBuilder b)]) = _$ExaminationId;
 

@@ -8,7 +8,7 @@ void main() {
 
   group(ExaminationId, () {
     // Must not be in the future
-    // String uuid (default value: 'null')
+    // String uuid
     test('to test the property `uuid`', () async {
       // TODO
     });

@@ -11,7 +11,7 @@ void main() {
     //
     // Notify the API that an examination has been performed.  The date of the completion must not be in the future.
     //
-    //Future<ExaminationRecord> cancelExamination(String type, { ExaminationId examinationId }) async
+    //Future<ExaminationRecord> cancelExamination({ ExaminationId examinationId }) async
     test('test cancelExamination', () async {
       // TODO
     });
@@ -20,8 +20,17 @@ void main() {
     //
     // Notify the API that an examination has been performed.  The date of the completion must not be in the future.
     //
-    //Future<ExaminationRecord> completeExamination(String type, { ExaminationId examinationId }) async
+    //Future<ExaminationRecord> completeExamination({ ExaminationId examinationId }) async
     test('test completeExamination', () async {
+      // TODO
+    });
+
+    // Confirm Self-Examination
+    //
+    // Notify the API that an self-examination has been completed.
+    //
+    //Future<SelfExaminationCompletionInformation> confirmSelfExamination(String selfType, { String body }) async
+    test('test confirmSelfExamination', () async {
       // TODO
     });
 
@@ -35,6 +44,8 @@ void main() {
     });
 
     // Create or update examination record
+    //
+    // Creating or updating an examination.
     //
     //Future<ExaminationRecord> postExaminations({ ExaminationRecord examinationRecord }) async
     test('test postExaminations', () async {

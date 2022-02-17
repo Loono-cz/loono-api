@@ -101,6 +101,8 @@ No authorization required
 
 Trigger healthcare provider update
 
+Trigger to execute the providers update manually.
+
 ### Example
 ```dart
 import 'package:loono_api/api.dart';
@@ -137,7 +139,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postProvidersDetail**
-> HealthcareProviderDetail postProvidersDetail(healthcareProviderIdList)
+> HealthcareProviderDetailList postProvidersDetail(healthcareProviderIdList)
 
 Gets details of given healthcare providers
 
@@ -169,7 +171,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**HealthcareProviderDetail**](HealthcareProviderDetail.md)
+[**HealthcareProviderDetailList**](HealthcareProviderDetailList.md)
 
 ### Authorization
 

@@ -11,6 +11,7 @@ import 'package:loono_api/src/model/error.dart';
 import 'package:loono_api/src/model/examination_id.dart';
 import 'package:loono_api/src/model/examination_record.dart';
 import 'package:loono_api/src/model/prevention_status.dart';
+import 'package:loono_api/src/model/self_examination_completion_information.dart';
 
 class ExaminationsApi {
 
@@ -24,7 +25,6 @@ class ExaminationsApi {
   /// Notify the API that an examination has been performed.  The date of the completion must not be in the future.
   ///
   /// Parameters:
-  /// * [type] - One of the `ExaminationTypeEnum` values
   /// * [examinationId] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -36,7 +36,6 @@ class ExaminationsApi {
   /// Returns a [Future] containing a [Response] with a [ExaminationRecord] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<ExaminationRecord>> cancelExamination({ 
-    required String type,
     ExaminationId? examinationId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -45,7 +44,7 @@ class ExaminationsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/examinations/{type}/cancel'.replaceAll('{' r'type' '}', type.toString());
+    final _path = r'/examinations/cancel';
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -125,7 +124,6 @@ class ExaminationsApi {
   /// Notify the API that an examination has been performed.  The date of the completion must not be in the future.
   ///
   /// Parameters:
-  /// * [type] - One of the `ExaminationTypeEnum` values
   /// * [examinationId] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -137,7 +135,6 @@ class ExaminationsApi {
   /// Returns a [Future] containing a [Response] with a [ExaminationRecord] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<ExaminationRecord>> completeExamination({ 
-    required String type,
     ExaminationId? examinationId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -146,7 +143,7 @@ class ExaminationsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/examinations/{type}/confirm'.replaceAll('{' r'type' '}', type.toString());
+    final _path = r'/examinations/confirm';
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -211,6 +208,106 @@ class ExaminationsApi {
     }
 
     return Response<ExaminationRecord>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// Confirm Self-Examination
+  /// Notify the API that an self-examination has been completed.
+  ///
+  /// Parameters:
+  /// * [selfType] - One of the `SelfExaminationType` values
+  /// * [body] 
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [SelfExaminationCompletionInformation] as data
+  /// Throws [DioError] if API call or serialization fails
+  Future<Response<SelfExaminationCompletionInformation>> confirmSelfExamination({ 
+    required String selfType,
+    String? body,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/examinations/{self-type}/self'.replaceAll('{' r'self-type' '}', selfType.toString());
+    final _options = Options(
+      method: r'POST',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'http',
+            'scheme': 'bearer',
+            'name': 'Bearer_Auth',
+          },
+        ],
+        ...?extra,
+      },
+      contentType: 'application/json',
+      validateStatus: validateStatus,
+    );
+
+    dynamic _bodyData;
+
+    try {
+      _bodyData = body;
+
+    } catch(error, stackTrace) {
+      throw DioError(
+         requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
+        type: DioErrorType.other,
+        error: error,
+      )..stackTrace = stackTrace;
+    }
+
+    final _response = await _dio.request<Object>(
+      _path,
+      data: _bodyData,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    SelfExaminationCompletionInformation _responseData;
+
+    try {
+      const _responseType = FullType(SelfExaminationCompletionInformation);
+      _responseData = _serializers.deserialize(
+        _response.data!,
+        specifiedType: _responseType,
+      ) as SelfExaminationCompletionInformation;
+
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioErrorType.other,
+        error: error,
+      )..stackTrace = stackTrace;
+    }
+
+    return Response<SelfExaminationCompletionInformation>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -301,7 +398,7 @@ class ExaminationsApi {
   }
 
   /// Create or update examination record
-  /// 
+  /// Creating or updating an examination.
   ///
   /// Parameters:
   /// * [examinationRecord] 

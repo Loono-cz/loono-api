@@ -5,6 +5,7 @@
 import 'package:loono_api/src/model/self_examination_type.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:loono_api/src/model/self_examination_status.dart';
+import 'package:loono_api/src/model/badge_type.dart';
 import 'package:loono_api/src/model/date.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -18,6 +19,8 @@ part 'self_examination_prevention_status.g.dart';
 /// * [plannedDate] 
 /// * [type] 
 /// * [history] 
+/// * [points] 
+/// * [badge] 
 abstract class SelfExaminationPreventionStatus implements Built<SelfExaminationPreventionStatus, SelfExaminationPreventionStatusBuilder> {
     @BuiltValueField(wireName: r'lastExamUuid')
     String? get lastExamUuid;
@@ -31,6 +34,13 @@ abstract class SelfExaminationPreventionStatus implements Built<SelfExaminationP
 
     @BuiltValueField(wireName: r'history')
     BuiltList<SelfExaminationStatus> get history;
+
+    @BuiltValueField(wireName: r'points')
+    int get points;
+
+    @BuiltValueField(wireName: r'badge')
+    BadgeType get badge;
+    // enum badgeEnum {  COAT,  TOP,  BELT,  SHOES,  GLOVES,  HEADBAND,  GLASSES,  SHIELD,  };
 
     SelfExaminationPreventionStatus._();
 
@@ -74,6 +84,14 @@ class _$SelfExaminationPreventionStatusSerializer implements StructuredSerialize
             ..add(r'history')
             ..add(serializers.serialize(object.history,
                 specifiedType: const FullType(BuiltList, [FullType(SelfExaminationStatus)])));
+        result
+            ..add(r'points')
+            ..add(serializers.serialize(object.points,
+                specifiedType: const FullType(int)));
+        result
+            ..add(r'badge')
+            ..add(serializers.serialize(object.badge,
+                specifiedType: const FullType(BadgeType)));
         return result;
     }
 
@@ -108,6 +126,16 @@ class _$SelfExaminationPreventionStatusSerializer implements StructuredSerialize
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(BuiltList, [FullType(SelfExaminationStatus)])) as BuiltList<SelfExaminationStatus>;
                     result.history.replace(valueDes);
+                    break;
+                case r'points':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(int)) as int;
+                    result.points = valueDes;
+                    break;
+                case r'badge':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(BadgeType)) as BadgeType;
+                    result.badge = valueDes;
                     break;
             }
         }

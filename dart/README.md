@@ -75,8 +75,9 @@ Class | Method | HTTP request | Description
 [*AccountApi*](doc/AccountApi.md) | [**getAccount**](doc/AccountApi.md#getaccount) | **GET** /account | GET Account
 [*AccountApi*](doc/AccountApi.md) | [**updateAccountSettings**](doc/AccountApi.md#updateaccountsettings) | **POST** /account/settings/update | Update Account Settings
 [*AccountApi*](doc/AccountApi.md) | [**updateAccountUser**](doc/AccountApi.md#updateaccountuser) | **POST** /account/user/update | Update Account User
-[*ExaminationsApi*](doc/ExaminationsApi.md) | [**cancelExamination**](doc/ExaminationsApi.md#cancelexamination) | **POST** /examinations/{type}/cancel | Cancel Examination
-[*ExaminationsApi*](doc/ExaminationsApi.md) | [**completeExamination**](doc/ExaminationsApi.md#completeexamination) | **POST** /examinations/{type}/confirm | Confirm Examination
+[*ExaminationsApi*](doc/ExaminationsApi.md) | [**cancelExamination**](doc/ExaminationsApi.md#cancelexamination) | **POST** /examinations/cancel | Cancel Examination
+[*ExaminationsApi*](doc/ExaminationsApi.md) | [**completeExamination**](doc/ExaminationsApi.md#completeexamination) | **POST** /examinations/confirm | Confirm Examination
+[*ExaminationsApi*](doc/ExaminationsApi.md) | [**confirmSelfExamination**](doc/ExaminationsApi.md#confirmselfexamination) | **POST** /examinations/{self-type}/self | Confirm Self-Examination
 [*ExaminationsApi*](doc/ExaminationsApi.md) | [**getExaminations**](doc/ExaminationsApi.md#getexaminations) | **GET** /examinations | Get Examinations Status
 [*ExaminationsApi*](doc/ExaminationsApi.md) | [**postExaminations**](doc/ExaminationsApi.md#postexaminations) | **POST** /examinations | Create or update examination record
 [*LeaderboardApi*](doc/LeaderboardApi.md) | [**getLeaderboard**](doc/LeaderboardApi.md#getleaderboard) | **GET** /leaderboard | Get Leaderboard
@@ -89,7 +90,6 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [Account](doc/Account.md)
- - [Appointment](doc/Appointment.md)
  - [Badge](doc/Badge.md)
  - [BadgeType](doc/BadgeType.md)
  - [Error](doc/Error.md)
@@ -103,10 +103,10 @@ Class | Method | HTTP request | Description
  - [HealthcareProviderId](doc/HealthcareProviderId.md)
  - [HealthcareProviderIdList](doc/HealthcareProviderIdList.md)
  - [HealthcareProviderLastUpdate](doc/HealthcareProviderLastUpdate.md)
- - [HealthcareProviderList](doc/HealthcareProviderList.md)
  - [Leaderboard](doc/Leaderboard.md)
  - [LeaderboardUser](doc/LeaderboardUser.md)
  - [PreventionStatus](doc/PreventionStatus.md)
+ - [SelfExaminationCompletionInformation](doc/SelfExaminationCompletionInformation.md)
  - [SelfExaminationPreventionStatus](doc/SelfExaminationPreventionStatus.md)
  - [SelfExaminationResult](doc/SelfExaminationResult.md)
  - [SelfExaminationStatus](doc/SelfExaminationStatus.md)

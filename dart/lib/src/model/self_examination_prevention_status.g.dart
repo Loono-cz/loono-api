@@ -16,6 +16,10 @@ class _$SelfExaminationPreventionStatus
   final SelfExaminationType type;
   @override
   final BuiltList<SelfExaminationStatus> history;
+  @override
+  final int points;
+  @override
+  final BadgeType badge;
 
   factory _$SelfExaminationPreventionStatus(
           [void Function(SelfExaminationPreventionStatusBuilder)? updates]) =>
@@ -25,12 +29,18 @@ class _$SelfExaminationPreventionStatus
       {this.lastExamUuid,
       this.plannedDate,
       required this.type,
-      required this.history})
+      required this.history,
+      required this.points,
+      required this.badge})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         type, 'SelfExaminationPreventionStatus', 'type');
     BuiltValueNullFieldError.checkNotNull(
         history, 'SelfExaminationPreventionStatus', 'history');
+    BuiltValueNullFieldError.checkNotNull(
+        points, 'SelfExaminationPreventionStatus', 'points');
+    BuiltValueNullFieldError.checkNotNull(
+        badge, 'SelfExaminationPreventionStatus', 'badge');
   }
 
   @override
@@ -49,15 +59,21 @@ class _$SelfExaminationPreventionStatus
         lastExamUuid == other.lastExamUuid &&
         plannedDate == other.plannedDate &&
         type == other.type &&
-        history == other.history;
+        history == other.history &&
+        points == other.points &&
+        badge == other.badge;
   }
 
   @override
   int get hashCode {
     return $jf($jc(
-        $jc($jc($jc(0, lastExamUuid.hashCode), plannedDate.hashCode),
-            type.hashCode),
-        history.hashCode));
+        $jc(
+            $jc(
+                $jc($jc($jc(0, lastExamUuid.hashCode), plannedDate.hashCode),
+                    type.hashCode),
+                history.hashCode),
+            points.hashCode),
+        badge.hashCode));
   }
 
   @override
@@ -66,7 +82,9 @@ class _$SelfExaminationPreventionStatus
           ..add('lastExamUuid', lastExamUuid)
           ..add('plannedDate', plannedDate)
           ..add('type', type)
-          ..add('history', history))
+          ..add('history', history)
+          ..add('points', points)
+          ..add('badge', badge))
         .toString();
   }
 }
@@ -95,6 +113,14 @@ class SelfExaminationPreventionStatusBuilder
   set history(ListBuilder<SelfExaminationStatus>? history) =>
       _$this._history = history;
 
+  int? _points;
+  int? get points => _$this._points;
+  set points(int? points) => _$this._points = points;
+
+  BadgeType? _badge;
+  BadgeType? get badge => _$this._badge;
+  set badge(BadgeType? badge) => _$this._badge = badge;
+
   SelfExaminationPreventionStatusBuilder() {
     SelfExaminationPreventionStatus._defaults(this);
   }
@@ -106,6 +132,8 @@ class SelfExaminationPreventionStatusBuilder
       _plannedDate = $v.plannedDate;
       _type = $v.type;
       _history = $v.history.toBuilder();
+      _points = $v.points;
+      _badge = $v.badge;
       _$v = null;
     }
     return this;
@@ -132,7 +160,11 @@ class SelfExaminationPreventionStatusBuilder
               plannedDate: plannedDate,
               type: BuiltValueNullFieldError.checkNotNull(
                   type, 'SelfExaminationPreventionStatus', 'type'),
-              history: history.build());
+              history: history.build(),
+              points: BuiltValueNullFieldError.checkNotNull(
+                  points, 'SelfExaminationPreventionStatus', 'points'),
+              badge: BuiltValueNullFieldError.checkNotNull(
+                  badge, 'SelfExaminationPreventionStatus', 'badge'));
     } catch (_) {
       late String _$failedField;
       try {

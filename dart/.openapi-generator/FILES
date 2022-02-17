@@ -4,7 +4,6 @@ README.md
 analysis_options.yaml
 doc/Account.md
 doc/AccountApi.md
-doc/Appointment.md
 doc/Badge.md
 doc/BadgeType.md
 doc/Error.md
@@ -19,12 +18,12 @@ doc/HealthcareProviderDetailList.md
 doc/HealthcareProviderId.md
 doc/HealthcareProviderIdList.md
 doc/HealthcareProviderLastUpdate.md
-doc/HealthcareProviderList.md
 doc/Leaderboard.md
 doc/LeaderboardApi.md
 doc/LeaderboardUser.md
 doc/PreventionStatus.md
 doc/ProvidersApi.md
+doc/SelfExaminationCompletionInformation.md
 doc/SelfExaminationPreventionStatus.md
 doc/SelfExaminationResult.md
 doc/SelfExaminationStatus.md
@@ -49,7 +48,6 @@ lib/src/auth/bearer_auth.dart
 lib/src/auth/oauth.dart
 lib/src/date_serializer.dart
 lib/src/model/account.dart
-lib/src/model/appointment.dart
 lib/src/model/badge.dart
 lib/src/model/badge_type.dart
 lib/src/model/date.dart
@@ -64,10 +62,10 @@ lib/src/model/healthcare_provider_detail_list.dart
 lib/src/model/healthcare_provider_id.dart
 lib/src/model/healthcare_provider_id_list.dart
 lib/src/model/healthcare_provider_last_update.dart
-lib/src/model/healthcare_provider_list.dart
 lib/src/model/leaderboard.dart
 lib/src/model/leaderboard_user.dart
 lib/src/model/prevention_status.dart
+lib/src/model/self_examination_completion_information.dart
 lib/src/model/self_examination_prevention_status.dart
 lib/src/model/self_examination_result.dart
 lib/src/model/self_examination_status.dart
@@ -82,7 +80,6 @@ lib/src/serializers.dart
 pubspec.yaml
 test/account_api_test.dart
 test/account_test.dart
-test/appointment_test.dart
 test/badge_test.dart
 test/badge_type_test.dart
 test/error_test.dart
@@ -97,12 +94,12 @@ test/healthcare_provider_detail_test.dart
 test/healthcare_provider_id_list_test.dart
 test/healthcare_provider_id_test.dart
 test/healthcare_provider_last_update_test.dart
-test/healthcare_provider_list_test.dart
 test/leaderboard_api_test.dart
 test/leaderboard_test.dart
 test/leaderboard_user_test.dart
 test/prevention_status_test.dart
 test/providers_api_test.dart
+test/self_examination_completion_information_test.dart
 test/self_examination_prevention_status_test.dart
 test/self_examination_result_test.dart
 test/self_examination_status_test.dart

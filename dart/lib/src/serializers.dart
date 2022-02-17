@@ -13,7 +13,6 @@ import 'package:loono_api/src/date_serializer.dart';
 import 'package:loono_api/src/model/date.dart';
 
 import 'package:loono_api/src/model/account.dart';
-import 'package:loono_api/src/model/appointment.dart';
 import 'package:loono_api/src/model/badge.dart';
 import 'package:loono_api/src/model/badge_type.dart';
 import 'package:loono_api/src/model/error.dart';
@@ -27,10 +26,10 @@ import 'package:loono_api/src/model/healthcare_provider_detail_list.dart';
 import 'package:loono_api/src/model/healthcare_provider_id.dart';
 import 'package:loono_api/src/model/healthcare_provider_id_list.dart';
 import 'package:loono_api/src/model/healthcare_provider_last_update.dart';
-import 'package:loono_api/src/model/healthcare_provider_list.dart';
 import 'package:loono_api/src/model/leaderboard.dart';
 import 'package:loono_api/src/model/leaderboard_user.dart';
 import 'package:loono_api/src/model/prevention_status.dart';
+import 'package:loono_api/src/model/self_examination_completion_information.dart';
 import 'package:loono_api/src/model/self_examination_prevention_status.dart';
 import 'package:loono_api/src/model/self_examination_result.dart';
 import 'package:loono_api/src/model/self_examination_status.dart';
@@ -46,7 +45,6 @@ part 'serializers.g.dart';
 
 @SerializersFor([
   Account,
-  Appointment,
   Badge,
   BadgeType,
   Error,
@@ -60,10 +58,10 @@ part 'serializers.g.dart';
   HealthcareProviderId,
   HealthcareProviderIdList,
   HealthcareProviderLastUpdate,
-  HealthcareProviderList,
   Leaderboard,
   LeaderboardUser,
   PreventionStatus,
+  SelfExaminationCompletionInformation,
   SelfExaminationPreventionStatus,
   SelfExaminationResult,
   SelfExaminationStatus,

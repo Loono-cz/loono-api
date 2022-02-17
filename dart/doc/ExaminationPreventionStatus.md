@@ -17,6 +17,8 @@ Name | Type | Description | Notes
 **state** | [**ExaminationStatus**](ExaminationStatus.md) |  | 
 **count** | **int** |  | 
 **lastConfirmedDate** | [**DateTime**](DateTime.md) |  | [optional] 
+**points** | **int** |  | 
+**badge** | [**BadgeType**](BadgeType.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

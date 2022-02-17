@@ -27,5 +27,15 @@ void main() {
       // TODO
     });
 
+    // int points
+    test('to test the property `points`', () async {
+      // TODO
+    });
+
+    // BadgeType badge
+    test('to test the property `badge`', () async {
+      // TODO
+    });
+
   });
 }

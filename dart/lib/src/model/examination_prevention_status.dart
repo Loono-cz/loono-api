@@ -3,6 +3,7 @@
 //
 
 import 'package:loono_api/src/model/examination_type.dart';
+import 'package:loono_api/src/model/badge_type.dart';
 import 'package:loono_api/src/model/examination_status.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -21,6 +22,8 @@ part 'examination_prevention_status.g.dart';
 /// * [state] 
 /// * [count] 
 /// * [lastConfirmedDate] 
+/// * [points] 
+/// * [badge] 
 abstract class ExaminationPreventionStatus implements Built<ExaminationPreventionStatus, ExaminationPreventionStatusBuilder> {
     @BuiltValueField(wireName: r'uuid')
     String get uuid;
@@ -50,6 +53,13 @@ abstract class ExaminationPreventionStatus implements Built<ExaminationPreventio
 
     @BuiltValueField(wireName: r'lastConfirmedDate')
     DateTime? get lastConfirmedDate;
+
+    @BuiltValueField(wireName: r'points')
+    int get points;
+
+    @BuiltValueField(wireName: r'badge')
+    BadgeType get badge;
+    // enum badgeEnum {  COAT,  TOP,  BELT,  SHOES,  GLOVES,  HEADBAND,  GLASSES,  SHIELD,  };
 
     ExaminationPreventionStatus._();
 
@@ -113,6 +123,14 @@ class _$ExaminationPreventionStatusSerializer implements StructuredSerializer<Ex
                 ..add(serializers.serialize(object.lastConfirmedDate,
                     specifiedType: const FullType(DateTime)));
         }
+        result
+            ..add(r'points')
+            ..add(serializers.serialize(object.points,
+                specifiedType: const FullType(int)));
+        result
+            ..add(r'badge')
+            ..add(serializers.serialize(object.badge,
+                specifiedType: const FullType(BadgeType)));
         return result;
     }
 
@@ -172,6 +190,16 @@ class _$ExaminationPreventionStatusSerializer implements StructuredSerializer<Ex
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(DateTime)) as DateTime;
                     result.lastConfirmedDate = valueDes;
+                    break;
+                case r'points':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(int)) as int;
+                    result.points = valueDes;
+                    break;
+                case r'badge':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(BadgeType)) as BadgeType;
+                    result.badge = valueDes;
                     break;
             }
         }

@@ -9,14 +9,15 @@ All URIs are relative to *https://loono.ceskodigital.net:443*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cancelExamination**](ExaminationsApi.md#cancelexamination) | **POST** /examinations/{type}/cancel | Cancel Examination
-[**completeExamination**](ExaminationsApi.md#completeexamination) | **POST** /examinations/{type}/confirm | Confirm Examination
+[**cancelExamination**](ExaminationsApi.md#cancelexamination) | **POST** /examinations/cancel | Cancel Examination
+[**completeExamination**](ExaminationsApi.md#completeexamination) | **POST** /examinations/confirm | Confirm Examination
+[**confirmSelfExamination**](ExaminationsApi.md#confirmselfexamination) | **POST** /examinations/{self-type}/self | Confirm Self-Examination
 [**getExaminations**](ExaminationsApi.md#getexaminations) | **GET** /examinations | Get Examinations Status
 [**postExaminations**](ExaminationsApi.md#postexaminations) | **POST** /examinations | Create or update examination record
 
 
 # **cancelExamination**
-> ExaminationRecord cancelExamination(type, examinationId)
+> ExaminationRecord cancelExamination(examinationId)
 
 Cancel Examination
 
@@ -30,11 +31,10 @@ import 'package:loono_api/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('Bearer_Auth').password = 'YOUR_PASSWORD';
 
 final api = LoonoApi().getExaminationsApi();
-final String type = type_example; // String | One of the `ExaminationTypeEnum` values
 final ExaminationId examinationId = ; // ExaminationId | 
 
 try {
-    final response = api.cancelExamination(type, examinationId);
+    final response = api.cancelExamination(examinationId);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling ExaminationsApi->cancelExamination: $e\n');
@@ -45,7 +45,6 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **type** | **String**| One of the `ExaminationTypeEnum` values | 
  **examinationId** | [**ExaminationId**](ExaminationId.md)|  | [optional] 
 
 ### Return type
@@ -64,7 +63,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **completeExamination**
-> ExaminationRecord completeExamination(type, examinationId)
+> ExaminationRecord completeExamination(examinationId)
 
 Confirm Examination
 
@@ -78,11 +77,10 @@ import 'package:loono_api/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('Bearer_Auth').password = 'YOUR_PASSWORD';
 
 final api = LoonoApi().getExaminationsApi();
-final String type = type_example; // String | One of the `ExaminationTypeEnum` values
 final ExaminationId examinationId = ; // ExaminationId | 
 
 try {
-    final response = api.completeExamination(type, examinationId);
+    final response = api.completeExamination(examinationId);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling ExaminationsApi->completeExamination: $e\n');
@@ -93,12 +91,59 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **type** | **String**| One of the `ExaminationTypeEnum` values | 
  **examinationId** | [**ExaminationId**](ExaminationId.md)|  | [optional] 
 
 ### Return type
 
 [**ExaminationRecord**](ExaminationRecord.md)
+
+### Authorization
+
+[Bearer_Auth](../README.md#Bearer_Auth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **confirmSelfExamination**
+> SelfExaminationCompletionInformation confirmSelfExamination(selfType, body)
+
+Confirm Self-Examination
+
+Notify the API that an self-examination has been completed.
+
+### Example
+```dart
+import 'package:loono_api/api.dart';
+// TODO Configure HTTP basic authorization: Bearer_Auth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('Bearer_Auth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('Bearer_Auth').password = 'YOUR_PASSWORD';
+
+final api = LoonoApi().getExaminationsApi();
+final String selfType = selfType_example; // String | One of the `SelfExaminationType` values
+final String body = ; // String | 
+
+try {
+    final response = api.confirmSelfExamination(selfType, body);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling ExaminationsApi->confirmSelfExamination: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **selfType** | **String**| One of the `SelfExaminationType` values | 
+ **body** | **String**|  | [optional] 
+
+### Return type
+
+[**SelfExaminationCompletionInformation**](SelfExaminationCompletionInformation.md)
 
 ### Authorization
 
@@ -157,6 +202,8 @@ This endpoint does not need any parameter.
 > ExaminationRecord postExaminations(examinationRecord)
 
 Create or update examination record
+
+Creating or updating an examination.
 
 ### Example
 ```dart

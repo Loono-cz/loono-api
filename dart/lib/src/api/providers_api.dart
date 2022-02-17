@@ -8,7 +8,7 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'dart:typed_data';
-import 'package:loono_api/src/model/healthcare_provider_detail.dart';
+import 'package:loono_api/src/model/healthcare_provider_detail_list.dart';
 import 'package:loono_api/src/model/healthcare_provider_id_list.dart';
 import 'package:loono_api/src/model/healthcare_provider_last_update.dart';
 import 'package:loono_api/src/model/update_status_message.dart';
@@ -169,7 +169,7 @@ class ProvidersApi {
   }
 
   /// Trigger healthcare provider update
-  /// 
+  /// Trigger to execute the providers update manually.
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -258,9 +258,9 @@ class ProvidersApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [HealthcareProviderDetail] as data
+  /// Returns a [Future] containing a [Response] with a [HealthcareProviderDetailList] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<HealthcareProviderDetail>> postProvidersDetail({ 
+  Future<Response<HealthcareProviderDetailList>> postProvidersDetail({ 
     HealthcareProviderIdList? healthcareProviderIdList,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -315,14 +315,14 @@ class ProvidersApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    HealthcareProviderDetail _responseData;
+    HealthcareProviderDetailList _responseData;
 
     try {
-      const _responseType = FullType(HealthcareProviderDetail);
+      const _responseType = FullType(HealthcareProviderDetailList);
       _responseData = _serializers.deserialize(
         _response.data!,
         specifiedType: _responseType,
-      ) as HealthcareProviderDetail;
+      ) as HealthcareProviderDetailList;
 
     } catch (error, stackTrace) {
       throw DioError(
@@ -333,7 +333,7 @@ class ProvidersApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<HealthcareProviderDetail>(
+    return Response<HealthcareProviderDetailList>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
