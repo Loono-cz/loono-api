@@ -16,7 +16,7 @@ void main() {
       // TODO
     });
 
-    // GET Account
+    // Get Account
     //
     // GET the account information of the current user.
     //
@@ -25,21 +25,19 @@ void main() {
       // TODO
     });
 
-    // Update Account Settings
+    // Update account
     //
-    // Change the settings. Successful operation returns the whole updated **Account**  **ALL FIELDS ARE ALWAYS UPDATED. BEWARE OF DEFAULT PARAMETERS**
+    // Update account
     //
-    //Future<Account> updateAccountSettings({ Settings settings }) async
-    test('test updateAccountSettings', () async {
+    //Future<Account> postAccount({ AccountUpdate accountUpdate }) async
+    test('test postAccount', () async {
       // TODO
     });
 
-    // Update Account User
+    // Onboarding / creating an account
     //
-    // Change the auxiliary account information. Successful operation returns the whole updated **Account**  **ALL FIELDS ARE ALWAYS UPDATED. BEWARE OF DEFAULT PARAMETERS**
-    //
-    //Future<Account> updateAccountUser({ UserPatch userPatch }) async
-    test('test updateAccountUser', () async {
+    //Future<Account> postAccountOnboard({ AccountOnboarding accountOnboarding }) async
+    test('test postAccountOnboard', () async {
       // TODO
     });
 

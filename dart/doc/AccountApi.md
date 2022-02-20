@@ -10,9 +10,9 @@ All URIs are relative to *https://loono.ceskodigital.net:443*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**deleteAccount**](AccountApi.md#deleteaccount) | **DELETE** /account | Delete account
-[**getAccount**](AccountApi.md#getaccount) | **GET** /account | GET Account
-[**updateAccountSettings**](AccountApi.md#updateaccountsettings) | **POST** /account/settings/update | Update Account Settings
-[**updateAccountUser**](AccountApi.md#updateaccountuser) | **POST** /account/user/update | Update Account User
+[**getAccount**](AccountApi.md#getaccount) | **GET** /account | Get Account
+[**postAccount**](AccountApi.md#postaccount) | **POST** /account | Update account
+[**postAccountOnboard**](AccountApi.md#postaccountonboard) | **POST** /account/onboard | 
 
 
 # **deleteAccount**
@@ -59,7 +59,7 @@ void (empty response body)
 # **getAccount**
 > Account getAccount()
 
-GET Account
+Get Account
 
 GET the account information of the current user.
 
@@ -98,12 +98,12 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **updateAccountSettings**
-> Account updateAccountSettings(settings)
+# **postAccount**
+> Account postAccount(accountUpdate)
 
-Update Account Settings
+Update account
 
-Change the settings. Successful operation returns the whole updated **Account**  **ALL FIELDS ARE ALWAYS UPDATED. BEWARE OF DEFAULT PARAMETERS**
+Update account
 
 ### Example
 ```dart
@@ -113,13 +113,13 @@ import 'package:loono_api/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('Bearer_Auth').password = 'YOUR_PASSWORD';
 
 final api = LoonoApi().getAccountApi();
-final Settings settings = ; // Settings | The whole new settings object. 
+final AccountUpdate accountUpdate = ; // AccountUpdate | 
 
 try {
-    final response = api.updateAccountSettings(settings);
+    final response = api.postAccount(accountUpdate);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling AccountApi->updateAccountSettings: $e\n');
+    print('Exception when calling AccountApi->postAccount: $e\n');
 }
 ```
 
@@ -127,7 +127,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settings** | [**Settings**](Settings.md)| The whole new settings object.  | [optional] 
+ **accountUpdate** | [**AccountUpdate**](AccountUpdate.md)|  | [optional] 
 
 ### Return type
 
@@ -144,12 +144,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **updateAccountUser**
-> Account updateAccountUser(userPatch)
+# **postAccountOnboard**
+> Account postAccountOnboard(accountOnboarding)
 
-Update Account User
 
-Change the auxiliary account information. Successful operation returns the whole updated **Account**  **ALL FIELDS ARE ALWAYS UPDATED. BEWARE OF DEFAULT PARAMETERS**
+
+Onboarding / creating an account
 
 ### Example
 ```dart
@@ -159,13 +159,13 @@ import 'package:loono_api/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('Bearer_Auth').password = 'YOUR_PASSWORD';
 
 final api = LoonoApi().getAccountApi();
-final UserPatch userPatch = ; // UserPatch | 
+final AccountOnboarding accountOnboarding = ; // AccountOnboarding | 
 
 try {
-    final response = api.updateAccountUser(userPatch);
+    final response = api.postAccountOnboard(accountOnboarding);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling AccountApi->updateAccountUser: $e\n');
+    print('Exception when calling AccountApi->postAccountOnboard: $e\n');
 }
 ```
 
@@ -173,7 +173,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userPatch** | [**UserPatch**](UserPatch.md)|  | [optional] 
+ **accountOnboarding** | [**AccountOnboarding**](AccountOnboarding.md)|  | [optional] 
 
 ### Return type
 

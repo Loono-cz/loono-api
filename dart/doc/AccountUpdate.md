@@ -1,4 +1,4 @@
-# loono_api.model.User
+# loono_api.model.AccountUpdate
 
 ## Load the model package
 ```dart
@@ -8,14 +8,13 @@ import 'package:loono_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**uid** | **String** | unique user identifier | 
-**email** | **String** | The primary registration email. | [optional] 
+**uid** | **String** |  | 
 **nickname** | **String** |  | [optional] 
-**sex** | [**Sex**](Sex.md) |  | [optional] 
-**birthdateMonth** | **int** | birthdate month of user | [optional] 
-**birthdateYear** | **int** | birthdate year of user | [optional] 
-**preferredEmail** | **String** |  | [optional] 
+**prefferedEmail** | **String** |  | [optional] 
 **profileImageUrl** | **String** |  | [optional] 
+**leaderboardAnonymizationOptIn** | **bool** |  | [optional] 
+**appointmentReminderEmailsOptIn** | **bool** |  | [optional] 
+**newsletterOptIn** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

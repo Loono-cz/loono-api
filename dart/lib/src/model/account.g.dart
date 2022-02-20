@@ -8,26 +8,58 @@ part of 'account.dart';
 
 class _$Account extends Account {
   @override
-  final User user;
+  final String uid;
   @override
-  final Settings settings;
+  final String nickname;
+  @override
+  final String prefferedEmail;
+  @override
+  final Sex sex;
+  @override
+  final Date birthdate;
+  @override
+  final String? profileImageUrl;
+  @override
+  final bool leaderboardAnonymizationOptIn;
+  @override
+  final bool appointmentReminderEmailsOptIn;
+  @override
+  final bool newsletterOptIn;
   @override
   final int points;
   @override
-  final BuiltList<Badge>? badges;
+  final BuiltList<Badge> badges;
 
   factory _$Account([void Function(AccountBuilder)? updates]) =>
       (new AccountBuilder()..update(updates)).build();
 
   _$Account._(
-      {required this.user,
-      required this.settings,
+      {required this.uid,
+      required this.nickname,
+      required this.prefferedEmail,
+      required this.sex,
+      required this.birthdate,
+      this.profileImageUrl,
+      required this.leaderboardAnonymizationOptIn,
+      required this.appointmentReminderEmailsOptIn,
+      required this.newsletterOptIn,
       required this.points,
-      this.badges})
+      required this.badges})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(user, 'Account', 'user');
-    BuiltValueNullFieldError.checkNotNull(settings, 'Account', 'settings');
+    BuiltValueNullFieldError.checkNotNull(uid, 'Account', 'uid');
+    BuiltValueNullFieldError.checkNotNull(nickname, 'Account', 'nickname');
+    BuiltValueNullFieldError.checkNotNull(
+        prefferedEmail, 'Account', 'prefferedEmail');
+    BuiltValueNullFieldError.checkNotNull(sex, 'Account', 'sex');
+    BuiltValueNullFieldError.checkNotNull(birthdate, 'Account', 'birthdate');
+    BuiltValueNullFieldError.checkNotNull(leaderboardAnonymizationOptIn,
+        'Account', 'leaderboardAnonymizationOptIn');
+    BuiltValueNullFieldError.checkNotNull(appointmentReminderEmailsOptIn,
+        'Account', 'appointmentReminderEmailsOptIn');
+    BuiltValueNullFieldError.checkNotNull(
+        newsletterOptIn, 'Account', 'newsletterOptIn');
     BuiltValueNullFieldError.checkNotNull(points, 'Account', 'points');
+    BuiltValueNullFieldError.checkNotNull(badges, 'Account', 'badges');
   }
 
   @override
@@ -41,8 +73,16 @@ class _$Account extends Account {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is Account &&
-        user == other.user &&
-        settings == other.settings &&
+        uid == other.uid &&
+        nickname == other.nickname &&
+        prefferedEmail == other.prefferedEmail &&
+        sex == other.sex &&
+        birthdate == other.birthdate &&
+        profileImageUrl == other.profileImageUrl &&
+        leaderboardAnonymizationOptIn == other.leaderboardAnonymizationOptIn &&
+        appointmentReminderEmailsOptIn ==
+            other.appointmentReminderEmailsOptIn &&
+        newsletterOptIn == other.newsletterOptIn &&
         points == other.points &&
         badges == other.badges;
   }
@@ -50,15 +90,40 @@ class _$Account extends Account {
   @override
   int get hashCode {
     return $jf($jc(
-        $jc($jc($jc(0, user.hashCode), settings.hashCode), points.hashCode),
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc($jc(0, uid.hashCode),
+                                            nickname.hashCode),
+                                        prefferedEmail.hashCode),
+                                    sex.hashCode),
+                                birthdate.hashCode),
+                            profileImageUrl.hashCode),
+                        leaderboardAnonymizationOptIn.hashCode),
+                    appointmentReminderEmailsOptIn.hashCode),
+                newsletterOptIn.hashCode),
+            points.hashCode),
         badges.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Account')
-          ..add('user', user)
-          ..add('settings', settings)
+          ..add('uid', uid)
+          ..add('nickname', nickname)
+          ..add('prefferedEmail', prefferedEmail)
+          ..add('sex', sex)
+          ..add('birthdate', birthdate)
+          ..add('profileImageUrl', profileImageUrl)
+          ..add('leaderboardAnonymizationOptIn', leaderboardAnonymizationOptIn)
+          ..add(
+              'appointmentReminderEmailsOptIn', appointmentReminderEmailsOptIn)
+          ..add('newsletterOptIn', newsletterOptIn)
           ..add('points', points)
           ..add('badges', badges))
         .toString();
@@ -68,13 +133,48 @@ class _$Account extends Account {
 class AccountBuilder implements Builder<Account, AccountBuilder> {
   _$Account? _$v;
 
-  UserBuilder? _user;
-  UserBuilder get user => _$this._user ??= new UserBuilder();
-  set user(UserBuilder? user) => _$this._user = user;
+  String? _uid;
+  String? get uid => _$this._uid;
+  set uid(String? uid) => _$this._uid = uid;
 
-  SettingsBuilder? _settings;
-  SettingsBuilder get settings => _$this._settings ??= new SettingsBuilder();
-  set settings(SettingsBuilder? settings) => _$this._settings = settings;
+  String? _nickname;
+  String? get nickname => _$this._nickname;
+  set nickname(String? nickname) => _$this._nickname = nickname;
+
+  String? _prefferedEmail;
+  String? get prefferedEmail => _$this._prefferedEmail;
+  set prefferedEmail(String? prefferedEmail) =>
+      _$this._prefferedEmail = prefferedEmail;
+
+  Sex? _sex;
+  Sex? get sex => _$this._sex;
+  set sex(Sex? sex) => _$this._sex = sex;
+
+  Date? _birthdate;
+  Date? get birthdate => _$this._birthdate;
+  set birthdate(Date? birthdate) => _$this._birthdate = birthdate;
+
+  String? _profileImageUrl;
+  String? get profileImageUrl => _$this._profileImageUrl;
+  set profileImageUrl(String? profileImageUrl) =>
+      _$this._profileImageUrl = profileImageUrl;
+
+  bool? _leaderboardAnonymizationOptIn;
+  bool? get leaderboardAnonymizationOptIn =>
+      _$this._leaderboardAnonymizationOptIn;
+  set leaderboardAnonymizationOptIn(bool? leaderboardAnonymizationOptIn) =>
+      _$this._leaderboardAnonymizationOptIn = leaderboardAnonymizationOptIn;
+
+  bool? _appointmentReminderEmailsOptIn;
+  bool? get appointmentReminderEmailsOptIn =>
+      _$this._appointmentReminderEmailsOptIn;
+  set appointmentReminderEmailsOptIn(bool? appointmentReminderEmailsOptIn) =>
+      _$this._appointmentReminderEmailsOptIn = appointmentReminderEmailsOptIn;
+
+  bool? _newsletterOptIn;
+  bool? get newsletterOptIn => _$this._newsletterOptIn;
+  set newsletterOptIn(bool? newsletterOptIn) =>
+      _$this._newsletterOptIn = newsletterOptIn;
 
   int? _points;
   int? get points => _$this._points;
@@ -91,10 +191,17 @@ class AccountBuilder implements Builder<Account, AccountBuilder> {
   AccountBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _user = $v.user.toBuilder();
-      _settings = $v.settings.toBuilder();
+      _uid = $v.uid;
+      _nickname = $v.nickname;
+      _prefferedEmail = $v.prefferedEmail;
+      _sex = $v.sex;
+      _birthdate = $v.birthdate;
+      _profileImageUrl = $v.profileImageUrl;
+      _leaderboardAnonymizationOptIn = $v.leaderboardAnonymizationOptIn;
+      _appointmentReminderEmailsOptIn = $v.appointmentReminderEmailsOptIn;
+      _newsletterOptIn = $v.newsletterOptIn;
       _points = $v.points;
-      _badges = $v.badges?.toBuilder();
+      _badges = $v.badges.toBuilder();
       _$v = null;
     }
     return this;
@@ -117,21 +224,34 @@ class AccountBuilder implements Builder<Account, AccountBuilder> {
     try {
       _$result = _$v ??
           new _$Account._(
-              user: user.build(),
-              settings: settings.build(),
+              uid: BuiltValueNullFieldError.checkNotNull(uid, 'Account', 'uid'),
+              nickname: BuiltValueNullFieldError.checkNotNull(
+                  nickname, 'Account', 'nickname'),
+              prefferedEmail: BuiltValueNullFieldError.checkNotNull(
+                  prefferedEmail, 'Account', 'prefferedEmail'),
+              sex: BuiltValueNullFieldError.checkNotNull(sex, 'Account', 'sex'),
+              birthdate: BuiltValueNullFieldError.checkNotNull(
+                  birthdate, 'Account', 'birthdate'),
+              profileImageUrl: profileImageUrl,
+              leaderboardAnonymizationOptIn: BuiltValueNullFieldError.checkNotNull(
+                  leaderboardAnonymizationOptIn,
+                  'Account',
+                  'leaderboardAnonymizationOptIn'),
+              appointmentReminderEmailsOptIn:
+                  BuiltValueNullFieldError.checkNotNull(
+                      appointmentReminderEmailsOptIn,
+                      'Account',
+                      'appointmentReminderEmailsOptIn'),
+              newsletterOptIn: BuiltValueNullFieldError.checkNotNull(
+                  newsletterOptIn, 'Account', 'newsletterOptIn'),
               points: BuiltValueNullFieldError.checkNotNull(
                   points, 'Account', 'points'),
-              badges: _badges?.build());
+              badges: badges.build());
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'user';
-        user.build();
-        _$failedField = 'settings';
-        settings.build();
-
         _$failedField = 'badges';
-        _badges?.build();
+        badges.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             'Account', _$failedField, e.toString());

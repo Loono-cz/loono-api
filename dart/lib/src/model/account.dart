@@ -2,9 +2,9 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
+import 'package:loono_api/src/model/sex.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:loono_api/src/model/settings.dart';
-import 'package:loono_api/src/model/user.dart';
+import 'package:loono_api/src/model/date.dart';
 import 'package:loono_api/src/model/badge.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -14,23 +14,52 @@ part 'account.g.dart';
 /// Account information of the current user. Includes the user profile, account settings and points.
 ///
 /// Properties:
-/// * [user] 
-/// * [settings] 
+/// * [uid] 
+/// * [nickname] 
+/// * [prefferedEmail] 
+/// * [sex] 
+/// * [birthdate] 
+/// * [profileImageUrl] 
+/// * [leaderboardAnonymizationOptIn] 
+/// * [appointmentReminderEmailsOptIn] 
+/// * [newsletterOptIn] 
 /// * [points] - The total amount of points earned by the user from gamification features.
 /// * [badges] 
 abstract class Account implements Built<Account, AccountBuilder> {
-    @BuiltValueField(wireName: r'user')
-    User get user;
+    @BuiltValueField(wireName: r'uid')
+    String get uid;
 
-    @BuiltValueField(wireName: r'settings')
-    Settings get settings;
+    @BuiltValueField(wireName: r'nickname')
+    String get nickname;
+
+    @BuiltValueField(wireName: r'prefferedEmail')
+    String get prefferedEmail;
+
+    @BuiltValueField(wireName: r'sex')
+    Sex get sex;
+    // enum sexEnum {  MALE,  FEMALE,  };
+
+    @BuiltValueField(wireName: r'birthdate')
+    Date get birthdate;
+
+    @BuiltValueField(wireName: r'profileImageUrl')
+    String? get profileImageUrl;
+
+    @BuiltValueField(wireName: r'leaderboardAnonymizationOptIn')
+    bool get leaderboardAnonymizationOptIn;
+
+    @BuiltValueField(wireName: r'appointmentReminderEmailsOptIn')
+    bool get appointmentReminderEmailsOptIn;
+
+    @BuiltValueField(wireName: r'newsletterOptIn')
+    bool get newsletterOptIn;
 
     /// The total amount of points earned by the user from gamification features.
     @BuiltValueField(wireName: r'points')
     int get points;
 
     @BuiltValueField(wireName: r'badges')
-    BuiltList<Badge>? get badges;
+    BuiltList<Badge> get badges;
 
     Account._();
 
@@ -55,23 +84,51 @@ class _$AccountSerializer implements StructuredSerializer<Account> {
         {FullType specifiedType = FullType.unspecified}) {
         final result = <Object?>[];
         result
-            ..add(r'user')
-            ..add(serializers.serialize(object.user,
-                specifiedType: const FullType(User)));
+            ..add(r'uid')
+            ..add(serializers.serialize(object.uid,
+                specifiedType: const FullType(String)));
         result
-            ..add(r'settings')
-            ..add(serializers.serialize(object.settings,
-                specifiedType: const FullType(Settings)));
+            ..add(r'nickname')
+            ..add(serializers.serialize(object.nickname,
+                specifiedType: const FullType(String)));
+        result
+            ..add(r'prefferedEmail')
+            ..add(serializers.serialize(object.prefferedEmail,
+                specifiedType: const FullType(String)));
+        result
+            ..add(r'sex')
+            ..add(serializers.serialize(object.sex,
+                specifiedType: const FullType(Sex)));
+        result
+            ..add(r'birthdate')
+            ..add(serializers.serialize(object.birthdate,
+                specifiedType: const FullType(Date)));
+        if (object.profileImageUrl != null) {
+            result
+                ..add(r'profileImageUrl')
+                ..add(serializers.serialize(object.profileImageUrl,
+                    specifiedType: const FullType.nullable(String)));
+        }
+        result
+            ..add(r'leaderboardAnonymizationOptIn')
+            ..add(serializers.serialize(object.leaderboardAnonymizationOptIn,
+                specifiedType: const FullType(bool)));
+        result
+            ..add(r'appointmentReminderEmailsOptIn')
+            ..add(serializers.serialize(object.appointmentReminderEmailsOptIn,
+                specifiedType: const FullType(bool)));
+        result
+            ..add(r'newsletterOptIn')
+            ..add(serializers.serialize(object.newsletterOptIn,
+                specifiedType: const FullType(bool)));
         result
             ..add(r'points')
             ..add(serializers.serialize(object.points,
                 specifiedType: const FullType(int)));
-        if (object.badges != null) {
-            result
-                ..add(r'badges')
-                ..add(serializers.serialize(object.badges,
-                    specifiedType: const FullType(BuiltList, [FullType(Badge)])));
-        }
+        result
+            ..add(r'badges')
+            ..add(serializers.serialize(object.badges,
+                specifiedType: const FullType(BuiltList, [FullType(Badge)])));
         return result;
     }
 
@@ -87,15 +144,51 @@ class _$AccountSerializer implements StructuredSerializer<Account> {
             final Object? value = iterator.current;
             
             switch (key) {
-                case r'user':
+                case r'uid':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(User)) as User;
-                    result.user.replace(valueDes);
+                        specifiedType: const FullType(String)) as String;
+                    result.uid = valueDes;
                     break;
-                case r'settings':
+                case r'nickname':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(Settings)) as Settings;
-                    result.settings.replace(valueDes);
+                        specifiedType: const FullType(String)) as String;
+                    result.nickname = valueDes;
+                    break;
+                case r'prefferedEmail':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    result.prefferedEmail = valueDes;
+                    break;
+                case r'sex':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(Sex)) as Sex;
+                    result.sex = valueDes;
+                    break;
+                case r'birthdate':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(Date)) as Date;
+                    result.birthdate = valueDes;
+                    break;
+                case r'profileImageUrl':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType.nullable(String)) as String?;
+                    if (valueDes == null) continue;
+                    result.profileImageUrl = valueDes;
+                    break;
+                case r'leaderboardAnonymizationOptIn':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(bool)) as bool;
+                    result.leaderboardAnonymizationOptIn = valueDes;
+                    break;
+                case r'appointmentReminderEmailsOptIn':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(bool)) as bool;
+                    result.appointmentReminderEmailsOptIn = valueDes;
+                    break;
+                case r'newsletterOptIn':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(bool)) as bool;
+                    result.newsletterOptIn = valueDes;
                     break;
                 case r'points':
                     final valueDes = serializers.deserialize(value,

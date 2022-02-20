@@ -1,12 +1,12 @@
 import 'package:test/test.dart';
 import 'package:loono_api/loono_api.dart';
 
-// tests for Account
+// tests for AccountUpdate
 void main() {
-  final instance = AccountBuilder();
+  final instance = AccountUpdateBuilder();
   // TODO add properties to the builder and call build()
 
-  group(Account, () {
+  group(AccountUpdate, () {
     // String uid
     test('to test the property `uid`', () async {
       // TODO
@@ -19,16 +19,6 @@ void main() {
 
     // String prefferedEmail
     test('to test the property `prefferedEmail`', () async {
-      // TODO
-    });
-
-    // Sex sex
-    test('to test the property `sex`', () async {
-      // TODO
-    });
-
-    // Date birthdate
-    test('to test the property `birthdate`', () async {
       // TODO
     });
 
@@ -49,17 +39,6 @@ void main() {
 
     // bool newsletterOptIn
     test('to test the property `newsletterOptIn`', () async {
-      // TODO
-    });
-
-    // The total amount of points earned by the user from gamification features.
-    // int points
-    test('to test the property `points`', () async {
-      // TODO
-    });
-
-    // BuiltList<Badge> badges
-    test('to test the property `badges`', () async {
       // TODO
     });
 

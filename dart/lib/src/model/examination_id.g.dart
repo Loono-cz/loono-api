@@ -8,14 +8,12 @@ part of 'examination_id.dart';
 
 class _$ExaminationId extends ExaminationId {
   @override
-  final String uuid;
+  final String? uuid;
 
   factory _$ExaminationId([void Function(ExaminationIdBuilder)? updates]) =>
       (new ExaminationIdBuilder()..update(updates)).build();
 
-  _$ExaminationId._({required this.uuid}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(uuid, 'ExaminationId', 'uuid');
-  }
+  _$ExaminationId._({this.uuid}) : super._();
 
   @override
   ExaminationId rebuild(void Function(ExaminationIdBuilder) updates) =>
@@ -76,10 +74,7 @@ class ExaminationIdBuilder
 
   @override
   _$ExaminationId build() {
-    final _$result = _$v ??
-        new _$ExaminationId._(
-            uuid: BuiltValueNullFieldError.checkNotNull(
-                uuid, 'ExaminationId', 'uuid'));
+    final _$result = _$v ?? new _$ExaminationId._(uuid: uuid);
     replace(_$result);
     return _$result;
   }

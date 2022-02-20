@@ -8,6 +8,8 @@ part of 'serializers.dart';
 
 Serializers _$serializers = (new Serializers().toBuilder()
       ..add(Account.serializer)
+      ..add(AccountOnboarding.serializer)
+      ..add(AccountUpdate.serializer)
       ..add(Badge.serializer)
       ..add(BadgeType.serializer)
       ..add(Error.serializer)
@@ -29,12 +31,9 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(SelfExaminationResult.serializer)
       ..add(SelfExaminationStatus.serializer)
       ..add(SelfExaminationType.serializer)
-      ..add(Settings.serializer)
       ..add(Sex.serializer)
       ..add(SimpleHealthcareProvider.serializer)
       ..add(UpdateStatusMessage.serializer)
-      ..add(User.serializer)
-      ..add(UserPatch.serializer)
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(Badge)]),
           () => new ListBuilder<Badge>())
@@ -46,6 +45,9 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltList,
               const [const FullType(SelfExaminationPreventionStatus)]),
           () => new ListBuilder<SelfExaminationPreventionStatus>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(ExaminationRecord)]),
+          () => new ListBuilder<ExaminationRecord>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(HealthcareProviderDetail)]),

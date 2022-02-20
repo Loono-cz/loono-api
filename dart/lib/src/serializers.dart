@@ -13,6 +13,8 @@ import 'package:loono_api/src/date_serializer.dart';
 import 'package:loono_api/src/model/date.dart';
 
 import 'package:loono_api/src/model/account.dart';
+import 'package:loono_api/src/model/account_onboarding.dart';
+import 'package:loono_api/src/model/account_update.dart';
 import 'package:loono_api/src/model/badge.dart';
 import 'package:loono_api/src/model/badge_type.dart';
 import 'package:loono_api/src/model/error.dart';
@@ -34,17 +36,16 @@ import 'package:loono_api/src/model/self_examination_prevention_status.dart';
 import 'package:loono_api/src/model/self_examination_result.dart';
 import 'package:loono_api/src/model/self_examination_status.dart';
 import 'package:loono_api/src/model/self_examination_type.dart';
-import 'package:loono_api/src/model/settings.dart';
 import 'package:loono_api/src/model/sex.dart';
 import 'package:loono_api/src/model/simple_healthcare_provider.dart';
 import 'package:loono_api/src/model/update_status_message.dart';
-import 'package:loono_api/src/model/user.dart';
-import 'package:loono_api/src/model/user_patch.dart';
 
 part 'serializers.g.dart';
 
 @SerializersFor([
   Account,
+  AccountOnboarding,
+  AccountUpdate,
   Badge,
   BadgeType,
   Error,
@@ -66,12 +67,9 @@ part 'serializers.g.dart';
   SelfExaminationResult,
   SelfExaminationStatus,
   SelfExaminationType,
-  Settings,
   Sex,
   SimpleHealthcareProvider,
   UpdateStatusMessage,
-  User,
-  UserPatch,
 ])
 Serializers serializers = (_$serializers.toBuilder()
       ..add(const DateSerializer())

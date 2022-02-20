@@ -7,7 +7,6 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(ExaminationId, () {
-    // Must not be in the future
     // String uuid
     test('to test the property `uuid`', () async {
       // TODO

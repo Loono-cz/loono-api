@@ -7,14 +7,13 @@ import 'package:built_value/serializer.dart';
 
 part 'examination_id.g.dart';
 
-/// A examination identification.  `month` and `year` are optional and nullable. If any of them is missing or `null`, API defaults to `LocalDate.now()` - the current year and month.
+/// A examination identification.
 ///
 /// Properties:
-/// * [uuid] - Must not be in the future
+/// * [uuid] 
 abstract class ExaminationId implements Built<ExaminationId, ExaminationIdBuilder> {
-    /// Must not be in the future
     @BuiltValueField(wireName: r'uuid')
-    String get uuid;
+    String? get uuid;
 
     ExaminationId._();
 
@@ -38,10 +37,12 @@ class _$ExaminationIdSerializer implements StructuredSerializer<ExaminationId> {
     Iterable<Object?> serialize(Serializers serializers, ExaminationId object,
         {FullType specifiedType = FullType.unspecified}) {
         final result = <Object?>[];
-        result
-            ..add(r'uuid')
-            ..add(serializers.serialize(object.uuid,
-                specifiedType: const FullType(String)));
+        if (object.uuid != null) {
+            result
+                ..add(r'uuid')
+                ..add(serializers.serialize(object.uuid,
+                    specifiedType: const FullType(String)));
+        }
         return result;
     }
 

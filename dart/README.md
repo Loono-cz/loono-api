@@ -72,9 +72,9 @@ All URIs are relative to *https://loono.ceskodigital.net:443*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 [*AccountApi*](doc/AccountApi.md) | [**deleteAccount**](doc/AccountApi.md#deleteaccount) | **DELETE** /account | Delete account
-[*AccountApi*](doc/AccountApi.md) | [**getAccount**](doc/AccountApi.md#getaccount) | **GET** /account | GET Account
-[*AccountApi*](doc/AccountApi.md) | [**updateAccountSettings**](doc/AccountApi.md#updateaccountsettings) | **POST** /account/settings/update | Update Account Settings
-[*AccountApi*](doc/AccountApi.md) | [**updateAccountUser**](doc/AccountApi.md#updateaccountuser) | **POST** /account/user/update | Update Account User
+[*AccountApi*](doc/AccountApi.md) | [**getAccount**](doc/AccountApi.md#getaccount) | **GET** /account | Get Account
+[*AccountApi*](doc/AccountApi.md) | [**postAccount**](doc/AccountApi.md#postaccount) | **POST** /account | Update account
+[*AccountApi*](doc/AccountApi.md) | [**postAccountOnboard**](doc/AccountApi.md#postaccountonboard) | **POST** /account/onboard | 
 [*ExaminationsApi*](doc/ExaminationsApi.md) | [**cancelExamination**](doc/ExaminationsApi.md#cancelexamination) | **POST** /examinations/cancel | Cancel Examination
 [*ExaminationsApi*](doc/ExaminationsApi.md) | [**completeExamination**](doc/ExaminationsApi.md#completeexamination) | **POST** /examinations/confirm | Confirm Examination
 [*ExaminationsApi*](doc/ExaminationsApi.md) | [**confirmSelfExamination**](doc/ExaminationsApi.md#confirmselfexamination) | **POST** /examinations/{self-type}/self | Confirm Self-Examination
@@ -90,6 +90,8 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [Account](doc/Account.md)
+ - [AccountOnboarding](doc/AccountOnboarding.md)
+ - [AccountUpdate](doc/AccountUpdate.md)
  - [Badge](doc/Badge.md)
  - [BadgeType](doc/BadgeType.md)
  - [Error](doc/Error.md)
@@ -111,12 +113,9 @@ Class | Method | HTTP request | Description
  - [SelfExaminationResult](doc/SelfExaminationResult.md)
  - [SelfExaminationStatus](doc/SelfExaminationStatus.md)
  - [SelfExaminationType](doc/SelfExaminationType.md)
- - [Settings](doc/Settings.md)
  - [Sex](doc/Sex.md)
  - [SimpleHealthcareProvider](doc/SimpleHealthcareProvider.md)
  - [UpdateStatusMessage](doc/UpdateStatusMessage.md)
- - [User](doc/User.md)
- - [UserPatch](doc/UserPatch.md)
 
 
 ## Documentation For Authorization

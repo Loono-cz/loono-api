@@ -8,9 +8,9 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:loono_api/src/model/account.dart';
+import 'package:loono_api/src/model/account_onboarding.dart';
+import 'package:loono_api/src/model/account_update.dart';
 import 'package:loono_api/src/model/error.dart';
-import 'package:loono_api/src/model/settings.dart';
-import 'package:loono_api/src/model/user_patch.dart';
 
 class AccountApi {
 
@@ -71,7 +71,7 @@ class AccountApi {
     return _response;
   }
 
-  /// GET Account
+  /// Get Account
   /// GET the account information of the current user.
   ///
   /// Parameters:
@@ -149,11 +149,11 @@ class AccountApi {
     );
   }
 
-  /// Update Account Settings
-  /// Change the settings. Successful operation returns the whole updated **Account**  **ALL FIELDS ARE ALWAYS UPDATED. BEWARE OF DEFAULT PARAMETERS**
+  /// Update account
+  /// Update account
   ///
   /// Parameters:
-  /// * [settings] - The whole new settings object. 
+  /// * [accountUpdate] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -163,8 +163,8 @@ class AccountApi {
   ///
   /// Returns a [Future] containing a [Response] with a [Account] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<Account>> updateAccountSettings({ 
-    Settings? settings,
+  Future<Response<Account>> postAccount({ 
+    AccountUpdate? accountUpdate,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -172,7 +172,7 @@ class AccountApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/account/settings/update';
+    final _path = r'/account';
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -195,8 +195,8 @@ class AccountApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(Settings);
-      _bodyData = settings == null ? null : _serializers.serialize(settings, specifiedType: _type);
+      const _type = FullType(AccountUpdate);
+      _bodyData = accountUpdate == null ? null : _serializers.serialize(accountUpdate, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioError(
@@ -248,11 +248,11 @@ class AccountApi {
     );
   }
 
-  /// Update Account User
-  /// Change the auxiliary account information. Successful operation returns the whole updated **Account**  **ALL FIELDS ARE ALWAYS UPDATED. BEWARE OF DEFAULT PARAMETERS**
+  /// postAccountOnboard
+  /// Onboarding / creating an account
   ///
   /// Parameters:
-  /// * [userPatch] 
+  /// * [accountOnboarding] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -262,8 +262,8 @@ class AccountApi {
   ///
   /// Returns a [Future] containing a [Response] with a [Account] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<Account>> updateAccountUser({ 
-    UserPatch? userPatch,
+  Future<Response<Account>> postAccountOnboard({ 
+    AccountOnboarding? accountOnboarding,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -271,7 +271,7 @@ class AccountApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/account/user/update';
+    final _path = r'/account/onboard';
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -294,8 +294,8 @@ class AccountApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(UserPatch);
-      _bodyData = userPatch == null ? null : _serializers.serialize(userPatch, specifiedType: _type);
+      const _type = FullType(AccountOnboarding);
+      _bodyData = accountOnboarding == null ? null : _serializers.serialize(accountOnboarding, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioError(

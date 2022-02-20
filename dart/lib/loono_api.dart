@@ -15,6 +15,8 @@ export 'package:loono_api/src/api/leaderboard_api.dart';
 export 'package:loono_api/src/api/providers_api.dart';
 
 export 'package:loono_api/src/model/account.dart';
+export 'package:loono_api/src/model/account_onboarding.dart';
+export 'package:loono_api/src/model/account_update.dart';
 export 'package:loono_api/src/model/badge.dart';
 export 'package:loono_api/src/model/badge_type.dart';
 export 'package:loono_api/src/model/error.dart';
@@ -36,9 +38,6 @@ export 'package:loono_api/src/model/self_examination_prevention_status.dart';
 export 'package:loono_api/src/model/self_examination_result.dart';
 export 'package:loono_api/src/model/self_examination_status.dart';
 export 'package:loono_api/src/model/self_examination_type.dart';
-export 'package:loono_api/src/model/settings.dart';
 export 'package:loono_api/src/model/sex.dart';
 export 'package:loono_api/src/model/simple_healthcare_provider.dart';
 export 'package:loono_api/src/model/update_status_message.dart';
-export 'package:loono_api/src/model/user.dart';
-export 'package:loono_api/src/model/user_patch.dart';
