@@ -8,7 +8,6 @@ import 'package:loono_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**uid** | **String** |  | 
 **nickname** | **String** |  | [optional] 
 **prefferedEmail** | **String** |  | [optional] 
 **profileImageUrl** | **String** |  | [optional] 

@@ -10,7 +10,6 @@ part 'account_update.g.dart';
 /// Object to able to update the account.
 ///
 /// Properties:
-/// * [uid] 
 /// * [nickname] 
 /// * [prefferedEmail] 
 /// * [profileImageUrl] 
@@ -18,9 +17,6 @@ part 'account_update.g.dart';
 /// * [appointmentReminderEmailsOptIn] 
 /// * [newsletterOptIn] 
 abstract class AccountUpdate implements Built<AccountUpdate, AccountUpdateBuilder> {
-    @BuiltValueField(wireName: r'uid')
-    String get uid;
-
     @BuiltValueField(wireName: r'nickname')
     String? get nickname;
 
@@ -61,10 +57,6 @@ class _$AccountUpdateSerializer implements StructuredSerializer<AccountUpdate> {
     Iterable<Object?> serialize(Serializers serializers, AccountUpdate object,
         {FullType specifiedType = FullType.unspecified}) {
         final result = <Object?>[];
-        result
-            ..add(r'uid')
-            ..add(serializers.serialize(object.uid,
-                specifiedType: const FullType(String)));
         if (object.nickname != null) {
             result
                 ..add(r'nickname')
@@ -116,11 +108,6 @@ class _$AccountUpdateSerializer implements StructuredSerializer<AccountUpdate> {
             final Object? value = iterator.current;
             
             switch (key) {
-                case r'uid':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
-                    result.uid = valueDes;
-                    break;
                 case r'nickname':
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(String)) as String;

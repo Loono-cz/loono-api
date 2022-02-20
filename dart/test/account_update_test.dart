@@ -7,11 +7,6 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(AccountUpdate, () {
-    // String uid
-    test('to test the property `uid`', () async {
-      // TODO
-    });
-
     // String nickname
     test('to test the property `nickname`', () async {
       // TODO

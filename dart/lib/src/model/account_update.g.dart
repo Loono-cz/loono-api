@@ -8,8 +8,6 @@ part of 'account_update.dart';
 
 class _$AccountUpdate extends AccountUpdate {
   @override
-  final String uid;
-  @override
   final String? nickname;
   @override
   final String? prefferedEmail;
@@ -26,16 +24,13 @@ class _$AccountUpdate extends AccountUpdate {
       (new AccountUpdateBuilder()..update(updates)).build();
 
   _$AccountUpdate._(
-      {required this.uid,
-      this.nickname,
+      {this.nickname,
       this.prefferedEmail,
       this.profileImageUrl,
       this.leaderboardAnonymizationOptIn,
       this.appointmentReminderEmailsOptIn,
       this.newsletterOptIn})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(uid, 'AccountUpdate', 'uid');
-  }
+      : super._();
 
   @override
   AccountUpdate rebuild(void Function(AccountUpdateBuilder) updates) =>
@@ -48,7 +43,6 @@ class _$AccountUpdate extends AccountUpdate {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is AccountUpdate &&
-        uid == other.uid &&
         nickname == other.nickname &&
         prefferedEmail == other.prefferedEmail &&
         profileImageUrl == other.profileImageUrl &&
@@ -63,9 +57,7 @@ class _$AccountUpdate extends AccountUpdate {
     return $jf($jc(
         $jc(
             $jc(
-                $jc(
-                    $jc($jc($jc(0, uid.hashCode), nickname.hashCode),
-                        prefferedEmail.hashCode),
+                $jc($jc($jc(0, nickname.hashCode), prefferedEmail.hashCode),
                     profileImageUrl.hashCode),
                 leaderboardAnonymizationOptIn.hashCode),
             appointmentReminderEmailsOptIn.hashCode),
@@ -75,7 +67,6 @@ class _$AccountUpdate extends AccountUpdate {
   @override
   String toString() {
     return (newBuiltValueToStringHelper('AccountUpdate')
-          ..add('uid', uid)
           ..add('nickname', nickname)
           ..add('prefferedEmail', prefferedEmail)
           ..add('profileImageUrl', profileImageUrl)
@@ -90,10 +81,6 @@ class _$AccountUpdate extends AccountUpdate {
 class AccountUpdateBuilder
     implements Builder<AccountUpdate, AccountUpdateBuilder> {
   _$AccountUpdate? _$v;
-
-  String? _uid;
-  String? get uid => _$this._uid;
-  set uid(String? uid) => _$this._uid = uid;
 
   String? _nickname;
   String? get nickname => _$this._nickname;
@@ -133,7 +120,6 @@ class AccountUpdateBuilder
   AccountUpdateBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _uid = $v.uid;
       _nickname = $v.nickname;
       _prefferedEmail = $v.prefferedEmail;
       _profileImageUrl = $v.profileImageUrl;
@@ -160,8 +146,6 @@ class AccountUpdateBuilder
   _$AccountUpdate build() {
     final _$result = _$v ??
         new _$AccountUpdate._(
-            uid: BuiltValueNullFieldError.checkNotNull(
-                uid, 'AccountUpdate', 'uid'),
             nickname: nickname,
             prefferedEmail: prefferedEmail,
             profileImageUrl: profileImageUrl,
