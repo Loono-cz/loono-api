@@ -10,10 +10,12 @@ part 'self_examination_result.g.dart';
 
 class SelfExaminationResult extends EnumClass {
 
-  @BuiltValueEnumConst(wireName: r'OK')
-  static const SelfExaminationResult OK = _$OK;
   @BuiltValueEnumConst(wireName: r'FINDING')
   static const SelfExaminationResult FINDING = _$FINDING;
+  @BuiltValueEnumConst(wireName: r'NOT_OK')
+  static const SelfExaminationResult NOT_OK = _$NOT_OK;
+  @BuiltValueEnumConst(wireName: r'OK')
+  static const SelfExaminationResult OK = _$OK;
 
   static Serializer<SelfExaminationResult> get serializer => _$selfExaminationResultSerializer;
 

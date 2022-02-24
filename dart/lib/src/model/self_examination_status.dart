@@ -19,6 +19,12 @@ class SelfExaminationStatus extends EnumClass {
   /// Self-examination statuses
   @BuiltValueEnumConst(wireName: r'MISSED')
   static const SelfExaminationStatus MISSED = _$MISSED;
+  /// Self-examination statuses
+  @BuiltValueEnumConst(wireName: r'WAITING_FOR_CHECKUP')
+  static const SelfExaminationStatus WAITING_FOR_CHECKUP = _$WAITING_FOR_CHECKUP;
+  /// Self-examination statuses
+  @BuiltValueEnumConst(wireName: r'WAITING_FOR_RESULT')
+  static const SelfExaminationStatus WAITING_FOR_RESULT = _$WAITING_FOR_RESULT;
 
   static Serializer<SelfExaminationStatus> get serializer => _$selfExaminationStatusSerializer;
 

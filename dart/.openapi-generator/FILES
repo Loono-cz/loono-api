@@ -26,6 +26,7 @@ doc/LeaderboardUser.md
 doc/PreventionStatus.md
 doc/ProvidersApi.md
 doc/SelfExaminationCompletionInformation.md
+doc/SelfExaminationFindingResponse.md
 doc/SelfExaminationPreventionStatus.md
 doc/SelfExaminationResult.md
 doc/SelfExaminationStatus.md
@@ -67,6 +68,7 @@ lib/src/model/leaderboard.dart
 lib/src/model/leaderboard_user.dart
 lib/src/model/prevention_status.dart
 lib/src/model/self_examination_completion_information.dart
+lib/src/model/self_examination_finding_response.dart
 lib/src/model/self_examination_prevention_status.dart
 lib/src/model/self_examination_result.dart
 lib/src/model/self_examination_status.dart
@@ -100,6 +102,7 @@ test/leaderboard_user_test.dart
 test/prevention_status_test.dart
 test/providers_api_test.dart
 test/self_examination_completion_information_test.dart
+test/self_examination_finding_response_test.dart
 test/self_examination_prevention_status_test.dart
 test/self_examination_result_test.dart
 test/self_examination_status_test.dart

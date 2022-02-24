@@ -52,5 +52,14 @@ void main() {
       // TODO
     });
 
+    // Self-Examination result finding
+    //
+    // Sending result of the finding.
+    //
+    //Future<SelfExaminationFindingResponse> resultSelfExamination(String selfType, { String body }) async
+    test('test resultSelfExamination', () async {
+      // TODO
+    });
+
   });
 }

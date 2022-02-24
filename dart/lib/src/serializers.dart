@@ -32,6 +32,7 @@ import 'package:loono_api/src/model/leaderboard.dart';
 import 'package:loono_api/src/model/leaderboard_user.dart';
 import 'package:loono_api/src/model/prevention_status.dart';
 import 'package:loono_api/src/model/self_examination_completion_information.dart';
+import 'package:loono_api/src/model/self_examination_finding_response.dart';
 import 'package:loono_api/src/model/self_examination_prevention_status.dart';
 import 'package:loono_api/src/model/self_examination_result.dart';
 import 'package:loono_api/src/model/self_examination_status.dart';
@@ -63,6 +64,7 @@ part 'serializers.g.dart';
   LeaderboardUser,
   PreventionStatus,
   SelfExaminationCompletionInformation,
+  SelfExaminationFindingResponse,
   SelfExaminationPreventionStatus,
   SelfExaminationResult,
   SelfExaminationStatus,

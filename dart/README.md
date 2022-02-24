@@ -80,6 +80,7 @@ Class | Method | HTTP request | Description
 [*ExaminationsApi*](doc/ExaminationsApi.md) | [**confirmSelfExamination**](doc/ExaminationsApi.md#confirmselfexamination) | **POST** /examinations/{self-type}/self | Confirm Self-Examination
 [*ExaminationsApi*](doc/ExaminationsApi.md) | [**getExaminations**](doc/ExaminationsApi.md#getexaminations) | **GET** /examinations | Get Examinations Status
 [*ExaminationsApi*](doc/ExaminationsApi.md) | [**postExaminations**](doc/ExaminationsApi.md#postexaminations) | **POST** /examinations | Create or update examination record
+[*ExaminationsApi*](doc/ExaminationsApi.md) | [**resultSelfExamination**](doc/ExaminationsApi.md#resultselfexamination) | **POST** /examinations/{self-type}/result | Self-Examination result finding
 [*LeaderboardApi*](doc/LeaderboardApi.md) | [**getLeaderboard**](doc/LeaderboardApi.md#getleaderboard) | **GET** /leaderboard | Get Leaderboard
 [*ProvidersApi*](doc/ProvidersApi.md) | [**getProvidersAll**](doc/ProvidersApi.md#getprovidersall) | **GET** /providers/all | Gets all healthcare providers data
 [*ProvidersApi*](doc/ProvidersApi.md) | [**getProvidersLastupdate**](doc/ProvidersApi.md#getproviderslastupdate) | **GET** /providers/lastupdate | Gets last date of healthcare provider update
@@ -109,6 +110,7 @@ Class | Method | HTTP request | Description
  - [LeaderboardUser](doc/LeaderboardUser.md)
  - [PreventionStatus](doc/PreventionStatus.md)
  - [SelfExaminationCompletionInformation](doc/SelfExaminationCompletionInformation.md)
+ - [SelfExaminationFindingResponse](doc/SelfExaminationFindingResponse.md)
  - [SelfExaminationPreventionStatus](doc/SelfExaminationPreventionStatus.md)
  - [SelfExaminationResult](doc/SelfExaminationResult.md)
  - [SelfExaminationStatus](doc/SelfExaminationStatus.md)

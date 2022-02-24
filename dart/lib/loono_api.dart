@@ -34,6 +34,7 @@ export 'package:loono_api/src/model/leaderboard.dart';
 export 'package:loono_api/src/model/leaderboard_user.dart';
 export 'package:loono_api/src/model/prevention_status.dart';
 export 'package:loono_api/src/model/self_examination_completion_information.dart';
+export 'package:loono_api/src/model/self_examination_finding_response.dart';
 export 'package:loono_api/src/model/self_examination_prevention_status.dart';
 export 'package:loono_api/src/model/self_examination_result.dart';
 export 'package:loono_api/src/model/self_examination_status.dart';

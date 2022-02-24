@@ -12,6 +12,7 @@ import 'package:loono_api/src/model/examination_id.dart';
 import 'package:loono_api/src/model/examination_record.dart';
 import 'package:loono_api/src/model/prevention_status.dart';
 import 'package:loono_api/src/model/self_examination_completion_information.dart';
+import 'package:loono_api/src/model/self_examination_finding_response.dart';
 
 class ExaminationsApi {
 
@@ -485,6 +486,106 @@ class ExaminationsApi {
     }
 
     return Response<ExaminationRecord>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// Self-Examination result finding
+  /// Sending result of the finding.
+  ///
+  /// Parameters:
+  /// * [selfType] - One of the `SelfExaminationType` values
+  /// * [body] 
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [SelfExaminationFindingResponse] as data
+  /// Throws [DioError] if API call or serialization fails
+  Future<Response<SelfExaminationFindingResponse>> resultSelfExamination({ 
+    required String selfType,
+    String? body,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/examinations/{self-type}/result'.replaceAll('{' r'self-type' '}', selfType.toString());
+    final _options = Options(
+      method: r'POST',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'http',
+            'scheme': 'bearer',
+            'name': 'Bearer_Auth',
+          },
+        ],
+        ...?extra,
+      },
+      contentType: 'application/json',
+      validateStatus: validateStatus,
+    );
+
+    dynamic _bodyData;
+
+    try {
+      _bodyData = body;
+
+    } catch(error, stackTrace) {
+      throw DioError(
+         requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
+        type: DioErrorType.other,
+        error: error,
+      )..stackTrace = stackTrace;
+    }
+
+    final _response = await _dio.request<Object>(
+      _path,
+      data: _bodyData,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    SelfExaminationFindingResponse _responseData;
+
+    try {
+      const _responseType = FullType(SelfExaminationFindingResponse);
+      _responseData = _serializers.deserialize(
+        _response.data!,
+        specifiedType: _responseType,
+      ) as SelfExaminationFindingResponse;
+
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioErrorType.other,
+        error: error,
+      )..stackTrace = stackTrace;
+    }
+
+    return Response<SelfExaminationFindingResponse>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

@@ -6,16 +6,19 @@ part of 'self_examination_result.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const SelfExaminationResult _$OK = const SelfExaminationResult._('OK');
 const SelfExaminationResult _$FINDING =
     const SelfExaminationResult._('FINDING');
+const SelfExaminationResult _$NOT_OK = const SelfExaminationResult._('NOT_OK');
+const SelfExaminationResult _$OK = const SelfExaminationResult._('OK');
 
 SelfExaminationResult _$valueOf(String name) {
   switch (name) {
-    case 'OK':
-      return _$OK;
     case 'FINDING':
       return _$FINDING;
+    case 'NOT_OK':
+      return _$NOT_OK;
+    case 'OK':
+      return _$OK;
     default:
       throw new ArgumentError(name);
   }
@@ -23,14 +26,16 @@ SelfExaminationResult _$valueOf(String name) {
 
 final BuiltSet<SelfExaminationResult> _$values =
     new BuiltSet<SelfExaminationResult>(const <SelfExaminationResult>[
-  _$OK,
   _$FINDING,
+  _$NOT_OK,
+  _$OK,
 ]);
 
 class _$SelfExaminationResultMeta {
   const _$SelfExaminationResultMeta();
-  SelfExaminationResult get OK => _$OK;
   SelfExaminationResult get FINDING => _$FINDING;
+  SelfExaminationResult get NOT_OK => _$NOT_OK;
+  SelfExaminationResult get OK => _$OK;
   SelfExaminationResult valueOf(String name) => _$valueOf(name);
   BuiltSet<SelfExaminationResult> get values => _$values;
 }
@@ -47,12 +52,14 @@ Serializer<SelfExaminationResult> _$selfExaminationResultSerializer =
 class _$SelfExaminationResultSerializer
     implements PrimitiveSerializer<SelfExaminationResult> {
   static const Map<String, Object> _toWire = const <String, Object>{
-    'OK': 'OK',
     'FINDING': 'FINDING',
+    'NOT_OK': 'NOT_OK',
+    'OK': 'OK',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
-    'OK': 'OK',
     'FINDING': 'FINDING',
+    'NOT_OK': 'NOT_OK',
+    'OK': 'OK',
   };
 
   @override

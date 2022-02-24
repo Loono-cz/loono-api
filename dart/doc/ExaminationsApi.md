@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**confirmSelfExamination**](ExaminationsApi.md#confirmselfexamination) | **POST** /examinations/{self-type}/self | Confirm Self-Examination
 [**getExaminations**](ExaminationsApi.md#getexaminations) | **GET** /examinations | Get Examinations Status
 [**postExaminations**](ExaminationsApi.md#postexaminations) | **POST** /examinations | Create or update examination record
+[**resultSelfExamination**](ExaminationsApi.md#resultselfexamination) | **POST** /examinations/{self-type}/result | Self-Examination result finding
 
 
 # **cancelExamination**
@@ -232,6 +233,54 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ExaminationRecord**](ExaminationRecord.md)
+
+### Authorization
+
+[Bearer_Auth](../README.md#Bearer_Auth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **resultSelfExamination**
+> SelfExaminationFindingResponse resultSelfExamination(selfType, body)
+
+Self-Examination result finding
+
+Sending result of the finding.
+
+### Example
+```dart
+import 'package:loono_api/api.dart';
+// TODO Configure HTTP basic authorization: Bearer_Auth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('Bearer_Auth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('Bearer_Auth').password = 'YOUR_PASSWORD';
+
+final api = LoonoApi().getExaminationsApi();
+final String selfType = selfType_example; // String | One of the `SelfExaminationType` values
+final String body = ; // String | 
+
+try {
+    final response = api.resultSelfExamination(selfType, body);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling ExaminationsApi->resultSelfExamination: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **selfType** | **String**| One of the `SelfExaminationType` values | 
+ **body** | **String**|  | [optional] 
+
+### Return type
+
+[**SelfExaminationFindingResponse**](SelfExaminationFindingResponse.md)
 
 ### Authorization
 

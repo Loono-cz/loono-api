@@ -11,6 +11,10 @@ const SelfExaminationStatus _$PLANNED =
 const SelfExaminationStatus _$COMPLETED =
     const SelfExaminationStatus._('COMPLETED');
 const SelfExaminationStatus _$MISSED = const SelfExaminationStatus._('MISSED');
+const SelfExaminationStatus _$WAITING_FOR_CHECKUP =
+    const SelfExaminationStatus._('WAITING_FOR_CHECKUP');
+const SelfExaminationStatus _$WAITING_FOR_RESULT =
+    const SelfExaminationStatus._('WAITING_FOR_RESULT');
 
 SelfExaminationStatus _$valueOf(String name) {
   switch (name) {
@@ -20,6 +24,10 @@ SelfExaminationStatus _$valueOf(String name) {
       return _$COMPLETED;
     case 'MISSED':
       return _$MISSED;
+    case 'WAITING_FOR_CHECKUP':
+      return _$WAITING_FOR_CHECKUP;
+    case 'WAITING_FOR_RESULT':
+      return _$WAITING_FOR_RESULT;
     default:
       throw new ArgumentError(name);
   }
@@ -30,6 +38,8 @@ final BuiltSet<SelfExaminationStatus> _$values =
   _$PLANNED,
   _$COMPLETED,
   _$MISSED,
+  _$WAITING_FOR_CHECKUP,
+  _$WAITING_FOR_RESULT,
 ]);
 
 class _$SelfExaminationStatusMeta {
@@ -37,6 +47,8 @@ class _$SelfExaminationStatusMeta {
   SelfExaminationStatus get PLANNED => _$PLANNED;
   SelfExaminationStatus get COMPLETED => _$COMPLETED;
   SelfExaminationStatus get MISSED => _$MISSED;
+  SelfExaminationStatus get WAITING_FOR_CHECKUP => _$WAITING_FOR_CHECKUP;
+  SelfExaminationStatus get WAITING_FOR_RESULT => _$WAITING_FOR_RESULT;
   SelfExaminationStatus valueOf(String name) => _$valueOf(name);
   BuiltSet<SelfExaminationStatus> get values => _$values;
 }
@@ -56,11 +68,15 @@ class _$SelfExaminationStatusSerializer
     'PLANNED': 'PLANNED',
     'COMPLETED': 'COMPLETED',
     'MISSED': 'MISSED',
+    'WAITING_FOR_CHECKUP': 'WAITING_FOR_CHECKUP',
+    'WAITING_FOR_RESULT': 'WAITING_FOR_RESULT',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'PLANNED': 'PLANNED',
     'COMPLETED': 'COMPLETED',
     'MISSED': 'MISSED',
+    'WAITING_FOR_CHECKUP': 'WAITING_FOR_CHECKUP',
+    'WAITING_FOR_RESULT': 'WAITING_FOR_RESULT',
   };
 
   @override
