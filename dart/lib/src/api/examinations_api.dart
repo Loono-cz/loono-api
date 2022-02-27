@@ -13,6 +13,7 @@ import 'package:loono_api/src/model/examination_record.dart';
 import 'package:loono_api/src/model/prevention_status.dart';
 import 'package:loono_api/src/model/self_examination_completion_information.dart';
 import 'package:loono_api/src/model/self_examination_finding_response.dart';
+import 'package:loono_api/src/model/self_examination_result.dart';
 
 class ExaminationsApi {
 
