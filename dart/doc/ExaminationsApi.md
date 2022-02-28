@@ -110,7 +110,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **confirmSelfExamination**
-> SelfExaminationCompletionInformation confirmSelfExamination(selfType, body)
+> SelfExaminationCompletionInformation confirmSelfExamination(selfType, selfExaminationResult)
 
 Confirm Self-Examination
 
@@ -125,10 +125,10 @@ import 'package:loono_api/api.dart';
 
 final api = LoonoApi().getExaminationsApi();
 final String selfType = selfType_example; // String | One of the `SelfExaminationType` values
-final String body = ; // String | 
+final SelfExaminationResult selfExaminationResult = ; // SelfExaminationResult | 
 
 try {
-    final response = api.confirmSelfExamination(selfType, body);
+    final response = api.confirmSelfExamination(selfType, selfExaminationResult);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling ExaminationsApi->confirmSelfExamination: $e\n');
@@ -140,7 +140,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **selfType** | **String**| One of the `SelfExaminationType` values | 
- **body** | **String**|  | [optional] 
+ **selfExaminationResult** | [**SelfExaminationResult**](SelfExaminationResult.md)|  | [optional] 
 
 ### Return type
 
@@ -246,7 +246,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **resultSelfExamination**
-> SelfExaminationFindingResponse resultSelfExamination(selfType, body)
+> SelfExaminationFindingResponse resultSelfExamination(selfType, selfExaminationResult)
 
 Self-Examination result finding
 
@@ -261,10 +261,10 @@ import 'package:loono_api/api.dart';
 
 final api = LoonoApi().getExaminationsApi();
 final String selfType = selfType_example; // String | One of the `SelfExaminationType` values
-final String body = ; // String | 
+final SelfExaminationResult selfExaminationResult = ; // SelfExaminationResult | 
 
 try {
-    final response = api.resultSelfExamination(selfType, body);
+    final response = api.resultSelfExamination(selfType, selfExaminationResult);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling ExaminationsApi->resultSelfExamination: $e\n');
@@ -276,7 +276,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **selfType** | **String**| One of the `SelfExaminationType` values | 
- **body** | **String**|  | [optional] 
+ **selfExaminationResult** | [**SelfExaminationResult**](SelfExaminationResult.md)|  | [optional] 
 
 ### Return type
 

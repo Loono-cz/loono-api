@@ -8,28 +8,84 @@ import 'package:built_value/serializer.dart';
 
 part 'self_examination_result.g.dart';
 
-class SelfExaminationResult extends EnumClass {
+/// SelfExaminationResult
+///
+/// Properties:
+/// * [result] 
+abstract class SelfExaminationResult implements Built<SelfExaminationResult, SelfExaminationResultBuilder> {
+    @BuiltValueField(wireName: r'result')
+    SelfExaminationResultResultEnum? get result;
+    // enum resultEnum {  FINDING,  NOT_OK,  OK,  };
 
-  @BuiltValueEnumConst(wireName: r'FINDING')
-  static const SelfExaminationResult FINDING = _$FINDING;
-  @BuiltValueEnumConst(wireName: r'NOT_OK')
-  static const SelfExaminationResult NOT_OK = _$NOT_OK;
-  @BuiltValueEnumConst(wireName: r'OK')
-  static const SelfExaminationResult OK = _$OK;
+    SelfExaminationResult._();
 
-  static Serializer<SelfExaminationResult> get serializer => _$selfExaminationResultSerializer;
+    @BuiltValueHook(initializeBuilder: true)
+    static void _defaults(SelfExaminationResultBuilder b) => b
+        ..result = const SelfExaminationResultResultEnum._('OK');
 
-  const SelfExaminationResult._(String name): super(name);
+    factory SelfExaminationResult([void updates(SelfExaminationResultBuilder b)]) = _$SelfExaminationResult;
 
-  static BuiltSet<SelfExaminationResult> get values => _$values;
-  static SelfExaminationResult valueOf(String name) => _$valueOf(name);
+    @BuiltValueSerializer(custom: true)
+    static Serializer<SelfExaminationResult> get serializer => _$SelfExaminationResultSerializer();
 }
 
-/// Optionally, enum_class can generate a mixin to go with your enum for use
-/// with Angular. It exposes your enum constants as getters. So, if you mix it
-/// in to your Dart component class, the values become available to the
-/// corresponding Angular template.
-///
-/// Trigger mixin generation by writing a line like this one next to your enum.
-abstract class SelfExaminationResultMixin = Object with _$SelfExaminationResultMixin;
+class _$SelfExaminationResultSerializer implements StructuredSerializer<SelfExaminationResult> {
+    @override
+    final Iterable<Type> types = const [SelfExaminationResult, _$SelfExaminationResult];
+
+    @override
+    final String wireName = r'SelfExaminationResult';
+
+    @override
+    Iterable<Object?> serialize(Serializers serializers, SelfExaminationResult object,
+        {FullType specifiedType = FullType.unspecified}) {
+        final result = <Object?>[];
+        if (object.result != null) {
+            result
+                ..add(r'result')
+                ..add(serializers.serialize(object.result,
+                    specifiedType: const FullType(SelfExaminationResultResultEnum)));
+        }
+        return result;
+    }
+
+    @override
+    SelfExaminationResult deserialize(Serializers serializers, Iterable<Object?> serialized,
+        {FullType specifiedType = FullType.unspecified}) {
+        final result = SelfExaminationResultBuilder();
+
+        final iterator = serialized.iterator;
+        while (iterator.moveNext()) {
+            final key = iterator.current as String;
+            iterator.moveNext();
+            final Object? value = iterator.current;
+            
+            switch (key) {
+                case r'result':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(SelfExaminationResultResultEnum)) as SelfExaminationResultResultEnum;
+                    result.result = valueDes;
+                    break;
+            }
+        }
+        return result.build();
+    }
+}
+
+class SelfExaminationResultResultEnum extends EnumClass {
+
+  @BuiltValueEnumConst(wireName: r'FINDING')
+  static const SelfExaminationResultResultEnum FINDING = _$selfExaminationResultResultEnum_FINDING;
+  @BuiltValueEnumConst(wireName: r'NOT_OK')
+  static const SelfExaminationResultResultEnum NOT_OK = _$selfExaminationResultResultEnum_NOT_OK;
+  @BuiltValueEnumConst(wireName: r'OK')
+  static const SelfExaminationResultResultEnum OK = _$selfExaminationResultResultEnum_OK;
+
+  static Serializer<SelfExaminationResultResultEnum> get serializer => _$selfExaminationResultResultEnumSerializer;
+
+  const SelfExaminationResultResultEnum._(String name): super(name);
+
+  static BuiltSet<SelfExaminationResultResultEnum> get values => _$selfExaminationResultResultEnumValues;
+  static SelfExaminationResultResultEnum valueOf(String name) => _$selfExaminationResultResultEnumValueOf(name);
+}
 

@@ -29,7 +29,7 @@ void main() {
     //
     // Notify the API that an self-examination has been completed.
     //
-    //Future<SelfExaminationCompletionInformation> confirmSelfExamination(String selfType, { String body }) async
+    //Future<SelfExaminationCompletionInformation> confirmSelfExamination(String selfType, { SelfExaminationResult selfExaminationResult }) async
     test('test confirmSelfExamination', () async {
       // TODO
     });
@@ -56,7 +56,7 @@ void main() {
     //
     // Sending result of the finding.
     //
-    //Future<SelfExaminationFindingResponse> resultSelfExamination(String selfType, { String body }) async
+    //Future<SelfExaminationFindingResponse> resultSelfExamination(String selfType, { SelfExaminationResult selfExaminationResult }) async
     test('test resultSelfExamination', () async {
       // TODO
     });

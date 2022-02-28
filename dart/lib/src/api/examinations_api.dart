@@ -226,7 +226,7 @@ class ExaminationsApi {
   ///
   /// Parameters:
   /// * [selfType] - One of the `SelfExaminationType` values
-  /// * [body] 
+  /// * [selfExaminationResult] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -238,7 +238,7 @@ class ExaminationsApi {
   /// Throws [DioError] if API call or serialization fails
   Future<Response<SelfExaminationCompletionInformation>> confirmSelfExamination({ 
     required String selfType,
-    String? body,
+    SelfExaminationResult? selfExaminationResult,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -269,7 +269,8 @@ class ExaminationsApi {
     dynamic _bodyData;
 
     try {
-      _bodyData = body;
+      const _type = FullType(SelfExaminationResult);
+      _bodyData = selfExaminationResult == null ? null : _serializers.serialize(selfExaminationResult, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioError(
@@ -503,7 +504,7 @@ class ExaminationsApi {
   ///
   /// Parameters:
   /// * [selfType] - One of the `SelfExaminationType` values
-  /// * [body] 
+  /// * [selfExaminationResult] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -515,7 +516,7 @@ class ExaminationsApi {
   /// Throws [DioError] if API call or serialization fails
   Future<Response<SelfExaminationFindingResponse>> resultSelfExamination({ 
     required String selfType,
-    String? body,
+    SelfExaminationResult? selfExaminationResult,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -546,7 +547,8 @@ class ExaminationsApi {
     dynamic _bodyData;
 
     try {
-      _bodyData = body;
+      const _type = FullType(SelfExaminationResult);
+      _bodyData = selfExaminationResult == null ? null : _serializers.serialize(selfExaminationResult, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioError(
