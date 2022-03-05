@@ -1,6 +1,6 @@
 # loono-api
 
-## Dart generator
+## Dart generator 2
 
 Install Dart SDK, Node, and [OpenAPI Generator](https://openapi-generator.tech/docs/installation#npm).
 
