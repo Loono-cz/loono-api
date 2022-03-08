@@ -1,4 +1,4 @@
-name: 'Deploy backend to ECS'
+name: 'Deploy api to ECS'
 on:
   push:
     branches:
