@@ -1,7 +1,7 @@
 {
     "openapi": "3.0.3",
     "info": {
-        "title": "Loono API 1.0.4",
+        "title": "Loono API 1.0.5",
         "description": "Loono API for the mobile application. The whole API is JSON based.\n\nFailed API operations return [Error](https://okarmazin.stoplight.io/docs/loono/c2NoOjI2ODI2OA-error-response).\n\nGeneral error codes:\n|HTTP Status|code |description|\n|--- |--- | --- |\n|400|MISSING_PRIMARY_EMAIL| The Firebase login method did not include user email. Email is required and must be saved in Firebase before any API access. |\n|400|MISSING_USER_NAME| The Firebase login method did not include user name. Name is required and must be saved in Firebase before any API access. |",
         "contact": {
             "name": "Loono",

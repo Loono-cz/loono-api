@@ -36,10 +36,11 @@ jobs:
 
       - name: 'Redeploy to ECS'
         run: |
-          aws ecs update-service --cluster $ECR_REPOSITORY --service $ECR_REPOSITORY --force-new-deployment
+          aws ecs update-service --cluster $ECR_CLUSTER --service $ECR_REPOSITORY --force-new-deployment
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           ECR_REPOSITORY: ${{ secrets.REPO_NAME }}
+          ECR_CLUSTER: ${{ secrets.CLUSTER_NAME }}
           IMAGE_TAG: latest
