@@ -22,3 +22,25 @@ jobs:
     steps:
       - name: 'Checkout'
         uses: actions/checkout@master
+
+      - uses: hashicorp/setup-terraform@v1
+        with:
+          terraform_version: ${{ env.tf_version }}
+
+      - name: 'Terraform format'
+        id: fmt
+        run: terraform fmt -check -diff
+        continue-on-error: true
+
+      - name: 'Terraform Init'
+        id: init
+        run: terraform init
+
+      - name: 'Terraform Validate'
+        id: validate
+        run: terraform validate
+
+      - name: 'Terraform Plan'
+        id: plan
+        run: terraform plan
+        continue-on-error: true
