@@ -2,7 +2,7 @@ variable "AWS_REGION" {
   default = "eu-central-1"
 }
 
-variable "PATH_TO_PRIVATE_KEY" {
+  variable "PATH_TO_PRIVATE_KEY" {
   default = "mykey"
 }
 
