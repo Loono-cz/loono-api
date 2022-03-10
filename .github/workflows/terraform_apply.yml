@@ -13,26 +13,60 @@ jobs:
   terraform:
     name: 'Terraform'
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ${{ env.tf_actions_working_dir }}
     steps:
       - name: 'Checkout'
         uses: actions/checkout@master
+
+      - uses: hashicorp/setup-terraform@v1
+        with:
+          terraform_version: ${{ env.tf_version }}
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+      - name: 'Terraform format'
+        id: fmt
+        run: terraform fmt -check -diff
+        continue-on-error: true
+
       - name: 'Terraform Init'
-        uses: hashicorp/terraform-github-actions@master
-        with:
-          tf_actions_version: ${{ env.tf_version }}
-          tf_actions_subcommand: 'init'
-          tf_actions_working_dir: ${{ env.tf_working_dir }}
-          tf_actions_comment: false
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        id: init
+        run: terraform init
+
+      - name: 'Terraform Validate'
+        id: validate
+        run: terraform validate
+
       - name: 'Terraform Plan'
-        uses: hashicorp/terraform-github-actions@master
-        with:
-          tf_actions_version: ${{ env.tf_version }}
-          tf_actions_subcommand: 'plan'
-          tf_actions_working_dir: ${{ env.tf_working_dir }}
-          tf_actions_comment: false
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        id: plan
+        run: terraform plan
+        continue-on-error: true
+
+
+
+
+
+
+#      - name: 'Terraform Init'
+#        uses: hashicorp/hashicorp/setup-terraform@v1
+#        with:
+#          terraform_version: ${{ env.tf_version }}
+#          tf_actions_subcommand: 'init'
+#          tf_actions_working_dir: ${{ env.tf_working_dir }}
+#          tf_actions_comment: false
+#        env:
+#          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+#      - name: 'Terraform Plan'
+#        uses: hashicorp/terraform-github-actions@master
+#        with:
+#          tf_actions_version: ${{ env.tf_version }}
+#          tf_actions_subcommand: 'plan'
+#          tf_actions_working_dir: ${{ env.tf_working_dir }}
+#          tf_actions_comment: false
+#        env:
+#          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
