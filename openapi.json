@@ -720,7 +720,7 @@
                     "nickname": {
                         "type": "string"
                     },
-                    "prefferedEmail": {
+                    "preferredEmail": {
                         "type": "string"
                     },
                     "sex": {
@@ -756,7 +756,7 @@
                 "required": [
                     "uid",
                     "nickname",
-                    "prefferedEmail",
+                    "preferredEmail",
                     "sex",
                     "birthdate",
                     "leaderboardAnonymizationOptIn",
@@ -775,7 +775,7 @@
                     "nickname": {
                         "type": "string"
                     },
-                    "prefferedEmail": {
+                    "preferredEmail": {
                         "type": "string"
                     },
                     "profileImageUrl": {
