@@ -11,7 +11,7 @@ part 'account_update.g.dart';
 ///
 /// Properties:
 /// * [nickname] 
-/// * [prefferedEmail] 
+/// * [preferredEmail] 
 /// * [profileImageUrl] 
 /// * [leaderboardAnonymizationOptIn] 
 /// * [appointmentReminderEmailsOptIn] 
@@ -20,8 +20,8 @@ abstract class AccountUpdate implements Built<AccountUpdate, AccountUpdateBuilde
     @BuiltValueField(wireName: r'nickname')
     String? get nickname;
 
-    @BuiltValueField(wireName: r'prefferedEmail')
-    String? get prefferedEmail;
+    @BuiltValueField(wireName: r'preferredEmail')
+    String? get preferredEmail;
 
     @BuiltValueField(wireName: r'profileImageUrl')
     String? get profileImageUrl;
@@ -63,10 +63,10 @@ class _$AccountUpdateSerializer implements StructuredSerializer<AccountUpdate> {
                 ..add(serializers.serialize(object.nickname,
                     specifiedType: const FullType(String)));
         }
-        if (object.prefferedEmail != null) {
+        if (object.preferredEmail != null) {
             result
-                ..add(r'prefferedEmail')
-                ..add(serializers.serialize(object.prefferedEmail,
+                ..add(r'preferredEmail')
+                ..add(serializers.serialize(object.preferredEmail,
                     specifiedType: const FullType(String)));
         }
         if (object.profileImageUrl != null) {
@@ -113,10 +113,10 @@ class _$AccountUpdateSerializer implements StructuredSerializer<AccountUpdate> {
                         specifiedType: const FullType(String)) as String;
                     result.nickname = valueDes;
                     break;
-                case r'prefferedEmail':
+                case r'preferredEmail':
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(String)) as String;
-                    result.prefferedEmail = valueDes;
+                    result.preferredEmail = valueDes;
                     break;
                 case r'profileImageUrl':
                     final valueDes = serializers.deserialize(value,

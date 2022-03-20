@@ -16,7 +16,7 @@ part 'account.g.dart';
 /// Properties:
 /// * [uid] 
 /// * [nickname] 
-/// * [prefferedEmail] 
+/// * [preferredEmail] 
 /// * [sex] 
 /// * [birthdate] 
 /// * [profileImageUrl] 
@@ -32,8 +32,8 @@ abstract class Account implements Built<Account, AccountBuilder> {
     @BuiltValueField(wireName: r'nickname')
     String get nickname;
 
-    @BuiltValueField(wireName: r'prefferedEmail')
-    String get prefferedEmail;
+    @BuiltValueField(wireName: r'preferredEmail')
+    String get preferredEmail;
 
     @BuiltValueField(wireName: r'sex')
     Sex get sex;
@@ -92,8 +92,8 @@ class _$AccountSerializer implements StructuredSerializer<Account> {
             ..add(serializers.serialize(object.nickname,
                 specifiedType: const FullType(String)));
         result
-            ..add(r'prefferedEmail')
-            ..add(serializers.serialize(object.prefferedEmail,
+            ..add(r'preferredEmail')
+            ..add(serializers.serialize(object.preferredEmail,
                 specifiedType: const FullType(String)));
         result
             ..add(r'sex')
@@ -154,10 +154,10 @@ class _$AccountSerializer implements StructuredSerializer<Account> {
                         specifiedType: const FullType(String)) as String;
                     result.nickname = valueDes;
                     break;
-                case r'prefferedEmail':
+                case r'preferredEmail':
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(String)) as String;
-                    result.prefferedEmail = valueDes;
+                    result.preferredEmail = valueDes;
                     break;
                 case r'sex':
                     final valueDes = serializers.deserialize(value,

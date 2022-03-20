@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **uid** | **String** |  | 
 **nickname** | **String** |  | 
-**prefferedEmail** | **String** |  | 
+**preferredEmail** | **String** |  | 
 **sex** | [**Sex**](Sex.md) |  | 
 **birthdate** | [**Date**](Date.md) |  | 
 **profileImageUrl** | **String** |  | [optional] 

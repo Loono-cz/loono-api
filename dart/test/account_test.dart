@@ -17,8 +17,8 @@ void main() {
       // TODO
     });
 
-    // String prefferedEmail
-    test('to test the property `prefferedEmail`', () async {
+    // String preferredEmail
+    test('to test the property `preferredEmail`', () async {
       // TODO
     });
 

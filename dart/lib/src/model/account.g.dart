@@ -12,7 +12,7 @@ class _$Account extends Account {
   @override
   final String nickname;
   @override
-  final String prefferedEmail;
+  final String preferredEmail;
   @override
   final Sex sex;
   @override
@@ -36,7 +36,7 @@ class _$Account extends Account {
   _$Account._(
       {required this.uid,
       required this.nickname,
-      required this.prefferedEmail,
+      required this.preferredEmail,
       required this.sex,
       required this.birthdate,
       this.profileImageUrl,
@@ -49,7 +49,7 @@ class _$Account extends Account {
     BuiltValueNullFieldError.checkNotNull(uid, 'Account', 'uid');
     BuiltValueNullFieldError.checkNotNull(nickname, 'Account', 'nickname');
     BuiltValueNullFieldError.checkNotNull(
-        prefferedEmail, 'Account', 'prefferedEmail');
+        preferredEmail, 'Account', 'preferredEmail');
     BuiltValueNullFieldError.checkNotNull(sex, 'Account', 'sex');
     BuiltValueNullFieldError.checkNotNull(birthdate, 'Account', 'birthdate');
     BuiltValueNullFieldError.checkNotNull(leaderboardAnonymizationOptIn,
@@ -75,7 +75,7 @@ class _$Account extends Account {
     return other is Account &&
         uid == other.uid &&
         nickname == other.nickname &&
-        prefferedEmail == other.prefferedEmail &&
+        preferredEmail == other.preferredEmail &&
         sex == other.sex &&
         birthdate == other.birthdate &&
         profileImageUrl == other.profileImageUrl &&
@@ -100,7 +100,7 @@ class _$Account extends Account {
                                     $jc(
                                         $jc($jc(0, uid.hashCode),
                                             nickname.hashCode),
-                                        prefferedEmail.hashCode),
+                                        preferredEmail.hashCode),
                                     sex.hashCode),
                                 birthdate.hashCode),
                             profileImageUrl.hashCode),
@@ -116,7 +116,7 @@ class _$Account extends Account {
     return (newBuiltValueToStringHelper('Account')
           ..add('uid', uid)
           ..add('nickname', nickname)
-          ..add('prefferedEmail', prefferedEmail)
+          ..add('preferredEmail', preferredEmail)
           ..add('sex', sex)
           ..add('birthdate', birthdate)
           ..add('profileImageUrl', profileImageUrl)
@@ -141,10 +141,10 @@ class AccountBuilder implements Builder<Account, AccountBuilder> {
   String? get nickname => _$this._nickname;
   set nickname(String? nickname) => _$this._nickname = nickname;
 
-  String? _prefferedEmail;
-  String? get prefferedEmail => _$this._prefferedEmail;
-  set prefferedEmail(String? prefferedEmail) =>
-      _$this._prefferedEmail = prefferedEmail;
+  String? _preferredEmail;
+  String? get preferredEmail => _$this._preferredEmail;
+  set preferredEmail(String? preferredEmail) =>
+      _$this._preferredEmail = preferredEmail;
 
   Sex? _sex;
   Sex? get sex => _$this._sex;
@@ -193,7 +193,7 @@ class AccountBuilder implements Builder<Account, AccountBuilder> {
     if ($v != null) {
       _uid = $v.uid;
       _nickname = $v.nickname;
-      _prefferedEmail = $v.prefferedEmail;
+      _preferredEmail = $v.preferredEmail;
       _sex = $v.sex;
       _birthdate = $v.birthdate;
       _profileImageUrl = $v.profileImageUrl;
@@ -227,8 +227,8 @@ class AccountBuilder implements Builder<Account, AccountBuilder> {
               uid: BuiltValueNullFieldError.checkNotNull(uid, 'Account', 'uid'),
               nickname: BuiltValueNullFieldError.checkNotNull(
                   nickname, 'Account', 'nickname'),
-              prefferedEmail: BuiltValueNullFieldError.checkNotNull(
-                  prefferedEmail, 'Account', 'prefferedEmail'),
+              preferredEmail: BuiltValueNullFieldError.checkNotNull(
+                  preferredEmail, 'Account', 'preferredEmail'),
               sex: BuiltValueNullFieldError.checkNotNull(sex, 'Account', 'sex'),
               birthdate: BuiltValueNullFieldError.checkNotNull(
                   birthdate, 'Account', 'birthdate'),

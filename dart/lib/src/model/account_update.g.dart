@@ -10,7 +10,7 @@ class _$AccountUpdate extends AccountUpdate {
   @override
   final String? nickname;
   @override
-  final String? prefferedEmail;
+  final String? preferredEmail;
   @override
   final String? profileImageUrl;
   @override
@@ -25,7 +25,7 @@ class _$AccountUpdate extends AccountUpdate {
 
   _$AccountUpdate._(
       {this.nickname,
-      this.prefferedEmail,
+      this.preferredEmail,
       this.profileImageUrl,
       this.leaderboardAnonymizationOptIn,
       this.appointmentReminderEmailsOptIn,
@@ -44,7 +44,7 @@ class _$AccountUpdate extends AccountUpdate {
     if (identical(other, this)) return true;
     return other is AccountUpdate &&
         nickname == other.nickname &&
-        prefferedEmail == other.prefferedEmail &&
+        preferredEmail == other.preferredEmail &&
         profileImageUrl == other.profileImageUrl &&
         leaderboardAnonymizationOptIn == other.leaderboardAnonymizationOptIn &&
         appointmentReminderEmailsOptIn ==
@@ -57,7 +57,7 @@ class _$AccountUpdate extends AccountUpdate {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, nickname.hashCode), prefferedEmail.hashCode),
+                $jc($jc($jc(0, nickname.hashCode), preferredEmail.hashCode),
                     profileImageUrl.hashCode),
                 leaderboardAnonymizationOptIn.hashCode),
             appointmentReminderEmailsOptIn.hashCode),
@@ -68,7 +68,7 @@ class _$AccountUpdate extends AccountUpdate {
   String toString() {
     return (newBuiltValueToStringHelper('AccountUpdate')
           ..add('nickname', nickname)
-          ..add('prefferedEmail', prefferedEmail)
+          ..add('preferredEmail', preferredEmail)
           ..add('profileImageUrl', profileImageUrl)
           ..add('leaderboardAnonymizationOptIn', leaderboardAnonymizationOptIn)
           ..add(
@@ -86,10 +86,10 @@ class AccountUpdateBuilder
   String? get nickname => _$this._nickname;
   set nickname(String? nickname) => _$this._nickname = nickname;
 
-  String? _prefferedEmail;
-  String? get prefferedEmail => _$this._prefferedEmail;
-  set prefferedEmail(String? prefferedEmail) =>
-      _$this._prefferedEmail = prefferedEmail;
+  String? _preferredEmail;
+  String? get preferredEmail => _$this._preferredEmail;
+  set preferredEmail(String? preferredEmail) =>
+      _$this._preferredEmail = preferredEmail;
 
   String? _profileImageUrl;
   String? get profileImageUrl => _$this._profileImageUrl;
@@ -121,7 +121,7 @@ class AccountUpdateBuilder
     final $v = _$v;
     if ($v != null) {
       _nickname = $v.nickname;
-      _prefferedEmail = $v.prefferedEmail;
+      _preferredEmail = $v.preferredEmail;
       _profileImageUrl = $v.profileImageUrl;
       _leaderboardAnonymizationOptIn = $v.leaderboardAnonymizationOptIn;
       _appointmentReminderEmailsOptIn = $v.appointmentReminderEmailsOptIn;
@@ -147,7 +147,7 @@ class AccountUpdateBuilder
     final _$result = _$v ??
         new _$AccountUpdate._(
             nickname: nickname,
-            prefferedEmail: prefferedEmail,
+            preferredEmail: preferredEmail,
             profileImageUrl: profileImageUrl,
             leaderboardAnonymizationOptIn: leaderboardAnonymizationOptIn,
             appointmentReminderEmailsOptIn: appointmentReminderEmailsOptIn,

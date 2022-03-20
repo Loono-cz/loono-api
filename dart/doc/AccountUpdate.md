@@ -9,7 +9,7 @@ import 'package:loono_api/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **nickname** | **String** |  | [optional] 
-**prefferedEmail** | **String** |  | [optional] 
+**preferredEmail** | **String** |  | [optional] 
 **profileImageUrl** | **String** |  | [optional] 
 **leaderboardAnonymizationOptIn** | **bool** |  | [optional] 
 **appointmentReminderEmailsOptIn** | **bool** |  | [optional] 
