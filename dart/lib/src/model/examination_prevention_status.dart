@@ -26,7 +26,7 @@ part 'examination_prevention_status.g.dart';
 /// * [badge] 
 abstract class ExaminationPreventionStatus implements Built<ExaminationPreventionStatus, ExaminationPreventionStatusBuilder> {
     @BuiltValueField(wireName: r'uuid')
-    String get uuid;
+    String? get uuid;
 
     @BuiltValueField(wireName: r'examinationType')
     ExaminationType get examinationType;
@@ -83,10 +83,12 @@ class _$ExaminationPreventionStatusSerializer implements StructuredSerializer<Ex
     Iterable<Object?> serialize(Serializers serializers, ExaminationPreventionStatus object,
         {FullType specifiedType = FullType.unspecified}) {
         final result = <Object?>[];
-        result
-            ..add(r'uuid')
-            ..add(serializers.serialize(object.uuid,
-                specifiedType: const FullType(String)));
+        if (object.uuid != null) {
+            result
+                ..add(r'uuid')
+                ..add(serializers.serialize(object.uuid,
+                    specifiedType: const FullType(String)));
+        }
         result
             ..add(r'examinationType')
             ..add(serializers.serialize(object.examinationType,

@@ -8,7 +8,7 @@ import 'package:loono_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**uuid** | **String** |  | 
+**uuid** | **String** |  | [optional] 
 **examinationType** | [**ExaminationType**](ExaminationType.md) |  | 
 **intervalYears** | **int** |  | 
 **plannedDate** | [**DateTime**](DateTime.md) |  | [optional] 

@@ -8,7 +8,7 @@ part of 'examination_prevention_status.dart';
 
 class _$ExaminationPreventionStatus extends ExaminationPreventionStatus {
   @override
-  final String uuid;
+  final String? uuid;
   @override
   final ExaminationType examinationType;
   @override
@@ -35,7 +35,7 @@ class _$ExaminationPreventionStatus extends ExaminationPreventionStatus {
       (new ExaminationPreventionStatusBuilder()..update(updates)).build();
 
   _$ExaminationPreventionStatus._(
-      {required this.uuid,
+      {this.uuid,
       required this.examinationType,
       required this.intervalYears,
       this.plannedDate,
@@ -47,8 +47,6 @@ class _$ExaminationPreventionStatus extends ExaminationPreventionStatus {
       required this.points,
       required this.badge})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        uuid, 'ExaminationPreventionStatus', 'uuid');
     BuiltValueNullFieldError.checkNotNull(
         examinationType, 'ExaminationPreventionStatus', 'examinationType');
     BuiltValueNullFieldError.checkNotNull(
@@ -226,8 +224,7 @@ class ExaminationPreventionStatusBuilder
   _$ExaminationPreventionStatus build() {
     final _$result = _$v ??
         new _$ExaminationPreventionStatus._(
-            uuid: BuiltValueNullFieldError.checkNotNull(
-                uuid, 'ExaminationPreventionStatus', 'uuid'),
+            uuid: uuid,
             examinationType: BuiltValueNullFieldError.checkNotNull(
                 examinationType, 'ExaminationPreventionStatus', 'examinationType'),
             intervalYears: BuiltValueNullFieldError.checkNotNull(
@@ -242,9 +239,10 @@ class ExaminationPreventionStatusBuilder
             count: BuiltValueNullFieldError.checkNotNull(
                 count, 'ExaminationPreventionStatus', 'count'),
             lastConfirmedDate: lastConfirmedDate,
-            points:
-                BuiltValueNullFieldError.checkNotNull(points, 'ExaminationPreventionStatus', 'points'),
-            badge: BuiltValueNullFieldError.checkNotNull(badge, 'ExaminationPreventionStatus', 'badge'));
+            points: BuiltValueNullFieldError.checkNotNull(
+                points, 'ExaminationPreventionStatus', 'points'),
+            badge:
+                BuiltValueNullFieldError.checkNotNull(badge, 'ExaminationPreventionStatus', 'badge'));
     replace(_$result);
     return _$result;
   }
