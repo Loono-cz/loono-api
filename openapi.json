@@ -1238,7 +1238,6 @@
                     }
                 },
                 "required": [
-                    "uuid",
                     "examinationType",
                     "intervalYears",
                     "firstExam",
