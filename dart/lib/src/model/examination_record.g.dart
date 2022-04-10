@@ -12,7 +12,7 @@ class _$ExaminationRecord extends ExaminationRecord {
   @override
   final ExaminationType type;
   @override
-  final DateTime? date;
+  final DateTime? plannedDate;
   @override
   final ExaminationStatus? status;
   @override
@@ -23,7 +23,11 @@ class _$ExaminationRecord extends ExaminationRecord {
       (new ExaminationRecordBuilder()..update(updates)).build();
 
   _$ExaminationRecord._(
-      {this.uuid, required this.type, this.date, this.status, this.firstExam})
+      {this.uuid,
+      required this.type,
+      this.plannedDate,
+      this.status,
+      this.firstExam})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(type, 'ExaminationRecord', 'type');
   }
@@ -42,7 +46,7 @@ class _$ExaminationRecord extends ExaminationRecord {
     return other is ExaminationRecord &&
         uuid == other.uuid &&
         type == other.type &&
-        date == other.date &&
+        plannedDate == other.plannedDate &&
         status == other.status &&
         firstExam == other.firstExam;
   }
@@ -50,7 +54,9 @@ class _$ExaminationRecord extends ExaminationRecord {
   @override
   int get hashCode {
     return $jf($jc(
-        $jc($jc($jc($jc(0, uuid.hashCode), type.hashCode), date.hashCode),
+        $jc(
+            $jc($jc($jc(0, uuid.hashCode), type.hashCode),
+                plannedDate.hashCode),
             status.hashCode),
         firstExam.hashCode));
   }
@@ -60,7 +66,7 @@ class _$ExaminationRecord extends ExaminationRecord {
     return (newBuiltValueToStringHelper('ExaminationRecord')
           ..add('uuid', uuid)
           ..add('type', type)
-          ..add('date', date)
+          ..add('plannedDate', plannedDate)
           ..add('status', status)
           ..add('firstExam', firstExam))
         .toString();
@@ -79,9 +85,9 @@ class ExaminationRecordBuilder
   ExaminationType? get type => _$this._type;
   set type(ExaminationType? type) => _$this._type = type;
 
-  DateTime? _date;
-  DateTime? get date => _$this._date;
-  set date(DateTime? date) => _$this._date = date;
+  DateTime? _plannedDate;
+  DateTime? get plannedDate => _$this._plannedDate;
+  set plannedDate(DateTime? plannedDate) => _$this._plannedDate = plannedDate;
 
   ExaminationStatus? _status;
   ExaminationStatus? get status => _$this._status;
@@ -100,7 +106,7 @@ class ExaminationRecordBuilder
     if ($v != null) {
       _uuid = $v.uuid;
       _type = $v.type;
-      _date = $v.date;
+      _plannedDate = $v.plannedDate;
       _status = $v.status;
       _firstExam = $v.firstExam;
       _$v = null;
@@ -126,7 +132,7 @@ class ExaminationRecordBuilder
             uuid: uuid,
             type: BuiltValueNullFieldError.checkNotNull(
                 type, 'ExaminationRecord', 'type'),
-            date: date,
+            plannedDate: plannedDate,
             status: status,
             firstExam: firstExam);
     replace(_$result);

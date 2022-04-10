@@ -14,7 +14,7 @@ part 'examination_record.g.dart';
 /// Properties:
 /// * [uuid] 
 /// * [type] 
-/// * [date] 
+/// * [plannedDate] 
 /// * [status] 
 /// * [firstExam] 
 abstract class ExaminationRecord implements Built<ExaminationRecord, ExaminationRecordBuilder> {
@@ -25,8 +25,8 @@ abstract class ExaminationRecord implements Built<ExaminationRecord, Examination
     ExaminationType get type;
     // enum typeEnum {  COLONOSCOPY,  DENTIST,  DERMATOLOGIST,  GENERAL_PRACTITIONER,  GYNECOLOGIST,  MAMMOGRAM,  OPHTHALMOLOGIST,  TOKS,  ULTRASOUND_BREAST,  UROLOGIST,  VENEREAL_DISEASES,  };
 
-    @BuiltValueField(wireName: r'date')
-    DateTime? get date;
+    @BuiltValueField(wireName: r'plannedDate')
+    DateTime? get plannedDate;
 
     @BuiltValueField(wireName: r'status')
     ExaminationStatus? get status;
@@ -68,10 +68,10 @@ class _$ExaminationRecordSerializer implements StructuredSerializer<ExaminationR
             ..add(r'type')
             ..add(serializers.serialize(object.type,
                 specifiedType: const FullType(ExaminationType)));
-        if (object.date != null) {
+        if (object.plannedDate != null) {
             result
-                ..add(r'date')
-                ..add(serializers.serialize(object.date,
+                ..add(r'plannedDate')
+                ..add(serializers.serialize(object.plannedDate,
                     specifiedType: const FullType.nullable(DateTime)));
         }
         if (object.status != null) {
@@ -112,11 +112,11 @@ class _$ExaminationRecordSerializer implements StructuredSerializer<ExaminationR
                         specifiedType: const FullType(ExaminationType)) as ExaminationType;
                     result.type = valueDes;
                     break;
-                case r'date':
+                case r'plannedDate':
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType.nullable(DateTime)) as DateTime?;
                     if (valueDes == null) continue;
-                    result.date = valueDes;
+                    result.plannedDate = valueDes;
                     break;
                 case r'status':
                     final valueDes = serializers.deserialize(value,

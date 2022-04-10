@@ -17,8 +17,8 @@ void main() {
       // TODO
     });
 
-    // DateTime date
-    test('to test the property `date`', () async {
+    // DateTime plannedDate
+    test('to test the property `plannedDate`', () async {
       // TODO
     });
 

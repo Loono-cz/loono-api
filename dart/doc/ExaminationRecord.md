@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **uuid** | **String** |  | [optional] 
 **type** | [**ExaminationType**](ExaminationType.md) |  | 
-**date** | [**DateTime**](DateTime.md) |  | [optional] 
+**plannedDate** | [**DateTime**](DateTime.md) |  | [optional] 
 **status** | [**ExaminationStatus**](ExaminationStatus.md) |  | [optional] 
 **firstExam** | **bool** |  | [optional] [default to false]
 
