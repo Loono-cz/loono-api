@@ -11,12 +11,11 @@
             "name": "MIT license",
             "url": "http://www.opensource.org/licenses/mit-license.html"
         },
-        "version": "1.0",
-        "basePath": "/v1"
+        "version": "1.0"
     },
     "servers": [
         {
-            "url": "https://loono.ceskodigital.net:443",
+            "url": "https://loono.ceskodigital.net:443/v1",
             "description": "Inferred Url"
         }
     ],
