@@ -15,7 +15,7 @@ import 'package:loono_api/src/api/leaderboard_api.dart';
 import 'package:loono_api/src/api/providers_api.dart';
 
 class LoonoApi {
-  static const String basePath = r'https://loono.ceskodigital.net:443';
+  static const String basePath = r'https://loono.ceskodigital.net:443/v1';
 
   final Dio dio;
   final Serializers serializers;

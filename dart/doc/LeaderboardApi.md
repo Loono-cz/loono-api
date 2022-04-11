@@ -5,7 +5,7 @@
 import 'package:loono_api/api.dart';
 ```
 
-All URIs are relative to *https://loono.ceskodigital.net:443*
+All URIs are relative to *https://loono.ceskodigital.net:443/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

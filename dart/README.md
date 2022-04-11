@@ -67,7 +67,7 @@ try {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://loono.ceskodigital.net:443*
+All URIs are relative to *https://loono.ceskodigital.net:443/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
