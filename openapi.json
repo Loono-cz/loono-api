@@ -705,6 +705,48 @@
                     }
                 }
             }
+        },
+        "/feedback": {
+            "post": {
+                "summary": "Sending a user feedback",
+                "operationId": "feedback",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Account"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "description": "Send a user feedback which should be stored",
+                "security": [
+                    {
+                        "Bearer_Auth": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UserFeedback"
+                            }
+                        }
+                    }
+                }
+            }
         }
     },
     "components": {
@@ -1428,6 +1470,22 @@
                     "message"
                 ],
                 "description": "Return message after sending the finding status."
+            },
+            "UserFeedback": {
+                "title": "UserFeedback",
+                "type": "object",
+                "properties": {
+                    "evaluation": {
+                        "type": "integer"
+                    },
+                    "message": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "evaluation"
+                ],
+                "description": "User feedback to be stored."
             }
         },
         "securitySchemes": {
