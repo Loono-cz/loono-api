@@ -10,6 +10,7 @@ import 'package:loono_api/src/auth/basic_auth.dart';
 import 'package:loono_api/src/auth/bearer_auth.dart';
 import 'package:loono_api/src/auth/oauth.dart';
 import 'package:loono_api/src/api/account_api.dart';
+import 'package:loono_api/src/api/default_api.dart';
 import 'package:loono_api/src/api/examinations_api.dart';
 import 'package:loono_api/src/api/leaderboard_api.dart';
 import 'package:loono_api/src/api/providers_api.dart';
@@ -72,6 +73,12 @@ class LoonoApi {
   /// by doing that all interceptors will not be executed
   AccountApi getAccountApi() {
     return AccountApi(dio, serializers);
+  }
+
+  /// Get DefaultApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  DefaultApi getDefaultApi() {
+    return DefaultApi(dio, serializers);
   }
 
   /// Get ExaminationsApi instance, base route and serializer can be overridden by a given but be careful,

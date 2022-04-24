@@ -36,6 +36,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(Sex.serializer)
       ..add(SimpleHealthcareProvider.serializer)
       ..add(UpdateStatusMessage.serializer)
+      ..add(UserFeedback.serializer)
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(Badge)]),
           () => new ListBuilder<Badge>())

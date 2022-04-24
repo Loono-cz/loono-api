@@ -8,6 +8,7 @@ doc/AccountOnboarding.md
 doc/AccountUpdate.md
 doc/Badge.md
 doc/BadgeType.md
+doc/DefaultApi.md
 doc/Error.md
 doc/ExaminationId.md
 doc/ExaminationPreventionStatus.md
@@ -34,9 +35,11 @@ doc/SelfExaminationType.md
 doc/Sex.md
 doc/SimpleHealthcareProvider.md
 doc/UpdateStatusMessage.md
+doc/UserFeedback.md
 lib/loono_api.dart
 lib/src/api.dart
 lib/src/api/account_api.dart
+lib/src/api/default_api.dart
 lib/src/api/examinations_api.dart
 lib/src/api/leaderboard_api.dart
 lib/src/api/providers_api.dart
@@ -76,6 +79,7 @@ lib/src/model/self_examination_type.dart
 lib/src/model/sex.dart
 lib/src/model/simple_healthcare_provider.dart
 lib/src/model/update_status_message.dart
+lib/src/model/user_feedback.dart
 lib/src/serializers.dart
 pubspec.yaml
 test/account_api_test.dart
@@ -84,6 +88,7 @@ test/account_test.dart
 test/account_update_test.dart
 test/badge_test.dart
 test/badge_type_test.dart
+test/default_api_test.dart
 test/error_test.dart
 test/examination_id_test.dart
 test/examination_prevention_status_test.dart
@@ -110,3 +115,4 @@ test/self_examination_type_test.dart
 test/sex_test.dart
 test/simple_healthcare_provider_test.dart
 test/update_status_message_test.dart
+test/user_feedback_test.dart

@@ -10,6 +10,7 @@ export 'package:loono_api/src/serializers.dart';
 export 'package:loono_api/src/model/date.dart';
 
 export 'package:loono_api/src/api/account_api.dart';
+export 'package:loono_api/src/api/default_api.dart';
 export 'package:loono_api/src/api/examinations_api.dart';
 export 'package:loono_api/src/api/leaderboard_api.dart';
 export 'package:loono_api/src/api/providers_api.dart';
@@ -42,3 +43,4 @@ export 'package:loono_api/src/model/self_examination_type.dart';
 export 'package:loono_api/src/model/sex.dart';
 export 'package:loono_api/src/model/simple_healthcare_provider.dart';
 export 'package:loono_api/src/model/update_status_message.dart';
+export 'package:loono_api/src/model/user_feedback.dart';

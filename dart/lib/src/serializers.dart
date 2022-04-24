@@ -40,6 +40,7 @@ import 'package:loono_api/src/model/self_examination_type.dart';
 import 'package:loono_api/src/model/sex.dart';
 import 'package:loono_api/src/model/simple_healthcare_provider.dart';
 import 'package:loono_api/src/model/update_status_message.dart';
+import 'package:loono_api/src/model/user_feedback.dart';
 
 part 'serializers.g.dart';
 
@@ -72,6 +73,7 @@ part 'serializers.g.dart';
   Sex,
   SimpleHealthcareProvider,
   UpdateStatusMessage,
+  UserFeedback,
 ])
 Serializers serializers = (_$serializers.toBuilder()
       ..add(const DateSerializer())
