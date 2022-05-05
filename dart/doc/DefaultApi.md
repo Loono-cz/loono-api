@@ -22,9 +22,6 @@ Send a user feedback which should be stored
 ### Example
 ```dart
 import 'package:loono_api/api.dart';
-// TODO Configure HTTP basic authorization: Bearer_Auth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('Bearer_Auth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('Bearer_Auth').password = 'YOUR_PASSWORD';
 
 final api = LoonoApi().getDefaultApi();
 final UserFeedback userFeedback = ; // UserFeedback | 
@@ -48,7 +45,7 @@ void (empty response body)
 
 ### Authorization
 
-[Bearer_Auth](../README.md#Bearer_Auth)
+No authorization required
 
 ### HTTP request headers
 

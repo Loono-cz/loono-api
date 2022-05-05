@@ -12,12 +12,16 @@ part 'user_feedback.g.dart';
 /// Properties:
 /// * [evaluation] 
 /// * [message] 
+/// * [uid] 
 abstract class UserFeedback implements Built<UserFeedback, UserFeedbackBuilder> {
     @BuiltValueField(wireName: r'evaluation')
     int get evaluation;
 
     @BuiltValueField(wireName: r'message')
     String? get message;
+
+    @BuiltValueField(wireName: r'uid')
+    String? get uid;
 
     UserFeedback._();
 
@@ -51,6 +55,12 @@ class _$UserFeedbackSerializer implements StructuredSerializer<UserFeedback> {
                 ..add(serializers.serialize(object.message,
                     specifiedType: const FullType(String)));
         }
+        if (object.uid != null) {
+            result
+                ..add(r'uid')
+                ..add(serializers.serialize(object.uid,
+                    specifiedType: const FullType(String)));
+        }
         return result;
     }
 
@@ -75,6 +85,11 @@ class _$UserFeedbackSerializer implements StructuredSerializer<UserFeedback> {
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(String)) as String;
                     result.message = valueDes;
+                    break;
+                case r'uid':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    result.uid = valueDes;
                     break;
             }
         }

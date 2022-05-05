@@ -17,5 +17,10 @@ void main() {
       // TODO
     });
 
+    // String uid
+    test('to test the property `uid`', () async {
+      // TODO
+    });
+
   });
 }

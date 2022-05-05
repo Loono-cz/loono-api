@@ -11,11 +11,14 @@ class _$UserFeedback extends UserFeedback {
   final int evaluation;
   @override
   final String? message;
+  @override
+  final String? uid;
 
   factory _$UserFeedback([void Function(UserFeedbackBuilder)? updates]) =>
       (new UserFeedbackBuilder()..update(updates)).build();
 
-  _$UserFeedback._({required this.evaluation, this.message}) : super._() {
+  _$UserFeedback._({required this.evaluation, this.message, this.uid})
+      : super._() {
     BuiltValueNullFieldError.checkNotNull(
         evaluation, 'UserFeedback', 'evaluation');
   }
@@ -32,19 +35,22 @@ class _$UserFeedback extends UserFeedback {
     if (identical(other, this)) return true;
     return other is UserFeedback &&
         evaluation == other.evaluation &&
-        message == other.message;
+        message == other.message &&
+        uid == other.uid;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc(0, evaluation.hashCode), message.hashCode));
+    return $jf(
+        $jc($jc($jc(0, evaluation.hashCode), message.hashCode), uid.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('UserFeedback')
           ..add('evaluation', evaluation)
-          ..add('message', message))
+          ..add('message', message)
+          ..add('uid', uid))
         .toString();
   }
 }
@@ -61,6 +67,10 @@ class UserFeedbackBuilder
   String? get message => _$this._message;
   set message(String? message) => _$this._message = message;
 
+  String? _uid;
+  String? get uid => _$this._uid;
+  set uid(String? uid) => _$this._uid = uid;
+
   UserFeedbackBuilder() {
     UserFeedback._defaults(this);
   }
@@ -70,6 +80,7 @@ class UserFeedbackBuilder
     if ($v != null) {
       _evaluation = $v.evaluation;
       _message = $v.message;
+      _uid = $v.uid;
       _$v = null;
     }
     return this;
@@ -92,7 +103,8 @@ class UserFeedbackBuilder
         new _$UserFeedback._(
             evaluation: BuiltValueNullFieldError.checkNotNull(
                 evaluation, 'UserFeedback', 'evaluation'),
-            message: message);
+            message: message,
+            uid: uid);
     replace(_$result);
     return _$result;
   }
