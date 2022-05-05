@@ -712,14 +712,7 @@
                 "operationId": "feedback",
                 "responses": {
                     "200": {
-                        "description": "OK",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Account"
-                                }
-                            }
-                        }
+                        "description": "OK"
                     },
                     "400": {
                         "description": "Bad Request"
