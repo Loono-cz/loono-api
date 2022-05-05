@@ -725,11 +725,6 @@
                     }
                 },
                 "description": "Send a user feedback which should be stored",
-                "security": [
-                    {
-                        "Bearer_Auth": []
-                    }
-                ],
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -1472,6 +1467,9 @@
                         "type": "integer"
                     },
                     "message": {
+                        "type": "string"
+                    },
+                    "uid": {
                         "type": "string"
                     }
                 },
