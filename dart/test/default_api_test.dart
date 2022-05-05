@@ -11,7 +11,7 @@ void main() {
     //
     // Send a user feedback which should be stored
     //
-    //Future<Account> feedback({ UserFeedback userFeedback }) async
+    //Future feedback({ UserFeedback userFeedback }) async
     test('test feedback', () async {
       // TODO
     });

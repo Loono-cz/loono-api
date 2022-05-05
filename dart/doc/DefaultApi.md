@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **feedback**
-> Account feedback(userFeedback)
+> feedback(userFeedback)
 
 Sending a user feedback
 
@@ -30,8 +30,7 @@ final api = LoonoApi().getDefaultApi();
 final UserFeedback userFeedback = ; // UserFeedback | 
 
 try {
-    final response = api.feedback(userFeedback);
-    print(response);
+    api.feedback(userFeedback);
 } catch on DioError (e) {
     print('Exception when calling DefaultApi->feedback: $e\n');
 }
@@ -45,7 +44,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Account**](Account.md)
+void (empty response body)
 
 ### Authorization
 
@@ -54,7 +53,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

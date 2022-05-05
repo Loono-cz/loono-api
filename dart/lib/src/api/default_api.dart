@@ -7,7 +7,6 @@ import 'dart:async';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
-import 'package:loono_api/src/model/account.dart';
 import 'package:loono_api/src/model/user_feedback.dart';
 
 class DefaultApi {
@@ -30,9 +29,9 @@ class DefaultApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [Account] as data
+  /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<Account>> feedback({ 
+  Future<Response<void>> feedback({ 
     UserFeedback? userFeedback,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -87,34 +86,7 @@ class DefaultApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Account _responseData;
-
-    try {
-      const _responseType = FullType(Account);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as Account;
-
-    } catch (error, stackTrace) {
-      throw DioError(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioErrorType.other,
-        error: error,
-      )..stackTrace = stackTrace;
-    }
-
-    return Response<Account>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
+    return _response;
   }
 
 }
