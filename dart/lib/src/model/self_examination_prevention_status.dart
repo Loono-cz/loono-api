@@ -30,7 +30,7 @@ abstract class SelfExaminationPreventionStatus implements Built<SelfExaminationP
 
     @BuiltValueField(wireName: r'type')
     SelfExaminationType get type;
-    // enum typeEnum {  BREAST,  TESTICULAR,  };
+    // enum typeEnum {  BREAST,  TESTICULAR,  SKIN,  };
 
     @BuiltValueField(wireName: r'history')
     BuiltList<SelfExaminationStatus> get history;

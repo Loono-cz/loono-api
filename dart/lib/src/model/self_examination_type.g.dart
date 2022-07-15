@@ -9,6 +9,7 @@ part of 'self_examination_type.dart';
 const SelfExaminationType _$BREAST = const SelfExaminationType._('BREAST');
 const SelfExaminationType _$TESTICULAR =
     const SelfExaminationType._('TESTICULAR');
+const SelfExaminationType _$SKIN = const SelfExaminationType._('SKIN');
 
 SelfExaminationType _$valueOf(String name) {
   switch (name) {
@@ -16,6 +17,8 @@ SelfExaminationType _$valueOf(String name) {
       return _$BREAST;
     case 'TESTICULAR':
       return _$TESTICULAR;
+    case 'SKIN':
+      return _$SKIN;
     default:
       throw new ArgumentError(name);
   }
@@ -25,12 +28,14 @@ final BuiltSet<SelfExaminationType> _$values =
     new BuiltSet<SelfExaminationType>(const <SelfExaminationType>[
   _$BREAST,
   _$TESTICULAR,
+  _$SKIN,
 ]);
 
 class _$SelfExaminationTypeMeta {
   const _$SelfExaminationTypeMeta();
   SelfExaminationType get BREAST => _$BREAST;
   SelfExaminationType get TESTICULAR => _$TESTICULAR;
+  SelfExaminationType get SKIN => _$SKIN;
   SelfExaminationType valueOf(String name) => _$valueOf(name);
   BuiltSet<SelfExaminationType> get values => _$values;
 }
@@ -49,10 +54,12 @@ class _$SelfExaminationTypeSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'BREAST': 'BREAST',
     'TESTICULAR': 'TESTICULAR',
+    'SKIN': 'SKIN',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'BREAST': 'BREAST',
     'TESTICULAR': 'TESTICULAR',
+    'SKIN': 'SKIN',
   };
 
   @override

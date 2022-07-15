@@ -14,6 +14,8 @@ class SelfExaminationType extends EnumClass {
   static const SelfExaminationType BREAST = _$BREAST;
   @BuiltValueEnumConst(wireName: r'TESTICULAR')
   static const SelfExaminationType TESTICULAR = _$TESTICULAR;
+  @BuiltValueEnumConst(wireName: r'SKIN')
+  static const SelfExaminationType SKIN = _$SKIN;
 
   static Serializer<SelfExaminationType> get serializer => _$selfExaminationTypeSerializer;
 
