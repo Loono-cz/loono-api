@@ -40,7 +40,7 @@ abstract class SelfExaminationPreventionStatus implements Built<SelfExaminationP
 
     @BuiltValueField(wireName: r'badge')
     BadgeType get badge;
-    // enum badgeEnum {  COAT,  TOP,  BELT,  SHOES,  GLOVES,  HEADBAND,  GLASSES,  SHIELD,  };
+    // enum badgeEnum {  COAT,  TOP,  BELT,  SHOES,  GLOVES,  HEADBAND,  GLASSES,  SHIELD,  PAULDRONS,  };
 
     SelfExaminationPreventionStatus._();
 

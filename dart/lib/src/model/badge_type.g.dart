@@ -14,6 +14,7 @@ const BadgeType _$GLOVES = const BadgeType._('GLOVES');
 const BadgeType _$HEADBAND = const BadgeType._('HEADBAND');
 const BadgeType _$GLASSES = const BadgeType._('GLASSES');
 const BadgeType _$SHIELD = const BadgeType._('SHIELD');
+const BadgeType _$PAULDRONS = const BadgeType._('PAULDRONS');
 
 BadgeType _$valueOf(String name) {
   switch (name) {
@@ -33,6 +34,8 @@ BadgeType _$valueOf(String name) {
       return _$GLASSES;
     case 'SHIELD':
       return _$SHIELD;
+    case 'PAULDRONS':
+      return _$PAULDRONS;
     default:
       throw new ArgumentError(name);
   }
@@ -47,6 +50,7 @@ final BuiltSet<BadgeType> _$values = new BuiltSet<BadgeType>(const <BadgeType>[
   _$HEADBAND,
   _$GLASSES,
   _$SHIELD,
+  _$PAULDRONS,
 ]);
 
 class _$BadgeTypeMeta {
@@ -59,6 +63,7 @@ class _$BadgeTypeMeta {
   BadgeType get HEADBAND => _$HEADBAND;
   BadgeType get GLASSES => _$GLASSES;
   BadgeType get SHIELD => _$SHIELD;
+  BadgeType get PAULDRONS => _$PAULDRONS;
   BadgeType valueOf(String name) => _$valueOf(name);
   BuiltSet<BadgeType> get values => _$values;
 }
@@ -80,6 +85,7 @@ class _$BadgeTypeSerializer implements PrimitiveSerializer<BadgeType> {
     'HEADBAND': 'HEADBAND',
     'GLASSES': 'GLASSES',
     'SHIELD': 'SHIELD',
+    'PAULDRONS': 'PAULDRONS',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'COAT': 'COAT',
@@ -90,6 +96,7 @@ class _$BadgeTypeSerializer implements PrimitiveSerializer<BadgeType> {
     'HEADBAND': 'HEADBAND',
     'GLASSES': 'GLASSES',
     'SHIELD': 'SHIELD',
+    'PAULDRONS': 'PAULDRONS',
   };
 
   @override

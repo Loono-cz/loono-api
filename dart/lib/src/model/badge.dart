@@ -16,7 +16,7 @@ part 'badge.g.dart';
 abstract class Badge implements Built<Badge, BadgeBuilder> {
     @BuiltValueField(wireName: r'type')
     BadgeType get type;
-    // enum typeEnum {  COAT,  TOP,  BELT,  SHOES,  GLOVES,  HEADBAND,  GLASSES,  SHIELD,  };
+    // enum typeEnum {  COAT,  TOP,  BELT,  SHOES,  GLOVES,  HEADBAND,  GLASSES,  SHIELD,  PAULDRONS,  };
 
     @BuiltValueField(wireName: r'level')
     int get level;

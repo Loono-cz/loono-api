@@ -25,7 +25,7 @@ abstract class SelfExaminationCompletionInformation implements Built<SelfExamina
 
     @BuiltValueField(wireName: r'badgeType')
     BadgeType get badgeType;
-    // enum badgeTypeEnum {  COAT,  TOP,  BELT,  SHOES,  GLOVES,  HEADBAND,  GLASSES,  SHIELD,  };
+    // enum badgeTypeEnum {  COAT,  TOP,  BELT,  SHOES,  GLOVES,  HEADBAND,  GLASSES,  SHIELD,  PAULDRONS,  };
 
     @BuiltValueField(wireName: r'badgeLevel')
     int get badgeLevel;

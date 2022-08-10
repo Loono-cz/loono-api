@@ -34,6 +34,9 @@ class BadgeType extends EnumClass {
   /// Available badges enum
   @BuiltValueEnumConst(wireName: r'SHIELD')
   static const BadgeType SHIELD = _$SHIELD;
+  /// Available badges enum
+  @BuiltValueEnumConst(wireName: r'PAULDRONS')
+  static const BadgeType PAULDRONS = _$PAULDRONS;
 
   static Serializer<BadgeType> get serializer => _$badgeTypeSerializer;
 

@@ -59,7 +59,7 @@ abstract class ExaminationPreventionStatus implements Built<ExaminationPreventio
 
     @BuiltValueField(wireName: r'badge')
     BadgeType get badge;
-    // enum badgeEnum {  COAT,  TOP,  BELT,  SHOES,  GLOVES,  HEADBAND,  GLASSES,  SHIELD,  };
+    // enum badgeEnum {  COAT,  TOP,  BELT,  SHOES,  GLOVES,  HEADBAND,  GLASSES,  SHIELD,  PAULDRONS,  };
 
     ExaminationPreventionStatus._();
 
