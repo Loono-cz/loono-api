@@ -951,7 +951,8 @@
         "type": "string",
         "title": "ExaminationCategory",
         "description": "",
-        "enum": ["MANDATORY", "CUSTOM"]
+        "enum": ["MANDATORY", "CUSTOM"],
+        "default": "MANDATORY"
       },
       "SelfExaminationType": {
         "type": "string",
