@@ -97,6 +97,7 @@ Class | Method | HTTP request | Description
  - [Badge](doc/Badge.md)
  - [BadgeType](doc/BadgeType.md)
  - [Error](doc/Error.md)
+ - [ExaminationCategory](doc/ExaminationCategory.md)
  - [ExaminationId](doc/ExaminationId.md)
  - [ExaminationPreventionStatus](doc/ExaminationPreventionStatus.md)
  - [ExaminationRecord](doc/ExaminationRecord.md)
