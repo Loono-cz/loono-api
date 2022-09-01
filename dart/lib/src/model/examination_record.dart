@@ -17,6 +17,7 @@ part 'examination_record.g.dart';
 /// * [plannedDate] 
 /// * [status] 
 /// * [firstExam] 
+/// * [note] 
 abstract class ExaminationRecord implements Built<ExaminationRecord, ExaminationRecordBuilder> {
     @BuiltValueField(wireName: r'uuid')
     String? get uuid;
@@ -34,6 +35,9 @@ abstract class ExaminationRecord implements Built<ExaminationRecord, Examination
 
     @BuiltValueField(wireName: r'firstExam')
     bool? get firstExam;
+
+    @BuiltValueField(wireName: r'note')
+    String? get note;
 
     ExaminationRecord._();
 
@@ -86,6 +90,12 @@ class _$ExaminationRecordSerializer implements StructuredSerializer<ExaminationR
                 ..add(serializers.serialize(object.firstExam,
                     specifiedType: const FullType(bool)));
         }
+        if (object.note != null) {
+            result
+                ..add(r'note')
+                ..add(serializers.serialize(object.note,
+                    specifiedType: const FullType.nullable(String)));
+        }
         return result;
     }
 
@@ -127,6 +137,12 @@ class _$ExaminationRecordSerializer implements StructuredSerializer<ExaminationR
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(bool)) as bool;
                     result.firstExam = valueDes;
+                    break;
+                case r'note':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType.nullable(String)) as String?;
+                    if (valueDes == null) continue;
+                    result.note = valueDes;
                     break;
             }
         }

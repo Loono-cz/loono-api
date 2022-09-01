@@ -17,6 +17,8 @@ class _$ExaminationRecord extends ExaminationRecord {
   final ExaminationStatus? status;
   @override
   final bool? firstExam;
+  @override
+  final String? note;
 
   factory _$ExaminationRecord(
           [void Function(ExaminationRecordBuilder)? updates]) =>
@@ -27,7 +29,8 @@ class _$ExaminationRecord extends ExaminationRecord {
       required this.type,
       this.plannedDate,
       this.status,
-      this.firstExam})
+      this.firstExam,
+      this.note})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(type, 'ExaminationRecord', 'type');
   }
@@ -48,17 +51,20 @@ class _$ExaminationRecord extends ExaminationRecord {
         type == other.type &&
         plannedDate == other.plannedDate &&
         status == other.status &&
-        firstExam == other.firstExam;
+        firstExam == other.firstExam &&
+        note == other.note;
   }
 
   @override
   int get hashCode {
     return $jf($jc(
         $jc(
-            $jc($jc($jc(0, uuid.hashCode), type.hashCode),
-                plannedDate.hashCode),
-            status.hashCode),
-        firstExam.hashCode));
+            $jc(
+                $jc($jc($jc(0, uuid.hashCode), type.hashCode),
+                    plannedDate.hashCode),
+                status.hashCode),
+            firstExam.hashCode),
+        note.hashCode));
   }
 
   @override
@@ -68,7 +74,8 @@ class _$ExaminationRecord extends ExaminationRecord {
           ..add('type', type)
           ..add('plannedDate', plannedDate)
           ..add('status', status)
-          ..add('firstExam', firstExam))
+          ..add('firstExam', firstExam)
+          ..add('note', note))
         .toString();
   }
 }
@@ -97,6 +104,10 @@ class ExaminationRecordBuilder
   bool? get firstExam => _$this._firstExam;
   set firstExam(bool? firstExam) => _$this._firstExam = firstExam;
 
+  String? _note;
+  String? get note => _$this._note;
+  set note(String? note) => _$this._note = note;
+
   ExaminationRecordBuilder() {
     ExaminationRecord._defaults(this);
   }
@@ -109,6 +120,7 @@ class ExaminationRecordBuilder
       _plannedDate = $v.plannedDate;
       _status = $v.status;
       _firstExam = $v.firstExam;
+      _note = $v.note;
       _$v = null;
     }
     return this;
@@ -134,7 +146,8 @@ class ExaminationRecordBuilder
                 type, 'ExaminationRecord', 'type'),
             plannedDate: plannedDate,
             status: status,
-            firstExam: firstExam);
+            firstExam: firstExam,
+            note: note);
     replace(_$result);
     return _$result;
   }

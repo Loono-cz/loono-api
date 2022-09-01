@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **plannedDate** | [**DateTime**](DateTime.md) |  | [optional] 
 **status** | [**ExaminationStatus**](ExaminationStatus.md) |  | [optional] 
 **firstExam** | **bool** |  | [optional] [default to false]
+**note** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
