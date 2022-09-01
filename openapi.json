@@ -1301,6 +1301,10 @@
           "firstExam": {
             "type": "boolean",
             "default": false
+          },
+          "note": {
+            "type": "string",
+            "nullable": true
           }
         },
         "required": ["type"]
