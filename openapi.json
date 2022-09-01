@@ -947,6 +947,12 @@
           "VENEREAL_DISEASES"
         ]
       },
+      "ExaminationCategory": {
+        "type": "string",
+        "title": "ExaminationCategory",
+        "description": "",
+        "enum": ["MANDATORY", "CUSTOM"]
+      },
       "SelfExaminationType": {
         "type": "string",
         "title": "SelfExaminationType",
