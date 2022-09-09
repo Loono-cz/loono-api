@@ -22,6 +22,11 @@ void main() {
       // TODO
     });
 
+    // int customInterval
+    test('to test the property `customInterval`', () async {
+      // TODO
+    });
+
     // DateTime plannedDate
     test('to test the property `plannedDate`', () async {
       // TODO
@@ -29,6 +34,11 @@ void main() {
 
     // bool firstExam
     test('to test the property `firstExam`', () async {
+      // TODO
+    });
+
+    // bool periodicExam
+    test('to test the property `periodicExam`', () async {
       // TODO
     });
 
@@ -59,6 +69,11 @@ void main() {
 
     // BadgeType badge
     test('to test the property `badge`', () async {
+      // TODO
+    });
+
+    // ExaminationCategory examinationCategory
+    test('to test the property `examinationCategory`', () async {
       // TODO
     });
 

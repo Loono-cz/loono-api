@@ -3,6 +3,7 @@
 //
 
 import 'package:loono_api/src/model/examination_type.dart';
+import 'package:loono_api/src/model/examination_category.dart';
 import 'package:loono_api/src/model/badge_type.dart';
 import 'package:loono_api/src/model/examination_status.dart';
 import 'package:built_value/built_value.dart';
@@ -16,14 +17,17 @@ part 'examination_prevention_status.g.dart';
 /// * [uuid] 
 /// * [examinationType] 
 /// * [intervalYears] 
+/// * [customInterval] 
 /// * [plannedDate] 
 /// * [firstExam] 
+/// * [periodicExam] 
 /// * [priority] 
 /// * [state] 
 /// * [count] 
 /// * [lastConfirmedDate] 
 /// * [points] 
 /// * [badge] 
+/// * [examinationCategory] 
 abstract class ExaminationPreventionStatus implements Built<ExaminationPreventionStatus, ExaminationPreventionStatusBuilder> {
     @BuiltValueField(wireName: r'uuid')
     String? get uuid;
@@ -35,11 +39,17 @@ abstract class ExaminationPreventionStatus implements Built<ExaminationPreventio
     @BuiltValueField(wireName: r'intervalYears')
     int get intervalYears;
 
+    @BuiltValueField(wireName: r'customInterval')
+    int? get customInterval;
+
     @BuiltValueField(wireName: r'plannedDate')
     DateTime? get plannedDate;
 
     @BuiltValueField(wireName: r'firstExam')
     bool get firstExam;
+
+    @BuiltValueField(wireName: r'periodicExam')
+    bool? get periodicExam;
 
     @BuiltValueField(wireName: r'priority')
     int get priority;
@@ -60,6 +70,10 @@ abstract class ExaminationPreventionStatus implements Built<ExaminationPreventio
     @BuiltValueField(wireName: r'badge')
     BadgeType get badge;
     // enum badgeEnum {  COAT,  TOP,  BELT,  SHOES,  GLOVES,  HEADBAND,  GLASSES,  SHIELD,  PAULDRONS,  };
+
+    @BuiltValueField(wireName: r'examinationCategory')
+    ExaminationCategory get examinationCategory;
+    // enum examinationCategoryEnum {  MANDATORY,  CUSTOM,  };
 
     ExaminationPreventionStatus._();
 
@@ -97,6 +111,12 @@ class _$ExaminationPreventionStatusSerializer implements StructuredSerializer<Ex
             ..add(r'intervalYears')
             ..add(serializers.serialize(object.intervalYears,
                 specifiedType: const FullType(int)));
+        if (object.customInterval != null) {
+            result
+                ..add(r'customInterval')
+                ..add(serializers.serialize(object.customInterval,
+                    specifiedType: const FullType.nullable(int)));
+        }
         if (object.plannedDate != null) {
             result
                 ..add(r'plannedDate')
@@ -107,6 +127,12 @@ class _$ExaminationPreventionStatusSerializer implements StructuredSerializer<Ex
             ..add(r'firstExam')
             ..add(serializers.serialize(object.firstExam,
                 specifiedType: const FullType(bool)));
+        if (object.periodicExam != null) {
+            result
+                ..add(r'periodicExam')
+                ..add(serializers.serialize(object.periodicExam,
+                    specifiedType: const FullType(bool)));
+        }
         result
             ..add(r'priority')
             ..add(serializers.serialize(object.priority,
@@ -133,6 +159,10 @@ class _$ExaminationPreventionStatusSerializer implements StructuredSerializer<Ex
             ..add(r'badge')
             ..add(serializers.serialize(object.badge,
                 specifiedType: const FullType(BadgeType)));
+        result
+            ..add(r'examinationCategory')
+            ..add(serializers.serialize(object.examinationCategory,
+                specifiedType: const FullType(ExaminationCategory)));
         return result;
     }
 
@@ -163,6 +193,12 @@ class _$ExaminationPreventionStatusSerializer implements StructuredSerializer<Ex
                         specifiedType: const FullType(int)) as int;
                     result.intervalYears = valueDes;
                     break;
+                case r'customInterval':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType.nullable(int)) as int?;
+                    if (valueDes == null) continue;
+                    result.customInterval = valueDes;
+                    break;
                 case r'plannedDate':
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(DateTime)) as DateTime;
@@ -172,6 +208,11 @@ class _$ExaminationPreventionStatusSerializer implements StructuredSerializer<Ex
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(bool)) as bool;
                     result.firstExam = valueDes;
+                    break;
+                case r'periodicExam':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(bool)) as bool;
+                    result.periodicExam = valueDes;
                     break;
                 case r'priority':
                     final valueDes = serializers.deserialize(value,
@@ -202,6 +243,11 @@ class _$ExaminationPreventionStatusSerializer implements StructuredSerializer<Ex
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(BadgeType)) as BadgeType;
                     result.badge = valueDes;
+                    break;
+                case r'examinationCategory':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(ExaminationCategory)) as ExaminationCategory;
+                    result.examinationCategory = valueDes;
                     break;
             }
         }
