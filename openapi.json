@@ -1191,11 +1191,18 @@
           "intervalYears": {
             "type": "integer"
           },
+          "customInterval": {
+            "type": "integer",
+            "nullable": true
+          },
           "plannedDate": {
             "type": "string",
             "format": "date-time"
           },
           "firstExam": {
+            "type": "boolean"
+          },
+          "periodicExam": {
             "type": "boolean"
           },
           "priority": {
@@ -1216,6 +1223,9 @@
           },
           "badge": {
             "$ref": "#/components/schemas/BadgeType"
+          },
+          "examinationCategory": {
+            "$ref": "#/components/schemas/ExaminationCategory"
           }
         },
         "required": [
@@ -1226,7 +1236,8 @@
           "state",
           "count",
           "points",
-          "badge"
+          "badge",
+          "examinationCategory"
         ]
       },
       "SelfExaminationPreventionStatus": {
