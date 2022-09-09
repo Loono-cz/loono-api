@@ -37,5 +37,20 @@ void main() {
       // TODO
     });
 
+    // int customInterval
+    test('to test the property `customInterval`', () async {
+      // TODO
+    });
+
+    // bool periodicExam (default value: true)
+    test('to test the property `periodicExam`', () async {
+      // TODO
+    });
+
+    // ExaminationCategory examinationCategory
+    test('to test the property `examinationCategory`', () async {
+      // TODO
+    });
+
   });
 }

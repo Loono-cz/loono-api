@@ -14,6 +14,9 @@ Name | Type | Description | Notes
 **status** | [**ExaminationStatus**](ExaminationStatus.md) |  | [optional] 
 **firstExam** | **bool** |  | [optional] [default to false]
 **note** | **String** |  | [optional] 
+**customInterval** | **int** |  | [optional] 
+**periodicExam** | **bool** |  | [optional] [default to true]
+**examinationCategory** | [**ExaminationCategory**](ExaminationCategory.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

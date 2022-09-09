@@ -19,6 +19,12 @@ class _$ExaminationRecord extends ExaminationRecord {
   final bool? firstExam;
   @override
   final String? note;
+  @override
+  final int? customInterval;
+  @override
+  final bool? periodicExam;
+  @override
+  final ExaminationCategory examinationCategory;
 
   factory _$ExaminationRecord(
           [void Function(ExaminationRecordBuilder)? updates]) =>
@@ -30,9 +36,14 @@ class _$ExaminationRecord extends ExaminationRecord {
       this.plannedDate,
       this.status,
       this.firstExam,
-      this.note})
+      this.note,
+      this.customInterval,
+      this.periodicExam,
+      required this.examinationCategory})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(type, 'ExaminationRecord', 'type');
+    BuiltValueNullFieldError.checkNotNull(
+        examinationCategory, 'ExaminationRecord', 'examinationCategory');
   }
 
   @override
@@ -52,7 +63,10 @@ class _$ExaminationRecord extends ExaminationRecord {
         plannedDate == other.plannedDate &&
         status == other.status &&
         firstExam == other.firstExam &&
-        note == other.note;
+        note == other.note &&
+        customInterval == other.customInterval &&
+        periodicExam == other.periodicExam &&
+        examinationCategory == other.examinationCategory;
   }
 
   @override
@@ -60,11 +74,17 @@ class _$ExaminationRecord extends ExaminationRecord {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, uuid.hashCode), type.hashCode),
-                    plannedDate.hashCode),
-                status.hashCode),
-            firstExam.hashCode),
-        note.hashCode));
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc($jc($jc(0, uuid.hashCode), type.hashCode),
+                                plannedDate.hashCode),
+                            status.hashCode),
+                        firstExam.hashCode),
+                    note.hashCode),
+                customInterval.hashCode),
+            periodicExam.hashCode),
+        examinationCategory.hashCode));
   }
 
   @override
@@ -75,7 +95,10 @@ class _$ExaminationRecord extends ExaminationRecord {
           ..add('plannedDate', plannedDate)
           ..add('status', status)
           ..add('firstExam', firstExam)
-          ..add('note', note))
+          ..add('note', note)
+          ..add('customInterval', customInterval)
+          ..add('periodicExam', periodicExam)
+          ..add('examinationCategory', examinationCategory))
         .toString();
   }
 }
@@ -108,6 +131,20 @@ class ExaminationRecordBuilder
   String? get note => _$this._note;
   set note(String? note) => _$this._note = note;
 
+  int? _customInterval;
+  int? get customInterval => _$this._customInterval;
+  set customInterval(int? customInterval) =>
+      _$this._customInterval = customInterval;
+
+  bool? _periodicExam;
+  bool? get periodicExam => _$this._periodicExam;
+  set periodicExam(bool? periodicExam) => _$this._periodicExam = periodicExam;
+
+  ExaminationCategory? _examinationCategory;
+  ExaminationCategory? get examinationCategory => _$this._examinationCategory;
+  set examinationCategory(ExaminationCategory? examinationCategory) =>
+      _$this._examinationCategory = examinationCategory;
+
   ExaminationRecordBuilder() {
     ExaminationRecord._defaults(this);
   }
@@ -121,6 +158,9 @@ class ExaminationRecordBuilder
       _status = $v.status;
       _firstExam = $v.firstExam;
       _note = $v.note;
+      _customInterval = $v.customInterval;
+      _periodicExam = $v.periodicExam;
+      _examinationCategory = $v.examinationCategory;
       _$v = null;
     }
     return this;
@@ -147,7 +187,13 @@ class ExaminationRecordBuilder
             plannedDate: plannedDate,
             status: status,
             firstExam: firstExam,
-            note: note);
+            note: note,
+            customInterval: customInterval,
+            periodicExam: periodicExam,
+            examinationCategory: BuiltValueNullFieldError.checkNotNull(
+                examinationCategory,
+                'ExaminationRecord',
+                'examinationCategory'));
     replace(_$result);
     return _$result;
   }

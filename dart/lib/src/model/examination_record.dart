@@ -3,6 +3,7 @@
 //
 
 import 'package:loono_api/src/model/examination_type.dart';
+import 'package:loono_api/src/model/examination_category.dart';
 import 'package:loono_api/src/model/examination_status.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -18,6 +19,9 @@ part 'examination_record.g.dart';
 /// * [status] 
 /// * [firstExam] 
 /// * [note] 
+/// * [customInterval] 
+/// * [periodicExam] 
+/// * [examinationCategory] 
 abstract class ExaminationRecord implements Built<ExaminationRecord, ExaminationRecordBuilder> {
     @BuiltValueField(wireName: r'uuid')
     String? get uuid;
@@ -39,11 +43,22 @@ abstract class ExaminationRecord implements Built<ExaminationRecord, Examination
     @BuiltValueField(wireName: r'note')
     String? get note;
 
+    @BuiltValueField(wireName: r'customInterval')
+    int? get customInterval;
+
+    @BuiltValueField(wireName: r'periodicExam')
+    bool? get periodicExam;
+
+    @BuiltValueField(wireName: r'examinationCategory')
+    ExaminationCategory get examinationCategory;
+    // enum examinationCategoryEnum {  MANDATORY,  CUSTOM,  };
+
     ExaminationRecord._();
 
     @BuiltValueHook(initializeBuilder: true)
     static void _defaults(ExaminationRecordBuilder b) => b
-        ..firstExam = false;
+        ..firstExam = false
+        ..periodicExam = true;
 
     factory ExaminationRecord([void updates(ExaminationRecordBuilder b)]) = _$ExaminationRecord;
 
@@ -96,6 +111,22 @@ class _$ExaminationRecordSerializer implements StructuredSerializer<ExaminationR
                 ..add(serializers.serialize(object.note,
                     specifiedType: const FullType.nullable(String)));
         }
+        if (object.customInterval != null) {
+            result
+                ..add(r'customInterval')
+                ..add(serializers.serialize(object.customInterval,
+                    specifiedType: const FullType.nullable(int)));
+        }
+        if (object.periodicExam != null) {
+            result
+                ..add(r'periodicExam')
+                ..add(serializers.serialize(object.periodicExam,
+                    specifiedType: const FullType(bool)));
+        }
+        result
+            ..add(r'examinationCategory')
+            ..add(serializers.serialize(object.examinationCategory,
+                specifiedType: const FullType(ExaminationCategory)));
         return result;
     }
 
@@ -143,6 +174,22 @@ class _$ExaminationRecordSerializer implements StructuredSerializer<ExaminationR
                         specifiedType: const FullType.nullable(String)) as String?;
                     if (valueDes == null) continue;
                     result.note = valueDes;
+                    break;
+                case r'customInterval':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType.nullable(int)) as int?;
+                    if (valueDes == null) continue;
+                    result.customInterval = valueDes;
+                    break;
+                case r'periodicExam':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(bool)) as bool;
+                    result.periodicExam = valueDes;
+                    break;
+                case r'examinationCategory':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(ExaminationCategory)) as ExaminationCategory;
+                    result.examinationCategory = valueDes;
                     break;
             }
         }
