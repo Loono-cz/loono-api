@@ -1317,9 +1317,20 @@
           "note": {
             "type": "string",
             "nullable": true
+          },
+          "customInterval": {
+            "type": "integer",
+            "nullable": true
+          },
+          "periodicExam": {
+            "type": "boolean",
+            "default": true
+          },
+          "examinationCategory": {
+            "$ref": "#/components/schemas/ExaminationCategory"
           }
         },
-        "required": ["type"]
+        "required": ["type", "examinationCategory"]
       },
       "PreventionStatus": {
         "title": "PreventionStatus",
