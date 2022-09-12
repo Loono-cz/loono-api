@@ -1237,7 +1237,7 @@
           "count",
           "points",
           "badge",
-          "ExaminationCategoryType"
+          "examinationCategoryType"
         ]
       },
       "SelfExaminationPreventionStatus": {
@@ -1330,7 +1330,7 @@
             "$ref": "#/components/schemas/ExaminationCategoryType"
           }
         },
-        "required": ["type", "ExaminationCategoryType"]
+        "required": ["type", "examinationCategoryType"]
       },
       "PreventionStatus": {
         "title": "PreventionStatus",
