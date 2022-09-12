@@ -34,7 +34,7 @@ class _$ExaminationPreventionStatus extends ExaminationPreventionStatus {
   @override
   final BadgeType badge;
   @override
-  final ExaminationCategory examinationCategory;
+  final ExaminationCategoryType examinationCategoryType;
 
   factory _$ExaminationPreventionStatus(
           [void Function(ExaminationPreventionStatusBuilder)? updates]) =>
@@ -54,7 +54,7 @@ class _$ExaminationPreventionStatus extends ExaminationPreventionStatus {
       this.lastConfirmedDate,
       required this.points,
       required this.badge,
-      required this.examinationCategory})
+      required this.examinationCategoryType})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         examinationType, 'ExaminationPreventionStatus', 'examinationType');
@@ -72,8 +72,8 @@ class _$ExaminationPreventionStatus extends ExaminationPreventionStatus {
         points, 'ExaminationPreventionStatus', 'points');
     BuiltValueNullFieldError.checkNotNull(
         badge, 'ExaminationPreventionStatus', 'badge');
-    BuiltValueNullFieldError.checkNotNull(examinationCategory,
-        'ExaminationPreventionStatus', 'examinationCategory');
+    BuiltValueNullFieldError.checkNotNull(examinationCategoryType,
+        'ExaminationPreventionStatus', 'examinationCategoryType');
   }
 
   @override
@@ -102,7 +102,7 @@ class _$ExaminationPreventionStatus extends ExaminationPreventionStatus {
         lastConfirmedDate == other.lastConfirmedDate &&
         points == other.points &&
         badge == other.badge &&
-        examinationCategory == other.examinationCategory;
+        examinationCategoryType == other.examinationCategoryType;
   }
 
   @override
@@ -134,7 +134,7 @@ class _$ExaminationPreventionStatus extends ExaminationPreventionStatus {
                     lastConfirmedDate.hashCode),
                 points.hashCode),
             badge.hashCode),
-        examinationCategory.hashCode));
+        examinationCategoryType.hashCode));
   }
 
   @override
@@ -153,7 +153,7 @@ class _$ExaminationPreventionStatus extends ExaminationPreventionStatus {
           ..add('lastConfirmedDate', lastConfirmedDate)
           ..add('points', points)
           ..add('badge', badge)
-          ..add('examinationCategory', examinationCategory))
+          ..add('examinationCategoryType', examinationCategoryType))
         .toString();
   }
 }
@@ -220,10 +220,12 @@ class ExaminationPreventionStatusBuilder
   BadgeType? get badge => _$this._badge;
   set badge(BadgeType? badge) => _$this._badge = badge;
 
-  ExaminationCategory? _examinationCategory;
-  ExaminationCategory? get examinationCategory => _$this._examinationCategory;
-  set examinationCategory(ExaminationCategory? examinationCategory) =>
-      _$this._examinationCategory = examinationCategory;
+  ExaminationCategoryType? _examinationCategoryType;
+  ExaminationCategoryType? get examinationCategoryType =>
+      _$this._examinationCategoryType;
+  set examinationCategoryType(
+          ExaminationCategoryType? examinationCategoryType) =>
+      _$this._examinationCategoryType = examinationCategoryType;
 
   ExaminationPreventionStatusBuilder() {
     ExaminationPreventionStatus._defaults(this);
@@ -245,7 +247,7 @@ class ExaminationPreventionStatusBuilder
       _lastConfirmedDate = $v.lastConfirmedDate;
       _points = $v.points;
       _badge = $v.badge;
-      _examinationCategory = $v.examinationCategory;
+      _examinationCategoryType = $v.examinationCategoryType;
       _$v = null;
     }
     return this;
@@ -287,7 +289,7 @@ class ExaminationPreventionStatusBuilder
                 points, 'ExaminationPreventionStatus', 'points'),
             badge:
                 BuiltValueNullFieldError.checkNotNull(badge, 'ExaminationPreventionStatus', 'badge'),
-            examinationCategory: BuiltValueNullFieldError.checkNotNull(examinationCategory, 'ExaminationPreventionStatus', 'examinationCategory'));
+            examinationCategoryType: BuiltValueNullFieldError.checkNotNull(examinationCategoryType, 'ExaminationPreventionStatus', 'examinationCategoryType'));
     replace(_$result);
     return _$result;
   }

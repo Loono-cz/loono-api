@@ -6,21 +6,21 @@ import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'examination_category.g.dart';
+part 'examination_category_type.g.dart';
 
-class ExaminationCategory extends EnumClass {
+class ExaminationCategoryType extends EnumClass {
 
   @BuiltValueEnumConst(wireName: r'MANDATORY')
-  static const ExaminationCategory MANDATORY = _$MANDATORY;
+  static const ExaminationCategoryType MANDATORY = _$MANDATORY;
   @BuiltValueEnumConst(wireName: r'CUSTOM')
-  static const ExaminationCategory CUSTOM = _$CUSTOM;
+  static const ExaminationCategoryType CUSTOM = _$CUSTOM;
 
-  static Serializer<ExaminationCategory> get serializer => _$examinationCategorySerializer;
+  static Serializer<ExaminationCategoryType> get serializer => _$examinationCategoryTypeSerializer;
 
-  const ExaminationCategory._(String name): super(name);
+  const ExaminationCategoryType._(String name): super(name);
 
-  static BuiltSet<ExaminationCategory> get values => _$values;
-  static ExaminationCategory valueOf(String name) => _$valueOf(name);
+  static BuiltSet<ExaminationCategoryType> get values => _$values;
+  static ExaminationCategoryType valueOf(String name) => _$valueOf(name);
 }
 
 /// Optionally, enum_class can generate a mixin to go with your enum for use
@@ -29,5 +29,5 @@ class ExaminationCategory extends EnumClass {
 /// corresponding Angular template.
 ///
 /// Trigger mixin generation by writing a line like this one next to your enum.
-abstract class ExaminationCategoryMixin = Object with _$ExaminationCategoryMixin;
+abstract class ExaminationCategoryTypeMixin = Object with _$ExaminationCategoryTypeMixin;
 

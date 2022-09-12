@@ -1,4 +1,4 @@
-# loono_api.model.ExaminationCategory
+# loono_api.model.ExaminationCategoryType
 
 ## Load the model package
 ```dart

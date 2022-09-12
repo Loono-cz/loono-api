@@ -72,8 +72,8 @@ void main() {
       // TODO
     });
 
-    // ExaminationCategory examinationCategory
-    test('to test the property `examinationCategory`', () async {
+    // ExaminationCategoryType examinationCategoryType
+    test('to test the property `examinationCategoryType`', () async {
       // TODO
     });
 

@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **lastConfirmedDate** | [**DateTime**](DateTime.md) |  | [optional] 
 **points** | **int** |  | 
 **badge** | [**BadgeType**](BadgeType.md) |  | 
-**examinationCategory** | [**ExaminationCategory**](ExaminationCategory.md) |  | 
+**examinationCategoryType** | [**ExaminationCategoryType**](ExaminationCategoryType.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

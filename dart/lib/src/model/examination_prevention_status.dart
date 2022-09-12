@@ -3,7 +3,7 @@
 //
 
 import 'package:loono_api/src/model/examination_type.dart';
-import 'package:loono_api/src/model/examination_category.dart';
+import 'package:loono_api/src/model/examination_category_type.dart';
 import 'package:loono_api/src/model/badge_type.dart';
 import 'package:loono_api/src/model/examination_status.dart';
 import 'package:built_value/built_value.dart';
@@ -27,7 +27,7 @@ part 'examination_prevention_status.g.dart';
 /// * [lastConfirmedDate] 
 /// * [points] 
 /// * [badge] 
-/// * [examinationCategory] 
+/// * [examinationCategoryType] 
 abstract class ExaminationPreventionStatus implements Built<ExaminationPreventionStatus, ExaminationPreventionStatusBuilder> {
     @BuiltValueField(wireName: r'uuid')
     String? get uuid;
@@ -71,9 +71,9 @@ abstract class ExaminationPreventionStatus implements Built<ExaminationPreventio
     BadgeType get badge;
     // enum badgeEnum {  COAT,  TOP,  BELT,  SHOES,  GLOVES,  HEADBAND,  GLASSES,  SHIELD,  PAULDRONS,  };
 
-    @BuiltValueField(wireName: r'examinationCategory')
-    ExaminationCategory get examinationCategory;
-    // enum examinationCategoryEnum {  MANDATORY,  CUSTOM,  };
+    @BuiltValueField(wireName: r'ExaminationCategoryType')
+    ExaminationCategoryType get examinationCategoryType;
+    // enum examinationCategoryTypeEnum {  MANDATORY,  CUSTOM,  };
 
     ExaminationPreventionStatus._();
 
@@ -160,9 +160,9 @@ class _$ExaminationPreventionStatusSerializer implements StructuredSerializer<Ex
             ..add(serializers.serialize(object.badge,
                 specifiedType: const FullType(BadgeType)));
         result
-            ..add(r'examinationCategory')
-            ..add(serializers.serialize(object.examinationCategory,
-                specifiedType: const FullType(ExaminationCategory)));
+            ..add(r'ExaminationCategoryType')
+            ..add(serializers.serialize(object.examinationCategoryType,
+                specifiedType: const FullType(ExaminationCategoryType)));
         return result;
     }
 
@@ -244,10 +244,10 @@ class _$ExaminationPreventionStatusSerializer implements StructuredSerializer<Ex
                         specifiedType: const FullType(BadgeType)) as BadgeType;
                     result.badge = valueDes;
                     break;
-                case r'examinationCategory':
+                case r'ExaminationCategoryType':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(ExaminationCategory)) as ExaminationCategory;
-                    result.examinationCategory = valueDes;
+                        specifiedType: const FullType(ExaminationCategoryType)) as ExaminationCategoryType;
+                    result.examinationCategoryType = valueDes;
                     break;
             }
         }

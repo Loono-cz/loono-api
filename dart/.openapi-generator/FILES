@@ -10,7 +10,7 @@ doc/Badge.md
 doc/BadgeType.md
 doc/DefaultApi.md
 doc/Error.md
-doc/ExaminationCategory.md
+doc/ExaminationCategoryType.md
 doc/ExaminationId.md
 doc/ExaminationPreventionStatus.md
 doc/ExaminationRecord.md
@@ -58,7 +58,7 @@ lib/src/model/badge.dart
 lib/src/model/badge_type.dart
 lib/src/model/date.dart
 lib/src/model/error.dart
-lib/src/model/examination_category.dart
+lib/src/model/examination_category_type.dart
 lib/src/model/examination_id.dart
 lib/src/model/examination_prevention_status.dart
 lib/src/model/examination_record.dart
@@ -92,7 +92,7 @@ test/badge_test.dart
 test/badge_type_test.dart
 test/default_api_test.dart
 test/error_test.dart
-test/examination_category_test.dart
+test/examination_category_type_test.dart
 test/examination_id_test.dart
 test/examination_prevention_status_test.dart
 test/examination_record_test.dart

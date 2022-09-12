@@ -1,16 +1,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'examination_category.dart';
+part of 'examination_category_type.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-const ExaminationCategory _$MANDATORY =
-    const ExaminationCategory._('MANDATORY');
-const ExaminationCategory _$CUSTOM = const ExaminationCategory._('CUSTOM');
+const ExaminationCategoryType _$MANDATORY =
+    const ExaminationCategoryType._('MANDATORY');
+const ExaminationCategoryType _$CUSTOM =
+    const ExaminationCategoryType._('CUSTOM');
 
-ExaminationCategory _$valueOf(String name) {
+ExaminationCategoryType _$valueOf(String name) {
   switch (name) {
     case 'MANDATORY':
       return _$MANDATORY;
@@ -21,31 +22,31 @@ ExaminationCategory _$valueOf(String name) {
   }
 }
 
-final BuiltSet<ExaminationCategory> _$values =
-    new BuiltSet<ExaminationCategory>(const <ExaminationCategory>[
+final BuiltSet<ExaminationCategoryType> _$values =
+    new BuiltSet<ExaminationCategoryType>(const <ExaminationCategoryType>[
   _$MANDATORY,
   _$CUSTOM,
 ]);
 
-class _$ExaminationCategoryMeta {
-  const _$ExaminationCategoryMeta();
-  ExaminationCategory get MANDATORY => _$MANDATORY;
-  ExaminationCategory get CUSTOM => _$CUSTOM;
-  ExaminationCategory valueOf(String name) => _$valueOf(name);
-  BuiltSet<ExaminationCategory> get values => _$values;
+class _$ExaminationCategoryTypeMeta {
+  const _$ExaminationCategoryTypeMeta();
+  ExaminationCategoryType get MANDATORY => _$MANDATORY;
+  ExaminationCategoryType get CUSTOM => _$CUSTOM;
+  ExaminationCategoryType valueOf(String name) => _$valueOf(name);
+  BuiltSet<ExaminationCategoryType> get values => _$values;
 }
 
-abstract class _$ExaminationCategoryMixin {
+abstract class _$ExaminationCategoryTypeMixin {
   // ignore: non_constant_identifier_names
-  _$ExaminationCategoryMeta get ExaminationCategory =>
-      const _$ExaminationCategoryMeta();
+  _$ExaminationCategoryTypeMeta get ExaminationCategoryType =>
+      const _$ExaminationCategoryTypeMeta();
 }
 
-Serializer<ExaminationCategory> _$examinationCategorySerializer =
-    new _$ExaminationCategorySerializer();
+Serializer<ExaminationCategoryType> _$examinationCategoryTypeSerializer =
+    new _$ExaminationCategoryTypeSerializer();
 
-class _$ExaminationCategorySerializer
-    implements PrimitiveSerializer<ExaminationCategory> {
+class _$ExaminationCategoryTypeSerializer
+    implements PrimitiveSerializer<ExaminationCategoryType> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'MANDATORY': 'MANDATORY',
     'CUSTOM': 'CUSTOM',
@@ -56,19 +57,20 @@ class _$ExaminationCategorySerializer
   };
 
   @override
-  final Iterable<Type> types = const <Type>[ExaminationCategory];
+  final Iterable<Type> types = const <Type>[ExaminationCategoryType];
   @override
-  final String wireName = 'ExaminationCategory';
+  final String wireName = 'ExaminationCategoryType';
 
   @override
-  Object serialize(Serializers serializers, ExaminationCategory object,
+  Object serialize(Serializers serializers, ExaminationCategoryType object,
           {FullType specifiedType = FullType.unspecified}) =>
       _toWire[object.name] ?? object.name;
 
   @override
-  ExaminationCategory deserialize(Serializers serializers, Object serialized,
+  ExaminationCategoryType deserialize(
+          Serializers serializers, Object serialized,
           {FullType specifiedType = FullType.unspecified}) =>
-      ExaminationCategory.valueOf(
+      ExaminationCategoryType.valueOf(
           _fromWire[serialized] ?? (serialized is String ? serialized : ''));
 }
 

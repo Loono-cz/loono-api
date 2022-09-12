@@ -3,7 +3,7 @@
 //
 
 import 'package:loono_api/src/model/examination_type.dart';
-import 'package:loono_api/src/model/examination_category.dart';
+import 'package:loono_api/src/model/examination_category_type.dart';
 import 'package:loono_api/src/model/examination_status.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -21,7 +21,7 @@ part 'examination_record.g.dart';
 /// * [note] 
 /// * [customInterval] 
 /// * [periodicExam] 
-/// * [examinationCategory] 
+/// * [examinationCategoryType] 
 abstract class ExaminationRecord implements Built<ExaminationRecord, ExaminationRecordBuilder> {
     @BuiltValueField(wireName: r'uuid')
     String? get uuid;
@@ -49,9 +49,9 @@ abstract class ExaminationRecord implements Built<ExaminationRecord, Examination
     @BuiltValueField(wireName: r'periodicExam')
     bool? get periodicExam;
 
-    @BuiltValueField(wireName: r'examinationCategory')
-    ExaminationCategory get examinationCategory;
-    // enum examinationCategoryEnum {  MANDATORY,  CUSTOM,  };
+    @BuiltValueField(wireName: r'ExaminationCategoryType')
+    ExaminationCategoryType get examinationCategoryType;
+    // enum examinationCategoryTypeEnum {  MANDATORY,  CUSTOM,  };
 
     ExaminationRecord._();
 
@@ -124,9 +124,9 @@ class _$ExaminationRecordSerializer implements StructuredSerializer<ExaminationR
                     specifiedType: const FullType(bool)));
         }
         result
-            ..add(r'examinationCategory')
-            ..add(serializers.serialize(object.examinationCategory,
-                specifiedType: const FullType(ExaminationCategory)));
+            ..add(r'ExaminationCategoryType')
+            ..add(serializers.serialize(object.examinationCategoryType,
+                specifiedType: const FullType(ExaminationCategoryType)));
         return result;
     }
 
@@ -186,10 +186,10 @@ class _$ExaminationRecordSerializer implements StructuredSerializer<ExaminationR
                         specifiedType: const FullType(bool)) as bool;
                     result.periodicExam = valueDes;
                     break;
-                case r'examinationCategory':
+                case r'ExaminationCategoryType':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(ExaminationCategory)) as ExaminationCategory;
-                    result.examinationCategory = valueDes;
+                        specifiedType: const FullType(ExaminationCategoryType)) as ExaminationCategoryType;
+                    result.examinationCategoryType = valueDes;
                     break;
             }
         }
