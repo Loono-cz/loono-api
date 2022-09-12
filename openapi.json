@@ -947,9 +947,9 @@
           "VENEREAL_DISEASES"
         ]
       },
-      "ExaminationCategory": {
+      "ExaminationCategoryType": {
         "type": "string",
-        "title": "ExaminationCategory",
+        "title": "ExaminationCategoryType",
         "description": "",
         "enum": ["MANDATORY", "CUSTOM"],
         "default": "MANDATORY"
@@ -1224,8 +1224,8 @@
           "badge": {
             "$ref": "#/components/schemas/BadgeType"
           },
-          "examinationCategory": {
-            "$ref": "#/components/schemas/ExaminationCategory"
+          "ExaminationCategoryType": {
+            "$ref": "#/components/schemas/ExaminationCategoryType"
           }
         },
         "required": [
@@ -1237,7 +1237,7 @@
           "count",
           "points",
           "badge",
-          "examinationCategory"
+          "ExaminationCategoryType"
         ]
       },
       "SelfExaminationPreventionStatus": {
@@ -1326,11 +1326,11 @@
             "type": "boolean",
             "default": true
           },
-          "examinationCategory": {
-            "$ref": "#/components/schemas/ExaminationCategory"
+          "ExaminationCategoryType": {
+            "$ref": "#/components/schemas/ExaminationCategoryType"
           }
         },
-        "required": ["type", "examinationCategory"]
+        "required": ["type", "ExaminationCategoryType"]
       },
       "PreventionStatus": {
         "title": "PreventionStatus",
