@@ -24,7 +24,7 @@ class _$ExaminationRecord extends ExaminationRecord {
   @override
   final bool? periodicExam;
   @override
-  final ExaminationCategoryType examinationCategoryType;
+  final ExaminationCategoryType? examinationCategoryType;
 
   factory _$ExaminationRecord(
           [void Function(ExaminationRecordBuilder)? updates]) =>
@@ -39,11 +39,9 @@ class _$ExaminationRecord extends ExaminationRecord {
       this.note,
       this.customInterval,
       this.periodicExam,
-      required this.examinationCategoryType})
+      this.examinationCategoryType})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(type, 'ExaminationRecord', 'type');
-    BuiltValueNullFieldError.checkNotNull(examinationCategoryType,
-        'ExaminationRecord', 'examinationCategoryType');
   }
 
   @override
@@ -192,10 +190,7 @@ class ExaminationRecordBuilder
             note: note,
             customInterval: customInterval,
             periodicExam: periodicExam,
-            examinationCategoryType: BuiltValueNullFieldError.checkNotNull(
-                examinationCategoryType,
-                'ExaminationRecord',
-                'examinationCategoryType'));
+            examinationCategoryType: examinationCategoryType);
     replace(_$result);
     return _$result;
   }

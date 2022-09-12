@@ -71,8 +71,8 @@ abstract class ExaminationPreventionStatus implements Built<ExaminationPreventio
     BadgeType get badge;
     // enum badgeEnum {  COAT,  TOP,  BELT,  SHOES,  GLOVES,  HEADBAND,  GLASSES,  SHIELD,  PAULDRONS,  };
 
-    @BuiltValueField(wireName: r'ExaminationCategoryType')
-    ExaminationCategoryType get examinationCategoryType;
+    @BuiltValueField(wireName: r'examinationCategoryType')
+    ExaminationCategoryType? get examinationCategoryType;
     // enum examinationCategoryTypeEnum {  MANDATORY,  CUSTOM,  };
 
     ExaminationPreventionStatus._();
@@ -159,10 +159,12 @@ class _$ExaminationPreventionStatusSerializer implements StructuredSerializer<Ex
             ..add(r'badge')
             ..add(serializers.serialize(object.badge,
                 specifiedType: const FullType(BadgeType)));
-        result
-            ..add(r'ExaminationCategoryType')
-            ..add(serializers.serialize(object.examinationCategoryType,
-                specifiedType: const FullType(ExaminationCategoryType)));
+        if (object.examinationCategoryType != null) {
+            result
+                ..add(r'examinationCategoryType')
+                ..add(serializers.serialize(object.examinationCategoryType,
+                    specifiedType: const FullType(ExaminationCategoryType)));
+        }
         return result;
     }
 
@@ -244,7 +246,7 @@ class _$ExaminationPreventionStatusSerializer implements StructuredSerializer<Ex
                         specifiedType: const FullType(BadgeType)) as BadgeType;
                     result.badge = valueDes;
                     break;
-                case r'ExaminationCategoryType':
+                case r'examinationCategoryType':
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(ExaminationCategoryType)) as ExaminationCategoryType;
                     result.examinationCategoryType = valueDes;
