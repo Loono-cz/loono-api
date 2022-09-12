@@ -1224,7 +1224,7 @@
           "badge": {
             "$ref": "#/components/schemas/BadgeType"
           },
-          "ExaminationCategoryType": {
+          "examinationCategoryType": {
             "$ref": "#/components/schemas/ExaminationCategoryType"
           }
         },
@@ -1326,7 +1326,7 @@
             "type": "boolean",
             "default": true
           },
-          "ExaminationCategoryType": {
+          "examinationCategoryType": {
             "$ref": "#/components/schemas/ExaminationCategoryType"
           }
         },
