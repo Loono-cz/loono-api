@@ -932,7 +932,7 @@
       "ExaminationType": {
         "type": "string",
         "title": "ExaminationType",
-        "description": "",
+        "description": "Specialists",
         "enum": [
           "COLONOSCOPY",
           "DERMATOLOGIST",
@@ -982,6 +982,12 @@
           "REPRODUCTIVE_MEDICINE",
           "OTHER"
         ]
+      },
+      "ExaminationActionType": {
+        "type": "string",
+        "title": "ExaminationActionType",
+        "description": "",
+        "enum": ["EXAMINATION", "CONTROL", "BLOOD COLLECTION", "VISUALIZATION METHODS"]
       },
       "ExaminationCategoryType": {
         "type": "string",
