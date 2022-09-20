@@ -10,6 +10,22 @@ part 'examination_type.g.dart';
 
 class ExaminationType extends EnumClass {
 
+  @BuiltValueEnumConst(wireName: r'COLONOSCOPY')
+  static const ExaminationType COLONOSCOPY = _$COLONOSCOPY;
+  @BuiltValueEnumConst(wireName: r'DERMATOLOGIST')
+  static const ExaminationType DERMATOLOGIST = _$DERMATOLOGIST;
+  @BuiltValueEnumConst(wireName: r'MAMMOGRAM')
+  static const ExaminationType MAMMOGRAM = _$MAMMOGRAM;
+  @BuiltValueEnumConst(wireName: r'OPHTHALMOLOGIST')
+  static const ExaminationType OPHTHALMOLOGIST = _$OPHTHALMOLOGIST;
+  @BuiltValueEnumConst(wireName: r'TOKS')
+  static const ExaminationType TOKS = _$TOKS;
+  @BuiltValueEnumConst(wireName: r'ULTRASOUND_BREAST')
+  static const ExaminationType ULTRASOUND_BREAST = _$ULTRASOUND_BREAST;
+  @BuiltValueEnumConst(wireName: r'UROLOGIST')
+  static const ExaminationType UROLOGIST = _$UROLOGIST;
+  @BuiltValueEnumConst(wireName: r'VENEREAL_DISEASES')
+  static const ExaminationType VENEREAL_DISEASES = _$VENEREAL_DISEASES;
   @BuiltValueEnumConst(wireName: r'DENTIST')
   static const ExaminationType DENTIST = _$DENTIST;
   @BuiltValueEnumConst(wireName: r'GENERAL_PRACTITIONER')
