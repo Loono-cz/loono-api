@@ -21,6 +21,7 @@ export 'package:loono_api/src/model/account_update.dart';
 export 'package:loono_api/src/model/badge.dart';
 export 'package:loono_api/src/model/badge_type.dart';
 export 'package:loono_api/src/model/error.dart';
+export 'package:loono_api/src/model/examination_action_type.dart';
 export 'package:loono_api/src/model/examination_category_type.dart';
 export 'package:loono_api/src/model/examination_id.dart';
 export 'package:loono_api/src/model/examination_prevention_status.dart';
