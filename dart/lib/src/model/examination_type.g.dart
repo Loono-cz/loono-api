@@ -57,8 +57,7 @@ const ExaminationType _$PALLIATIVE_MEDICINE =
     const ExaminationType._('PALLIATIVE_MEDICINE');
 const ExaminationType _$NEPHROLOGY = const ExaminationType._('NEPHROLOGY');
 const ExaminationType _$VASCULAR = const ExaminationType._('VASCULAR');
-const ExaminationType _$OCCUPATIONAL_THERAPY =
-    const ExaminationType._('OCCUPATIONAL_THERAPY');
+const ExaminationType _$ERGOTHERAPY = const ExaminationType._('ERGOTHERAPY');
 const ExaminationType _$ONCOLOGY = const ExaminationType._('ONCOLOGY');
 const ExaminationType _$NUTRITION = const ExaminationType._('NUTRITION');
 const ExaminationType _$PHONIATRICS = const ExaminationType._('PHONIATRICS');
@@ -148,8 +147,8 @@ ExaminationType _$valueOf(String name) {
       return _$NEPHROLOGY;
     case 'VASCULAR':
       return _$VASCULAR;
-    case 'OCCUPATIONAL_THERAPY':
-      return _$OCCUPATIONAL_THERAPY;
+    case 'ERGOTHERAPY':
+      return _$ERGOTHERAPY;
     case 'ONCOLOGY':
       return _$ONCOLOGY;
     case 'NUTRITION':
@@ -211,7 +210,7 @@ final BuiltSet<ExaminationType> _$values =
   _$PALLIATIVE_MEDICINE,
   _$NEPHROLOGY,
   _$VASCULAR,
-  _$OCCUPATIONAL_THERAPY,
+  _$ERGOTHERAPY,
   _$ONCOLOGY,
   _$NUTRITION,
   _$PHONIATRICS,
@@ -263,7 +262,7 @@ class _$ExaminationTypeMeta {
   ExaminationType get PALLIATIVE_MEDICINE => _$PALLIATIVE_MEDICINE;
   ExaminationType get NEPHROLOGY => _$NEPHROLOGY;
   ExaminationType get VASCULAR => _$VASCULAR;
-  ExaminationType get OCCUPATIONAL_THERAPY => _$OCCUPATIONAL_THERAPY;
+  ExaminationType get ERGOTHERAPY => _$ERGOTHERAPY;
   ExaminationType get ONCOLOGY => _$ONCOLOGY;
   ExaminationType get NUTRITION => _$NUTRITION;
   ExaminationType get PHONIATRICS => _$PHONIATRICS;
@@ -325,7 +324,7 @@ class _$ExaminationTypeSerializer
     'PALLIATIVE_MEDICINE': 'PALLIATIVE_MEDICINE',
     'NEPHROLOGY': 'NEPHROLOGY',
     'VASCULAR': 'VASCULAR',
-    'OCCUPATIONAL_THERAPY': 'OCCUPATIONAL_THERAPY',
+    'ERGOTHERAPY': 'ERGOTHERAPY',
     'ONCOLOGY': 'ONCOLOGY',
     'NUTRITION': 'NUTRITION',
     'PHONIATRICS': 'PHONIATRICS',
@@ -374,7 +373,7 @@ class _$ExaminationTypeSerializer
     'PALLIATIVE_MEDICINE': 'PALLIATIVE_MEDICINE',
     'NEPHROLOGY': 'NEPHROLOGY',
     'VASCULAR': 'VASCULAR',
-    'OCCUPATIONAL_THERAPY': 'OCCUPATIONAL_THERAPY',
+    'ERGOTHERAPY': 'ERGOTHERAPY',
     'ONCOLOGY': 'ONCOLOGY',
     'NUTRITION': 'NUTRITION',
     'PHONIATRICS': 'PHONIATRICS',
