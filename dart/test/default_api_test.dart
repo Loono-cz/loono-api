@@ -16,5 +16,14 @@ void main() {
       // TODO
     });
 
+    // For testing purposes only - remove in release
+    //
+    // For testing purposes only - remove in release
+    //
+    //Future test() async
+    test('test test', () async {
+      // TODO
+    });
+
   });
 }
