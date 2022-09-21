@@ -705,6 +705,27 @@
           }
         }
       }
+    },
+    "/testCall": {
+      "get": {
+        "summary": "For testing purposes only - remove in release",
+        "operationId": "test",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "description": "For testing purposes only - remove in release"
+      }
     }
   },
   "components": {
