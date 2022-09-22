@@ -725,7 +725,18 @@
           }
         },
         "description": "For testing purposes only - remove in release"
-      }
+      },
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "account-uid",
+          "in": "path",
+          "required": true,
+          "description": "Account id"
+        }
+      ]
     }
   },
   "components": {
