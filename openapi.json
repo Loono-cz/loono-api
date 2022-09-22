@@ -724,19 +724,20 @@
             "description": "Forbidden"
           }
         },
-        "description": "For testing purposes only - remove in release"
-      },
-      "parameters": [
-        {
-          "schema": {
-            "type": "string"
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "uuid": {
+                  "type": "string"
+                }
+              }
+            }
           },
-          "name": "account-uid",
-          "in": "query",
-          "required": true,
-          "description": "Account uid"
-        }
-      ]
+          "description": ""
+        },
+        "description": "For testing purposes only - remove in release"
+      }
     }
   },
   "components": {
