@@ -732,9 +732,9 @@
             "type": "string"
           },
           "name": "account-uid",
-          "in": "path",
+          "in": "query",
           "required": true,
-          "description": "Account id"
+          "description": "Account uid"
         }
       ]
     }
