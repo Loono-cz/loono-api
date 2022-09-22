@@ -67,7 +67,7 @@ For testing purposes only - remove in release
 import 'package:loono_api/api.dart';
 
 final api = LoonoApi().getDefaultApi();
-final String accountUid = accountUid_example; // String | Account id
+final String accountUid = accountUid_example; // String | Account uid
 
 try {
     api.test(accountUid);
@@ -80,7 +80,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountUid** | **String**| Account id | 
+ **accountUid** | **String**| Account uid | 
 
 ### Return type
 

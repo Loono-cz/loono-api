@@ -7,6 +7,7 @@ import 'dart:async';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
+import 'package:loono_api/src/api_util.dart';
 import 'package:loono_api/src/model/user_feedback.dart';
 
 class DefaultApi {
@@ -87,7 +88,7 @@ class DefaultApi {
   /// For testing purposes only - remove in release
   ///
   /// Parameters:
-  /// * [accountUid] - Account id
+  /// * [accountUid] - Account uid
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -106,7 +107,7 @@ class DefaultApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/testCall'.replaceAll('{' r'account-uid' '}', accountUid.toString());
+    final _path = r'/testCall';
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -119,9 +120,14 @@ class DefaultApi {
       validateStatus: validateStatus,
     );
 
+    final _queryParameters = <String, dynamic>{
+      r'account-uid': encodeQueryParameter(_serializers, accountUid, const FullType(String)),
+    };
+
     final _response = await _dio.request<Object>(
       _path,
       options: _options,
+      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
