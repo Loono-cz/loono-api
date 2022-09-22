@@ -20,7 +20,7 @@ void main() {
     //
     // For testing purposes only - remove in release
     //
-    //Future test() async
+    //Future test(String accountUid) async
     test('test test', () async {
       // TODO
     });

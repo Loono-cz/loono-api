@@ -56,7 +56,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **test**
-> test()
+> test(accountUid)
 
 For testing purposes only - remove in release
 
@@ -67,16 +67,20 @@ For testing purposes only - remove in release
 import 'package:loono_api/api.dart';
 
 final api = LoonoApi().getDefaultApi();
+final String accountUid = accountUid_example; // String | Account id
 
 try {
-    api.test();
+    api.test(accountUid);
 } catch on DioError (e) {
     print('Exception when calling DefaultApi->test: $e\n');
 }
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountUid** | **String**| Account id | 
 
 ### Return type
 
