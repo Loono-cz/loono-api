@@ -707,7 +707,7 @@
       }
     },
     "/testCall": {
-      "get": {
+      "post": {
         "summary": "For testing purposes only - remove in release",
         "operationId": "test",
         "responses": {
