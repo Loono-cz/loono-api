@@ -109,7 +109,7 @@ class DefaultApi {
   }) async {
     final _path = r'/testCall';
     final _options = Options(
-      method: r'GET',
+      method: r'POST',
       headers: <String, dynamic>{
         ...?headers,
       },

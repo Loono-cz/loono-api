@@ -10,7 +10,7 @@ All URIs are relative to *https://loono.ceskodigital.net:443/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**feedback**](DefaultApi.md#feedback) | **POST** /feedback | Sending a user feedback
-[**test**](DefaultApi.md#test) | **GET** /testCall | For testing purposes only - remove in release
+[**test**](DefaultApi.md#test) | **POST** /testCall | For testing purposes only - remove in release
 
 
 # **feedback**
