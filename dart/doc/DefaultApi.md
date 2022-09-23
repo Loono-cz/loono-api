@@ -56,7 +56,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **test**
-> test(accountUid)
+> test(examinationId)
 
 For testing purposes only - remove in release
 
@@ -67,10 +67,10 @@ For testing purposes only - remove in release
 import 'package:loono_api/api.dart';
 
 final api = LoonoApi().getDefaultApi();
-final String accountUid = accountUid_example; // String | Account uid
+final ExaminationId examinationId = ; // ExaminationId | 
 
 try {
-    api.test(accountUid);
+    api.test(examinationId);
 } catch on DioError (e) {
     print('Exception when calling DefaultApi->test: $e\n');
 }
@@ -80,7 +80,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountUid** | **String**| Account uid | 
+ **examinationId** | [**ExaminationId**](ExaminationId.md)|  | [optional] 
 
 ### Return type
 
@@ -92,7 +92,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

@@ -7,7 +7,7 @@ import 'dart:async';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
-import 'package:loono_api/src/api_util.dart';
+import 'package:loono_api/src/model/examination_id.dart';
 import 'package:loono_api/src/model/user_feedback.dart';
 
 class DefaultApi {
@@ -88,7 +88,7 @@ class DefaultApi {
   /// For testing purposes only - remove in release
   ///
   /// Parameters:
-  /// * [accountUid] - Account uid
+  /// * [examinationId] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -99,7 +99,7 @@ class DefaultApi {
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
   Future<Response<void>> test({ 
-    required String accountUid,
+    ExaminationId? examinationId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -117,17 +117,31 @@ class DefaultApi {
         'secure': <Map<String, String>>[],
         ...?extra,
       },
+      contentType: 'application/json',
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-      r'account-uid': encodeQueryParameter(_serializers, accountUid, const FullType(String)),
-    };
+    dynamic _bodyData;
+
+    try {
+      const _type = FullType(ExaminationId);
+      _bodyData = examinationId == null ? null : _serializers.serialize(examinationId, specifiedType: _type);
+
+    } catch(error, stackTrace) {
+      throw DioError(
+         requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
+        type: DioErrorType.other,
+        error: error,
+      )..stackTrace = stackTrace;
+    }
 
     final _response = await _dio.request<Object>(
       _path,
+      data: _bodyData,
       options: _options,
-      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
