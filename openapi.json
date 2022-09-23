@@ -724,19 +724,17 @@
             "description": "Forbidden"
           }
         },
+        "description": "For testing purposes only - remove in release",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "uuid": {
-                  "type": "string"
-                }
+                "$ref": "#/components/schemas/ExaminationId"
               }
             }
           },
           "description": ""
-        },
-        "description": "For testing purposes only - remove in release"
+        }
       }
     }
   },
