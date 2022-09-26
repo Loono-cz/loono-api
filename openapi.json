@@ -1401,6 +1401,10 @@
           },
           "examinationCategoryType": {
             "$ref": "#/components/schemas/ExaminationCategoryType"
+          },
+          "examinationActionType": {
+            "$ref": "#/components/schemas/ExaminationActionType",
+            "nullable": true
           }
         },
         "required": ["type", "examinationCategoryType"]
