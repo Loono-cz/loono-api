@@ -4,6 +4,7 @@
 
 import 'package:loono_api/src/model/examination_type.dart';
 import 'package:loono_api/src/model/examination_category_type.dart';
+import 'package:loono_api/src/model/examination_action_type.dart';
 import 'package:loono_api/src/model/examination_status.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -22,6 +23,7 @@ part 'examination_record.g.dart';
 /// * [customInterval] 
 /// * [periodicExam] 
 /// * [examinationCategoryType] 
+/// * [examinationActionType] 
 abstract class ExaminationRecord implements Built<ExaminationRecord, ExaminationRecordBuilder> {
     @BuiltValueField(wireName: r'uuid')
     String? get uuid;
@@ -52,6 +54,10 @@ abstract class ExaminationRecord implements Built<ExaminationRecord, Examination
     @BuiltValueField(wireName: r'examinationCategoryType')
     ExaminationCategoryType get examinationCategoryType;
     // enum examinationCategoryTypeEnum {  MANDATORY,  CUSTOM,  };
+
+    @BuiltValueField(wireName: r'examinationActionType')
+    ExaminationActionType? get examinationActionType;
+    // enum examinationActionTypeEnum {  EXAMINATION,  CONTROL,  BLOOD COLLECTION,  VISUALIZATION METHODS,  };
 
     ExaminationRecord._();
 
@@ -127,6 +133,12 @@ class _$ExaminationRecordSerializer implements StructuredSerializer<ExaminationR
             ..add(r'examinationCategoryType')
             ..add(serializers.serialize(object.examinationCategoryType,
                 specifiedType: const FullType(ExaminationCategoryType)));
+        if (object.examinationActionType != null) {
+            result
+                ..add(r'examinationActionType')
+                ..add(serializers.serialize(object.examinationActionType,
+                    specifiedType: const FullType(ExaminationActionType)));
+        }
         return result;
     }
 
@@ -190,6 +202,11 @@ class _$ExaminationRecordSerializer implements StructuredSerializer<ExaminationR
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(ExaminationCategoryType)) as ExaminationCategoryType;
                     result.examinationCategoryType = valueDes;
+                    break;
+                case r'examinationActionType':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(ExaminationActionType)) as ExaminationActionType;
+                    result.examinationActionType = valueDes;
                     break;
             }
         }

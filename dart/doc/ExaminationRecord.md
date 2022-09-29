@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **customInterval** | **int** |  | [optional] 
 **periodicExam** | **bool** |  | [optional] [default to true]
 **examinationCategoryType** | [**ExaminationCategoryType**](ExaminationCategoryType.md) |  | 
+**examinationActionType** | [**ExaminationActionType**](ExaminationActionType.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

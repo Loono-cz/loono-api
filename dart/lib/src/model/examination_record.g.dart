@@ -25,6 +25,8 @@ class _$ExaminationRecord extends ExaminationRecord {
   final bool? periodicExam;
   @override
   final ExaminationCategoryType examinationCategoryType;
+  @override
+  final ExaminationActionType? examinationActionType;
 
   factory _$ExaminationRecord(
           [void Function(ExaminationRecordBuilder)? updates]) =>
@@ -39,7 +41,8 @@ class _$ExaminationRecord extends ExaminationRecord {
       this.note,
       this.customInterval,
       this.periodicExam,
-      required this.examinationCategoryType})
+      required this.examinationCategoryType,
+      this.examinationActionType})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(type, 'ExaminationRecord', 'type');
     BuiltValueNullFieldError.checkNotNull(examinationCategoryType,
@@ -66,7 +69,8 @@ class _$ExaminationRecord extends ExaminationRecord {
         note == other.note &&
         customInterval == other.customInterval &&
         periodicExam == other.periodicExam &&
-        examinationCategoryType == other.examinationCategoryType;
+        examinationCategoryType == other.examinationCategoryType &&
+        examinationActionType == other.examinationActionType;
   }
 
   @override
@@ -77,14 +81,16 @@ class _$ExaminationRecord extends ExaminationRecord {
                 $jc(
                     $jc(
                         $jc(
-                            $jc($jc($jc(0, uuid.hashCode), type.hashCode),
-                                plannedDate.hashCode),
-                            status.hashCode),
-                        firstExam.hashCode),
-                    note.hashCode),
-                customInterval.hashCode),
-            periodicExam.hashCode),
-        examinationCategoryType.hashCode));
+                            $jc(
+                                $jc($jc($jc(0, uuid.hashCode), type.hashCode),
+                                    plannedDate.hashCode),
+                                status.hashCode),
+                            firstExam.hashCode),
+                        note.hashCode),
+                    customInterval.hashCode),
+                periodicExam.hashCode),
+            examinationCategoryType.hashCode),
+        examinationActionType.hashCode));
   }
 
   @override
@@ -98,7 +104,8 @@ class _$ExaminationRecord extends ExaminationRecord {
           ..add('note', note)
           ..add('customInterval', customInterval)
           ..add('periodicExam', periodicExam)
-          ..add('examinationCategoryType', examinationCategoryType))
+          ..add('examinationCategoryType', examinationCategoryType)
+          ..add('examinationActionType', examinationActionType))
         .toString();
   }
 }
@@ -147,6 +154,12 @@ class ExaminationRecordBuilder
           ExaminationCategoryType? examinationCategoryType) =>
       _$this._examinationCategoryType = examinationCategoryType;
 
+  ExaminationActionType? _examinationActionType;
+  ExaminationActionType? get examinationActionType =>
+      _$this._examinationActionType;
+  set examinationActionType(ExaminationActionType? examinationActionType) =>
+      _$this._examinationActionType = examinationActionType;
+
   ExaminationRecordBuilder() {
     ExaminationRecord._defaults(this);
   }
@@ -163,6 +176,7 @@ class ExaminationRecordBuilder
       _customInterval = $v.customInterval;
       _periodicExam = $v.periodicExam;
       _examinationCategoryType = $v.examinationCategoryType;
+      _examinationActionType = $v.examinationActionType;
       _$v = null;
     }
     return this;
@@ -195,7 +209,8 @@ class ExaminationRecordBuilder
             examinationCategoryType: BuiltValueNullFieldError.checkNotNull(
                 examinationCategoryType,
                 'ExaminationRecord',
-                'examinationCategoryType'));
+                'examinationCategoryType'),
+            examinationActionType: examinationActionType);
     replace(_$result);
     return _$result;
   }
