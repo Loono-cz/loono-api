@@ -37,6 +37,8 @@ class _$ExaminationPreventionStatus extends ExaminationPreventionStatus {
   final ExaminationCategoryType examinationCategoryType;
   @override
   final ExaminationActionType? examinationActionType;
+  @override
+  final String? note;
 
   factory _$ExaminationPreventionStatus(
           [void Function(ExaminationPreventionStatusBuilder)? updates]) =>
@@ -57,7 +59,8 @@ class _$ExaminationPreventionStatus extends ExaminationPreventionStatus {
       required this.points,
       required this.badge,
       required this.examinationCategoryType,
-      this.examinationActionType})
+      this.examinationActionType,
+      this.note})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         examinationType, 'ExaminationPreventionStatus', 'examinationType');
@@ -106,7 +109,8 @@ class _$ExaminationPreventionStatus extends ExaminationPreventionStatus {
         points == other.points &&
         badge == other.badge &&
         examinationCategoryType == other.examinationCategoryType &&
-        examinationActionType == other.examinationActionType;
+        examinationActionType == other.examinationActionType &&
+        note == other.note;
   }
 
   @override
@@ -125,23 +129,29 @@ class _$ExaminationPreventionStatus extends ExaminationPreventionStatus {
                                                 $jc(
                                                     $jc(
                                                         $jc(
-                                                            $jc(0,
-                                                                uuid.hashCode),
-                                                            examinationType
+                                                            $jc(
+                                                                $jc(
+                                                                    0,
+                                                                    uuid
+                                                                        .hashCode),
+                                                                examinationType
+                                                                    .hashCode),
+                                                            intervalYears
                                                                 .hashCode),
-                                                        intervalYears.hashCode),
-                                                    customInterval.hashCode),
-                                                plannedDate.hashCode),
-                                            firstExam.hashCode),
-                                        periodicExam.hashCode),
-                                    priority.hashCode),
-                                state.hashCode),
-                            count.hashCode),
-                        lastConfirmedDate.hashCode),
-                    points.hashCode),
-                badge.hashCode),
-            examinationCategoryType.hashCode),
-        examinationActionType.hashCode));
+                                                        customInterval
+                                                            .hashCode),
+                                                    plannedDate.hashCode),
+                                                firstExam.hashCode),
+                                            periodicExam.hashCode),
+                                        priority.hashCode),
+                                    state.hashCode),
+                                count.hashCode),
+                            lastConfirmedDate.hashCode),
+                        points.hashCode),
+                    badge.hashCode),
+                examinationCategoryType.hashCode),
+            examinationActionType.hashCode),
+        note.hashCode));
   }
 
   @override
@@ -161,7 +171,8 @@ class _$ExaminationPreventionStatus extends ExaminationPreventionStatus {
           ..add('points', points)
           ..add('badge', badge)
           ..add('examinationCategoryType', examinationCategoryType)
-          ..add('examinationActionType', examinationActionType))
+          ..add('examinationActionType', examinationActionType)
+          ..add('note', note))
         .toString();
   }
 }
@@ -241,6 +252,10 @@ class ExaminationPreventionStatusBuilder
   set examinationActionType(ExaminationActionType? examinationActionType) =>
       _$this._examinationActionType = examinationActionType;
 
+  String? _note;
+  String? get note => _$this._note;
+  set note(String? note) => _$this._note = note;
+
   ExaminationPreventionStatusBuilder() {
     ExaminationPreventionStatus._defaults(this);
   }
@@ -263,6 +278,7 @@ class ExaminationPreventionStatusBuilder
       _badge = $v.badge;
       _examinationCategoryType = $v.examinationCategoryType;
       _examinationActionType = $v.examinationActionType;
+      _note = $v.note;
       _$v = null;
     }
     return this;
@@ -305,7 +321,8 @@ class ExaminationPreventionStatusBuilder
             badge:
                 BuiltValueNullFieldError.checkNotNull(badge, 'ExaminationPreventionStatus', 'badge'),
             examinationCategoryType: BuiltValueNullFieldError.checkNotNull(examinationCategoryType, 'ExaminationPreventionStatus', 'examinationCategoryType'),
-            examinationActionType: examinationActionType);
+            examinationActionType: examinationActionType,
+            note: note);
     replace(_$result);
     return _$result;
   }

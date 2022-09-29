@@ -30,6 +30,7 @@ part 'examination_prevention_status.g.dart';
 /// * [badge] 
 /// * [examinationCategoryType] 
 /// * [examinationActionType] 
+/// * [note] 
 abstract class ExaminationPreventionStatus implements Built<ExaminationPreventionStatus, ExaminationPreventionStatusBuilder> {
     @BuiltValueField(wireName: r'uuid')
     String? get uuid;
@@ -80,6 +81,9 @@ abstract class ExaminationPreventionStatus implements Built<ExaminationPreventio
     @BuiltValueField(wireName: r'examinationActionType')
     ExaminationActionType? get examinationActionType;
     // enum examinationActionTypeEnum {  EXAMINATION,  CONTROL,  BLOOD COLLECTION,  VISUALIZATION METHODS,  };
+
+    @BuiltValueField(wireName: r'note')
+    String? get note;
 
     ExaminationPreventionStatus._();
 
@@ -175,6 +179,12 @@ class _$ExaminationPreventionStatusSerializer implements StructuredSerializer<Ex
                 ..add(serializers.serialize(object.examinationActionType,
                     specifiedType: const FullType(ExaminationActionType)));
         }
+        if (object.note != null) {
+            result
+                ..add(r'note')
+                ..add(serializers.serialize(object.note,
+                    specifiedType: const FullType(String)));
+        }
         return result;
     }
 
@@ -265,6 +275,11 @@ class _$ExaminationPreventionStatusSerializer implements StructuredSerializer<Ex
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(ExaminationActionType)) as ExaminationActionType;
                     result.examinationActionType = valueDes;
+                    break;
+                case r'note':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    result.note = valueDes;
                     break;
             }
         }
