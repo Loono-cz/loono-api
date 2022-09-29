@@ -1300,6 +1300,9 @@
           },
           "examinationActionType": {
             "$ref": "#/components/schemas/ExaminationActionType"
+          },
+          "note": {
+            "type": "string"
           }
         },
         "required": [
