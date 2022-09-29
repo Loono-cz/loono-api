@@ -1299,6 +1299,9 @@
           },
           "examinationCategoryType": {
             "$ref": "#/components/schemas/ExaminationCategoryType"
+          },
+          "examinationActionType": {
+            "$ref": "#/components/schemas/ExaminationActionType"
           }
         },
         "required": [
