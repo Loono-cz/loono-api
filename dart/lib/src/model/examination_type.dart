@@ -23,17 +23,11 @@ class ExaminationType extends EnumClass {
   @BuiltValueEnumConst(wireName: r'OPHTHALMOLOGIST')
   static const ExaminationType OPHTHALMOLOGIST = _$OPHTHALMOLOGIST;
   /// Specialists
-  @BuiltValueEnumConst(wireName: r'TOKS')
-  static const ExaminationType TOKS = _$TOKS;
-  /// Specialists
   @BuiltValueEnumConst(wireName: r'ULTRASOUND_BREAST')
   static const ExaminationType ULTRASOUND_BREAST = _$ULTRASOUND_BREAST;
   /// Specialists
   @BuiltValueEnumConst(wireName: r'UROLOGIST')
   static const ExaminationType UROLOGIST = _$UROLOGIST;
-  /// Specialists
-  @BuiltValueEnumConst(wireName: r'VENEREAL_DISEASES')
-  static const ExaminationType VENEREAL_DISEASES = _$VENEREAL_DISEASES;
   /// Specialists
   @BuiltValueEnumConst(wireName: r'DENTIST')
   static const ExaminationType DENTIST = _$DENTIST;

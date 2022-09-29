@@ -12,12 +12,9 @@ const ExaminationType _$DERMATOLOGIST =
 const ExaminationType _$MAMMOGRAM = const ExaminationType._('MAMMOGRAM');
 const ExaminationType _$OPHTHALMOLOGIST =
     const ExaminationType._('OPHTHALMOLOGIST');
-const ExaminationType _$TOKS = const ExaminationType._('TOKS');
 const ExaminationType _$ULTRASOUND_BREAST =
     const ExaminationType._('ULTRASOUND_BREAST');
 const ExaminationType _$UROLOGIST = const ExaminationType._('UROLOGIST');
-const ExaminationType _$VENEREAL_DISEASES =
-    const ExaminationType._('VENEREAL_DISEASES');
 const ExaminationType _$DENTIST = const ExaminationType._('DENTIST');
 const ExaminationType _$GENERAL_PRACTITIONER =
     const ExaminationType._('GENERAL_PRACTITIONER');
@@ -79,14 +76,10 @@ ExaminationType _$valueOf(String name) {
       return _$MAMMOGRAM;
     case 'OPHTHALMOLOGIST':
       return _$OPHTHALMOLOGIST;
-    case 'TOKS':
-      return _$TOKS;
     case 'ULTRASOUND_BREAST':
       return _$ULTRASOUND_BREAST;
     case 'UROLOGIST':
       return _$UROLOGIST;
-    case 'VENEREAL_DISEASES':
-      return _$VENEREAL_DISEASES;
     case 'DENTIST':
       return _$DENTIST;
     case 'GENERAL_PRACTITIONER':
@@ -176,10 +169,8 @@ final BuiltSet<ExaminationType> _$values =
   _$DERMATOLOGIST,
   _$MAMMOGRAM,
   _$OPHTHALMOLOGIST,
-  _$TOKS,
   _$ULTRASOUND_BREAST,
   _$UROLOGIST,
-  _$VENEREAL_DISEASES,
   _$DENTIST,
   _$GENERAL_PRACTITIONER,
   _$PHYSIOTHERAPY,
@@ -227,10 +218,8 @@ class _$ExaminationTypeMeta {
   ExaminationType get DERMATOLOGIST => _$DERMATOLOGIST;
   ExaminationType get MAMMOGRAM => _$MAMMOGRAM;
   ExaminationType get OPHTHALMOLOGIST => _$OPHTHALMOLOGIST;
-  ExaminationType get TOKS => _$TOKS;
   ExaminationType get ULTRASOUND_BREAST => _$ULTRASOUND_BREAST;
   ExaminationType get UROLOGIST => _$UROLOGIST;
-  ExaminationType get VENEREAL_DISEASES => _$VENEREAL_DISEASES;
   ExaminationType get DENTIST => _$DENTIST;
   ExaminationType get GENERAL_PRACTITIONER => _$GENERAL_PRACTITIONER;
   ExaminationType get PHYSIOTHERAPY => _$PHYSIOTHERAPY;
@@ -290,10 +279,8 @@ class _$ExaminationTypeSerializer
     'DERMATOLOGIST': 'DERMATOLOGIST',
     'MAMMOGRAM': 'MAMMOGRAM',
     'OPHTHALMOLOGIST': 'OPHTHALMOLOGIST',
-    'TOKS': 'TOKS',
     'ULTRASOUND_BREAST': 'ULTRASOUND_BREAST',
     'UROLOGIST': 'UROLOGIST',
-    'VENEREAL_DISEASES': 'VENEREAL_DISEASES',
     'DENTIST': 'DENTIST',
     'GENERAL_PRACTITIONER': 'GENERAL_PRACTITIONER',
     'PHYSIOTHERAPY': 'PHYSIOTHERAPY',
@@ -339,10 +326,8 @@ class _$ExaminationTypeSerializer
     'DERMATOLOGIST': 'DERMATOLOGIST',
     'MAMMOGRAM': 'MAMMOGRAM',
     'OPHTHALMOLOGIST': 'OPHTHALMOLOGIST',
-    'TOKS': 'TOKS',
     'ULTRASOUND_BREAST': 'ULTRASOUND_BREAST',
     'UROLOGIST': 'UROLOGIST',
-    'VENEREAL_DISEASES': 'VENEREAL_DISEASES',
     'DENTIST': 'DENTIST',
     'GENERAL_PRACTITIONER': 'GENERAL_PRACTITIONER',
     'PHYSIOTHERAPY': 'PHYSIOTHERAPY',
