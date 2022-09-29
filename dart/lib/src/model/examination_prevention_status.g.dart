@@ -35,6 +35,8 @@ class _$ExaminationPreventionStatus extends ExaminationPreventionStatus {
   final BadgeType badge;
   @override
   final ExaminationCategoryType examinationCategoryType;
+  @override
+  final ExaminationActionType? examinationActionType;
 
   factory _$ExaminationPreventionStatus(
           [void Function(ExaminationPreventionStatusBuilder)? updates]) =>
@@ -54,7 +56,8 @@ class _$ExaminationPreventionStatus extends ExaminationPreventionStatus {
       this.lastConfirmedDate,
       required this.points,
       required this.badge,
-      required this.examinationCategoryType})
+      required this.examinationCategoryType,
+      this.examinationActionType})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         examinationType, 'ExaminationPreventionStatus', 'examinationType');
@@ -102,7 +105,8 @@ class _$ExaminationPreventionStatus extends ExaminationPreventionStatus {
         lastConfirmedDate == other.lastConfirmedDate &&
         points == other.points &&
         badge == other.badge &&
-        examinationCategoryType == other.examinationCategoryType;
+        examinationCategoryType == other.examinationCategoryType &&
+        examinationActionType == other.examinationActionType;
   }
 
   @override
@@ -120,21 +124,24 @@ class _$ExaminationPreventionStatus extends ExaminationPreventionStatus {
                                             $jc(
                                                 $jc(
                                                     $jc(
-                                                        $jc(0, uuid.hashCode),
-                                                        examinationType
-                                                            .hashCode),
-                                                    intervalYears.hashCode),
-                                                customInterval.hashCode),
-                                            plannedDate.hashCode),
-                                        firstExam.hashCode),
-                                    periodicExam.hashCode),
-                                priority.hashCode),
-                            state.hashCode),
-                        count.hashCode),
-                    lastConfirmedDate.hashCode),
-                points.hashCode),
-            badge.hashCode),
-        examinationCategoryType.hashCode));
+                                                        $jc(
+                                                            $jc(0,
+                                                                uuid.hashCode),
+                                                            examinationType
+                                                                .hashCode),
+                                                        intervalYears.hashCode),
+                                                    customInterval.hashCode),
+                                                plannedDate.hashCode),
+                                            firstExam.hashCode),
+                                        periodicExam.hashCode),
+                                    priority.hashCode),
+                                state.hashCode),
+                            count.hashCode),
+                        lastConfirmedDate.hashCode),
+                    points.hashCode),
+                badge.hashCode),
+            examinationCategoryType.hashCode),
+        examinationActionType.hashCode));
   }
 
   @override
@@ -153,7 +160,8 @@ class _$ExaminationPreventionStatus extends ExaminationPreventionStatus {
           ..add('lastConfirmedDate', lastConfirmedDate)
           ..add('points', points)
           ..add('badge', badge)
-          ..add('examinationCategoryType', examinationCategoryType))
+          ..add('examinationCategoryType', examinationCategoryType)
+          ..add('examinationActionType', examinationActionType))
         .toString();
   }
 }
@@ -227,6 +235,12 @@ class ExaminationPreventionStatusBuilder
           ExaminationCategoryType? examinationCategoryType) =>
       _$this._examinationCategoryType = examinationCategoryType;
 
+  ExaminationActionType? _examinationActionType;
+  ExaminationActionType? get examinationActionType =>
+      _$this._examinationActionType;
+  set examinationActionType(ExaminationActionType? examinationActionType) =>
+      _$this._examinationActionType = examinationActionType;
+
   ExaminationPreventionStatusBuilder() {
     ExaminationPreventionStatus._defaults(this);
   }
@@ -248,6 +262,7 @@ class ExaminationPreventionStatusBuilder
       _points = $v.points;
       _badge = $v.badge;
       _examinationCategoryType = $v.examinationCategoryType;
+      _examinationActionType = $v.examinationActionType;
       _$v = null;
     }
     return this;
@@ -289,7 +304,8 @@ class ExaminationPreventionStatusBuilder
                 points, 'ExaminationPreventionStatus', 'points'),
             badge:
                 BuiltValueNullFieldError.checkNotNull(badge, 'ExaminationPreventionStatus', 'badge'),
-            examinationCategoryType: BuiltValueNullFieldError.checkNotNull(examinationCategoryType, 'ExaminationPreventionStatus', 'examinationCategoryType'));
+            examinationCategoryType: BuiltValueNullFieldError.checkNotNull(examinationCategoryType, 'ExaminationPreventionStatus', 'examinationCategoryType'),
+            examinationActionType: examinationActionType);
     replace(_$result);
     return _$result;
   }

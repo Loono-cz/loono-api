@@ -77,5 +77,10 @@ void main() {
       // TODO
     });
 
+    // ExaminationActionType examinationActionType
+    test('to test the property `examinationActionType`', () async {
+      // TODO
+    });
+
   });
 }
