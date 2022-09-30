@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **count** | **int** |  | 
 **lastConfirmedDate** | [**DateTime**](DateTime.md) |  | [optional] 
 **points** | **int** |  | 
-**badge** | [**BadgeType**](BadgeType.md) |  | 
+**badge** | [**BadgeType**](BadgeType.md) |  | [optional] 
 **examinationCategoryType** | [**ExaminationCategoryType**](ExaminationCategoryType.md) |  | 
 **examinationActionType** | [**ExaminationActionType**](ExaminationActionType.md) |  | [optional] 
 **note** | **String** |  | [optional] 

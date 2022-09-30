@@ -32,7 +32,7 @@ class _$ExaminationPreventionStatus extends ExaminationPreventionStatus {
   @override
   final int points;
   @override
-  final BadgeType badge;
+  final BadgeType? badge;
   @override
   final ExaminationCategoryType examinationCategoryType;
   @override
@@ -57,7 +57,7 @@ class _$ExaminationPreventionStatus extends ExaminationPreventionStatus {
       required this.count,
       this.lastConfirmedDate,
       required this.points,
-      required this.badge,
+      this.badge,
       required this.examinationCategoryType,
       this.examinationActionType,
       this.note})
@@ -76,8 +76,6 @@ class _$ExaminationPreventionStatus extends ExaminationPreventionStatus {
         count, 'ExaminationPreventionStatus', 'count');
     BuiltValueNullFieldError.checkNotNull(
         points, 'ExaminationPreventionStatus', 'points');
-    BuiltValueNullFieldError.checkNotNull(
-        badge, 'ExaminationPreventionStatus', 'badge');
     BuiltValueNullFieldError.checkNotNull(examinationCategoryType,
         'ExaminationPreventionStatus', 'examinationCategoryType');
   }
@@ -318,9 +316,9 @@ class ExaminationPreventionStatusBuilder
             lastConfirmedDate: lastConfirmedDate,
             points: BuiltValueNullFieldError.checkNotNull(
                 points, 'ExaminationPreventionStatus', 'points'),
-            badge:
-                BuiltValueNullFieldError.checkNotNull(badge, 'ExaminationPreventionStatus', 'badge'),
-            examinationCategoryType: BuiltValueNullFieldError.checkNotNull(examinationCategoryType, 'ExaminationPreventionStatus', 'examinationCategoryType'),
+            badge: badge,
+            examinationCategoryType:
+                BuiltValueNullFieldError.checkNotNull(examinationCategoryType, 'ExaminationPreventionStatus', 'examinationCategoryType'),
             examinationActionType: examinationActionType,
             note: note);
     replace(_$result);

@@ -71,7 +71,7 @@ abstract class ExaminationPreventionStatus implements Built<ExaminationPreventio
     int get points;
 
     @BuiltValueField(wireName: r'badge')
-    BadgeType get badge;
+    BadgeType? get badge;
     // enum badgeEnum {  COAT,  TOP,  BELT,  SHOES,  GLOVES,  HEADBAND,  GLASSES,  SHIELD,  PAULDRONS,  };
 
     @BuiltValueField(wireName: r'examinationCategoryType')
@@ -165,10 +165,12 @@ class _$ExaminationPreventionStatusSerializer implements StructuredSerializer<Ex
             ..add(r'points')
             ..add(serializers.serialize(object.points,
                 specifiedType: const FullType(int)));
-        result
-            ..add(r'badge')
-            ..add(serializers.serialize(object.badge,
-                specifiedType: const FullType(BadgeType)));
+        if (object.badge != null) {
+            result
+                ..add(r'badge')
+                ..add(serializers.serialize(object.badge,
+                    specifiedType: const FullType(BadgeType)));
+        }
         result
             ..add(r'examinationCategoryType')
             ..add(serializers.serialize(object.examinationCategoryType,
