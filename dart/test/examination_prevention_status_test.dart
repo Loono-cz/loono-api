@@ -82,5 +82,10 @@ void main() {
       // TODO
     });
 
+    // String note
+    test('to test the property `note`', () async {
+      // TODO
+    });
+
   });
 }
