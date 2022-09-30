@@ -1293,7 +1293,8 @@
             "type": "integer"
           },
           "badge": {
-            "$ref": "#/components/schemas/BadgeType"
+            "$ref": "#/components/schemas/BadgeType",
+            "nullable": true
           },
           "examinationCategoryType": {
             "$ref": "#/components/schemas/ExaminationCategoryType"
