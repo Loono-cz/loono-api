@@ -79,7 +79,7 @@ abstract class ExaminationPreventionStatus implements Built<ExaminationPreventio
     // enum examinationCategoryTypeEnum {  MANDATORY,  CUSTOM,  };
 
     @BuiltValueField(wireName: r'examinationActionType')
-    ExaminationActionType get examinationActionType;
+    ExaminationActionType? get examinationActionType;
     // enum examinationActionTypeEnum {  EXAMINATION,  CONTROL,  BLOOD COLLECTION,  VISUALIZATION METHODS,  };
 
     @BuiltValueField(wireName: r'note')
@@ -175,10 +175,12 @@ class _$ExaminationPreventionStatusSerializer implements StructuredSerializer<Ex
             ..add(r'examinationCategoryType')
             ..add(serializers.serialize(object.examinationCategoryType,
                 specifiedType: const FullType(ExaminationCategoryType)));
-        result
-            ..add(r'examinationActionType')
-            ..add(serializers.serialize(object.examinationActionType,
-                specifiedType: const FullType(ExaminationActionType)));
+        if (object.examinationActionType != null) {
+            result
+                ..add(r'examinationActionType')
+                ..add(serializers.serialize(object.examinationActionType,
+                    specifiedType: const FullType(ExaminationActionType)));
+        }
         if (object.note != null) {
             result
                 ..add(r'note')

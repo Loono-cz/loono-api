@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **points** | **int** |  | 
 **badge** | [**BadgeType**](BadgeType.md) |  | [optional] 
 **examinationCategoryType** | [**ExaminationCategoryType**](ExaminationCategoryType.md) |  | 
-**examinationActionType** | [**ExaminationActionType**](ExaminationActionType.md) |  | 
+**examinationActionType** | [**ExaminationActionType**](ExaminationActionType.md) |  | [optional] 
 **note** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
