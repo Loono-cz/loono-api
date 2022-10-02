@@ -1016,7 +1016,8 @@
         "type": "string",
         "title": "ExaminationActionType",
         "description": "",
-        "enum": ["EXAMINATION", "CONTROL", "BLOOD COLLECTION", "VISUALIZATION METHODS"]
+        "enum": ["EXAMINATION", "CONTROL", "BLOOD COLLECTION", "VISUALIZATION METHODS"],
+        "default": "EXAMINATION"
       },
       "ExaminationCategoryType": {
         "type": "string",
