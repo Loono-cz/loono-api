@@ -1407,8 +1407,7 @@
             "$ref": "#/components/schemas/ExaminationCategoryType"
           },
           "examinationActionType": {
-            "$ref": "#/components/schemas/ExaminationActionType",
-            "nullable": true
+            "$ref": "#/components/schemas/ExaminationActionType"
           }
         },
         "required": ["type", "examinationCategoryType"]
