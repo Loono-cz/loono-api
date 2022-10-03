@@ -10,10 +10,10 @@ const ExaminationActionType _$EXAMINATION =
     const ExaminationActionType._('EXAMINATION');
 const ExaminationActionType _$CONTROL =
     const ExaminationActionType._('CONTROL');
-const ExaminationActionType _$bLOODCOLLECTION =
-    const ExaminationActionType._('bLOODCOLLECTION');
-const ExaminationActionType _$vISUALIZATIONMETHODS =
-    const ExaminationActionType._('vISUALIZATIONMETHODS');
+const ExaminationActionType _$BLOOD_COLLECTION =
+    const ExaminationActionType._('BLOOD_COLLECTION');
+const ExaminationActionType _$VISUALIZATION_METHODS =
+    const ExaminationActionType._('VISUALIZATION_METHODS');
 
 ExaminationActionType _$valueOf(String name) {
   switch (name) {
@@ -21,10 +21,10 @@ ExaminationActionType _$valueOf(String name) {
       return _$EXAMINATION;
     case 'CONTROL':
       return _$CONTROL;
-    case 'bLOODCOLLECTION':
-      return _$bLOODCOLLECTION;
-    case 'vISUALIZATIONMETHODS':
-      return _$vISUALIZATIONMETHODS;
+    case 'BLOOD_COLLECTION':
+      return _$BLOOD_COLLECTION;
+    case 'VISUALIZATION_METHODS':
+      return _$VISUALIZATION_METHODS;
     default:
       throw new ArgumentError(name);
   }
@@ -34,16 +34,16 @@ final BuiltSet<ExaminationActionType> _$values =
     new BuiltSet<ExaminationActionType>(const <ExaminationActionType>[
   _$EXAMINATION,
   _$CONTROL,
-  _$bLOODCOLLECTION,
-  _$vISUALIZATIONMETHODS,
+  _$BLOOD_COLLECTION,
+  _$VISUALIZATION_METHODS,
 ]);
 
 class _$ExaminationActionTypeMeta {
   const _$ExaminationActionTypeMeta();
   ExaminationActionType get EXAMINATION => _$EXAMINATION;
   ExaminationActionType get CONTROL => _$CONTROL;
-  ExaminationActionType get bLOODCOLLECTION => _$bLOODCOLLECTION;
-  ExaminationActionType get vISUALIZATIONMETHODS => _$vISUALIZATIONMETHODS;
+  ExaminationActionType get BLOOD_COLLECTION => _$BLOOD_COLLECTION;
+  ExaminationActionType get VISUALIZATION_METHODS => _$VISUALIZATION_METHODS;
   ExaminationActionType valueOf(String name) => _$valueOf(name);
   BuiltSet<ExaminationActionType> get values => _$values;
 }
@@ -62,14 +62,14 @@ class _$ExaminationActionTypeSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'EXAMINATION': 'EXAMINATION',
     'CONTROL': 'CONTROL',
-    'bLOODCOLLECTION': 'BLOOD COLLECTION',
-    'vISUALIZATIONMETHODS': 'VISUALIZATION METHODS',
+    'BLOOD_COLLECTION': 'BLOOD_COLLECTION',
+    'VISUALIZATION_METHODS': 'VISUALIZATION_METHODS',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'EXAMINATION': 'EXAMINATION',
     'CONTROL': 'CONTROL',
-    'BLOOD COLLECTION': 'bLOODCOLLECTION',
-    'VISUALIZATION METHODS': 'vISUALIZATIONMETHODS',
+    'BLOOD_COLLECTION': 'BLOOD_COLLECTION',
+    'VISUALIZATION_METHODS': 'VISUALIZATION_METHODS',
   };
 
   @override
