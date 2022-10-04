@@ -80,7 +80,7 @@ abstract class ExaminationPreventionStatus implements Built<ExaminationPreventio
 
     @BuiltValueField(wireName: r'examinationActionType')
     ExaminationActionType? get examinationActionType;
-    // enum examinationActionTypeEnum {  EXAMINATION,  CONTROL,  BLOOD COLLECTION,  VISUALIZATION METHODS,  };
+    // enum examinationActionTypeEnum {  EXAMINATION,  CONTROL,  BLOOD_COLLECTION,  VISUALIZATION_METHODS,  };
 
     @BuiltValueField(wireName: r'note')
     String? get note;

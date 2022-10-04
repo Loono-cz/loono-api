@@ -14,10 +14,10 @@ class ExaminationActionType extends EnumClass {
   static const ExaminationActionType EXAMINATION = _$EXAMINATION;
   @BuiltValueEnumConst(wireName: r'CONTROL')
   static const ExaminationActionType CONTROL = _$CONTROL;
-  @BuiltValueEnumConst(wireName: r'BLOOD COLLECTION')
-  static const ExaminationActionType bLOODCOLLECTION = _$bLOODCOLLECTION;
-  @BuiltValueEnumConst(wireName: r'VISUALIZATION METHODS')
-  static const ExaminationActionType vISUALIZATIONMETHODS = _$vISUALIZATIONMETHODS;
+  @BuiltValueEnumConst(wireName: r'BLOOD_COLLECTION')
+  static const ExaminationActionType BLOOD_COLLECTION = _$BLOOD_COLLECTION;
+  @BuiltValueEnumConst(wireName: r'VISUALIZATION_METHODS')
+  static const ExaminationActionType VISUALIZATION_METHODS = _$VISUALIZATION_METHODS;
 
   static Serializer<ExaminationActionType> get serializer => _$examinationActionTypeSerializer;
 

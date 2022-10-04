@@ -57,7 +57,7 @@ abstract class ExaminationRecord implements Built<ExaminationRecord, Examination
 
     @BuiltValueField(wireName: r'examinationActionType')
     ExaminationActionType? get examinationActionType;
-    // enum examinationActionTypeEnum {  EXAMINATION,  CONTROL,  BLOOD COLLECTION,  VISUALIZATION METHODS,  };
+    // enum examinationActionTypeEnum {  EXAMINATION,  CONTROL,  BLOOD_COLLECTION,  VISUALIZATION_METHODS,  };
 
     ExaminationRecord._();
 
