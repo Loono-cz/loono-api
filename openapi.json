@@ -490,6 +490,45 @@
       },
       "parameters": []
     },
+    "/examinations/delete": {
+      "post": {
+        "summary": "Delete Examination",
+        "operationId": "deleteExamination",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Examinations"],
+        "description": "Notify the API that an examination has been performed.\n\nThe date of the completion must not be in the future.",
+        "security": [
+          {
+            "Bearer_Auth": []
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExaminationId"
+              }
+            }
+          },
+          "description": ""
+        }
+      },
+      "parameters": []
+    },
     "/providers/all": {
       "get": {
         "summary": "Gets all healthcare providers data",
