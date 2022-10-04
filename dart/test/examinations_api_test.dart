@@ -34,6 +34,15 @@ void main() {
       // TODO
     });
 
+    // Delete Examination
+    //
+    // Notify the API that an examination has been performed.  The date of the completion must not be in the future.
+    //
+    //Future deleteExamination({ ExaminationId examinationId }) async
+    test('test deleteExamination', () async {
+      // TODO
+    });
+
     // Get Examinations Status
     //
     // Returns the examination records of the current user.

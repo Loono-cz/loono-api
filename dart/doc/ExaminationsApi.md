@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**cancelExamination**](ExaminationsApi.md#cancelexamination) | **POST** /examinations/cancel | Cancel Examination
 [**completeExamination**](ExaminationsApi.md#completeexamination) | **POST** /examinations/confirm | Confirm Examination
 [**confirmSelfExamination**](ExaminationsApi.md#confirmselfexamination) | **POST** /examinations/{self-type}/self | Confirm Self-Examination
+[**deleteExamination**](ExaminationsApi.md#deleteexamination) | **POST** /examinations/delete | Delete Examination
 [**getExaminations**](ExaminationsApi.md#getexaminations) | **GET** /examinations | Get Examinations Status
 [**postExaminations**](ExaminationsApi.md#postexaminations) | **POST** /examinations | Create or update examination record
 [**resultSelfExamination**](ExaminationsApi.md#resultselfexamination) | **POST** /examinations/{self-type}/result | Self-Examination result finding
@@ -145,6 +146,51 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SelfExaminationCompletionInformation**](SelfExaminationCompletionInformation.md)
+
+### Authorization
+
+[Bearer_Auth](../README.md#Bearer_Auth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **deleteExamination**
+> deleteExamination(examinationId)
+
+Delete Examination
+
+Notify the API that an examination has been performed.  The date of the completion must not be in the future.
+
+### Example
+```dart
+import 'package:loono_api/api.dart';
+// TODO Configure HTTP basic authorization: Bearer_Auth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('Bearer_Auth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('Bearer_Auth').password = 'YOUR_PASSWORD';
+
+final api = LoonoApi().getExaminationsApi();
+final ExaminationId examinationId = ; // ExaminationId | 
+
+try {
+    api.deleteExamination(examinationId);
+} catch on DioError (e) {
+    print('Exception when calling ExaminationsApi->deleteExamination: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **examinationId** | [**ExaminationId**](ExaminationId.md)|  | [optional] 
+
+### Return type
+
+void (empty response body)
 
 ### Authorization
 
