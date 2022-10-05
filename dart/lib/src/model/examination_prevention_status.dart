@@ -49,7 +49,7 @@ abstract class ExaminationPreventionStatus implements Built<ExaminationPreventio
     DateTime? get plannedDate;
 
     @BuiltValueField(wireName: r'firstExam')
-    bool get firstExam;
+    bool? get firstExam;
 
     @BuiltValueField(wireName: r'periodicExam')
     bool? get periodicExam;
@@ -75,7 +75,7 @@ abstract class ExaminationPreventionStatus implements Built<ExaminationPreventio
     // enum badgeEnum {  COAT,  TOP,  BELT,  SHOES,  GLOVES,  HEADBAND,  GLASSES,  SHIELD,  PAULDRONS,  };
 
     @BuiltValueField(wireName: r'examinationCategoryType')
-    ExaminationCategoryType get examinationCategoryType;
+    ExaminationCategoryType? get examinationCategoryType;
     // enum examinationCategoryTypeEnum {  MANDATORY,  CUSTOM,  };
 
     @BuiltValueField(wireName: r'examinationActionType')
@@ -133,10 +133,12 @@ class _$ExaminationPreventionStatusSerializer implements StructuredSerializer<Ex
                 ..add(serializers.serialize(object.plannedDate,
                     specifiedType: const FullType(DateTime)));
         }
-        result
-            ..add(r'firstExam')
-            ..add(serializers.serialize(object.firstExam,
-                specifiedType: const FullType(bool)));
+        if (object.firstExam != null) {
+            result
+                ..add(r'firstExam')
+                ..add(serializers.serialize(object.firstExam,
+                    specifiedType: const FullType(bool)));
+        }
         if (object.periodicExam != null) {
             result
                 ..add(r'periodicExam')
@@ -171,10 +173,12 @@ class _$ExaminationPreventionStatusSerializer implements StructuredSerializer<Ex
                 ..add(serializers.serialize(object.badge,
                     specifiedType: const FullType(BadgeType)));
         }
-        result
-            ..add(r'examinationCategoryType')
-            ..add(serializers.serialize(object.examinationCategoryType,
-                specifiedType: const FullType(ExaminationCategoryType)));
+        if (object.examinationCategoryType != null) {
+            result
+                ..add(r'examinationCategoryType')
+                ..add(serializers.serialize(object.examinationCategoryType,
+                    specifiedType: const FullType(ExaminationCategoryType)));
+        }
         if (object.examinationActionType != null) {
             result
                 ..add(r'examinationActionType')
