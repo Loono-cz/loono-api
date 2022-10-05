@@ -322,8 +322,8 @@ class ExaminationsApi {
     );
   }
 
-  /// Delete Examination
-  /// Notify the API that an examination has been performed.  The date of the completion must not be in the future.
+  /// Delete examination
+  /// Deletes the specific exam and all associated data. This action is irreversible.
   ///
   /// Parameters:
   /// * [examinationId] 
@@ -345,9 +345,9 @@ class ExaminationsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/examinations/delete';
+    final _path = r'/examinations';
     final _options = Options(
-      method: r'POST',
+      method: r'DELETE',
       headers: <String, dynamic>{
         ...?headers,
       },

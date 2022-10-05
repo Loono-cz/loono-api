@@ -12,7 +12,7 @@ Method | HTTP request | Description
 [**cancelExamination**](ExaminationsApi.md#cancelexamination) | **POST** /examinations/cancel | Cancel Examination
 [**completeExamination**](ExaminationsApi.md#completeexamination) | **POST** /examinations/confirm | Confirm Examination
 [**confirmSelfExamination**](ExaminationsApi.md#confirmselfexamination) | **POST** /examinations/{self-type}/self | Confirm Self-Examination
-[**deleteExamination**](ExaminationsApi.md#deleteexamination) | **POST** /examinations/delete | Delete Examination
+[**deleteExamination**](ExaminationsApi.md#deleteexamination) | **DELETE** /examinations | Delete examination
 [**getExaminations**](ExaminationsApi.md#getexaminations) | **GET** /examinations | Get Examinations Status
 [**postExaminations**](ExaminationsApi.md#postexaminations) | **POST** /examinations | Create or update examination record
 [**resultSelfExamination**](ExaminationsApi.md#resultselfexamination) | **POST** /examinations/{self-type}/result | Self-Examination result finding
@@ -161,9 +161,9 @@ Name | Type | Description  | Notes
 # **deleteExamination**
 > deleteExamination(examinationId)
 
-Delete Examination
+Delete examination
 
-Notify the API that an examination has been performed.  The date of the completion must not be in the future.
+Deletes the specific exam and all associated data. This action is irreversible.
 
 ### Example
 ```dart
@@ -199,7 +199,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

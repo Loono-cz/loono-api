@@ -34,9 +34,9 @@ void main() {
       // TODO
     });
 
-    // Delete Examination
+    // Delete examination
     //
-    // Notify the API that an examination has been performed.  The date of the completion must not be in the future.
+    // Deletes the specific exam and all associated data. This action is irreversible.
     //
     //Future deleteExamination({ ExaminationId examinationId }) async
     test('test deleteExamination', () async {

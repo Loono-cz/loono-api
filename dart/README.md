@@ -80,7 +80,7 @@ Class | Method | HTTP request | Description
 [*ExaminationsApi*](doc/ExaminationsApi.md) | [**cancelExamination**](doc/ExaminationsApi.md#cancelexamination) | **POST** /examinations/cancel | Cancel Examination
 [*ExaminationsApi*](doc/ExaminationsApi.md) | [**completeExamination**](doc/ExaminationsApi.md#completeexamination) | **POST** /examinations/confirm | Confirm Examination
 [*ExaminationsApi*](doc/ExaminationsApi.md) | [**confirmSelfExamination**](doc/ExaminationsApi.md#confirmselfexamination) | **POST** /examinations/{self-type}/self | Confirm Self-Examination
-[*ExaminationsApi*](doc/ExaminationsApi.md) | [**deleteExamination**](doc/ExaminationsApi.md#deleteexamination) | **POST** /examinations/delete | Delete Examination
+[*ExaminationsApi*](doc/ExaminationsApi.md) | [**deleteExamination**](doc/ExaminationsApi.md#deleteexamination) | **DELETE** /examinations | Delete examination
 [*ExaminationsApi*](doc/ExaminationsApi.md) | [**getExaminations**](doc/ExaminationsApi.md#getexaminations) | **GET** /examinations | Get Examinations Status
 [*ExaminationsApi*](doc/ExaminationsApi.md) | [**postExaminations**](doc/ExaminationsApi.md#postexaminations) | **POST** /examinations | Create or update examination record
 [*ExaminationsApi*](doc/ExaminationsApi.md) | [**resultSelfExamination**](doc/ExaminationsApi.md#resultselfexamination) | **POST** /examinations/{self-type}/result | Self-Examination result finding
