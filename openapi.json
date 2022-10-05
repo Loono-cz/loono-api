@@ -1337,10 +1337,12 @@
             "nullable": true
           },
           "examinationCategoryType": {
-            "$ref": "#/components/schemas/ExaminationCategoryType"
+            "$ref": "#/components/schemas/ExaminationCategoryType",
+            "nullable": true
           },
           "examinationActionType": {
-            "$ref": "#/components/schemas/ExaminationActionType"
+            "$ref": "#/components/schemas/ExaminationActionType",
+            "nullable": true
           },
           "note": {
             "type": "string"
@@ -1349,12 +1351,10 @@
         "required": [
           "examinationType",
           "intervalYears",
-          "firstExam",
           "priority",
           "state",
           "count",
-          "points",
-          "examinationCategoryType"
+          "points"
         ]
       },
       "SelfExaminationPreventionStatus": {
