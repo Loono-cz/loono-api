@@ -18,7 +18,7 @@ class _$ExaminationPreventionStatus extends ExaminationPreventionStatus {
   @override
   final DateTime? plannedDate;
   @override
-  final bool? firstExam;
+  final bool firstExam;
   @override
   final bool? periodicExam;
   @override
@@ -50,7 +50,7 @@ class _$ExaminationPreventionStatus extends ExaminationPreventionStatus {
       required this.intervalYears,
       this.customInterval,
       this.plannedDate,
-      this.firstExam,
+      required this.firstExam,
       this.periodicExam,
       required this.priority,
       required this.state,
@@ -66,6 +66,8 @@ class _$ExaminationPreventionStatus extends ExaminationPreventionStatus {
         examinationType, 'ExaminationPreventionStatus', 'examinationType');
     BuiltValueNullFieldError.checkNotNull(
         intervalYears, 'ExaminationPreventionStatus', 'intervalYears');
+    BuiltValueNullFieldError.checkNotNull(
+        firstExam, 'ExaminationPreventionStatus', 'firstExam');
     BuiltValueNullFieldError.checkNotNull(
         priority, 'ExaminationPreventionStatus', 'priority');
     BuiltValueNullFieldError.checkNotNull(
@@ -302,7 +304,8 @@ class ExaminationPreventionStatusBuilder
                 intervalYears, 'ExaminationPreventionStatus', 'intervalYears'),
             customInterval: customInterval,
             plannedDate: plannedDate,
-            firstExam: firstExam,
+            firstExam: BuiltValueNullFieldError.checkNotNull(
+                firstExam, 'ExaminationPreventionStatus', 'firstExam'),
             periodicExam: periodicExam,
             priority: BuiltValueNullFieldError.checkNotNull(
                 priority, 'ExaminationPreventionStatus', 'priority'),

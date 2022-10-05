@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **intervalYears** | **int** |  | 
 **customInterval** | **int** |  | [optional] 
 **plannedDate** | [**DateTime**](DateTime.md) |  | [optional] 
-**firstExam** | **bool** |  | [optional] 
+**firstExam** | **bool** |  | 
 **periodicExam** | **bool** |  | [optional] 
 **priority** | **int** |  | 
 **state** | [**ExaminationStatus**](ExaminationStatus.md) |  | 
