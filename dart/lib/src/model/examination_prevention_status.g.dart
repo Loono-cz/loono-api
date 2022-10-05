@@ -18,7 +18,7 @@ class _$ExaminationPreventionStatus extends ExaminationPreventionStatus {
   @override
   final DateTime? plannedDate;
   @override
-  final bool firstExam;
+  final bool? firstExam;
   @override
   final bool? periodicExam;
   @override
@@ -34,7 +34,7 @@ class _$ExaminationPreventionStatus extends ExaminationPreventionStatus {
   @override
   final BadgeType? badge;
   @override
-  final ExaminationCategoryType examinationCategoryType;
+  final ExaminationCategoryType? examinationCategoryType;
   @override
   final ExaminationActionType? examinationActionType;
   @override
@@ -50,7 +50,7 @@ class _$ExaminationPreventionStatus extends ExaminationPreventionStatus {
       required this.intervalYears,
       this.customInterval,
       this.plannedDate,
-      required this.firstExam,
+      this.firstExam,
       this.periodicExam,
       required this.priority,
       required this.state,
@@ -58,7 +58,7 @@ class _$ExaminationPreventionStatus extends ExaminationPreventionStatus {
       this.lastConfirmedDate,
       required this.points,
       this.badge,
-      required this.examinationCategoryType,
+      this.examinationCategoryType,
       this.examinationActionType,
       this.note})
       : super._() {
@@ -67,8 +67,6 @@ class _$ExaminationPreventionStatus extends ExaminationPreventionStatus {
     BuiltValueNullFieldError.checkNotNull(
         intervalYears, 'ExaminationPreventionStatus', 'intervalYears');
     BuiltValueNullFieldError.checkNotNull(
-        firstExam, 'ExaminationPreventionStatus', 'firstExam');
-    BuiltValueNullFieldError.checkNotNull(
         priority, 'ExaminationPreventionStatus', 'priority');
     BuiltValueNullFieldError.checkNotNull(
         state, 'ExaminationPreventionStatus', 'state');
@@ -76,8 +74,6 @@ class _$ExaminationPreventionStatus extends ExaminationPreventionStatus {
         count, 'ExaminationPreventionStatus', 'count');
     BuiltValueNullFieldError.checkNotNull(
         points, 'ExaminationPreventionStatus', 'points');
-    BuiltValueNullFieldError.checkNotNull(examinationCategoryType,
-        'ExaminationPreventionStatus', 'examinationCategoryType');
   }
 
   @override
@@ -299,13 +295,14 @@ class ExaminationPreventionStatusBuilder
         new _$ExaminationPreventionStatus._(
             uuid: uuid,
             examinationType: BuiltValueNullFieldError.checkNotNull(
-                examinationType, 'ExaminationPreventionStatus', 'examinationType'),
+                examinationType,
+                'ExaminationPreventionStatus',
+                'examinationType'),
             intervalYears: BuiltValueNullFieldError.checkNotNull(
                 intervalYears, 'ExaminationPreventionStatus', 'intervalYears'),
             customInterval: customInterval,
             plannedDate: plannedDate,
-            firstExam: BuiltValueNullFieldError.checkNotNull(
-                firstExam, 'ExaminationPreventionStatus', 'firstExam'),
+            firstExam: firstExam,
             periodicExam: periodicExam,
             priority: BuiltValueNullFieldError.checkNotNull(
                 priority, 'ExaminationPreventionStatus', 'priority'),
@@ -317,8 +314,7 @@ class ExaminationPreventionStatusBuilder
             points: BuiltValueNullFieldError.checkNotNull(
                 points, 'ExaminationPreventionStatus', 'points'),
             badge: badge,
-            examinationCategoryType:
-                BuiltValueNullFieldError.checkNotNull(examinationCategoryType, 'ExaminationPreventionStatus', 'examinationCategoryType'),
+            examinationCategoryType: examinationCategoryType,
             examinationActionType: examinationActionType,
             note: note);
     replace(_$result);

@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **intervalYears** | **int** |  | 
 **customInterval** | **int** |  | [optional] 
 **plannedDate** | [**DateTime**](DateTime.md) |  | [optional] 
-**firstExam** | **bool** |  | 
+**firstExam** | **bool** |  | [optional] 
 **periodicExam** | **bool** |  | [optional] 
 **priority** | **int** |  | 
 **state** | [**ExaminationStatus**](ExaminationStatus.md) |  | 
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **lastConfirmedDate** | [**DateTime**](DateTime.md) |  | [optional] 
 **points** | **int** |  | 
 **badge** | [**BadgeType**](BadgeType.md) |  | [optional] 
-**examinationCategoryType** | [**ExaminationCategoryType**](ExaminationCategoryType.md) |  | 
+**examinationCategoryType** | [**ExaminationCategoryType**](ExaminationCategoryType.md) |  | [optional] 
 **examinationActionType** | [**ExaminationActionType**](ExaminationActionType.md) |  | [optional] 
 **note** | **String** |  | [optional] 
 
