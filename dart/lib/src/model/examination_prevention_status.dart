@@ -49,7 +49,7 @@ abstract class ExaminationPreventionStatus implements Built<ExaminationPreventio
     DateTime? get plannedDate;
 
     @BuiltValueField(wireName: r'firstExam')
-    bool? get firstExam;
+    bool get firstExam;
 
     @BuiltValueField(wireName: r'periodicExam')
     bool? get periodicExam;
@@ -133,12 +133,10 @@ class _$ExaminationPreventionStatusSerializer implements StructuredSerializer<Ex
                 ..add(serializers.serialize(object.plannedDate,
                     specifiedType: const FullType(DateTime)));
         }
-        if (object.firstExam != null) {
-            result
-                ..add(r'firstExam')
-                ..add(serializers.serialize(object.firstExam,
-                    specifiedType: const FullType(bool)));
-        }
+        result
+            ..add(r'firstExam')
+            ..add(serializers.serialize(object.firstExam,
+                specifiedType: const FullType(bool)));
         if (object.periodicExam != null) {
             result
                 ..add(r'periodicExam')
