@@ -1337,12 +1337,10 @@
             "nullable": true
           },
           "examinationCategoryType": {
-            "$ref": "#/components/schemas/ExaminationCategoryType",
-            "nullable": true
+            "$ref": "#/components/schemas/ExaminationCategoryType"
           },
           "examinationActionType": {
-            "$ref": "#/components/schemas/ExaminationActionType",
-            "nullable": true
+            "$ref": "#/components/schemas/ExaminationActionType"
           },
           "note": {
             "type": "string"
@@ -1351,6 +1349,7 @@
         "required": [
           "examinationType",
           "intervalYears",
+          "firstExam",
           "priority",
           "state",
           "count",
@@ -1444,10 +1443,12 @@
             "default": true
           },
           "examinationCategoryType": {
-            "$ref": "#/components/schemas/ExaminationCategoryType"
+            "$ref": "#/components/schemas/ExaminationCategoryType",
+            "nullable": true
           },
           "examinationActionType": {
-            "$ref": "#/components/schemas/ExaminationActionType"
+            "$ref": "#/components/schemas/ExaminationActionType",
+            "nullable": true
           }
         },
         "required": ["type", "examinationCategoryType"]
