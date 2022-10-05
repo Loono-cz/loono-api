@@ -1451,7 +1451,7 @@
             "nullable": true
           }
         },
-        "required": ["type", "examinationCategoryType"]
+        "required": ["type"]
       },
       "PreventionStatus": {
         "title": "PreventionStatus",
