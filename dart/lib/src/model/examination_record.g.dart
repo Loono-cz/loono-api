@@ -24,7 +24,7 @@ class _$ExaminationRecord extends ExaminationRecord {
   @override
   final bool? periodicExam;
   @override
-  final ExaminationCategoryType examinationCategoryType;
+  final ExaminationCategoryType? examinationCategoryType;
   @override
   final ExaminationActionType? examinationActionType;
 
@@ -41,12 +41,10 @@ class _$ExaminationRecord extends ExaminationRecord {
       this.note,
       this.customInterval,
       this.periodicExam,
-      required this.examinationCategoryType,
+      this.examinationCategoryType,
       this.examinationActionType})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(type, 'ExaminationRecord', 'type');
-    BuiltValueNullFieldError.checkNotNull(examinationCategoryType,
-        'ExaminationRecord', 'examinationCategoryType');
   }
 
   @override
@@ -206,10 +204,7 @@ class ExaminationRecordBuilder
             note: note,
             customInterval: customInterval,
             periodicExam: periodicExam,
-            examinationCategoryType: BuiltValueNullFieldError.checkNotNull(
-                examinationCategoryType,
-                'ExaminationRecord',
-                'examinationCategoryType'),
+            examinationCategoryType: examinationCategoryType,
             examinationActionType: examinationActionType);
     replace(_$result);
     return _$result;

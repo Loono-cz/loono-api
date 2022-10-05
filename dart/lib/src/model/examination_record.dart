@@ -52,7 +52,7 @@ abstract class ExaminationRecord implements Built<ExaminationRecord, Examination
     bool? get periodicExam;
 
     @BuiltValueField(wireName: r'examinationCategoryType')
-    ExaminationCategoryType get examinationCategoryType;
+    ExaminationCategoryType? get examinationCategoryType;
     // enum examinationCategoryTypeEnum {  MANDATORY,  CUSTOM,  };
 
     @BuiltValueField(wireName: r'examinationActionType')
@@ -129,10 +129,12 @@ class _$ExaminationRecordSerializer implements StructuredSerializer<ExaminationR
                 ..add(serializers.serialize(object.periodicExam,
                     specifiedType: const FullType(bool)));
         }
-        result
-            ..add(r'examinationCategoryType')
-            ..add(serializers.serialize(object.examinationCategoryType,
-                specifiedType: const FullType(ExaminationCategoryType)));
+        if (object.examinationCategoryType != null) {
+            result
+                ..add(r'examinationCategoryType')
+                ..add(serializers.serialize(object.examinationCategoryType,
+                    specifiedType: const FullType(ExaminationCategoryType)));
+        }
         if (object.examinationActionType != null) {
             result
                 ..add(r'examinationActionType')
