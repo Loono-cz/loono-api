@@ -286,6 +286,41 @@
         "tags": ["Examinations"]
       }
     },
+    "delete": {
+      "summary": "Delete examination",
+      "operationId": "delete-examination",
+      "responses": {
+        "200": {
+          "description": "OK"
+        },
+        "401": {
+          "description": "Unauthorized"
+        },
+        "403": {
+          "description": "Forbidden"
+        },
+        "404": {
+          "description": "Not Found"
+        }
+      },
+      "description": "Deletes the specific exam and all associated data. This action is irreversible.\n\n\nIf it is necessary to keep certain pieces of information, for instance to comply with legal requirements, that data is anonymized to the maximum possible extent.\n\nSpecific error codes:\n\n|HTTP Status| code |description|\n|--- |--- | --- |\n|403|RECENT_LOGIN_REQUIRED| User must reauthenticate. Equivalent to the [FirebaseAuthRecentLoginRequiredException](https://firebase.google.com/docs/reference/android/com/google/firebase/auth/FirebaseAuthRecentLoginRequiredException)(Android) |",
+      "security": [
+        {
+          "Bearer_Auth": []
+        }
+      ],
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ExaminationId"
+            }
+          }
+        },
+        "description": ""
+      },
+      "tags": ["Examinations"]
+    },
     "/examinations/confirm": {
       "post": {
         "summary": "Confirm Examination",
@@ -458,45 +493,6 @@
                 }
               }
             }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "tags": ["Examinations"],
-        "description": "Notify the API that an examination has been performed.\n\nThe date of the completion must not be in the future.",
-        "security": [
-          {
-            "Bearer_Auth": []
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ExaminationId"
-              }
-            }
-          },
-          "description": ""
-        }
-      },
-      "parameters": []
-    },
-    "/examinations/delete": {
-      "post": {
-        "summary": "Delete Examination",
-        "operationId": "deleteExamination",
-        "responses": {
-          "200": {
-            "description": "OK"
           },
           "401": {
             "description": "Unauthorized",
