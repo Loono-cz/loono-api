@@ -47,9 +47,6 @@ class ExaminationType extends EnumClass {
   @BuiltValueEnumConst(wireName: r'INTERN')
   static const ExaminationType INTERN = _$INTERN;
   /// Specialists
-  @BuiltValueEnumConst(wireName: r'OCULAR')
-  static const ExaminationType OCULAR = _$OCULAR;
-  /// Specialists
   @BuiltValueEnumConst(wireName: r'SURGERY')
   static const ExaminationType SURGERY = _$SURGERY;
   /// Specialists
@@ -65,17 +62,14 @@ class ExaminationType extends EnumClass {
   @BuiltValueEnumConst(wireName: r'NEUROLOGY')
   static const ExaminationType NEUROLOGY = _$NEUROLOGY;
   /// Specialists
-  @BuiltValueEnumConst(wireName: r'TANNER')
-  static const ExaminationType TANNER = _$TANNER;
-  /// Specialists
   @BuiltValueEnumConst(wireName: r'PSYCHOLOGY')
   static const ExaminationType PSYCHOLOGY = _$PSYCHOLOGY;
   /// Specialists
   @BuiltValueEnumConst(wireName: r'ENDOCRINOLOGY_AND_HORMONES')
   static const ExaminationType ENDOCRINOLOGY_AND_HORMONES = _$ENDOCRINOLOGY_AND_HORMONES;
   /// Specialists
-  @BuiltValueEnumConst(wireName: r'DENTAL HYGIENE')
-  static const ExaminationType dENTALHYGIENE = _$dENTALHYGIENE;
+  @BuiltValueEnumConst(wireName: r'DENTAL_HYGIENE')
+  static const ExaminationType DENTAL_HYGIENE = _$DENTAL_HYGIENE;
   /// Specialists
   @BuiltValueEnumConst(wireName: r'CARDIOLOGY')
   static const ExaminationType CARDIOLOGY = _$CARDIOLOGY;
@@ -85,9 +79,6 @@ class ExaminationType extends EnumClass {
   /// Specialists
   @BuiltValueEnumConst(wireName: r'SPEECH_THERAPIST')
   static const ExaminationType SPEECH_THERAPIST = _$SPEECH_THERAPIST;
-  /// Specialists
-  @BuiltValueEnumConst(wireName: r'UROLOGY')
-  static const ExaminationType UROLOGY = _$UROLOGY;
   /// Specialists
   @BuiltValueEnumConst(wireName: r'ALLERGOLOGY')
   static const ExaminationType ALLERGOLOGY = _$ALLERGOLOGY;
