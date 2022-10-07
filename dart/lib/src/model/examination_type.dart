@@ -41,8 +41,8 @@ class ExaminationType extends EnumClass {
   @BuiltValueEnumConst(wireName: r'PEDIATRICIAN')
   static const ExaminationType PEDIATRICIAN = _$PEDIATRICIAN;
   /// Specialists
-  @BuiltValueEnumConst(wireName: r'GYNECOLOGY_AND_OBSTETRICS')
-  static const ExaminationType GYNECOLOGY_AND_OBSTETRICS = _$GYNECOLOGY_AND_OBSTETRICS;
+  @BuiltValueEnumConst(wireName: r'GYNECOLOGIST')
+  static const ExaminationType GYNECOLOGIST = _$GYNECOLOGIST;
   /// Specialists
   @BuiltValueEnumConst(wireName: r'INTERN')
   static const ExaminationType INTERN = _$INTERN;

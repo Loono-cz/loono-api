@@ -21,8 +21,7 @@ const ExaminationType _$GENERAL_PRACTITIONER =
 const ExaminationType _$PHYSIOTHERAPY =
     const ExaminationType._('PHYSIOTHERAPY');
 const ExaminationType _$PEDIATRICIAN = const ExaminationType._('PEDIATRICIAN');
-const ExaminationType _$GYNECOLOGY_AND_OBSTETRICS =
-    const ExaminationType._('GYNECOLOGY_AND_OBSTETRICS');
+const ExaminationType _$GYNECOLOGIST = const ExaminationType._('GYNECOLOGIST');
 const ExaminationType _$INTERN = const ExaminationType._('INTERN');
 const ExaminationType _$SURGERY = const ExaminationType._('SURGERY');
 const ExaminationType _$ORTHOPEDICS = const ExaminationType._('ORTHOPEDICS');
@@ -85,8 +84,8 @@ ExaminationType _$valueOf(String name) {
       return _$PHYSIOTHERAPY;
     case 'PEDIATRICIAN':
       return _$PEDIATRICIAN;
-    case 'GYNECOLOGY_AND_OBSTETRICS':
-      return _$GYNECOLOGY_AND_OBSTETRICS;
+    case 'GYNECOLOGIST':
+      return _$GYNECOLOGIST;
     case 'INTERN':
       return _$INTERN;
     case 'SURGERY':
@@ -166,7 +165,7 @@ final BuiltSet<ExaminationType> _$values =
   _$GENERAL_PRACTITIONER,
   _$PHYSIOTHERAPY,
   _$PEDIATRICIAN,
-  _$GYNECOLOGY_AND_OBSTETRICS,
+  _$GYNECOLOGIST,
   _$INTERN,
   _$SURGERY,
   _$ORTHOPEDICS,
@@ -212,7 +211,7 @@ class _$ExaminationTypeMeta {
   ExaminationType get GENERAL_PRACTITIONER => _$GENERAL_PRACTITIONER;
   ExaminationType get PHYSIOTHERAPY => _$PHYSIOTHERAPY;
   ExaminationType get PEDIATRICIAN => _$PEDIATRICIAN;
-  ExaminationType get GYNECOLOGY_AND_OBSTETRICS => _$GYNECOLOGY_AND_OBSTETRICS;
+  ExaminationType get GYNECOLOGIST => _$GYNECOLOGIST;
   ExaminationType get INTERN => _$INTERN;
   ExaminationType get SURGERY => _$SURGERY;
   ExaminationType get ORTHOPEDICS => _$ORTHOPEDICS;
@@ -270,7 +269,7 @@ class _$ExaminationTypeSerializer
     'GENERAL_PRACTITIONER': 'GENERAL_PRACTITIONER',
     'PHYSIOTHERAPY': 'PHYSIOTHERAPY',
     'PEDIATRICIAN': 'PEDIATRICIAN',
-    'GYNECOLOGY_AND_OBSTETRICS': 'GYNECOLOGY_AND_OBSTETRICS',
+    'GYNECOLOGIST': 'GYNECOLOGIST',
     'INTERN': 'INTERN',
     'SURGERY': 'SURGERY',
     'ORTHOPEDICS': 'ORTHOPEDICS',
@@ -314,7 +313,7 @@ class _$ExaminationTypeSerializer
     'GENERAL_PRACTITIONER': 'GENERAL_PRACTITIONER',
     'PHYSIOTHERAPY': 'PHYSIOTHERAPY',
     'PEDIATRICIAN': 'PEDIATRICIAN',
-    'GYNECOLOGY_AND_OBSTETRICS': 'GYNECOLOGY_AND_OBSTETRICS',
+    'GYNECOLOGIST': 'GYNECOLOGIST',
     'INTERN': 'INTERN',
     'SURGERY': 'SURGERY',
     'ORTHOPEDICS': 'ORTHOPEDICS',
