@@ -24,24 +24,21 @@ const ExaminationType _$PEDIATRICIAN = const ExaminationType._('PEDIATRICIAN');
 const ExaminationType _$GYNECOLOGY_AND_OBSTETRICS =
     const ExaminationType._('GYNECOLOGY_AND_OBSTETRICS');
 const ExaminationType _$INTERN = const ExaminationType._('INTERN');
-const ExaminationType _$OCULAR = const ExaminationType._('OCULAR');
 const ExaminationType _$SURGERY = const ExaminationType._('SURGERY');
 const ExaminationType _$ORTHOPEDICS = const ExaminationType._('ORTHOPEDICS');
 const ExaminationType _$REHABILITATION =
     const ExaminationType._('REHABILITATION');
 const ExaminationType _$PSYCHIATRY = const ExaminationType._('PSYCHIATRY');
 const ExaminationType _$NEUROLOGY = const ExaminationType._('NEUROLOGY');
-const ExaminationType _$TANNER = const ExaminationType._('TANNER');
 const ExaminationType _$PSYCHOLOGY = const ExaminationType._('PSYCHOLOGY');
 const ExaminationType _$ENDOCRINOLOGY_AND_HORMONES =
     const ExaminationType._('ENDOCRINOLOGY_AND_HORMONES');
-const ExaminationType _$dENTALHYGIENE =
-    const ExaminationType._('dENTALHYGIENE');
+const ExaminationType _$DENTAL_HYGIENE =
+    const ExaminationType._('DENTAL_HYGIENE');
 const ExaminationType _$CARDIOLOGY = const ExaminationType._('CARDIOLOGY');
 const ExaminationType _$ORL = const ExaminationType._('ORL');
 const ExaminationType _$SPEECH_THERAPIST =
     const ExaminationType._('SPEECH_THERAPIST');
-const ExaminationType _$UROLOGY = const ExaminationType._('UROLOGY');
 const ExaminationType _$ALLERGOLOGY = const ExaminationType._('ALLERGOLOGY');
 const ExaminationType _$IMMUNOLOGY = const ExaminationType._('IMMUNOLOGY');
 const ExaminationType _$ORTHODONTICS = const ExaminationType._('ORTHODONTICS');
@@ -92,8 +89,6 @@ ExaminationType _$valueOf(String name) {
       return _$GYNECOLOGY_AND_OBSTETRICS;
     case 'INTERN':
       return _$INTERN;
-    case 'OCULAR':
-      return _$OCULAR;
     case 'SURGERY':
       return _$SURGERY;
     case 'ORTHOPEDICS':
@@ -104,22 +99,18 @@ ExaminationType _$valueOf(String name) {
       return _$PSYCHIATRY;
     case 'NEUROLOGY':
       return _$NEUROLOGY;
-    case 'TANNER':
-      return _$TANNER;
     case 'PSYCHOLOGY':
       return _$PSYCHOLOGY;
     case 'ENDOCRINOLOGY_AND_HORMONES':
       return _$ENDOCRINOLOGY_AND_HORMONES;
-    case 'dENTALHYGIENE':
-      return _$dENTALHYGIENE;
+    case 'DENTAL_HYGIENE':
+      return _$DENTAL_HYGIENE;
     case 'CARDIOLOGY':
       return _$CARDIOLOGY;
     case 'ORL':
       return _$ORL;
     case 'SPEECH_THERAPIST':
       return _$SPEECH_THERAPIST;
-    case 'UROLOGY':
-      return _$UROLOGY;
     case 'ALLERGOLOGY':
       return _$ALLERGOLOGY;
     case 'IMMUNOLOGY':
@@ -177,20 +168,17 @@ final BuiltSet<ExaminationType> _$values =
   _$PEDIATRICIAN,
   _$GYNECOLOGY_AND_OBSTETRICS,
   _$INTERN,
-  _$OCULAR,
   _$SURGERY,
   _$ORTHOPEDICS,
   _$REHABILITATION,
   _$PSYCHIATRY,
   _$NEUROLOGY,
-  _$TANNER,
   _$PSYCHOLOGY,
   _$ENDOCRINOLOGY_AND_HORMONES,
-  _$dENTALHYGIENE,
+  _$DENTAL_HYGIENE,
   _$CARDIOLOGY,
   _$ORL,
   _$SPEECH_THERAPIST,
-  _$UROLOGY,
   _$ALLERGOLOGY,
   _$IMMUNOLOGY,
   _$ORTHODONTICS,
@@ -226,21 +214,18 @@ class _$ExaminationTypeMeta {
   ExaminationType get PEDIATRICIAN => _$PEDIATRICIAN;
   ExaminationType get GYNECOLOGY_AND_OBSTETRICS => _$GYNECOLOGY_AND_OBSTETRICS;
   ExaminationType get INTERN => _$INTERN;
-  ExaminationType get OCULAR => _$OCULAR;
   ExaminationType get SURGERY => _$SURGERY;
   ExaminationType get ORTHOPEDICS => _$ORTHOPEDICS;
   ExaminationType get REHABILITATION => _$REHABILITATION;
   ExaminationType get PSYCHIATRY => _$PSYCHIATRY;
   ExaminationType get NEUROLOGY => _$NEUROLOGY;
-  ExaminationType get TANNER => _$TANNER;
   ExaminationType get PSYCHOLOGY => _$PSYCHOLOGY;
   ExaminationType get ENDOCRINOLOGY_AND_HORMONES =>
       _$ENDOCRINOLOGY_AND_HORMONES;
-  ExaminationType get dENTALHYGIENE => _$dENTALHYGIENE;
+  ExaminationType get DENTAL_HYGIENE => _$DENTAL_HYGIENE;
   ExaminationType get CARDIOLOGY => _$CARDIOLOGY;
   ExaminationType get ORL => _$ORL;
   ExaminationType get SPEECH_THERAPIST => _$SPEECH_THERAPIST;
-  ExaminationType get UROLOGY => _$UROLOGY;
   ExaminationType get ALLERGOLOGY => _$ALLERGOLOGY;
   ExaminationType get IMMUNOLOGY => _$IMMUNOLOGY;
   ExaminationType get ORTHODONTICS => _$ORTHODONTICS;
@@ -287,20 +272,17 @@ class _$ExaminationTypeSerializer
     'PEDIATRICIAN': 'PEDIATRICIAN',
     'GYNECOLOGY_AND_OBSTETRICS': 'GYNECOLOGY_AND_OBSTETRICS',
     'INTERN': 'INTERN',
-    'OCULAR': 'OCULAR',
     'SURGERY': 'SURGERY',
     'ORTHOPEDICS': 'ORTHOPEDICS',
     'REHABILITATION': 'REHABILITATION',
     'PSYCHIATRY': 'PSYCHIATRY',
     'NEUROLOGY': 'NEUROLOGY',
-    'TANNER': 'TANNER',
     'PSYCHOLOGY': 'PSYCHOLOGY',
     'ENDOCRINOLOGY_AND_HORMONES': 'ENDOCRINOLOGY_AND_HORMONES',
-    'dENTALHYGIENE': 'DENTAL HYGIENE',
+    'DENTAL_HYGIENE': 'DENTAL_HYGIENE',
     'CARDIOLOGY': 'CARDIOLOGY',
     'ORL': 'ORL',
     'SPEECH_THERAPIST': 'SPEECH_THERAPIST',
-    'UROLOGY': 'UROLOGY',
     'ALLERGOLOGY': 'ALLERGOLOGY',
     'IMMUNOLOGY': 'IMMUNOLOGY',
     'ORTHODONTICS': 'ORTHODONTICS',
@@ -334,20 +316,17 @@ class _$ExaminationTypeSerializer
     'PEDIATRICIAN': 'PEDIATRICIAN',
     'GYNECOLOGY_AND_OBSTETRICS': 'GYNECOLOGY_AND_OBSTETRICS',
     'INTERN': 'INTERN',
-    'OCULAR': 'OCULAR',
     'SURGERY': 'SURGERY',
     'ORTHOPEDICS': 'ORTHOPEDICS',
     'REHABILITATION': 'REHABILITATION',
     'PSYCHIATRY': 'PSYCHIATRY',
     'NEUROLOGY': 'NEUROLOGY',
-    'TANNER': 'TANNER',
     'PSYCHOLOGY': 'PSYCHOLOGY',
     'ENDOCRINOLOGY_AND_HORMONES': 'ENDOCRINOLOGY_AND_HORMONES',
-    'DENTAL HYGIENE': 'dENTALHYGIENE',
+    'DENTAL_HYGIENE': 'DENTAL_HYGIENE',
     'CARDIOLOGY': 'CARDIOLOGY',
     'ORL': 'ORL',
     'SPEECH_THERAPIST': 'SPEECH_THERAPIST',
-    'UROLOGY': 'UROLOGY',
     'ALLERGOLOGY': 'ALLERGOLOGY',
     'IMMUNOLOGY': 'IMMUNOLOGY',
     'ORTHODONTICS': 'ORTHODONTICS',
