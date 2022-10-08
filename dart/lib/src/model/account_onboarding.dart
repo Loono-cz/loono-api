@@ -38,7 +38,7 @@ abstract class AccountOnboarding implements Built<AccountOnboarding, AccountOnbo
     BuiltList<ExaminationRecord> get examinations;
 
     @BuiltValueField(wireName: r'newsletterOptIn')
-    bool? get newsletterOptIn;
+    bool get newsletterOptIn;
 
     AccountOnboarding._();
 
@@ -82,12 +82,10 @@ class _$AccountOnboardingSerializer implements StructuredSerializer<AccountOnboa
             ..add(r'examinations')
             ..add(serializers.serialize(object.examinations,
                 specifiedType: const FullType(BuiltList, [FullType(ExaminationRecord)])));
-        if (object.newsletterOptIn != null) {
-            result
-                ..add(r'newsletterOptIn')
-                ..add(serializers.serialize(object.newsletterOptIn,
-                    specifiedType: const FullType(bool)));
-        }
+        result
+            ..add(r'newsletterOptIn')
+            ..add(serializers.serialize(object.newsletterOptIn,
+                specifiedType: const FullType(bool)));
         return result;
     }
 

@@ -18,7 +18,7 @@ class _$AccountOnboarding extends AccountOnboarding {
   @override
   final BuiltList<ExaminationRecord> examinations;
   @override
-  final bool? newsletterOptIn;
+  final bool newsletterOptIn;
 
   factory _$AccountOnboarding(
           [void Function(AccountOnboardingBuilder)? updates]) =>
@@ -30,7 +30,7 @@ class _$AccountOnboarding extends AccountOnboarding {
       required this.preferredEmail,
       required this.birthdate,
       required this.examinations,
-      this.newsletterOptIn})
+      required this.newsletterOptIn})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         nickname, 'AccountOnboarding', 'nickname');
@@ -41,6 +41,8 @@ class _$AccountOnboarding extends AccountOnboarding {
         birthdate, 'AccountOnboarding', 'birthdate');
     BuiltValueNullFieldError.checkNotNull(
         examinations, 'AccountOnboarding', 'examinations');
+    BuiltValueNullFieldError.checkNotNull(
+        newsletterOptIn, 'AccountOnboarding', 'newsletterOptIn');
   }
 
   @override
@@ -164,7 +166,8 @@ class AccountOnboardingBuilder
               birthdate: BuiltValueNullFieldError.checkNotNull(
                   birthdate, 'AccountOnboarding', 'birthdate'),
               examinations: examinations.build(),
-              newsletterOptIn: newsletterOptIn);
+              newsletterOptIn: BuiltValueNullFieldError.checkNotNull(
+                  newsletterOptIn, 'AccountOnboarding', 'newsletterOptIn'));
     } catch (_) {
       late String _$failedField;
       try {
