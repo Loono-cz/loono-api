@@ -19,6 +19,7 @@ part 'account_onboarding.g.dart';
 /// * [preferredEmail] 
 /// * [birthdate] 
 /// * [examinations] 
+/// * [newsletterOptIn] 
 abstract class AccountOnboarding implements Built<AccountOnboarding, AccountOnboardingBuilder> {
     @BuiltValueField(wireName: r'nickname')
     String get nickname;
@@ -35,6 +36,9 @@ abstract class AccountOnboarding implements Built<AccountOnboarding, AccountOnbo
 
     @BuiltValueField(wireName: r'examinations')
     BuiltList<ExaminationRecord> get examinations;
+
+    @BuiltValueField(wireName: r'newsletterOptIn')
+    bool? get newsletterOptIn;
 
     AccountOnboarding._();
 
@@ -78,6 +82,12 @@ class _$AccountOnboardingSerializer implements StructuredSerializer<AccountOnboa
             ..add(r'examinations')
             ..add(serializers.serialize(object.examinations,
                 specifiedType: const FullType(BuiltList, [FullType(ExaminationRecord)])));
+        if (object.newsletterOptIn != null) {
+            result
+                ..add(r'newsletterOptIn')
+                ..add(serializers.serialize(object.newsletterOptIn,
+                    specifiedType: const FullType(bool)));
+        }
         return result;
     }
 
@@ -117,6 +127,11 @@ class _$AccountOnboardingSerializer implements StructuredSerializer<AccountOnboa
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(BuiltList, [FullType(ExaminationRecord)])) as BuiltList<ExaminationRecord>;
                     result.examinations.replace(valueDes);
+                    break;
+                case r'newsletterOptIn':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(bool)) as bool;
+                    result.newsletterOptIn = valueDes;
                     break;
             }
         }

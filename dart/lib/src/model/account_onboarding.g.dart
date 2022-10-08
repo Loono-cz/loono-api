@@ -17,6 +17,8 @@ class _$AccountOnboarding extends AccountOnboarding {
   final Date birthdate;
   @override
   final BuiltList<ExaminationRecord> examinations;
+  @override
+  final bool? newsletterOptIn;
 
   factory _$AccountOnboarding(
           [void Function(AccountOnboardingBuilder)? updates]) =>
@@ -27,7 +29,8 @@ class _$AccountOnboarding extends AccountOnboarding {
       required this.sex,
       required this.preferredEmail,
       required this.birthdate,
-      required this.examinations})
+      required this.examinations,
+      this.newsletterOptIn})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         nickname, 'AccountOnboarding', 'nickname');
@@ -56,17 +59,20 @@ class _$AccountOnboarding extends AccountOnboarding {
         sex == other.sex &&
         preferredEmail == other.preferredEmail &&
         birthdate == other.birthdate &&
-        examinations == other.examinations;
+        examinations == other.examinations &&
+        newsletterOptIn == other.newsletterOptIn;
   }
 
   @override
   int get hashCode {
     return $jf($jc(
         $jc(
-            $jc($jc($jc(0, nickname.hashCode), sex.hashCode),
-                preferredEmail.hashCode),
-            birthdate.hashCode),
-        examinations.hashCode));
+            $jc(
+                $jc($jc($jc(0, nickname.hashCode), sex.hashCode),
+                    preferredEmail.hashCode),
+                birthdate.hashCode),
+            examinations.hashCode),
+        newsletterOptIn.hashCode));
   }
 
   @override
@@ -76,7 +82,8 @@ class _$AccountOnboarding extends AccountOnboarding {
           ..add('sex', sex)
           ..add('preferredEmail', preferredEmail)
           ..add('birthdate', birthdate)
-          ..add('examinations', examinations))
+          ..add('examinations', examinations)
+          ..add('newsletterOptIn', newsletterOptIn))
         .toString();
   }
 }
@@ -108,6 +115,11 @@ class AccountOnboardingBuilder
   set examinations(ListBuilder<ExaminationRecord>? examinations) =>
       _$this._examinations = examinations;
 
+  bool? _newsletterOptIn;
+  bool? get newsletterOptIn => _$this._newsletterOptIn;
+  set newsletterOptIn(bool? newsletterOptIn) =>
+      _$this._newsletterOptIn = newsletterOptIn;
+
   AccountOnboardingBuilder() {
     AccountOnboarding._defaults(this);
   }
@@ -120,6 +132,7 @@ class AccountOnboardingBuilder
       _preferredEmail = $v.preferredEmail;
       _birthdate = $v.birthdate;
       _examinations = $v.examinations.toBuilder();
+      _newsletterOptIn = $v.newsletterOptIn;
       _$v = null;
     }
     return this;
@@ -150,7 +163,8 @@ class AccountOnboardingBuilder
                   preferredEmail, 'AccountOnboarding', 'preferredEmail'),
               birthdate: BuiltValueNullFieldError.checkNotNull(
                   birthdate, 'AccountOnboarding', 'birthdate'),
-              examinations: examinations.build());
+              examinations: examinations.build(),
+              newsletterOptIn: newsletterOptIn);
     } catch (_) {
       late String _$failedField;
       try {

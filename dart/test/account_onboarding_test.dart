@@ -32,5 +32,10 @@ void main() {
       // TODO
     });
 
+    // bool newsletterOptIn
+    test('to test the property `newsletterOptIn`', () async {
+      // TODO
+    });
+
   });
 }
