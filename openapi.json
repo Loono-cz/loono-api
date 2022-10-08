@@ -893,7 +893,8 @@
           "sex",
           "preferredEmail",
           "birthdate",
-          "examinations"
+          "examinations",
+          "newsletterOptIn"
         ],
         "readOnly": true
       },
