@@ -883,6 +883,9 @@
             "items": {
               "$ref": "#/components/schemas/ExaminationRecord"
             }
+          },
+          "newsletterOptIn": {
+            "type": "boolean"
           }
         },
         "required": [
