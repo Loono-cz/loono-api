@@ -25,5 +25,14 @@ void main() {
       // TODO
     });
 
+    // For testing purposes only - remove in release
+    //
+    // For testing purposes only - remove in release
+    //
+    //Future testEmailNot() async
+    test('test testEmailNot', () async {
+      // TODO
+    });
+
   });
 }

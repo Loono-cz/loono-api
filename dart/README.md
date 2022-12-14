@@ -77,6 +77,7 @@ Class | Method | HTTP request | Description
 [*AccountApi*](doc/AccountApi.md) | [**postAccountOnboard**](doc/AccountApi.md#postaccountonboard) | **POST** /account/onboard | 
 [*DefaultApi*](doc/DefaultApi.md) | [**feedback**](doc/DefaultApi.md#feedback) | **POST** /feedback | Sending a user feedback
 [*DefaultApi*](doc/DefaultApi.md) | [**test**](doc/DefaultApi.md#test) | **POST** /testCall | For testing purposes only - remove in release
+[*DefaultApi*](doc/DefaultApi.md) | [**testEmailNot**](doc/DefaultApi.md#testemailnot) | **POST** /testEmail | For testing purposes only - remove in release
 [*ExaminationsApi*](doc/ExaminationsApi.md) | [**cancelExamination**](doc/ExaminationsApi.md#cancelexamination) | **POST** /examinations/cancel | Cancel Examination
 [*ExaminationsApi*](doc/ExaminationsApi.md) | [**completeExamination**](doc/ExaminationsApi.md#completeexamination) | **POST** /examinations/confirm | Confirm Examination
 [*ExaminationsApi*](doc/ExaminationsApi.md) | [**confirmSelfExamination**](doc/ExaminationsApi.md#confirmselfexamination) | **POST** /examinations/{self-type}/self | Confirm Self-Examination
