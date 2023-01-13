@@ -11,7 +11,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**feedback**](DefaultApi.md#feedback) | **POST** /feedback | Sending a user feedback
 [**test**](DefaultApi.md#test) | **POST** /testCall | For testing purposes only - remove in release
-[**testEmailNot**](DefaultApi.md#testemailnot) | **POST** /testEmail | For testing purposes only - remove in release
+[**testEmailNot**](DefaultApi.md#testemailnot) | **POST** /consultancyForm | For testing purposes only - remove in release
 
 
 # **feedback**
@@ -99,7 +99,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **testEmailNot**
-> testEmailNot()
+> testEmailNot(consultancyFormContent)
 
 For testing purposes only - remove in release
 
@@ -110,16 +110,20 @@ For testing purposes only - remove in release
 import 'package:loono_api/api.dart';
 
 final api = LoonoApi().getDefaultApi();
+final ConsultancyFormContent consultancyFormContent = ; // ConsultancyFormContent | 
 
 try {
-    api.testEmailNot();
+    api.testEmailNot(consultancyFormContent);
 } catch on DioError (e) {
     print('Exception when calling DefaultApi->testEmailNot: $e\n');
 }
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **consultancyFormContent** | [**ConsultancyFormContent**](ConsultancyFormContent.md)|  | [optional] 
 
 ### Return type
 
@@ -131,7 +135,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
