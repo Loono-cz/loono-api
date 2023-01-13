@@ -17,6 +17,7 @@ import 'package:loono_api/src/model/account_onboarding.dart';
 import 'package:loono_api/src/model/account_update.dart';
 import 'package:loono_api/src/model/badge.dart';
 import 'package:loono_api/src/model/badge_type.dart';
+import 'package:loono_api/src/model/consultancy_form_content.dart';
 import 'package:loono_api/src/model/error.dart';
 import 'package:loono_api/src/model/examination_action_type.dart';
 import 'package:loono_api/src/model/examination_category_type.dart';
@@ -52,6 +53,7 @@ part 'serializers.g.dart';
   AccountUpdate,
   Badge,
   BadgeType,
+  ConsultancyFormContent,
   Error,
   ExaminationActionType,
   ExaminationCategoryType,

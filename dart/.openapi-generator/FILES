@@ -8,6 +8,7 @@ doc/AccountOnboarding.md
 doc/AccountUpdate.md
 doc/Badge.md
 doc/BadgeType.md
+doc/ConsultancyFormContent.md
 doc/DefaultApi.md
 doc/Error.md
 doc/ExaminationActionType.md
@@ -57,6 +58,7 @@ lib/src/model/account_onboarding.dart
 lib/src/model/account_update.dart
 lib/src/model/badge.dart
 lib/src/model/badge_type.dart
+lib/src/model/consultancy_form_content.dart
 lib/src/model/date.dart
 lib/src/model/error.dart
 lib/src/model/examination_action_type.dart
@@ -92,6 +94,7 @@ test/account_test.dart
 test/account_update_test.dart
 test/badge_test.dart
 test/badge_type_test.dart
+test/consultancy_form_content_test.dart
 test/default_api_test.dart
 test/error_test.dart
 test/examination_action_type_test.dart

@@ -7,6 +7,7 @@ import 'dart:async';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
+import 'package:loono_api/src/model/consultancy_form_content.dart';
 import 'package:loono_api/src/model/examination_id.dart';
 import 'package:loono_api/src/model/user_feedback.dart';
 
@@ -154,6 +155,7 @@ class DefaultApi {
   /// For testing purposes only - remove in release
   ///
   /// Parameters:
+  /// * [consultancyFormContent] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -164,6 +166,7 @@ class DefaultApi {
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
   Future<Response<void>> testEmailNot({ 
+    ConsultancyFormContent? consultancyFormContent,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -171,7 +174,7 @@ class DefaultApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/testEmail';
+    final _path = r'/consultancyForm';
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -181,11 +184,30 @@ class DefaultApi {
         'secure': <Map<String, String>>[],
         ...?extra,
       },
+      contentType: 'application/json',
       validateStatus: validateStatus,
     );
 
+    dynamic _bodyData;
+
+    try {
+      const _type = FullType(ConsultancyFormContent);
+      _bodyData = consultancyFormContent == null ? null : _serializers.serialize(consultancyFormContent, specifiedType: _type);
+
+    } catch(error, stackTrace) {
+      throw DioError(
+         requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
+        type: DioErrorType.other,
+        error: error,
+      )..stackTrace = stackTrace;
+    }
+
     final _response = await _dio.request<Object>(
       _path,
+      data: _bodyData,
       options: _options,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,

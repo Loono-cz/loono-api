@@ -20,6 +20,7 @@ export 'package:loono_api/src/model/account_onboarding.dart';
 export 'package:loono_api/src/model/account_update.dart';
 export 'package:loono_api/src/model/badge.dart';
 export 'package:loono_api/src/model/badge_type.dart';
+export 'package:loono_api/src/model/consultancy_form_content.dart';
 export 'package:loono_api/src/model/error.dart';
 export 'package:loono_api/src/model/examination_action_type.dart';
 export 'package:loono_api/src/model/examination_category_type.dart';
