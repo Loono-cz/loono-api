@@ -772,7 +772,7 @@
         }
       }
     },
-    "/testEmail": {
+    "/consultancyForm": {
       "post": {
         "summary": "For testing purposes only - remove in release",
         "operationId": "testEmailNot",
@@ -790,7 +790,17 @@
             "description": "Forbidden"
           }
         },
-        "description": "For testing purposes only - remove in release"
+        "description": "For testing purposes only - remove in release",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConsultancyFormContent"
+              }
+            }
+          },
+          "description": ""
+        }
       }
     }
   },
@@ -1561,6 +1571,20 @@
             "type": "string"
           },
           "uid": {
+            "type": "string"
+          }
+        },
+        "required": ["evaluation"],
+        "description": "User feedback to be stored."
+      },
+      "ConsultancyFormContent": {
+        "title": "EmailContent",
+        "type": "object",
+        "properties": {
+          "tag": {
+            "type": "string"
+          },
+          "message": {
             "type": "string"
           }
         },
