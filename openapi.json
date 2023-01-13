@@ -1582,10 +1582,12 @@
         "type": "object",
         "properties": {
           "tag": {
-            "type": "string"
+            "type": "string",
+            "nullable": false
           },
           "message": {
-            "type": "string"
+            "type": "string",
+            "nullable": false
           }
         },
         "required": ["evaluation"],
