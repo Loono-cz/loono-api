@@ -774,8 +774,8 @@
     },
     "/consultancyForm": {
       "post": {
-        "summary": "For testing purposes only - remove in release",
-        "operationId": "testEmailNot",
+        "summary": "Sends email with question to user and doctor in Loono",
+        "operationId": "postConsultancyFrom",
         "responses": {
           "200": {
             "description": "OK"
@@ -790,7 +790,7 @@
             "description": "Forbidden"
           }
         },
-        "description": "For testing purposes only - remove in release",
+        "description": "Sends email with question to user and doctor in Loono",
         "requestBody": {
           "content": {
             "application/json": {
