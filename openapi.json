@@ -806,7 +806,7 @@
     "/addEmailUser": {
       "post": {
         "summary": "Test for testing",
-        "operationId": "addEmailUser",
+        "operationId": "addEmailUserTest",
         "responses": {
           "200": {
             "description": "OK"
