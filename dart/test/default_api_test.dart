@@ -11,8 +11,8 @@ void main() {
     //
     // Adds user email to list
     //
-    //Future addEmailUser() async
-    test('test addEmailUser', () async {
+    //Future addEmailUserTest() async
+    test('test addEmailUserTest', () async {
       // TODO
     });
 

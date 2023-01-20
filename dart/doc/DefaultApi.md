@@ -9,14 +9,14 @@ All URIs are relative to *https://loono.ceskodigital.net:443/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addEmailUser**](DefaultApi.md#addemailuser) | **POST** /addEmailUser | Test for testing
+[**addEmailUserTest**](DefaultApi.md#addemailusertest) | **POST** /addEmailUser | Test for testing
 [**feedback**](DefaultApi.md#feedback) | **POST** /feedback | Sending a user feedback
 [**postConsultancyFrom**](DefaultApi.md#postconsultancyfrom) | **POST** /consultancyForm | Sends email with question to user and doctor in Loono
 [**test**](DefaultApi.md#test) | **POST** /testCall | For testing purposes only - remove in release
 
 
-# **addEmailUser**
-> addEmailUser()
+# **addEmailUserTest**
+> addEmailUserTest()
 
 Test for testing
 
@@ -29,9 +29,9 @@ import 'package:loono_api/api.dart';
 final api = LoonoApi().getDefaultApi();
 
 try {
-    api.addEmailUser();
+    api.addEmailUserTest();
 } catch on DioError (e) {
-    print('Exception when calling DefaultApi->addEmailUser: $e\n');
+    print('Exception when calling DefaultApi->addEmailUserTest: $e\n');
 }
 ```
 

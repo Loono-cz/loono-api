@@ -32,7 +32,7 @@ class DefaultApi {
   ///
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> addEmailUser({ 
+  Future<Response<void>> addEmailUserTest({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
