@@ -10,8 +10,8 @@ All URIs are relative to *https://loono.ceskodigital.net:443/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**feedback**](DefaultApi.md#feedback) | **POST** /feedback | Sending a user feedback
+[**postConsultancyFrom**](DefaultApi.md#postconsultancyfrom) | **POST** /consultancyForm | Sends email with question to user and doctor in Loono
 [**test**](DefaultApi.md#test) | **POST** /testCall | For testing purposes only - remove in release
-[**testEmailNot**](DefaultApi.md#testemailnot) | **POST** /consultancyForm | For testing purposes only - remove in release
 
 
 # **feedback**
@@ -56,6 +56,48 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **postConsultancyFrom**
+> postConsultancyFrom(consultancyFormContent)
+
+Sends email with question to user and doctor in Loono
+
+Sends email with question to user and doctor in Loono
+
+### Example
+```dart
+import 'package:loono_api/api.dart';
+
+final api = LoonoApi().getDefaultApi();
+final ConsultancyFormContent consultancyFormContent = ; // ConsultancyFormContent | 
+
+try {
+    api.postConsultancyFrom(consultancyFormContent);
+} catch on DioError (e) {
+    print('Exception when calling DefaultApi->postConsultancyFrom: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **consultancyFormContent** | [**ConsultancyFormContent**](ConsultancyFormContent.md)|  | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **test**
 > test(examinationId)
 
@@ -82,48 +124,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **examinationId** | [**ExaminationId**](ExaminationId.md)|  | [optional] 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **testEmailNot**
-> testEmailNot(consultancyFormContent)
-
-For testing purposes only - remove in release
-
-For testing purposes only - remove in release
-
-### Example
-```dart
-import 'package:loono_api/api.dart';
-
-final api = LoonoApi().getDefaultApi();
-final ConsultancyFormContent consultancyFormContent = ; // ConsultancyFormContent | 
-
-try {
-    api.testEmailNot(consultancyFormContent);
-} catch on DioError (e) {
-    print('Exception when calling DefaultApi->testEmailNot: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **consultancyFormContent** | [**ConsultancyFormContent**](ConsultancyFormContent.md)|  | [optional] 
 
 ### Return type
 

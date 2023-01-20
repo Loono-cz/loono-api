@@ -16,12 +16,12 @@ void main() {
       // TODO
     });
 
-    // For testing purposes only - remove in release
+    // Sends email with question to user and doctor in Loono
     //
-    // For testing purposes only - remove in release
+    // Sends email with question to user and doctor in Loono
     //
-    //Future test({ ExaminationId examinationId }) async
-    test('test test', () async {
+    //Future postConsultancyFrom({ ConsultancyFormContent consultancyFormContent }) async
+    test('test postConsultancyFrom', () async {
       // TODO
     });
 
@@ -29,8 +29,8 @@ void main() {
     //
     // For testing purposes only - remove in release
     //
-    //Future testEmailNot({ ConsultancyFormContent consultancyFormContent }) async
-    test('test testEmailNot', () async {
+    //Future test({ ExaminationId examinationId }) async
+    test('test test', () async {
       // TODO
     });
 
