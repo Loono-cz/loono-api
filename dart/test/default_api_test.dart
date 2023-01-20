@@ -7,6 +7,15 @@ void main() {
   final instance = LoonoApi().getDefaultApi();
 
   group(DefaultApi, () {
+    // Test for testing
+    //
+    // Adds user email to list
+    //
+    //Future addEmailUser() async
+    test('test addEmailUser', () async {
+      // TODO
+    });
+
     // Sending a user feedback
     //
     // Send a user feedback which should be stored

@@ -9,10 +9,49 @@ All URIs are relative to *https://loono.ceskodigital.net:443/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**addEmailUser**](DefaultApi.md#addemailuser) | **POST** /addEmailUser | Test for testing
 [**feedback**](DefaultApi.md#feedback) | **POST** /feedback | Sending a user feedback
 [**postConsultancyFrom**](DefaultApi.md#postconsultancyfrom) | **POST** /consultancyForm | Sends email with question to user and doctor in Loono
 [**test**](DefaultApi.md#test) | **POST** /testCall | For testing purposes only - remove in release
 
+
+# **addEmailUser**
+> addEmailUser()
+
+Test for testing
+
+Adds user email to list
+
+### Example
+```dart
+import 'package:loono_api/api.dart';
+
+final api = LoonoApi().getDefaultApi();
+
+try {
+    api.addEmailUser();
+} catch on DioError (e) {
+    print('Exception when calling DefaultApi->addEmailUser: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **feedback**
 > feedback(userFeedback)
