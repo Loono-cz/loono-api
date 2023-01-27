@@ -869,9 +869,6 @@
           },
           "badges": {
             "$ref": "#/components/schemas/Badges"
-          },
-          "createdAt": {
-            "type": "string"
           }
         },
         "required": [
@@ -884,8 +881,7 @@
           "appointmentReminderEmailsOptIn",
           "newsletterOptIn",
           "points",
-          "badges",
-          "createdAt"
+          "badges"
         ],
         "readOnly": true
       },
