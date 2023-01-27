@@ -29,8 +29,6 @@ class _$Account extends Account {
   final int points;
   @override
   final BuiltList<Badge> badges;
-  @override
-  final String createdAt;
 
   factory _$Account([void Function(AccountBuilder)? updates]) =>
       (new AccountBuilder()..update(updates)).build();
@@ -46,8 +44,7 @@ class _$Account extends Account {
       required this.appointmentReminderEmailsOptIn,
       required this.newsletterOptIn,
       required this.points,
-      required this.badges,
-      required this.createdAt})
+      required this.badges})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(uid, 'Account', 'uid');
     BuiltValueNullFieldError.checkNotNull(nickname, 'Account', 'nickname');
@@ -63,7 +60,6 @@ class _$Account extends Account {
         newsletterOptIn, 'Account', 'newsletterOptIn');
     BuiltValueNullFieldError.checkNotNull(points, 'Account', 'points');
     BuiltValueNullFieldError.checkNotNull(badges, 'Account', 'badges');
-    BuiltValueNullFieldError.checkNotNull(createdAt, 'Account', 'createdAt');
   }
 
   @override
@@ -88,8 +84,7 @@ class _$Account extends Account {
             other.appointmentReminderEmailsOptIn &&
         newsletterOptIn == other.newsletterOptIn &&
         points == other.points &&
-        badges == other.badges &&
-        createdAt == other.createdAt;
+        badges == other.badges;
   }
 
   @override
@@ -103,19 +98,17 @@ class _$Account extends Account {
                             $jc(
                                 $jc(
                                     $jc(
-                                        $jc(
-                                            $jc($jc(0, uid.hashCode),
-                                                nickname.hashCode),
-                                            preferredEmail.hashCode),
-                                        sex.hashCode),
-                                    birthdate.hashCode),
-                                profileImageUrl.hashCode),
-                            leaderboardAnonymizationOptIn.hashCode),
-                        appointmentReminderEmailsOptIn.hashCode),
-                    newsletterOptIn.hashCode),
-                points.hashCode),
-            badges.hashCode),
-        createdAt.hashCode));
+                                        $jc($jc(0, uid.hashCode),
+                                            nickname.hashCode),
+                                        preferredEmail.hashCode),
+                                    sex.hashCode),
+                                birthdate.hashCode),
+                            profileImageUrl.hashCode),
+                        leaderboardAnonymizationOptIn.hashCode),
+                    appointmentReminderEmailsOptIn.hashCode),
+                newsletterOptIn.hashCode),
+            points.hashCode),
+        badges.hashCode));
   }
 
   @override
@@ -132,8 +125,7 @@ class _$Account extends Account {
               'appointmentReminderEmailsOptIn', appointmentReminderEmailsOptIn)
           ..add('newsletterOptIn', newsletterOptIn)
           ..add('points', points)
-          ..add('badges', badges)
-          ..add('createdAt', createdAt))
+          ..add('badges', badges))
         .toString();
   }
 }
@@ -192,10 +184,6 @@ class AccountBuilder implements Builder<Account, AccountBuilder> {
   ListBuilder<Badge> get badges => _$this._badges ??= new ListBuilder<Badge>();
   set badges(ListBuilder<Badge>? badges) => _$this._badges = badges;
 
-  String? _createdAt;
-  String? get createdAt => _$this._createdAt;
-  set createdAt(String? createdAt) => _$this._createdAt = createdAt;
-
   AccountBuilder() {
     Account._defaults(this);
   }
@@ -214,7 +202,6 @@ class AccountBuilder implements Builder<Account, AccountBuilder> {
       _newsletterOptIn = $v.newsletterOptIn;
       _points = $v.points;
       _badges = $v.badges.toBuilder();
-      _createdAt = $v.createdAt;
       _$v = null;
     }
     return this;
@@ -259,8 +246,7 @@ class AccountBuilder implements Builder<Account, AccountBuilder> {
                   newsletterOptIn, 'Account', 'newsletterOptIn'),
               points: BuiltValueNullFieldError.checkNotNull(
                   points, 'Account', 'points'),
-              badges: badges.build(),
-              createdAt: BuiltValueNullFieldError.checkNotNull(createdAt, 'Account', 'createdAt'));
+              badges: badges.build());
     } catch (_) {
       late String _$failedField;
       try {

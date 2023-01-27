@@ -19,7 +19,6 @@ Name | Type | Description | Notes
 **newsletterOptIn** | **bool** |  | 
 **points** | **int** | The total amount of points earned by the user from gamification features. | 
 **badges** | [**BuiltList&lt;Badge&gt;**](Badge.md) |  | 
-**createdAt** | **String** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
