@@ -25,6 +25,7 @@ part 'account.g.dart';
 /// * [newsletterOptIn] 
 /// * [points] - The total amount of points earned by the user from gamification features.
 /// * [badges] 
+/// * [created] 
 abstract class Account implements Built<Account, AccountBuilder> {
     @BuiltValueField(wireName: r'uid')
     String get uid;
@@ -60,6 +61,9 @@ abstract class Account implements Built<Account, AccountBuilder> {
 
     @BuiltValueField(wireName: r'badges')
     BuiltList<Badge> get badges;
+
+    @BuiltValueField(wireName: r'created')
+    String get created;
 
     Account._();
 
@@ -129,6 +133,10 @@ class _$AccountSerializer implements StructuredSerializer<Account> {
             ..add(r'badges')
             ..add(serializers.serialize(object.badges,
                 specifiedType: const FullType(BuiltList, [FullType(Badge)])));
+        result
+            ..add(r'created')
+            ..add(serializers.serialize(object.created,
+                specifiedType: const FullType(String)));
         return result;
     }
 
@@ -199,6 +207,11 @@ class _$AccountSerializer implements StructuredSerializer<Account> {
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(BuiltList, [FullType(Badge)])) as BuiltList<Badge>;
                     result.badges.replace(valueDes);
+                    break;
+                case r'created':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    result.created = valueDes;
                     break;
             }
         }
