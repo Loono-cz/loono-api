@@ -30,7 +30,7 @@ class _$Account extends Account {
   @override
   final BuiltList<Badge> badges;
   @override
-  final String created;
+  final String createdAt;
 
   factory _$Account([void Function(AccountBuilder)? updates]) =>
       (new AccountBuilder()..update(updates)).build();
@@ -47,7 +47,7 @@ class _$Account extends Account {
       required this.newsletterOptIn,
       required this.points,
       required this.badges,
-      required this.created})
+      required this.createdAt})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(uid, 'Account', 'uid');
     BuiltValueNullFieldError.checkNotNull(nickname, 'Account', 'nickname');
@@ -63,7 +63,7 @@ class _$Account extends Account {
         newsletterOptIn, 'Account', 'newsletterOptIn');
     BuiltValueNullFieldError.checkNotNull(points, 'Account', 'points');
     BuiltValueNullFieldError.checkNotNull(badges, 'Account', 'badges');
-    BuiltValueNullFieldError.checkNotNull(created, 'Account', 'created');
+    BuiltValueNullFieldError.checkNotNull(createdAt, 'Account', 'createdAt');
   }
 
   @override
@@ -89,7 +89,7 @@ class _$Account extends Account {
         newsletterOptIn == other.newsletterOptIn &&
         points == other.points &&
         badges == other.badges &&
-        created == other.created;
+        createdAt == other.createdAt;
   }
 
   @override
@@ -115,7 +115,7 @@ class _$Account extends Account {
                     newsletterOptIn.hashCode),
                 points.hashCode),
             badges.hashCode),
-        created.hashCode));
+        createdAt.hashCode));
   }
 
   @override
@@ -133,7 +133,7 @@ class _$Account extends Account {
           ..add('newsletterOptIn', newsletterOptIn)
           ..add('points', points)
           ..add('badges', badges)
-          ..add('created', created))
+          ..add('createdAt', createdAt))
         .toString();
   }
 }
@@ -192,9 +192,9 @@ class AccountBuilder implements Builder<Account, AccountBuilder> {
   ListBuilder<Badge> get badges => _$this._badges ??= new ListBuilder<Badge>();
   set badges(ListBuilder<Badge>? badges) => _$this._badges = badges;
 
-  String? _created;
-  String? get created => _$this._created;
-  set created(String? created) => _$this._created = created;
+  String? _createdAt;
+  String? get createdAt => _$this._createdAt;
+  set createdAt(String? createdAt) => _$this._createdAt = createdAt;
 
   AccountBuilder() {
     Account._defaults(this);
@@ -214,7 +214,7 @@ class AccountBuilder implements Builder<Account, AccountBuilder> {
       _newsletterOptIn = $v.newsletterOptIn;
       _points = $v.points;
       _badges = $v.badges.toBuilder();
-      _created = $v.created;
+      _createdAt = $v.createdAt;
       _$v = null;
     }
     return this;
@@ -260,7 +260,7 @@ class AccountBuilder implements Builder<Account, AccountBuilder> {
               points: BuiltValueNullFieldError.checkNotNull(
                   points, 'Account', 'points'),
               badges: badges.build(),
-              created: BuiltValueNullFieldError.checkNotNull(created, 'Account', 'created'));
+              createdAt: BuiltValueNullFieldError.checkNotNull(createdAt, 'Account', 'createdAt'));
     } catch (_) {
       late String _$failedField;
       try {

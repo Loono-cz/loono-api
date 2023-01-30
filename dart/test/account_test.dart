@@ -63,8 +63,8 @@ void main() {
       // TODO
     });
 
-    // String created
-    test('to test the property `created`', () async {
+    // String createdAt
+    test('to test the property `createdAt`', () async {
       // TODO
     });
 
