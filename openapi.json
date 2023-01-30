@@ -870,7 +870,7 @@
           "badges": {
             "$ref": "#/components/schemas/Badges"
           },
-          "created": {
+          "createdAt": {
             "type": "string"
           }
         },
@@ -885,7 +885,7 @@
           "newsletterOptIn",
           "points",
           "badges",
-          "created"
+          "createdAt"
         ],
         "readOnly": true
       },
