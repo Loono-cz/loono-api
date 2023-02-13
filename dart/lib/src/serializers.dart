@@ -26,6 +26,7 @@ import 'package:loono_api/src/model/examination_prevention_status.dart';
 import 'package:loono_api/src/model/examination_record.dart';
 import 'package:loono_api/src/model/examination_status.dart';
 import 'package:loono_api/src/model/examination_type.dart';
+import 'package:loono_api/src/model/healthcare_category_type.dart';
 import 'package:loono_api/src/model/healthcare_provider_detail.dart';
 import 'package:loono_api/src/model/healthcare_provider_detail_list.dart';
 import 'package:loono_api/src/model/healthcare_provider_id.dart';
@@ -62,6 +63,7 @@ part 'serializers.g.dart';
   ExaminationRecord,
   ExaminationStatus,
   ExaminationType,
+  HealthcareCategoryType,
   HealthcareProviderDetail,
   HealthcareProviderDetailList,
   HealthcareProviderId,

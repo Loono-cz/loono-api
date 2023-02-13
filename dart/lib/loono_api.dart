@@ -29,6 +29,7 @@ export 'package:loono_api/src/model/examination_prevention_status.dart';
 export 'package:loono_api/src/model/examination_record.dart';
 export 'package:loono_api/src/model/examination_status.dart';
 export 'package:loono_api/src/model/examination_type.dart';
+export 'package:loono_api/src/model/healthcare_category_type.dart';
 export 'package:loono_api/src/model/healthcare_provider_detail.dart';
 export 'package:loono_api/src/model/healthcare_provider_detail_list.dart';
 export 'package:loono_api/src/model/healthcare_provider_id.dart';

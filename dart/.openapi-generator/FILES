@@ -19,6 +19,7 @@ doc/ExaminationRecord.md
 doc/ExaminationStatus.md
 doc/ExaminationType.md
 doc/ExaminationsApi.md
+doc/HealthcareCategoryType.md
 doc/HealthcareProviderDetail.md
 doc/HealthcareProviderDetailList.md
 doc/HealthcareProviderId.md
@@ -68,6 +69,7 @@ lib/src/model/examination_prevention_status.dart
 lib/src/model/examination_record.dart
 lib/src/model/examination_status.dart
 lib/src/model/examination_type.dart
+lib/src/model/healthcare_category_type.dart
 lib/src/model/healthcare_provider_detail.dart
 lib/src/model/healthcare_provider_detail_list.dart
 lib/src/model/healthcare_provider_id.dart
@@ -105,6 +107,7 @@ test/examination_record_test.dart
 test/examination_status_test.dart
 test/examination_type_test.dart
 test/examinations_api_test.dart
+test/healthcare_category_type_test.dart
 test/healthcare_provider_detail_list_test.dart
 test/healthcare_provider_detail_test.dart
 test/healthcare_provider_id_list_test.dart

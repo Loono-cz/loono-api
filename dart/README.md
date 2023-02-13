@@ -109,6 +109,7 @@ Class | Method | HTTP request | Description
  - [ExaminationRecord](doc/ExaminationRecord.md)
  - [ExaminationStatus](doc/ExaminationStatus.md)
  - [ExaminationType](doc/ExaminationType.md)
+ - [HealthcareCategoryType](doc/HealthcareCategoryType.md)
  - [HealthcareProviderDetail](doc/HealthcareProviderDetail.md)
  - [HealthcareProviderDetailList](doc/HealthcareProviderDetailList.md)
  - [HealthcareProviderId](doc/HealthcareProviderId.md)
