@@ -824,7 +824,7 @@
         "description": "Adds user email to list"
       }
     },
-    "/updateCorrectedProviders": {
+    "/providers/updateCorrectedProviders": {
       "post": {
         "summary": "Update corrected providers",
         "operationId": "updateCorrectedProvidersFunc",
