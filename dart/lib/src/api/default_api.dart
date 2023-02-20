@@ -283,7 +283,7 @@ class DefaultApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/updateCorrectedProviders';
+    final _path = r'/providers/updateCorrectedProviders';
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{

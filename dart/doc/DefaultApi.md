@@ -13,7 +13,7 @@ Method | HTTP request | Description
 [**feedback**](DefaultApi.md#feedback) | **POST** /feedback | Sending a user feedback
 [**postConsultancyFrom**](DefaultApi.md#postconsultancyfrom) | **POST** /consultancyForm | Sends email with question to user and doctor in Loono
 [**test**](DefaultApi.md#test) | **POST** /testCall | For testing purposes only - remove in release
-[**updateCorrectedProvidersFunc**](DefaultApi.md#updatecorrectedprovidersfunc) | **POST** /updateCorrectedProviders | Update corrected providers
+[**updateCorrectedProvidersFunc**](DefaultApi.md#updatecorrectedprovidersfunc) | **POST** /providers/updateCorrectedProviders | Update corrected providers
 
 
 # **addEmailUser**
