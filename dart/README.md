@@ -75,10 +75,11 @@ Class | Method | HTTP request | Description
 [*AccountApi*](doc/AccountApi.md) | [**getAccount**](doc/AccountApi.md#getaccount) | **GET** /account | Get Account
 [*AccountApi*](doc/AccountApi.md) | [**postAccount**](doc/AccountApi.md#postaccount) | **POST** /account | Update account
 [*AccountApi*](doc/AccountApi.md) | [**postAccountOnboard**](doc/AccountApi.md#postaccountonboard) | **POST** /account/onboard | 
-[*DefaultApi*](doc/DefaultApi.md) | [**addEmailUserTest**](doc/DefaultApi.md#addemailusertest) | **POST** /addEmailUser | Test for testing
+[*DefaultApi*](doc/DefaultApi.md) | [**addEmailUser**](doc/DefaultApi.md#addemailuser) | **POST** /addEmailUser | Adds subscribed users to smartemailing
 [*DefaultApi*](doc/DefaultApi.md) | [**feedback**](doc/DefaultApi.md#feedback) | **POST** /feedback | Sending a user feedback
 [*DefaultApi*](doc/DefaultApi.md) | [**postConsultancyFrom**](doc/DefaultApi.md#postconsultancyfrom) | **POST** /consultancyForm | Sends email with question to user and doctor in Loono
 [*DefaultApi*](doc/DefaultApi.md) | [**test**](doc/DefaultApi.md#test) | **POST** /testCall | For testing purposes only - remove in release
+[*DefaultApi*](doc/DefaultApi.md) | [**updateCorrectedProvidersFunc**](doc/DefaultApi.md#updatecorrectedprovidersfunc) | **POST** /updateCorrectedProviders | Update corrected providers
 [*ExaminationsApi*](doc/ExaminationsApi.md) | [**cancelExamination**](doc/ExaminationsApi.md#cancelexamination) | **POST** /examinations/cancel | Cancel Examination
 [*ExaminationsApi*](doc/ExaminationsApi.md) | [**completeExamination**](doc/ExaminationsApi.md#completeexamination) | **POST** /examinations/confirm | Confirm Examination
 [*ExaminationsApi*](doc/ExaminationsApi.md) | [**confirmSelfExamination**](doc/ExaminationsApi.md#confirmselfexamination) | **POST** /examinations/{self-type}/self | Confirm Self-Examination

@@ -7,12 +7,12 @@ void main() {
   final instance = LoonoApi().getDefaultApi();
 
   group(DefaultApi, () {
-    // Test for testing
+    // Adds subscribed users to smartemailing
     //
     // Adds user email to list
     //
-    //Future addEmailUserTest() async
-    test('test addEmailUserTest', () async {
+    //Future addEmailUser() async
+    test('test addEmailUser', () async {
       // TODO
     });
 
@@ -40,6 +40,15 @@ void main() {
     //
     //Future test({ ExaminationId examinationId }) async
     test('test test', () async {
+      // TODO
+    });
+
+    // Update corrected providers
+    //
+    // Update corrected providers
+    //
+    //Future updateCorrectedProvidersFunc() async
+    test('test updateCorrectedProvidersFunc', () async {
       // TODO
     });
 

@@ -9,16 +9,17 @@ All URIs are relative to *https://loono.ceskodigital.net:443/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addEmailUserTest**](DefaultApi.md#addemailusertest) | **POST** /addEmailUser | Test for testing
+[**addEmailUser**](DefaultApi.md#addemailuser) | **POST** /addEmailUser | Adds subscribed users to smartemailing
 [**feedback**](DefaultApi.md#feedback) | **POST** /feedback | Sending a user feedback
 [**postConsultancyFrom**](DefaultApi.md#postconsultancyfrom) | **POST** /consultancyForm | Sends email with question to user and doctor in Loono
 [**test**](DefaultApi.md#test) | **POST** /testCall | For testing purposes only - remove in release
+[**updateCorrectedProvidersFunc**](DefaultApi.md#updatecorrectedprovidersfunc) | **POST** /updateCorrectedProviders | Update corrected providers
 
 
-# **addEmailUserTest**
-> addEmailUserTest()
+# **addEmailUser**
+> addEmailUser()
 
-Test for testing
+Adds subscribed users to smartemailing
 
 Adds user email to list
 
@@ -29,9 +30,9 @@ import 'package:loono_api/api.dart';
 final api = LoonoApi().getDefaultApi();
 
 try {
-    api.addEmailUserTest();
+    api.addEmailUser();
 } catch on DioError (e) {
-    print('Exception when calling DefaultApi->addEmailUserTest: $e\n');
+    print('Exception when calling DefaultApi->addEmailUser: $e\n');
 }
 ```
 
@@ -175,6 +176,44 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **updateCorrectedProvidersFunc**
+> updateCorrectedProvidersFunc()
+
+Update corrected providers
+
+Update corrected providers
+
+### Example
+```dart
+import 'package:loono_api/api.dart';
+
+final api = LoonoApi().getDefaultApi();
+
+try {
+    api.updateCorrectedProvidersFunc();
+} catch on DioError (e) {
+    print('Exception when calling DefaultApi->updateCorrectedProvidersFunc: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
