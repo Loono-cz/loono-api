@@ -805,8 +805,8 @@
     },
     "/addEmailUser": {
       "post": {
-        "summary": "Test for testing",
-        "operationId": "addEmailUserTest",
+        "summary": "Adds subscribed users to smartemailing",
+        "operationId": "addEmailUser",
         "responses": {
           "200": {
             "description": "OK"
@@ -822,6 +822,27 @@
           }
         },
         "description": "Adds user email to list"
+      }
+    },
+    "/updateCorrectedProviders": {
+      "post": {
+        "summary": "Update corrected providers",
+        "operationId": "updateCorrectedProvidersFunc",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "description": "Update corrected providers"
       }
     }
   },
