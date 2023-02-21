@@ -892,7 +892,8 @@
             "$ref": "#/components/schemas/Badges"
           },
           "createdAt": {
-            "type": "string"
+            "type": "string",
+            "format": "date"
           }
         },
         "required": [
