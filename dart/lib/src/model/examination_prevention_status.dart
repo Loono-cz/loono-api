@@ -5,6 +5,7 @@
 import 'package:loono_api/src/model/examination_type.dart';
 import 'package:loono_api/src/model/examination_category_type.dart';
 import 'package:loono_api/src/model/badge_type.dart';
+import 'package:loono_api/src/model/date.dart';
 import 'package:loono_api/src/model/examination_action_type.dart';
 import 'package:loono_api/src/model/examination_status.dart';
 import 'package:built_value/built_value.dart';
@@ -31,6 +32,7 @@ part 'examination_prevention_status.g.dart';
 /// * [examinationCategoryType] 
 /// * [examinationActionType] 
 /// * [note] 
+/// * [createdAt] 
 abstract class ExaminationPreventionStatus implements Built<ExaminationPreventionStatus, ExaminationPreventionStatusBuilder> {
     @BuiltValueField(wireName: r'uuid')
     String? get uuid;
@@ -84,6 +86,9 @@ abstract class ExaminationPreventionStatus implements Built<ExaminationPreventio
 
     @BuiltValueField(wireName: r'note')
     String? get note;
+
+    @BuiltValueField(wireName: r'createdAt')
+    Date? get createdAt;
 
     ExaminationPreventionStatus._();
 
@@ -189,6 +194,12 @@ class _$ExaminationPreventionStatusSerializer implements StructuredSerializer<Ex
                 ..add(serializers.serialize(object.note,
                     specifiedType: const FullType(String)));
         }
+        if (object.createdAt != null) {
+            result
+                ..add(r'createdAt')
+                ..add(serializers.serialize(object.createdAt,
+                    specifiedType: const FullType.nullable(Date)));
+        }
         return result;
     }
 
@@ -284,6 +295,12 @@ class _$ExaminationPreventionStatusSerializer implements StructuredSerializer<Ex
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(String)) as String;
                     result.note = valueDes;
+                    break;
+                case r'createdAt':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType.nullable(Date)) as Date?;
+                    if (valueDes == null) continue;
+                    result.createdAt = valueDes;
                     break;
             }
         }

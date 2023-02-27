@@ -4,6 +4,7 @@
 
 import 'package:loono_api/src/model/examination_type.dart';
 import 'package:loono_api/src/model/examination_category_type.dart';
+import 'package:loono_api/src/model/date.dart';
 import 'package:loono_api/src/model/examination_action_type.dart';
 import 'package:loono_api/src/model/examination_status.dart';
 import 'package:built_value/built_value.dart';
@@ -24,6 +25,7 @@ part 'examination_record.g.dart';
 /// * [periodicExam] 
 /// * [examinationCategoryType] 
 /// * [examinationActionType] 
+/// * [createdAt] 
 abstract class ExaminationRecord implements Built<ExaminationRecord, ExaminationRecordBuilder> {
     @BuiltValueField(wireName: r'uuid')
     String? get uuid;
@@ -58,6 +60,9 @@ abstract class ExaminationRecord implements Built<ExaminationRecord, Examination
     @BuiltValueField(wireName: r'examinationActionType')
     ExaminationActionType? get examinationActionType;
     // enum examinationActionTypeEnum {  EXAMINATION,  CONTROL,  BLOOD_COLLECTION,  VISUALIZATION_METHODS,  };
+
+    @BuiltValueField(wireName: r'createdAt')
+    Date? get createdAt;
 
     ExaminationRecord._();
 
@@ -141,6 +146,12 @@ class _$ExaminationRecordSerializer implements StructuredSerializer<ExaminationR
                 ..add(serializers.serialize(object.examinationActionType,
                     specifiedType: const FullType(ExaminationActionType)));
         }
+        if (object.createdAt != null) {
+            result
+                ..add(r'createdAt')
+                ..add(serializers.serialize(object.createdAt,
+                    specifiedType: const FullType.nullable(Date)));
+        }
         return result;
     }
 
@@ -209,6 +220,12 @@ class _$ExaminationRecordSerializer implements StructuredSerializer<ExaminationR
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(ExaminationActionType)) as ExaminationActionType;
                     result.examinationActionType = valueDes;
+                    break;
+                case r'createdAt':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType.nullable(Date)) as Date?;
+                    if (valueDes == null) continue;
+                    result.createdAt = valueDes;
                     break;
             }
         }

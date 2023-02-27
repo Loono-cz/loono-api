@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **examinationCategoryType** | [**ExaminationCategoryType**](ExaminationCategoryType.md) |  | [optional] 
 **examinationActionType** | [**ExaminationActionType**](ExaminationActionType.md) |  | [optional] 
 **note** | **String** |  | [optional] 
+**createdAt** | [**Date**](Date.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

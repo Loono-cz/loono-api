@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **periodicExam** | **bool** |  | [optional] [default to true]
 **examinationCategoryType** | [**ExaminationCategoryType**](ExaminationCategoryType.md) |  | [optional] 
 **examinationActionType** | [**ExaminationActionType**](ExaminationActionType.md) |  | [optional] 
+**createdAt** | [**Date**](Date.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

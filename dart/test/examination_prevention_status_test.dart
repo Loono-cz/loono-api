@@ -87,5 +87,10 @@ void main() {
       // TODO
     });
 
+    // Date createdAt
+    test('to test the property `createdAt`', () async {
+      // TODO
+    });
+
   });
 }
