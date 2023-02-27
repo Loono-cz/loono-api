@@ -1491,6 +1491,11 @@
           },
           "note": {
             "type": "string"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
           }
         },
         "required": [
@@ -1595,6 +1600,11 @@
           },
           "examinationActionType": {
             "$ref": "#/components/schemas/ExaminationActionType",
+            "nullable": true
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date",
             "nullable": true
           }
         },
