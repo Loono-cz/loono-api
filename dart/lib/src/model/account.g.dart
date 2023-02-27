@@ -30,7 +30,7 @@ class _$Account extends Account {
   @override
   final BuiltList<Badge> badges;
   @override
-  final String createdAt;
+  final Date createdAt;
 
   factory _$Account([void Function(AccountBuilder)? updates]) =>
       (new AccountBuilder()..update(updates)).build();
@@ -192,9 +192,9 @@ class AccountBuilder implements Builder<Account, AccountBuilder> {
   ListBuilder<Badge> get badges => _$this._badges ??= new ListBuilder<Badge>();
   set badges(ListBuilder<Badge>? badges) => _$this._badges = badges;
 
-  String? _createdAt;
-  String? get createdAt => _$this._createdAt;
-  set createdAt(String? createdAt) => _$this._createdAt = createdAt;
+  Date? _createdAt;
+  Date? get createdAt => _$this._createdAt;
+  set createdAt(Date? createdAt) => _$this._createdAt = createdAt;
 
   AccountBuilder() {
     Account._defaults(this);

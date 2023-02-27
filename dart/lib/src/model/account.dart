@@ -63,7 +63,7 @@ abstract class Account implements Built<Account, AccountBuilder> {
     BuiltList<Badge> get badges;
 
     @BuiltValueField(wireName: r'createdAt')
-    String get createdAt;
+    Date get createdAt;
 
     Account._();
 
@@ -136,7 +136,7 @@ class _$AccountSerializer implements StructuredSerializer<Account> {
         result
             ..add(r'createdAt')
             ..add(serializers.serialize(object.createdAt,
-                specifiedType: const FullType(String)));
+                specifiedType: const FullType(Date)));
         return result;
     }
 
@@ -210,7 +210,7 @@ class _$AccountSerializer implements StructuredSerializer<Account> {
                     break;
                 case r'createdAt':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
+                        specifiedType: const FullType(Date)) as Date;
                     result.createdAt = valueDes;
                     break;
             }
