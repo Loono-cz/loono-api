@@ -608,6 +608,39 @@
       },
       "parameters": []
     },
+    "/providers/updateCorrectedProviders": {
+      "get": {
+        "summary": "Update corrected providers",
+        "operationId": "updateCorrectedProvidersFunc",
+        "tags": ["Providers"],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateStatusMessage"
+                }
+              }
+            }
+          },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "description": "Update corrected providers"
+      }
+    },
     "/providers/update": {
       "get": {
         "summary": "Trigger healthcare provider update",
@@ -822,27 +855,6 @@
           }
         },
         "description": "Adds user email to list"
-      }
-    },
-    "/providers/updateCorrectedProviders": {
-      "post": {
-        "summary": "Update corrected providers",
-        "operationId": "updateCorrectedProvidersFunc",
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "Bad Request"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          }
-        },
-        "description": "Update corrected providers"
       }
     }
   },
