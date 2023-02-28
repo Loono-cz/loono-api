@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**getProvidersLastupdate**](ProvidersApi.md#getproviderslastupdate) | **GET** /providers/lastupdate | Gets last date of healthcare provider update
 [**getProvidersUpdate**](ProvidersApi.md#getprovidersupdate) | **GET** /providers/update | Trigger healthcare provider update
 [**postProvidersDetail**](ProvidersApi.md#postprovidersdetail) | **POST** /providers/details | Gets details of given healthcare providers
+[**updateCorrectedProvidersFunc**](ProvidersApi.md#updatecorrectedprovidersfunc) | **GET** /providers/updateCorrectedProviders | Update corrected providers
 
 
 # **getProvidersAll**
@@ -180,6 +181,45 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **updateCorrectedProvidersFunc**
+> UpdateStatusMessage updateCorrectedProvidersFunc()
+
+Update corrected providers
+
+Update corrected providers
+
+### Example
+```dart
+import 'package:loono_api/api.dart';
+
+final api = LoonoApi().getProvidersApi();
+
+try {
+    final response = api.updateCorrectedProvidersFunc();
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling ProvidersApi->updateCorrectedProvidersFunc: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**UpdateStatusMessage**](UpdateStatusMessage.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

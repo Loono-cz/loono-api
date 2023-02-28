@@ -43,14 +43,5 @@ void main() {
       // TODO
     });
 
-    // Update corrected providers
-    //
-    // Update corrected providers
-    //
-    //Future updateCorrectedProvidersFunc() async
-    test('test updateCorrectedProvidersFunc', () async {
-      // TODO
-    });
-
   });
 }

@@ -79,7 +79,6 @@ Class | Method | HTTP request | Description
 [*DefaultApi*](doc/DefaultApi.md) | [**feedback**](doc/DefaultApi.md#feedback) | **POST** /feedback | Sending a user feedback
 [*DefaultApi*](doc/DefaultApi.md) | [**postConsultancyFrom**](doc/DefaultApi.md#postconsultancyfrom) | **POST** /consultancyForm | Sends email with question to user and doctor in Loono
 [*DefaultApi*](doc/DefaultApi.md) | [**test**](doc/DefaultApi.md#test) | **POST** /testCall | For testing purposes only - remove in release
-[*DefaultApi*](doc/DefaultApi.md) | [**updateCorrectedProvidersFunc**](doc/DefaultApi.md#updatecorrectedprovidersfunc) | **POST** /providers/updateCorrectedProviders | Update corrected providers
 [*ExaminationsApi*](doc/ExaminationsApi.md) | [**cancelExamination**](doc/ExaminationsApi.md#cancelexamination) | **POST** /examinations/cancel | Cancel Examination
 [*ExaminationsApi*](doc/ExaminationsApi.md) | [**completeExamination**](doc/ExaminationsApi.md#completeexamination) | **POST** /examinations/confirm | Confirm Examination
 [*ExaminationsApi*](doc/ExaminationsApi.md) | [**confirmSelfExamination**](doc/ExaminationsApi.md#confirmselfexamination) | **POST** /examinations/{self-type}/self | Confirm Self-Examination
@@ -92,6 +91,7 @@ Class | Method | HTTP request | Description
 [*ProvidersApi*](doc/ProvidersApi.md) | [**getProvidersLastupdate**](doc/ProvidersApi.md#getproviderslastupdate) | **GET** /providers/lastupdate | Gets last date of healthcare provider update
 [*ProvidersApi*](doc/ProvidersApi.md) | [**getProvidersUpdate**](doc/ProvidersApi.md#getprovidersupdate) | **GET** /providers/update | Trigger healthcare provider update
 [*ProvidersApi*](doc/ProvidersApi.md) | [**postProvidersDetail**](doc/ProvidersApi.md#postprovidersdetail) | **POST** /providers/details | Gets details of given healthcare providers
+[*ProvidersApi*](doc/ProvidersApi.md) | [**updateCorrectedProvidersFunc**](doc/ProvidersApi.md#updatecorrectedprovidersfunc) | **GET** /providers/updateCorrectedProviders | Update corrected providers
 
 
 ## Documentation For Models

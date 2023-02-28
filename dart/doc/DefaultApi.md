@@ -13,7 +13,6 @@ Method | HTTP request | Description
 [**feedback**](DefaultApi.md#feedback) | **POST** /feedback | Sending a user feedback
 [**postConsultancyFrom**](DefaultApi.md#postconsultancyfrom) | **POST** /consultancyForm | Sends email with question to user and doctor in Loono
 [**test**](DefaultApi.md#test) | **POST** /testCall | For testing purposes only - remove in release
-[**updateCorrectedProvidersFunc**](DefaultApi.md#updatecorrectedprovidersfunc) | **POST** /providers/updateCorrectedProviders | Update corrected providers
 
 
 # **addEmailUser**
@@ -176,44 +175,6 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **updateCorrectedProvidersFunc**
-> updateCorrectedProvidersFunc()
-
-Update corrected providers
-
-Update corrected providers
-
-### Example
-```dart
-import 'package:loono_api/api.dart';
-
-final api = LoonoApi().getDefaultApi();
-
-try {
-    api.updateCorrectedProvidersFunc();
-} catch on DioError (e) {
-    print('Exception when calling DefaultApi->updateCorrectedProvidersFunc: $e\n');
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
